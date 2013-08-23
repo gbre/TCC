@@ -1,0 +1,98 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v<VERSION> }
+
+\bibitem[Barcellos 2010]{Barcellos2010}
+\abntrefinfo{Barcellos}{BARCELLOS}{2010}
+{BARCELLOS, M.~P. Medição de software - um importante pilar da melhoria de
+  processos de software.
+\emph{Engenharia de Software Magazine}, 2010.}
+
+\bibitem[Basili, Caldiera e Rombach 1996]{Basili96b}
+\abntrefinfo{Basili, Caldiera e Rombach}{BASILI; CALDIERA; ROMBACH}{1996}
+{BASILI, V.~R.; CALDIERA, G.; ROMBACH, H.~D. \emph{{The Goal Question Metric
+  Approach}}. [S.l.]: Encyclopedia of Software Engineering, 1996.}
+
+\bibitem[Beck 1999]{beck1999}
+\abntrefinfo{Beck}{BECK}{1999}
+{BECK, K. \emph{Extreme Programming Explained}. [S.l.]: Addison Wesley, 1999.}
+
+\bibitem[Emanuelsson e Nilsson 2008]{Emanuelsson2008}
+\abntrefinfo{Emanuelsson e Nilsson}{EMANUELSSON; NILSSON}{2008}
+{EMANUELSSON, P.; NILSSON, U. A comparative study of industrial static analysis
+  tools.
+\emph{Electron. Notes Theor. Comput. Sci.}, Elsevier Science Publishers B. V.,
+  Amsterdam, The Netherlands, The Netherlands, v.~217, p. 5--21, jul. 2008.
+ISSN 1571-0661.}
+
+\bibitem[Fenton e Pfleeger 1998]{Fenton98}
+\abntrefinfo{Fenton e Pfleeger}{FENTON; PFLEEGER}{1998}
+{FENTON, N.~E.; PFLEEGER, S.~L. \emph{{Software Metrics: A Rigorous and
+  Practical Approach}}. 2 edition. ed. [S.l.]: Course Technology, 1998. 656~p.}
+
+\bibitem[Gava et al. 2006]{Gava2006}
+\abntrefinfo{Gava et al.}{GAVA et al.}{2006}
+{GAVA, V.~L. et al. Modelo do processo de medição de software:
+  pré-condições para sua aplicação. In:  \emph{XXVI Encontro Nacional de
+  Engenharia de Produção}. [S.l.: s.n.], 2006.}
+
+\bibitem[{ISO/IEC 15939} 2002]{ISO:15939}
+\abntrefinfo{{ISO/IEC 15939}}{{ISO/IEC 15939}}{2002}
+{{ISO/IEC 15939}. \emph{{ISO/IEC} 15939: {S}oftware {E}ngineering - {S}oftware
+  {M}easurement {P}rocess}.
+[S.l.], 2002.}
+
+\bibitem[{ISO/IEC 25023} 2011]{ISO25023}
+\abntrefinfo{{ISO/IEC 25023}}{{ISO/IEC 25023}}{2011}
+{{ISO/IEC 25023}. \emph{{ISO/IEC} 25023: Systems and software engineering -
+  Systems and software Quality Requirements and Evaluation (SQuaRE) -
+  Measurement of system and software product quality}.
+[S.l.], 2011.}
+
+\bibitem[Lehman 1980]{Lehman1980b}
+\abntrefinfo{Lehman}{LEHMAN}{1980}
+{LEHMAN, M.~M. Programs, life cycles, and laws of software evolution.
+\emph{Proc. IEEE}, v.~68, n.~9, p. 1060--1076, September 1980.}
+
+\bibitem[Meirelles 2013]{Meirelles2013}
+\abntrefinfo{Meirelles}{MEIRELLES}{2013}
+{MEIRELLES, P. R.~M.
+\emph{Monitoramento de métricas de código-fonte em projetos de software
+  livre}.
+Tese (Doutorado) --- Instituto de Matemática e Estátistica -- Universidade de
+  São Paulo (IME/USP), 2013.}
+
+\bibitem[Mills 1999]{Mills:1999}
+\abntrefinfo{Mills}{MILLS}{1999}
+{MILLS, E.~E. Metrics in the software engineering curriculum.
+\emph{Ann. Softw. Eng.}, J. C. Baltzer AG, Science Publishers, Red Bank, NJ,
+  USA, v.~6, n.~1-4, p. 181--200, abr. 1999.
+ISSN 1022-7091.}
+
+\bibitem[Nielson, Nielson e Hankin 1999]{Nielson:1999}
+\abntrefinfo{Nielson, Nielson e Hankin}{NIELSON; NIELSON; HANKIN}{1999}
+{NIELSON, F.; NIELSON, H.~R.; HANKIN, C. \emph{Principles of Program Analysis}.
+  Secaucus, NJ, USA: Springer-Verlag New York, Inc., 1999.
+ISBN 3540654100.}
+
+\bibitem[Sommerville 2010]{Sommerville10}
+\abntrefinfo{Sommerville}{SOMMERVILLE}{2010}
+{SOMMERVILLE, I. \emph{Software Engineering}. 9. ed. Harlow, England:
+  Addison-Wesley, 2010.
+ISBN 978-0-13-703515-1.}
+
+\bibitem[Terra e Bigonha 2008]{Terra2008}
+\abntrefinfo{Terra e Bigonha}{TERRA; BIGONHA}{2008}
+{TERRA, R.; BIGONHA, R.~S. Ferramentas para análise estática de códigos
+  java.
+Departamento de Ciência da Computação - UFMG, 2008.}
+
+\bibitem[Wichmann et al. 1995]{Wichmann95}
+\abntrefinfo{Wichmann et al.}{WICHMANN et al.}{1995}
+{WICHMANN, B. et al. Industrial perspective on static analysis.
+\emph{Software Engineering Journal}, 1995.}
+
+\end{thebibliography}
