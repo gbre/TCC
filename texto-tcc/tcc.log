@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=latex 2013.8.19)  22 AUG 2013 09:18
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=latex 2013.8.19)  23 AUG 2013 00:15
 entering extended mode
 **tcc.tex fixos/informacoes.tex fixos/novosComandos.tex fixos/fichaCatalografic
 a.tex fixos/folhaDeAprovacao.tex fixos/pacotes.tex fixos/comandos.tex fixos/set
@@ -8,7 +8,7 @@ s.tex editaveis/epigrafe.tex editaveis/resumo.tex editaveis/abstract.tex editav
 eis/abreviaturas.tex editaveis/simbolos.tex editaveis/apendices.tex editaveis/a
 nexos.tex capitulos/1-introducao.tex capitulos/2-metricas.tex capitulos/3-ferra
 mentas.tex
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\tcc.tex
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\tcc.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -20,7 +20,7 @@ german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\fixos/pacotes.tex
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\fixos/pacotes.tex
 ("C:\Program Files\MiKTeX 2.9\tex\latex\abntex2\abntex2.cls"
 Document Class: abntex2 2013/06/01 v1.7 abnTeX2
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
@@ -980,17 +980,19 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\fixos/comandos.tex)
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\fixos/novosComandos.tex)
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\editaveis/informacoes.tex)
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\fixos/informacoes.tex)
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\fixos/setup.tex
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\fixos/comandos.tex)
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\fixos/novosComandos.
+tex)
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\editaveis/informacoe
+s.tex)
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\fixos/informacoes.te
+x) (C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\fixos/setup.tex
 Package hyperref Info: Option `colorlinks' set `true' on input line 16.
 )
 \tcc@idxfile=\write4
 
 Writing index file tcc.idx 
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\tcc.aux)
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\tcc.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
@@ -1088,7 +1090,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 ]
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\fixos/fichaCatalografica.tex
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\fixos/fichaCatalogra
+fica.tex
 Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
@@ -1129,53 +1132,60 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 32.
-) (C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\editaveis/errata.tex)
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\fixos/folhaDeAprovacao.tex
-[2] [3
+)
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\editaveis/errata.tex
+)
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\fixos/folhaDeAprovac
+ao.tex [2] [3
 
 ] [4
 
 ])
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\editaveis/dedicatoria.tex
-[5] [6
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\editaveis/dedicatori
+a.tex [5] [6
 
 ])
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\editaveis/agradecimentos.tex
-[7
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\editaveis/agradecime
+ntos.tex [7
 
 ] [8
 
-]) (C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\editaveis/epigrafe.tex
-[9] [10
+])
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\editaveis/epigrafe.t
+ex [9] [10
 
-]) (C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\editaveis/resumo.tex
+])
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\editaveis/resumo.tex
 [11] [12
 
-]) (C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\editaveis/abstract.tex [13] [1
-4
+])
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\editaveis/abstract.t
+ex [13] [14
 
 ])
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\fixos/listasAutomaticas.tex
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\tcc.lof) [15] [16
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\fixos/listasAutomati
+cas.tex (C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\tcc.lof)
+[15] [16
 
-]
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\tcc.lot) [17] [18
+] (C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\tcc.lot)
+[17] [18
 
 ])
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\editaveis/abreviaturas.tex
-[19
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\editaveis/abreviatur
+as.tex [19
 
 ] [20
 
 ])
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\fixos/indiceAutomatico.tex
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\tcc.toc) [21] [22
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\fixos/indiceAutomati
+co.tex (C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\tcc.toc)
+[21] [22
 
 ])
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\capitulos/1-introducao.tex
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\capitulos/1-introduc
+ao.tex
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 9.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Overfull \hbox (6.87971pt too wide) in paragraph at lines 21--22
@@ -1193,8 +1203,8 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 51.
  [24])
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\capitulos/2-metricas.tex [25]
-[26
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\capitulos/2-metricas
+.tex [25] [26
 
 ]
 File: figuras/processodemedicao15939.eps Graphic file (type eps)
@@ -1221,23 +1231,28 @@ Overfull \hbox (22.09726pt too wide) in paragraph at lines 120--121
 go-fonte ([][][][][][],
  []
 
-[31]) (C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\capitulos/3-ferramentas.tex
-[32] [33
+[31])
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\capitulos/3-ferramen
+tas.tex [32] [33
 
 ]
 Overfull \hbox (5.7062pt too wide) in paragraph at lines 55--56
 []\T1/lmr/m/n/12 O so-narQube não per-mite a con-
  []
 
-[34]) (C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\tcc.bbl
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\tcc.brf)
+[34]) (C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\tcc.bbl
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\tcc.brf)
 \tf@brf=\write5
- [35] [36
+ [35]
+[36
 
 ]
 bibitemlist
-) (C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\editaveis/apendices.tex)
-(C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\editaveis/anexos.tex)
+)
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\editaveis/apendices.
+tex)
+(C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\editaveis/anexos.tex
+)
 No file tcc.ind.
 
 AED: lastpage setting LastPage
@@ -1248,7 +1263,7 @@ AED: lastpage setting LastPage
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 47.
 Package atveryend Info: Executing hook `AfterLastShipout' on input line 47.
 \BKM@file=\write9
- (C:\Users\Guilherme\Dropbox\Unb\TCC\texto-tcc\tcc.aux)
+ (C:\Users\Guilherme\Dropbox\Unb\TCC\TCC-Baufaker\texto-tcc\tcc.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 47.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 47.
 Package rerunfilecheck Info: File `tcc.brf' has not changed.
@@ -1261,7 +1276,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 47.
  ) 
 Here is how much of TeX's memory you used:
  12250 strings out of 493922
- 180293 string characters out of 3147293
+ 181125 string characters out of 3147293
  303194 words of memory out of 3000000
  15263 multiletter control sequences out of 15000+200000
  87664 words of font info for 57 fonts, out of 3000000 for 9000
