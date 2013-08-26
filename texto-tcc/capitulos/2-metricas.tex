@@ -7,7 +7,7 @@
 	Segundo \citeonline{ISO:15939}, medição, que é uma ferramenta primordial para gerenciar as atividades do desenvolvimento de software e para avaliar a qualidade dos produtos e a capacidade de processos organizacionais,  é um conjunto de operações que visam por meio de um objeto determinar um valor a uma medida ou métrica.\footnote{A definição formal da \citeonline{ISO:15939} não utiliza o termo métrica, sendo que este é definido pelo GQM em \citeonline{Basili96b}, que é uma outra abordagem para medição, contudo compreende-se que o termo medida tem valor semântico equivalente ao de métrica no contexto do presente trabalho}. 
 	
 	
-	O processo de medição da \citeonline{ISO:15939}, como é mostrado na figura \ref{processo}, é um processo que consiste  de quatro atividades que são sequenciadas em um ciclo iterativo, permitindo
+	O processo de medição da \citeonline{ISO:15939}, como é mostrado na figura \ref{processo}, consiste  de quatro atividades que são sequenciadas em um ciclo iterativo, permitindo
 	feedback e melhoria contínua do processo. Ele é uma adaptação do ciclo PDCA (Plan-Do-Check-Act), comumente utilizado como base para a melhoria da qualidade \cite{Barcellos2010}.  O processo visa a construção de produtos de informação para cada necessidade seguindo um modelo de informação, que é mostrado na figura \ref{informacao}.
 		
 		\begin{figure}[h]
@@ -101,6 +101,8 @@
 			 
 		\end{description}
 		
+		 Conforme a figura \ref{modelodequalidade} mostra que ao investirmos em melhoria de qualidade interna do produto, provalmente trará benefícios tanto qualidade externa quanto na qualidade em uso. Este fato fica claro quando \citeonline{beckarticle1999} elucida que quando para reduzir o tempo de entrega, torcendo que a qualidade externa não sofra muito, é jogada tentadora para se evitar o caos de algumas semanas e meses no projeto reduzir a qualidade interna. Contudo, no final os problemas de qualidade interna aparecem e o software torna-se extremamente caro de ser mantido, ou incapaz de alcancar um nível competitivo de qualidade externa. 
+
 
 
 %---------------------------------------------------------------------------------------------------------------------%
@@ -110,26 +112,26 @@
 	
 	\citeonline{Mills:1999} define que o produto de software deve ser entendido como um objeto abstrato que evolui de um conjunto inicial de necessidades até o sistema software acabado, incluindo o código-fonte e várias outras formas de documentação.
 	
-	Segundo a chamada de trabalhos do SCAM 2013~\footnote{13th IEEE International Working Conference on Source Code Analysis and Manipulation}, código-fonte é “qualquer descrição completamente executável de um sistema de software, desde de linguagem de máquina até representações gráficas executáveis".
+	Segundo a chamada de trabalhos do SCAM 2013~\footnote{13th IEEE International Working Conference on Source Code Analysis and Manipulation}, código-fonte é  qualquer descrição completamente executável de um sistema de software, desde de linguagem de máquina até representações gráficas executáveis.
 	
 
 	Segundo \citeonline{Sommerville10}, há duas formas de executar verificação e validação no código-fonte:
 	
 	\begin{description}
 	
-	\item[Estatica.] A forma estática de avaliação do código-fonte é o meio pelo qual se pode analisar as estruturas internas do código sem realizar sua execução \cite{Wichmann95} e \cite{Nielson:1999}. Popularmente, o termo análise estática de código se refere uma análise automatizada, que é uma das técnicas estáticas de inspeção de software para obtenção de métricas de código-fonte \cite{Terra2008} \cite{Emanuelsson2008}.
+	\item[Estática.] A forma estática de avaliação do código-fonte é o meio pelo qual se pode analisar as estruturas internas do código sem realizar sua execução \cite{Wichmann95} e \cite{Nielson:1999}. Popularmente, o termo análise estática de código se refere uma análise automatizada, que é uma das técnicas estáticas de inspeção de software para obtenção de métricas de código-fonte \cite{Terra2008} \cite{Emanuelsson2008}.
 
-	\item[Dinâmica.] A forma dinâmica de avaliação do código-fonte requer a execução da implementação. Os testes de software são técnicas que compreendem a abordagem de verificação dinâmica, podendo ser estes o teste de defeitos que tem a finalidade de encontrar inconsistências entre um programa e sua especicação, isto é, revelar defeitos e o teste de validação que tem a finalidade de mostrar que o software tem o comportamento que o cliente deseja \cite{Sommerville10}. 
+	\item[Dinâmica.] A forma dinâmica de avaliação do código-fonte requer a execução da implementação. Os testes de software são técnicas que compreendem a abordagem de verificação dinâmica, podendo ser estes o teste de defeitos que tem a finalidade de encontrar inconsistências entre um programa e sua especificação, isto é, revelar defeitos e o teste de validação que tem a finalidade de mostrar que o software tem o comportamento que o cliente deseja \cite{Sommerville10}. 
 
 	\end{description}
 
-		Tendo como base a seção \ref{Classificação das Métricas}, métricas de código-fonte podem ser classificadas em \textit{métricas internas de produto}, quando obtidas por meio da análise estática do código-fonte, \textit{métricas externas de produto}, quando obtidas por resultados de testes de software. As duas categorias podem ser classificadas em \textit{métricas objetivas}, pois o método de medição, tanto para métricas internas quanto externas, é definido por meio de regras matemáticas que são, em sua grande maioria, automatizadas em sua forma de coleta.
+		Tendo como base a seção \ref{Classificação das Métricas}, métricas de código-fonte podem ser classificadas em \textit{métricas internas de produto}, quando obtidas por meio estáticos tal como a análise estática do código-fonte e \textit{métricas externas de produto}, quando obtidas por resultados de testes de software. As duas categorias podem ser classificadas em \textit{métricas objetivas}, pois o método de medição, tanto para métricas internas quanto externas, é definido por meio de regras matemáticas que são, em sua grande maioria, automatizadas em sua forma de coleta.
 
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 	\subsection {Métricas Internas de Código-Fonte}
 	\label {Métricas Internas de Código-Fonte}
 
-	Esta subseção traz a classificação de métricas internas de código-fonte. O mesmo pode ser caracterizado em subcategorias:
+	Esta subseção traz a classificação de métricas internas de código-fonte em subcategorias:
 
 	\begin{description}
 	\item [Tamanho.]  O tamanho do código-fonte foi uma das primeiras categorias a ser concebida, dado que o software poderia ocupar espaço tanto em forma de cartões perfurados quanto em forma de papel quando o código-fonte é impresso. A seção \ref{metrica tamanho} apresenta as principais métricas de tamanho. 
@@ -141,8 +143,19 @@
 
 \subsubsection{Métricas de Tamanho}
 \label{metrica tamanho} 
+	
+	\begin{description}
+	\item[LOC - Linhas de Código.] O LOC (do inglês Lines of Code) foi uma das primeiras métricas para medir o tamanho do software. É utilizada para contabilizar linhas que possuem instruções e não são brancas ou comentadas. 
+	\end{description}
 
-A primeira métrica utilizada para medir o tamanho do software é \textbf{Linhas de código}   (LOC - Lines of Code) que indica o número de linhas não brancas ou não comentadas de código-fonte. 
+LOC é uma métrica simples de entender e fácil de computar, mas possui sérias limitações, pois pois cada linguagem de programação valoriza
+de forma diferente clareza e brevidade, podendo diferir muito em verbosidade. Comparar linhas de
+código de linguagens diferentes exige certos cuidados: podem ser usados fatores de normalização, ou
+a comparação pode ser feita apenas em escala logarítmica. Projetos de software frequentemente são
+desenvolvidos usando mais de uma linguagem de programação. Como não é razoável simplesmente
+somar, fica difícil definir medidas como erros por linhas de código. (Carlos Morais)
+
+
 
 \subsubsection {Métricas de Complexidade}
 \label {metrica complexidade}

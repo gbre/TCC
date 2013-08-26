@@ -16,7 +16,7 @@ O eXtreme Programming (XP), que é uma metodologia ágil, tem a codificação co
 \end{enumerate} 
 
 
-Logo, em metodologias ágeis, é possível inferir a qualidade do processo de desenvolvimento, por meio do código-fonte. Um dos métodos mais utilizados é a análise estática de código, o qual segundo \citeonline{Emanuelsson2008} significa método automático de coleta de propriedades de tempo de execução do código-fonte sem executá-lo e os resultados da análise podem servir para propósitos de verificação de erros, geração automática de casos de teste, análise de impacto ou ainda para obtenção de métricas de código-fonte.
+Logo em metodologias ágeis, é possível inferir a qualidade do trabalho desenvolvido, por meio do código-fonte. Um dos métodos mais utilizados é a análise estática de código, o qual segundo \citeonline{Emanuelsson2008} significa método automático de coleta de propriedades de tempo de execução do código-fonte sem executá-lo e os resultados da análise podem servir para propósitos de verificação de erros, geração automática de casos de teste, análise de impacto ou ainda para obtenção de métricas de código-fonte.
 
 Embora a definição formal da análise estática consolidada no âmbito acâdemico, vide os trabalhos de \cite{Wichmann95} e \cite{Nielson:1999}, as ferramentas dísponiveis no mercado, que realizam as coletas e avaliação, ainda não suprem totalmente as necessidades de quem precisa avaliar a qualidade total do produto.
 
@@ -45,17 +45,10 @@ Cada ferramenta apresenta suas vantagens e limitações, contudo, de maneira ger
 Esta seção apresenta os objetivos gerais e específicos deste TCC.
 
 \subsection{Objetivos Gerais}
-Sob prisma da avaliação da qualidade de código em ambientes ágeis, neste trabalho, há como objetivo geral a prosição e construção um ambiente de \textit{Dwing}, de modo a melhorar extração e visualização das métricas de código-fonte, suprimindo os pontos fracos enunciados acima das ferramentas de análise estática de código. O ambiente é composto de:
- 
-\begin{itemize}
-  \item SonarQube~\footnote{\url{http://www.sonarqube.org/}}, que é uma ferramenta de software-livre para realizar análise estática de código
-  \item \textit{Data Warehouse}
-  \item \textit{Dashboards} com as métricas em formatos de gráficos diversos.
-\end{itemize}
-
+Sob prisma da avaliação da qualidade de código em ambientes ágeis, neste trabalho, há como objetivo geral a proposição e construção um ambiente de \textit{Dwing}, de modo a melhorar extração e visualização das métricas de código-fonte, suprimindo os pontos fracos enunciados acima das ferramentas de análise estática de código.
 
 Este ambiente inicialmente construído para este trabalho de conclusão de curso, poderá aumentado em trabalhos futuros para a correlação de outras métricas coletadas
-durante o processo de desenvolvimento de software. Este ambiente também tem como objetivo a validação da abordagem desenvolvida por \citeonline{Meirelles2013}.
+durante o processo de desenvolvimento de software. 
 
 
 %------------------------------------------------------------------------------%
@@ -67,7 +60,7 @@ Os objetivos específicos desse trabalho são:
 \begin{enumerate}
 	
 \item Construir o ambiente de Dwing para métricas de código-fonte.
-\item Validar o ambiente com o estudo de caso.
+\item Validar o ambiente com o estudo de caso baseado na abordagem desenvolvida por \citeonline{Meirelles2013}.
 \item Incorporar visões gerenciais das métricas de código-fonte.
 \item Facilitar o entendimento das métricas de código-fonte.
 
@@ -75,13 +68,34 @@ Os objetivos específicos desse trabalho são:
 
 %------------------------------------------------------------------------------%
 
-\section{Organização do Trabalho}
+\section{Sobre o Trabalho}
 
+\subsection{Cronograma}
+O Trabalho de Conclusão de Curso foi planejado, como um planejamento de longo prazo, em quatro ciclos de desenvolvimento de vinte e um dias. As figuras \ref{cronograma} e \ref{gantt}, que foram extraídas do OpenProj\footnote{\url{http://sourceforge.net/projects/openproj/}}, apresentam o cronograma geral o gráfico de Gantt do presente trabalho.
+
+	\begin{figure}[h]
+		\centering
+			\includegraphics[keepaspectratio=true,scale=0.7]{figuras/calendario_marcos.eps}
+		\caption{Ciclos de Desenvolvimento do Trabalho de Conclusão de Curso}
+		\label{cronograma}
+	\end{figure}
+
+	\begin{figure}[h]
+		\centering
+			\includegraphics[keepaspectratio=true,scale=0.7]{figuras/gantt_chart.eps}
+		\caption{Gráfico de Gantt}
+		\label{gantt}
+	\end{figure}
+
+Para cada ciclo de desenvolvimento do Trabalho de Conclusão de Curso,  utilizou-se o Quadro \textit{Kanban}  
+
+\subsection {Metodologia de Pesquisa}
 Durante a fase inicial do trabalho de conclusão de curso, a metodologia da pesquisa foi definida em pesquisa exploratória, dado que se buscava evidenciar e caracterizar o problema da visualização das métricas obtidas diretamente do código-fonte , 
 e pesquisa biblográfica, dada a necessidade de fundamentação teórica sobre cada um dos elementos que compõem o ambiente da solução proposta. Durante a fase de construção do ambiente, utilizou-se
 as práticas ágeis como a realização de ciclos curtos e a integração contínua de novos pedaços da solução proposta. Nesta fase, visou-se ainda a aplicação do ambiente em um estudo de caso, 
 de forma a  a validar o ambiente proposto.  
 
+\subsection{Organização do Trabalho}
 Para a primeira fase deste Trabalho de Conclusão de Curso, além desta introdução
 este texto está organizado em capítulos. O Capítulo 2 apresenta a fundamentação teórica
 sobre métricas e traz também as métricas de código-fonte, seus intervalos e definições para extração e visualização. O Capítulo 3 apresenta o SonarQube como a ferramenta escolhida para extração das métricas de código-fonte.
