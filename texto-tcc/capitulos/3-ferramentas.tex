@@ -1,45 +1,69 @@
-\chapter{SonarQube}
+\chapter{Ferramentas}
 
-
-\section {Descrição da Ferramenta}
-O SonarQube~\footnote{Toda a documentação e \textit{downloads} estão disponíveis em \url{http://www.sonarqube.org/}}, ateriormente conhecido como Sonar, é uma ferramenta que realiza coleta de dados do código-fonte. Em sua documentação, são citados sete eixos de controle de qualidade cobertos na ferramenta: 
+\section{SonarQube}
+O SonarQube~\footnote{Toda a documentação e \textit{downloads} estão disponíveis
+em \url{http://www.sonarqube.org/}}, anteriormente conhecido como Sonar, é uma 
+ferramenta que realiza coleta de dados do código-fonte. Em sua documentação, 
+são citados sete eixos de controle de qualidade cobertos na ferramenta: 
 
 \begin{enumerate}
-  \item Duplicação de Código
-  \item Detecção de Complexidade de Código
-  \item Parão de Codificação
-  \item Testes Unitários
-  \item Arquitetura e Projeto
-  \item Potenciais Defeitos
-  \item Comentários
+\item Duplicação de Código
+\item Detecção de Complexidade de Código
+\item Padrão de Codificação
+\item Testes Unitários
+\item Arquitetura e Projeto
+\item Potenciais Defeitos
+\item Comentários
 \end{enumerate}
 
 %--------------------------------------------%
 \subsection{Escolha do SonarQube}
-O SonarQube foi escolhido como ferramenta para extração de dados do código-fonte devido as seguintes características:
+O SonarQube foi escolhido como ferramenta para extração de dados do código-fonte
+ devido as seguintes características:
 \begin{description}
- \item [Ferramenta Livre:] O SonarQube é uma ferramenta livre que está licenciada sob a GNU LPGL 3, que é uma das licenças de software livre.
+  
+\item [Ferramenta Livre:] O SonarQube é uma ferramenta livre que está 
+licenciada sob a GNU LPGL 3, que é uma das licenças de software livre.
 
-  \item [Suporte a várias Linguagens de Programação:]  É realizada coleta em mais de 20 linguagens de programação, como por 		
-	exemplo, Java, C\#, Python, C++, .Net, PHP e entre outras.
+\item [Suporte a várias Linguagens de Programação:]  É realizada coleta em 
+mais de 20 linguagens de programação, como por exemplo, Java, C\#, Python, 
+C++, .Net, PHP e entre outras.
 
-  \item [Mutiplataforma:] Há suporte para os sistemas operacionais Windows, Linux, Mac OS e há também para sevidores de aplicação Java, como por exemplo, o Apache Tomcat. 
+\item [Multiplataforma:] Há suporte para os sistemas operacionais Windows, 
+Linux, Mac OS e há também para servidores de aplicação Java, como por exemplo,
+o Apache Tomcat. 
 
-  \item [Integração com Ferramentas de Integração Contínua:] é possível realizar a integração com ferramentas de integração contínua, como por exemplo, Jenkins. Assim a cada versão bem sucedida de construção do código-fonte, é possível aferir a qualidade do código.
+\item [Integração com Ferramentas de Integração Contínua:] é possível realizar
+a integração com ferramentas de integração contínua, como por exemplo, 
+Jenkins. Assim a cada versão bem sucedida de construção do código-fonte, é 
+possível aferir a qualidade do código.
 
-  \item [Persistência em Base de Dados:] toda a coleta de dados é persistida em uma base de dados. Há suporte para as principais ferramentas de bancos de dados utilizadas no mercado: MySQL, PostgreSQL e Oracle.
+\item [Persistência em Base de Dados:] toda a coleta de dados é persistida em 
+uma base de dados. Há suporte para as principais ferramentas de bancos de 
+dados utilizadas no mercado: MySQL, PostgreSQL e Oracle.
 
-  \item [Interface Amigável:] Diferentemente de outras ferramentas disponíveis no mercado, o SonarQube tem inferface web, ou seja, é possível visualização das métricas do código-fonte seja realizada em navegador a escolha do usuário. É possível ainda visualizar todo o código-fonte analisado.
+\item [Interface Amigável:] Diferentemente de outras ferramentas disponíveis 
+no mercado, o SonarQube tem interface web, ou seja, é possível visualização 
+das métricas do código-fonte seja realizada em navegador a escolha do usuário.
+É possível ainda visualizar todo o código-fonte analisado.
 
-\item [Integração com Ferramentas de Gestão de Defeitos:] É possivel integrar com ferramentas de gestão de defeitos, tais como Mantis e JIRA.
+\item [Integração com Ferramentas de Gestão de Defeitos:] É possível integrar 
+com ferramentas de gestão de defeitos, tais como Mantis e JIRA.
 
-\item [Suporte a Mutiprodutos:] Há suporte para visualização de métricas de mais um Produto.
+\item [Suporte a Muti produtos:] Há suporte para visualização de métricas de 
+ mais um Produto.
 
-\item [Suporte a Multi-Idiomas:] Há suporte para Inglês, Japonês, Russo, Francês, Italiano, Espanhol e Português.
+\item [Suporte a Multi-Idiomas:] Há suporte para Inglês, Japonês, Russo, 
+Francês, Italiano, Espanhol e Português.
 
-\item [Diversidade de Plugins:] O SonarQube permite a extensão de funcionalidades por meio de plugins, sendo que há uma variedade de plugins para mais diversas necessidades disponíveis para \textit{download}. Cabe ressaltar que alguns são gratuitos e outros tem licença comercial.
+\item [Diversidade de Plugins:] O SonarQube permite a 
+extensão de funcionalidades por meio de plugins, sendo que há uma variedade de 
+plugins para mais diversas necessidades disponíveis para \textit{download}. 
+Cabe ressaltar que alguns são gratuitos e outros tem licença comercial.
 
-\item [Presença de Web Service:] Há um Web Service que extrai as métricas disponíveis para diversos formatos, tais como JSON, XML e CSV.
+\item [Presença de Web Service:] Há um Web Service que extrai as métricas 
+disponíveis para diversos formatos, tais como JSON, XML e CSV.
+
 \end{description}
 
 
@@ -47,22 +71,32 @@ O SonarQube foi escolhido como ferramenta para extração de dados do código-fo
 
 
 \subsection {Limitações Observadas}
-Após uma análise ostensiva na ferramenta, concluiu-se que o SonarQube apresenta as seguintes limitações:
+Após uma análise ostensiva na ferramenta, concluiu-se que o SonarQube apresenta 
+as seguintes limitações:
+
 \begin{description}
 
-  \item [Ausência de Visão Consolidada de Métricas:]  A maior parte das métricas que SonarQube estão apenas no âmbito de Classes 		   ou Pacotes.
+\item [Ausência de Visão Consolidada de Métricas:]  A maior parte das métricas
+que SonarQube estão apenas no âmbito de Classes ou Pacotes.
 
-  \item [Impossibilidade Definição de Mútiplos Intervalos:]  O sonarQube não permite a configuração de múltiplos intervalos. É definido apenas, um intervalo de alerta (amarelo) e um intervalo de atenção (vermelho).
+\item [Impossibilidade Definição de Múltiplos Intervalos:]  O sonarQube não 
+permite a configuração de múltiplos intervalos. É definido apenas, um 
+intervalo de alerta (amarelo) e um intervalo de atenção (vermelho).
 
-\item [Ausência de Avaliações Qualitativas:] As métricas não trazem nenhuma avaliação qualitativa associada, ou seja, sem o conhecimento específico do significado de cada métrica, a interpretação dos valores obtidos não é representativo nem elucidativo sobre a qualidade do código.
+\item [Ausência de Avaliações Qualitativas:] As métricas não trazem nenhuma 
+avaliação qualitativa associada, ou seja, sem o conhecimento específico do 
+significado de cada métrica, a interpretação dos valores obtidos não é 
+representativo nem elucidativo sobre a qualidade do código.
 
-\item [Métricas como Violações:] O SonarQube utiliza para coletar dados de código fonte, em algumas linguagens de programação, coletores que são identificadores padrão de codificação. Isso quer dizer que algumas métricas não são aprsentadas com valor absoluto, apenas são indicadas com violações à regras estabelecidas pelos padões de codificação.
-
-\item [Ausência de Representações Estátisticas das Métricas:] O SonarQube não apresenta nenhum suporte a análise estátistica de dados.
+\item [Métricas como Violações:] O SonarQube utiliza para coletar dados de 
+código-fonte, em algumas linguagens de programação, coletores que são 
+identificadores de padrões de codificação. Isso quer dizer que algumas métricas 
+não são apresentadas com valor absoluto, apenas são indicadas como violações à 
+regras estabelecidas pelos padrões. 
 
 \end{description}
 
 
 
-
+\section{Pentaho}
 
