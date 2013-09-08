@@ -2,6 +2,7 @@ TARGET = TCC_Baufaker.pdf
 
 BIBTEX = bibtex
 LATEX = latex
+PDFLATEX = pdflatex
 DVIPS = dvips
 PS2PDF = ps2pdf
 
@@ -24,7 +25,7 @@ EDITAVEIS_SOURCES = informacoes.tex errata.tex dedicatoria.tex \
 EDITAVEIS_FILES = $(addprefix $(EDITAVEIS_DIR)/, $(EDITAVEIS_SOURCES))
 
 CHAPTERS_DIR = capitulos
-CHAPTERS_SOURCES = 1-introducao.tex 2-metricas.tex 3-ferramentas.tex
+CHAPTERS_SOURCES = 1-introducao.tex 2-metricas.tex 3-dwing.tex 4-solucao.tex
 
 CHAPTERS_FILES = $(addprefix $(CHAPTERS_DIR)/, $(CHAPTERS_SOURCES))
 
@@ -45,9 +46,7 @@ $(TARGET): $(MAIN_FILE) $(SOURCES) bibliografia.bib
 	$(LATEX) $(MAIN_FILE) $(SOURCES)
 	$(BIBTEX) $(AUX_FILE)
 	$(LATEX) $(MAIN_FILE) $(SOURCES)
-	$(LATEX) $(MAIN_FILE) $(SOURCES)
-	$(DVIPS) $(DVI_FILE)
-	$(PS2PDF) $(PS_FILE)
+	$(PDFLATEX) $(MAIN_FILE) $(SOURCES)
 	@cp $(PDF_FILE) $(TARGET)
 
 clean:
