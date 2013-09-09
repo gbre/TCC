@@ -10,8 +10,12 @@ Este repositório pode ser baixado pelo comando:
 
 ### Arquivos Latex (texto-tcc)
 
-Contém toda os arquivos fontes do TCC
+Contém todos os arquivos fontes do TCC
 Para compilar o texto através do Makefile digite:
 
 	$ make clean
 	$ make
+	
+### Arquivos do Pentaho (pentaho-files)	
+
+Contém os Jobs e transformations utilizados no Kettle
