@@ -1,12 +1,12 @@
 \chapter{Introdução}
 
-As metodologias ágeis vem ganhando cada vez espaço no mercado global 
+As metodologias ágeis vem ganhando cada vez mais espaço no mercado global 
 de desenvolvimento de software, pois enfatizam a qualidade do produto 
 sobre a qualidade do processo, procurando minimizar a execução 
 de atividades não essenciais ao longo do ciclo de vida de 
 desenvolvimento de software. 
 
-O eXtreme Programming (XP), que é uma metodologia ágil, tem a codificação como a 
+O eXtreme Programming (XP), que é uma metodologia ágil, tem a codificação como 
 atividade chave durante um projeto de desenvolvimento de software 
 \cite{beck1999}. Isso se torna perceptível quando se analisa algumas práticas do 
 XP,~\footnote{Documentação disponível em \url{http://www.extremeprogramming.org}}
@@ -15,24 +15,24 @@ tais como:
 \begin{enumerate}
 %-----------------------------
 \item Padronização do Código: O código é a principal forma de comunicação entre 
-a equipe, logo a padronização de código o torna consistente e fácil para todo o 
-time ler e refatorar. 
+a equipe. A padronização de código o torna consistente e fácil para leitura e 
+refatoração por todo o time. 
 %-----------------------------
 \item Propriedade Coletiva do Código: Cada programador pode melhorar qualquer 
-parte do código quando existir a oportunidade.
+parte do código quando houver a oportunidade.
 %-----------------------------
-\item Programação em Pares: Todo código é escrito com duas pessoas: uma que olha 
+\item Programação em Pares: Todo código é escrito por duas pessoas: uma que olha 
 para uma máquina, e outra com um teclado e um mouse.
 %-----------------------------
-\item Integração Contínua: Todo novo código é integrado ao sistema e quando 
+\item Integração Contínua: Todo novo código é integrado ao sistema e, quando 
 integrado, o sistema é totalmente reconstruído do zero e todos os testes devem 
-passar ou o novo código é descartado.
+passar. Caso contrário, o código é descartado.
 
 \end{enumerate} 
 
-Dado a importância do código-fonte, infere-se a qualidade do trabalho produzido, 
-pela qualidade do código-fonte, sendo que um dos métodos mais utilizados
-para tal é a análise estática de código. 
+Dada a importância do código-fonte, infere-se a qualidade do trabalho produzido 
+pela qualidade do código-fonte, sendo um dos métodos mais utilizados
+para tal a análise estática de código-fonte. 
 
 Durante anos, vários trabalhos foram publicados visando a definição formal de 
 métodos de análise estática de código-fonte. Vide os trabalhos de 
@@ -48,7 +48,7 @@ apresentam problemas, tais como:
 	parte das métricas é extraída de elementos internos menores (Bibliotecas, 
 	Pacotes, Classes,Métodos, Funções) do código-fonte.
     
-	\item Ausência de mecanismos de tratamento, separação, recuperação e 
+	\item Ausência de mecanismos de tratamento, separação, recuperação, 
 	organização e persistência de dados. 
 	
 	\item Ausência de associação entre resultados numéricos e forma de 
@@ -62,24 +62,24 @@ apresentam problemas, tais como:
 	
     \end{problems}
 	
-Os problemas enunciados acima trazem muitos prejuízos à organizações que 
+Os problemas enunciados acima trazem muitos prejuízos às organizações que 
 utilizam processos de aferição de qualidade de código-fonte como um indicador do
 desenvolvimento de produtos de software, pois sem possibilidade de manter 
 registros das métricas de código-fonte, torna-se inviável qualquer análise 
-temporal da evolução da qualidade do código-fonte e além disso, se os dados não 
+temporal da evolução da qualidade do código-fonte. Além disso, se os dados não 
 são representativos, qualquer análise fica a cargo de experiências anteriores 
 com as métricas de código-fonte.
 
-Dado este contexto, é crucial que dados relacionados a métricas sejam coletados 
-e compartilhados entre projetos e pessoas, em uma visão organizacional, 
+Dado este contexto, é crucial que dados relacionados às métricas sejam coletados 
+e compartilhados entre projetos e pessoas em uma visão organizacional unificada, 
 para que determinada organização ou time possa compreender o processo de medição 
 e monitoramento de projetos de software e, consequentemente, se 
 tornar mais hábil e eficiente em realizar atividades técnicas relacionadas ao 
 processo de desenvolvimento de software 
 \cite{Chulani2003}.
 
-Vários trabalhos tem mostrado que ambientes de DWing são boas soluções para 
-atender a visão organizacional unificada de métricas de software proposta por 
+Vários trabalhos têm mostrado que ambientes de DWing são boas soluções para 
+atender à visão organizacional unificada de métricas de software proposta por 
 \citeonline{Chulani2003}. Vide os trabalhos de \citeonline{Palza2003}, 
 \citeonline{Ruiz2005}, \citeonline{Castellanos2005}, \citeonline{Becker2006}, 
 \citeonline{Folleco2007}, \citeonline{Silveira2010}.
@@ -87,8 +87,8 @@ atender a visão organizacional unificada de métricas de software proposta por
 
 Tendo os trabalhos, enunciados anteriormente, como norteadores, adotou-se como 
 hipótese de pesquisa deste trabalho que a \textbf{visualização
-e a extração de métricas de código-fonte em ambientes de DWing supre os problemas
-encontrados nas ferramentas de análise estática de código-fonte}.
+e a extração de métricas de código-fonte em ambientes de DWing suprem 
+os problemas encontrados nas ferramentas de análise estática de código-fonte}.
 
 
 %------------------------------------------------------------------------------%
@@ -101,19 +101,20 @@ encontrados nas ferramentas de análise estática de código-fonte}.
 
 \section{Objetivos}
 
-Esta seção apresenta os objetivos gerais e específicos deste TCC.
+Esta seção apresenta os objetivos gerais e específicos deste Trabalho de 
+Conclusão de Curso.
 
 \subsection{Objetivos Gerais}
-Sob prisma da hipótese de pesquisa, há como objetivo geral a proposição e 
-construção um ambiente de \textit{Dwing}, para extrair e visualizar métricas de
-código-fonte.
+Sob o prisma da hipótese de pesquisa, há como objetivo geral a proposição e 
+construção  de um ambiente de \textit{Dwing}, para extrair e visualizar métricas
+ de código-fonte.
 
 
 %------------------------------------------------------------------------------%
 
 \subsection{Objetivos Específicos}
 
-Os objetivos específicos desse trabalho são:
+Os objetivos específicos deste trabalho são:
 
 \newlist{objectives}{enumerate}{3}
 \setlist[objectives]{ label* = OE\arabic* -}
@@ -121,12 +122,15 @@ Os objetivos específicos desse trabalho são:
 \begin{objectives}
 	\item Construir o ambiente de Dwing para extração e visualização de métricas 
 	de código-fonte utilizando ferramentas de software livre.
+	
+	\item Analisar a qualidade de um software livre em uma estrutura de estudo 
+	de caso.
   
 	\item Incorporar indicadores qualitativos para cada métrica de código-fonte.
 	
 	\item Facilitar o entendimento das métricas de código-fonte.
 	
-	\item Apresentar em formas visuais, as análises obtidas das métricas de 
+	\item Apresentar, em formas visuais, as análises obtidas das métricas de 
 	código-fonte.
 	
     \end{objectives}
@@ -139,8 +143,13 @@ Os objetivos específicos desse trabalho são:
 %------------------------------------------------------------------------------%
 \subsection {Metodologia de Pesquisa}
 A metodologia de pesquisa foi definida em \textbf{aplicada}, pois visa construir 
-conhecimento, em aplicações práticas, dirigido á solução de problemas 
-específicos \cite{Gil2008}; \textbf{pesquisa-ação}
+conhecimento, em aplicações práticas, dirigida à solução de problemas 
+específicos \cite{Gil2008}; \textbf{pesquisa-ação} pois visa efetuar 
+transformações nas práticas no mercado de desenvolvimento de software 
+\cite{brown1998}; \textbf{quantitativa}, dado que é necessário o uso de técnicas
+estatísticas para calcular as métricas de código-fonte do software livre do 
+estudo de caso; para, por fim, emitir uma análise \textbf{qualitativa} sobre a 
+visualização das métricas de código-fonte em ambientes de DWing. 
 
 
 
@@ -150,7 +159,7 @@ de desenvolvimento de vinte e um dias cada um.
 As figuras \ref{cronograma} e \ref{gantt}, que foram extraídas da ferramenta 
 OpenProj\footnote{Documentação e \textit{download} disponível em 
 \url{http://sourceforge.net/projects/openproj/}}, 
-apresentam o cronograma geral o gráfico de Gantt do presente trabalho.
+apresentam o cronograma geral e o gráfico de Gantt do presente trabalho.
 
 \begin{figure}[h]
 \centering
@@ -159,7 +168,6 @@ apresentam o cronograma geral o gráfico de Gantt do presente trabalho.
 	\label{cronograma}
 \end{figure}
 
-\clearpage
 
 \begin{figure}[h]
 \centering
@@ -176,7 +184,7 @@ fluxo da produção, limitando o tamanho do trabalho em progresso
 \cite{moura1999kanban}.
 
 Posteriormente, o método foi incorporado no processo de desenvolvimento de 
-software na  pela metodologia ágil, \textit{Scrum} \cite{Schwaber:2004}. 
+software pela metodologia ágil, \textit{Scrum} \cite{Schwaber:2004}. 
 O quadro \textit{Kanban} 
 que foi utilizado no presente trabalho, foi criado na ferramenta \textit{online}, 
 \textit{Kanban Flow},\footnote{Disponível em \url{https://kanbanflow.com}} e foi
@@ -198,15 +206,22 @@ curso foram listadas no apêndice \ref{kanban flow}.
 
 
 \subsection{Organização do Trabalho}
-Para a primeira fase deste Trabalho de Conclusão de Curso, além desta introdução 
-este texto está organizado em capítulos. O Capítulo 2 apresenta  o processo de 
-medição e as métricas de código-fonte.
-O Capítulo 3 apresenta o SonarQube como a ferramenta escolhida para extração das 
-métricas de código-fonte.
-O Capítulo 4 apresenta a fundamentação teórica do ambiente de Dwing, de modo a 
-suprir as limitações das ferramentas, e cada um de seus componentes em detalhes. 
-O Capítulo 5 apresenta o ambiente proposto por este trabalho para extração e 
-visualização das métricas de código-fonte. Por fim, o Capítulo 6 apresenta o 
-estado atual da validação 
-do ambiente por meio de estudo de caso, bem como as atividades planejadas até o 
-encerramento do trabalho de conclusão de curso.
+Para a primeira fase deste Trabalho de Conclusão de Curso, além desta introdução, 
+o texto foi organizado em capítulos. O Capítulo 2 apresenta o processo de 
+medição, descrito pela ISO 15939, classificação e as métricas de código-fonte, 
+bem como os respectivos intervalos de referência.
+
+
+O Capítulo 3 apresenta a arquitetura do ambiente de \textit{Dwing}, determinada pelos 
+requisitos de projeto, e composta por: \textit{Data Warehouse(DW)},  processo de ETL \textit{(Extraction-Transformation-Load}, pelo Kettle como 
+componente para realização do processo ETL, pelo SonarQube como fonte de coleta de métricas de 
+código-fonte, pelo esquema estrela com as tabelas fato e dimensão, pelo processo de 
+OLAP, pelo Mondrian como componente para realizá-lo e pela visualização das métricas 
+de código-fonte com o componente CDE para realizá-la.
+
+ 
+O Capítulo 4 apresenta um estudo de caso com ambiente de Dwing proposto no 
+capítulo 3. 
+
+Por fim, o capítulo 5 apresenta as conclusões retiradas do ambiente.
+
