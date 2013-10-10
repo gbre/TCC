@@ -12,7 +12,11 @@ atividade chave durante um projeto de desenvolvimento de software
 XP,~\footnote{Documentação disponível em \url{http://www.extremeprogramming.org}}
 tais como:
 
-\begin{enumerate}
+\newlist{pratices}{enumerate}{4}
+\setlist[pratices]{ label* = \arabic* -}
+
+
+\begin{pratices}
 %-----------------------------
 \item Padronização do Código: O código é a principal forma de comunicação entre 
 a equipe. A padronização de código o torna consistente e fácil para leitura e 
@@ -28,7 +32,7 @@ para uma máquina, e outra com um teclado e um mouse.
 integrado, o sistema é totalmente reconstruído do zero e todos os testes devem 
 passar. Caso contrário, o código é descartado.
 
-\end{enumerate} 
+\end{pratices} 
 
 Dada a importância do código-fonte, infere-se a qualidade do trabalho produzido 
 pela qualidade do código-fonte, sendo um dos métodos mais utilizados
@@ -139,90 +143,14 @@ Os objetivos específicos deste trabalho são:
 
 %------------------------------------------------------------------------------%
 
-\section{Sobre o Trabalho}
-%------------------------------------------------------------------------------%
 \subsection {Metodologia de Pesquisa}
-A metodologia de pesquisa foi definida em \textbf{aplicada}, pois visa construir 
-conhecimento, em aplicações práticas, dirigida à solução de problemas 
-específicos \cite{Gil2008}; \textbf{pesquisa-ação} pois visa efetuar 
-transformações nas práticas no mercado de desenvolvimento de software 
-\cite{brown1998}; \textbf{quantitativa}, dado que é necessário o uso de técnicas
-estatísticas para calcular as métricas de código-fonte do software livre do 
-estudo de caso; para, por fim, emitir uma análise \textbf{qualitativa} sobre a 
-visualização das métricas de código-fonte em ambientes de DWing. 
-
-
-
-\subsection{Cronograma}
-O Trabalho de Conclusão de Curso foi planejado, em longo prazo,em quatro ciclos 
-de desenvolvimento de vinte e um dias cada um. 
-As figuras \ref{cronograma} e \ref{gantt}, que foram extraídas da ferramenta 
-OpenProj\footnote{Documentação e \textit{download} disponível em 
-\url{http://sourceforge.net/projects/openproj/}}, 
-apresentam o cronograma geral e o gráfico de Gantt do presente trabalho.
-
-\begin{figure}[h]
-\centering
-	\includegraphics[keepaspectratio=true,scale=0.7]{figuras/marcos.eps}
-	\caption{Ciclos de Desenvolvimento do Trabalho de Conclusão de Curso}
-	\label{cronograma}
-\end{figure}
-
-
-\begin{figure}[h]
-\centering
-	\includegraphics[keepaspectratio=true,scale=0.7]{figuras/gantt_chart.eps}
-	\caption{Gráfico de Gantt do Trabalho de Conclusão de Curso}
-	\label{gantt}
-\end{figure}
-
-Para cada ciclo de desenvolvimento do Trabalho de Conclusão de Curso,  
-utilizou-se o Quadro \textit{Kanban} para controle das atividades. 
-O termo \textit{kanban} vem do japonês e significa literalmente "cartão". 
-O quadro \textit{kanban}, surgiu na Toyota, como um meio visual para controlar o 
-fluxo da produção, limitando o tamanho do trabalho em progresso 
-\cite{moura1999kanban}.
-
-Posteriormente, o método foi incorporado no processo de desenvolvimento de 
-software pela metodologia ágil, \textit{Scrum} \cite{Schwaber:2004}. 
-O quadro \textit{Kanban} 
-que foi utilizado no presente trabalho, foi criado na ferramenta \textit{online}, 
-\textit{Kanban Flow},\footnote{Disponível em \url{https://kanbanflow.com}} e foi
- dividido em três colunas: \textbf{Backlog}, que são tarefas a fazer, 
-\textbf{Em Progresso}, que são tarefas iniciadas e \textbf{Concluído} que mostra
- as tarefas que já foram executadas. A figura \ref{kanban} mostra o 
- \textit{Kanban} ao final do segundo ciclo de 
-desenvolvimento.
-
-\begin{figure}[h]
-\centering
-	\includegraphics[keepaspectratio=true,scale=0.40]{figuras/kanban.eps}
-	\caption{Quadro \textit{Kanban} do Trabalho de Conclusão de Curso}
-	\label{kanban}
-\end{figure}
-
-Todas as tarefas necessárias para realização deste trabalho de conclusão de 
-curso foram listadas no apêndice \ref{kanban flow}. 
-
 
 \subsection{Organização do Trabalho}
-Para a primeira fase deste Trabalho de Conclusão de Curso, além desta introdução, 
-o texto foi organizado em capítulos. O Capítulo 2 apresenta o processo de 
-medição, descrito pela ISO 15939, classificação e as métricas de código-fonte, 
-bem como os respectivos intervalos de referência.
-
-
-O Capítulo 3 apresenta a arquitetura do ambiente de \textit{Dwing}, determinada pelos 
-requisitos de projeto, e composta por: \textit{Data Warehouse(DW)},  processo de ETL 
-\textit{(Extraction-Transformation-Load}, pelo Kettle como 
-componente para realização do processo ETL, pelo SonarQube como fonte de coleta de métricas de 
-código-fonte, pelo esquema estrela com as tabelas fato e dimensão, pelo processo de 
-OLAP, pelo Mondrian como componente para realizá-lo e pela visualização das métricas 
-de código-fonte com o componente CDE para realizá-la.
-
- 
-O Capítulo 4 apresenta um estudo de caso com ambiente de Dwing proposto no 
-capítulo 3. 
-
-Por fim, o capítulo 5 apresenta as conclusões retiradas do ambiente.
-
+Para a primeira fase deste Trabalho de Conclusão de Curso, além desta 
+introdução, o texto foi organizado em capítulos. O Capítulo 2 apresenta as 
+métricas de software bem como o processo de medição, descrito pela ISO 15939, 
+as métricas de software bem como as métricas de código-fonte. O Capítulo 3 
+apresenta conceitualmente o ambiente de \textit{data warehousing} (DWing). O 
+Capítulo 4 apresenta a proposta de ambiente de DWing construída neste 
+trabalho. Por fim, o capítulo 5 apresenta as considerações finais com uso do 
+ambiente de DWing na extração e visualização de métricas de código-fonte. 

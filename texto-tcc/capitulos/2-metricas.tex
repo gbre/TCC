@@ -1,162 +1,131 @@
-\chapter{Métricas}
+\chapter{Métricas de Software}
 
-\section{Processo de Medição}
+\section{Processo de Medição de Software}
 
-Medição é o mapeamento de relações empíricas em relações formais. Isto é, 
-quantificação em símbolos com objetivo de caracterizar uma entidade por meio de 
-seus atributos. \cite{Fenton98}.
-	
-Segundo \citeonline{ISO:15939}, medição, que é uma ferramenta primordial para 
+Medição é o mapeamento de relações empíricas em relações formais. Isto 
+é, quantificação em símbolos com objetivo de caracterizar uma entidade por 
+meio de seus atributos. \cite{Fenton98}. Visando uma definição operacional, a 
+\citeonline{ISO:15939} define medição como conjunto de operações que visam 
+por meio de um objeto determinar um valor a uma medida ou métrica. \footnote{A 
+definição formal da \citeonline{ISO:15939} não utiliza o termo métrica, 
+sendo que este é definido pelo GQM em \citeonline{Basili96b}, que é uma outra 
+abordagem para medição, contudo compreende-se que o termo medida tem valor 
+semântico equivalente ao de métrica no contexto do presente trabalho}. Alguns 
+modelos de referência, como \citeonline{cmmi2010}, e até a própria 
+\citeonline{ISO:15939} definem medição como uma ferramenta primordial para 
 gerenciar as atividades do desenvolvimento de software e para avaliar a 
-qualidade dos produtos e a capacidade de processos organizacionais, é um 
-conjunto de operações que visam por meio de um objeto determinar um valor a uma 
-medida ou 
-métrica.\footnote{A definição formal da \citeonline{ISO:15939} não utiliza o 
-termo métrica, sendo que este é definido pelo GQM em \citeonline{Basili96b}, 
-que é uma outra abordagem para medição, contudo compreende-se que o termo medida 
-tem valor semântico equivalente ao de métrica no contexto do presente trabalho}. 
-	
-	
-O processo de medição da \citeonline{ISO:15939}, como é mostrado na figura 
-\ref{processo}, que fora extraído de \citeonline{Gava2006}, consiste de quatro 
-atividades que são sequenciadas em um ciclo iterativo, permitindo feedback e 
-melhoria contínua do processo. Trata-se de uma adaptação do ciclo 
-PDCA (Plan-Do-Check-Act), comumente utilizado como base para a melhoria da 
-qualidade \cite{Barcellos2010}.  O processo visa a construção de produtos de 
-informação para cada necessidade seguindo um modelo de informação, que é 
-mostrado na figura \ref{informação}.
-		
-\begin{figure}[h]
-\centering	
-	\includegraphics[keepaspectratio=true,scale=0.45]{figuras/processo15939.eps}
-	\caption{Processo de Medição da ISO 15939}
-	\label{processo}
-\end{figure}
-		
+qualidade dos produtos e a capacidade de processos organizacionais. 
 
-\begin{figure}[h]
+
+A \citeonline{ISO:15939} define um processo de medição com base em um modelo de 
+informação, que é mostrado na Figura \ref{informação}, afim de obter produtos de 
+informação para cada necessidade de informação. Para isto, cada necessidade de 
+informação, que é uma situação que requer conhecimento com intuito de gerenciar
+objetivos, metas, riscos e problemas é mapeada em uma construção mensurável que 
+tem em sua origem um conceito mensurável,como por exemplo, tamanho, qualidade, 
+custo afim de mapear um atributo, que é uma característica que permite 
+distiguir qualitivativamente e/ou quantitativamente
+uma entidade, que pode ser um processo, projeto ou produto de software.
+	 
+Por fim cada construção mensurável é mapeada em um ou mais produtos de 
+informação que levam uma ou mais métricas ou medidas, que podem ser 
+classificadas sob critérios apresentados na seção 
+\ref{Classificação das Métricas de Software}. 
+
+
+
+\begin{figure}[h!]
 \centering
-	\includegraphics[keepaspectratio=true,scale=0.55]{figuras/modelo15939.eps}
-	\caption{Modelo de Informação da ISO 15939}
+	\includegraphics[keepaspectratio=true,scale=1]{figuras/mensuravel.eps}
+	\caption{Modelo de Informação da ISO 15939 extraído de 
+	\citeonline{manuela2011}}
 	\label{informação}
 \end{figure}
+\FloatBarrier
 
-A terminologia do modelo de informação, que é mostrado na figura 
-\ref{informação} é descrito a seguir:
+O modelo de informação da \citeonline{ISO:15939} 
+é utilizado para construir o propósito geral da medições e a identificação 
+de medidas ou métricas que respondem as necessidades de informação. 
+Em metodologias ágeis, como por exemplo, é possível construir 
+um modelo de informação tal como 
+na Tabela \ref{construção-ágil}.
 
-\begin{description}
-	%----------
-	\item [Necessidade de Informação.]  São situações as quais requer 
-	 conhecimento de uma ou mais entidades para gerenciar objetivos, metas, 
-	 riscos e problemas.
-	
-	%---------
-	 \item [Entidade.]  Uma entidade é um objeto (como por exemplo, um processo,
-	 produto, projeto ou recurso) que é caracterizado por um atributo 
-	 mensurável;
-	 
-	%----------
-	 \item [Atributo.]  Um atributo é uma propriedade ou característica de uma 
-	 entidade que pode distinguí-la quantitativamente ou qualitativamente 
-	 utilizando métodos manuais ou automáticos
-	
-	%----------
-	 \item [Conceito Mensurável.]  Uma relação entre os atributos e as 
-	 necessidades de informação. Como por exemplo, a qualidade de um produto. 
-	 
-	%----------
-	 \item [Medida Básica ou Métrica Direta.] Uma medida básica é definida em 
-	 termos do atributo e do método para sua quantificação, ou seja, é a 
-	 variável a qual se atribui um valor. Cada medida básica é funcionalmente 
-	 independente de outras medidas básicas e captura apenas um atributo. 
-	%----------
-	 \item [Método de Medição.] O método de medição é uma sequência de 
-	 operações, descritas genericamente, usadas qualificar ou quantificar um 
-	 atributo, ou seja, obter uma medida básica ou derivada com respeito a uma 
-	 escala. Um método de medição pode ser classificado em:
-	
-		\begin{description}
-		 \item [Subjetivo.] Envolve o julgamento humano. Resulta em medidas ou 
-		 métricas subjetivas.
-		 \item [Objetivo.] Baseado em regras numéricas, tais como contagem. 
-		 Pode ser realizado de forma manual ou automática. Resulta em medidas 
-		 ou métricas objetivas.
-		\end{description}
-	%----------
-	 \item [Escala.] Uma escala é um conjunto ordenado de valores, contínuos ou 
-	 discretos, ou uma série de categorias as quais um atributo é mapeado. 
-	 O método de medição mapeia a magnitude, ou valor absoluto, de um atributo 
-	 medido em um valor de escala. As escalas podem ser: 
-	
-		\begin{description}
-			%----------
-		 	\item [Nominal.] A medição é categórica. Por exemplo, a 
-			classificação dos tipos de defeitos. Nesta escala, só é possível 
-			realização de comparações.
-			%----------
-			\item [Ordinal.] A medição é baseada em ordenação. Por exemplo, a 
-			classificação de atletas de uma prova de atletismo.
-			%----------
-		 	\item [Intervalo.] A medição é baseada em distâncias iguais 
-			definidas para as menores unidade. Por exemplo, o aumentar de 1º C 
-			de um termômetro. Nesta escala é possível realizar ordenação, soma 
-			e subtração.
-			%----------
-		 	\item [Racional.] A medição é baseada em distâncias iguais definidas 
-			para as menores unidades, e neste caso é possível a ausência por 
-			meio do zero absoluto. Como por exemplo, a quantidade de linhas de 
-			código em uma classe. Nesta escala, é possível realizar ordenação, 
-			soma, subtração, multiplicação e divisão.
-
-		\end{description}
-	%----------
-	 \item [Função de Medição.] Trata-se do algoritmo para combinar duas ou mais 
-	 medidas básicas ou métricas diretas.
-	%----------
-	 \item [Medida Derivada ou Métrica Derivada.] Uma medida derivada ou métrica 
-	 derivada é definida como uma função de medição de duas ou mais medidas 
-	 básicas ou métricas diretas.
-	
-	 \item [Indicador.]  É uma medida que fornece uma estimativa ou avaliação de 
-	 atributos especificados em relação a uma necessidade de informação. 
-	 Um indicador inclui um ou mais valores de medidas básicas e/ou derivadas.
-
-	\item [Interpretação.]  É a explicação dos indicadores, isto é, a 
-	interpretação que cada valor quantitativo do indicador mostra.
-	
-	\item [Produto de Informação] É o resultado esperado do processo de medição, 
-	que visa responder as necessidades de informação. O produto de informação 
-	pode vir a se materializar em forma de relatórios, gráficos ou planilhas.
-\end{description}
-
-
-
-
-
+	\begin{table}[!ht]
+	\begin{center}
+	 \begin{tabular}{|l|l|}
+		\hline
+		Entidade  & Código Fonte 
+		\\ \hline
+		Conceito Mensurável       & Qualidade      
+		\\ \hline
+		Construção Mensurável       & Qualidade do Código-Fonte      
+		\\ \hline
+		Atributos a ser medidos & Classes, Funções, Métodos e Pacotes   
+		\\ \hline
+		Produto de Informação   & Indicadores de Qualidade do Código-Fonte      
+		\\ \hline
+		\end{tabular}
+		\caption{Modelo de Informação para metodologias ágeis com base na 
+		\citeonline{ISO:15939}}
+		\label{construção-ágil}
+		\end{center}
+		\end{table}		
 
 %---------------------------------------------------------------------------------------------------------------------%
-\section{Classificação das Métricas}	
-\label {Classificação das Métricas}
-O modelo proposto pela \citeonline{ISO:15939} concentra-se na identificação da 
-necessidade de informação sobre alguma entidade (processo ou projeto). Daí advém
-a forma mais genérica de classificação, quanto a objeto da métrica, que divide 
-as métricas de software em: \textit{métricas de processo} e 
+
+\section{Classificação das Métricas de Software}	
+\label {Classificação das Métricas de Software}
+
+As métricas de software possuem uma escala de medição, que é um conjunto 
+ordenado de valores, contínuos ou discretos, ou uma série de 
+categorias as quais entidade é mapeada \cite{ISO:15939}. As escalas podem ser:
+
+\begin{easylist}[itemize]
+
+& Nominal: A medição é categórica. Nesta escala, só é possível realização de 
+comparações, sendo que a ordem não possui significado
+\cite{ISO:15939} \cite{Fenton98} \cite{Meirelles2013}.
+
+& Ordinal: A medição é baseada em ordenação, ou seja os valores possuem 
+ordem, mas a distância entre eles não possui significado. Por exemplo, nível 
+de experiência dos programadores \cite{ISO:15939} \cite{Fenton98} 
+\cite{Meirelles2013}. 
+
+& Intervalo: A medição é baseada em distâncias iguais definidas para as 
+menores unidade. Por exemplo, o aumentar de 1º C de um termômetro. Nesta 
+escala é possível realizar ordenação, soma e subtração. 
+\cite{ISO:15939} \cite{Fenton98} 
+
+& Racional: A medição é baseada em distâncias iguais definidas para as 
+menores unidades, e neste caso é possível a ausência por meio do zero 
+absoluto. Como por exemplo, a quantidade de linhas de código em uma classe. 
+Nesta escala, é possível realizar ordenação, soma, subtração, 
+multiplicação e divisão. \cite{ISO:15939} \cite{Fenton98} 
+
+\end{easylist}
+	
+As métricas podem ser classificadas quanto a objeto da métrica, que 
+divide as métricas de software em: \textit{métricas de processo} e 
 \textit{métricas de produto} \cite{Mills:1999}. Ainda é possível, segundo a 
-\citeonline{ISO:15939}, dividir as métricas quanto ao método de medição, podendo
-estas serem \textit{métricas objetivas} ou \textit{métricas subjetivas}.
+\citeonline{ISO:15939}, dividir as métricas quanto ao método de medição, 
+podendo estas serem \textit{métricas objetivas}, que são baseadas em regras 
+númericas e podem ter a coleta manual ou automática ou \textit{métricas 
+subjetivas}, que envolvem o julgamento humano para consolidação do resultado. 
 
+Segundo o modelo de qualidade da \citeonline{ISO25023}, que é mostrado na 
+Figura \ref{modelodequalidade}, as métricas de produto podem ser subdivididas 
+em três categorias: 
 
-Segundo o modelo de qualidade da \citeonline{ISO25023} 
-(Fig. \ref{modelodequalidade}), as métricas de produto podem ser subdivididas 
-em três categorias :
 				
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
-\includegraphics[keepaspectratio=false,scale=0.7]{figuras/modelodequalidade.eps}
-\caption{Modelo de Qualidade do Produto da ISO 25023}
+\includegraphics[keepaspectratio=false,scale=1]{figuras/modelodequalidade.eps}
+\caption{Modelo de Qualidade do Produto da ISO 25023 adaptado de 
+\citeonline{ISO25023}}
 \label{modelodequalidade}
 \end{figure}
-			
+\FloatBarrier
+	
 \begin{description}
 %-----------------------------
 		\item[Métricas Internas.] 
@@ -168,7 +137,7 @@ em três categorias :
 		\item[Métricas Externas.]
 		São métricas que capturam o comportamento do software. Exemplos de 
 		atributos da qualidade externa: correção, usabilidade, eficiência e 
-		robustez. qualidade externa mede  o comportamento do software. Estas só 
+		robustez. Qualidade externa mede o comportamento do software. Estas só 
 		podem ser aferidas por atividades de teste do desenvolvimento do 
 		software em condições similares as que serão encontradas em ambientes de
 		implantação.
@@ -178,7 +147,7 @@ em três categorias :
 		 São métricas que aferem se o software atende as necessidades do cliente
 		 com eficiência, produtividade, segurança e satisfação em contextos 
 		 específicos de uso. Estas só podem ser coletadas em ambientes reais, 
-		 isto é, o ambiente o qual fora previamente projetado.
+		 isto é, o ambiente de implantação.
 			 
 \end{description}
 		
@@ -188,58 +157,45 @@ em três categorias :
 \section {Métricas de Código-Fonte}
 \label {Métricas de Código-Fonte}
 
-Segundo a chamada de trabalhos do SCAM 2013~\footnote{13th IEEE International 
-Working Conference on Source Code Analysis and Manipulation}, código-fonte é 
-qualquer descrição completamente executável de um sistema de software, desde de 
-linguagem de máquina até representações gráficas executáveis.
+Segundo a International Working Conference on Source Code Analysis and 
+Manipulation (SCAM), O código-fonte é qualquer especificação executável 
+de um sistema de software. Por conseguinte, se inclui desde código de máquina, 
+até linguagens de alto nível ou representações gráficas executáveis. 
+\cite{harman2010source}.
+ 
+Popularmente, o termo análise estática de código se refere à uma análise 
+automatizada das estruturas internas do código, 
+em nível de linguagem de programação, sem realizar a execução, afim de 
+obter métricas de código-fonte \cite{Terra2008} 
+\cite{Emanuelsson2008} \cite{Wichmann95}  \cite{Nielson:1999} 
+\cite{Sommerville10}
+ 
+ 
+Dentre as inúmeras características que fazem um bom software, várias delas 
+podem ser percebidas no código-fonte e algumas são exclusivas dele 
+\cite{Meirelles2013}.Desta forma, As métricas de código-fonte são métricas 
+objetivas e tem características como validade, simplicidade, objetividade, 
+fácil obtenção e robustez \cite{Mills:1999}. \citeonline{Meirelles2013} 
+realizou um levantamento sistemático na literatura das métricas de 
+código-fonte. Estas foram categorizadas, nas seguintes categorias, apresentadas 
+nas subseções a seguir. 
 
-As métricas internas de produto ou métricas de código fonte são obtidas por meio
-da análise das estruturas internas do código sem realizar sua execução 
-\cite{Wichmann95}  \cite{Nielson:1999} \cite{Sommerville10}. Popularmente, o 
-termo análise estática de código se refere à uma análise automatizada de 
-obtenção de métricas de código fonte \cite{Terra2008} 
-\cite{Emanuelsson2008}.
-
-As métricas de código-fonte são métricas objetivas e tem características como 
-validade, simplicidade, objetividade, fácil obtenção e robustez \cite{Mills:1999}. 
-\citeonline{Meirelles2013} realizou um levantamento sistemático na literatura 
-das métricas de código-fonte. Estas foram categorizadas, nas seguintes 
-categorias:
-
-
-	\begin{description}
-	\item [Tamanho e Complexidade.] O tamanho do código-fonte foi uma das 
-	primeiros conceitos mensuráveis do software, dado que o software poderia 
-	ocupar espaço tanto em forma de cartões perfurados quanto em forma de papel 
-	quando o código-fonte é impresso. A segunda lei de \citeonline{Lehman1980b} 
-	enuncia que a complexidade aumenta à medida que o software é evoluído, 
-	a menos que seja um trabalho de manutenção. Logo é perceptível que as 
-	métricas de complexidade estão diretamente ligadas as métricas de tamanho, 
-	sendo a modificação em uma provavelmente impactará na outra, por este motivo,
-	a seção \ref{métricas tamanho e complexidade} apresenta as métricas de tamanho e
-	complexidade.
-	
-
-%-----------------------------
-	\item [Orientação à Objetos.] A evolução dos paradigmas de programação 
-	permitiu que as linguagens de programação, assumissem diversas 
-	características entre si. O paradigma funcional, por exemplo, enxerga o 
-	programa como uma sequência de funções que podem ser executadas em modo 
-	funcional. Já o paradigma orientado a objetos visa abstrair as unidades 
-	computacionais em Classes, que representam em grande parte do 
-	desenvolvimento unidades reais, e partir destas abstrair instâncias 
-	computacionais, isto são, objetos propriamente ditos. Para cada paradigma, 
-	são necessárias métricas específicas. A seção \ref{métrica objetos} 
-	apresenta algumas das métricas do paradigma orientado a objetos, pois este 
-	ainda é o paradigma mais utilizado no mercado de desenvolvimento de 
-	software. 
-	\end{description}
-	
 
 %-----------------------------------------------------------------------------------------------------------------------------
 \subsection{Métrica de Tamanho e Complexidade}
 \label{métricas tamanho e complexidade} 
-	
+
+O tamanho do código-fonte foi um dos primeiros conceitos mensuráveis do 
+software, dado que o software poderia ocupar espaço tanto em forma de cartões 
+perfurados quanto em forma de papel quando o código-fonte é impresso. 
+A segunda lei de \citeonline{Lehman1980b} enuncia que a complexidade aumenta à 
+medida que o software é evoluído, a menos que seja um trabalho de manutenção. 
+Logo é perceptível que as métricas de complexidade estão diretamente ligadas as 
+métricas de tamanho, sendo a modificação em uma provavelmente impactará na 
+outra. A seguir são apresentadas as principais métricas de tamanho e 
+complexidade:
+
+
 \begin{description}
 
 	\item[LOC (\textit{Lines of Code})] \textbf{Número de Linhas de Código} 
@@ -263,6 +219,15 @@ categorias:
 
 \subsection{Métricas de Orientação à Objetos}
 \label{métrica objetos}
+
+A evolução dos paradigmas de programação permitiu que as linguagens de 
+programação, assumissem diversas características entre si. O paradigma 
+funcional, por exemplo, enxerga o programa como uma sequência de funções que 
+podem ser executadas em modo funcional. Já o paradigma orientado a objetos visa 
+abstrair as unidades computacionais em Classes, que representam em grande 
+parte do desenvolvimento unidades reais, e partir destas abstrair instâncias 
+computacionais, isto são, objetos propriamente ditos. A seguir são apresentadas 
+as principais métricas de orientação à objetos:
 
 \begin{description}
 
@@ -329,8 +294,8 @@ percebeu que há certos valores que são frequentemente encontrados quando se
 analisa o código-fonte de aplicações que utilizam a mesma linguagem de 
 programação. \citeonline{Meirelles2013} classifica estes intervalos, em 
 \textit{muito frequente, frequente, pouco frequente e não frequente}. Visando o 
-o melhor entendimento das métricas, resolveu-se renomear tal como a tabela 
-\ref{nomes}. Posteriormente, é apresentada a tabela \ref{metrics}, decorrente do
+o melhor entendimento das métricas, resolveu-se renomear tal como a Tabela 
+\ref{nomes}. Posteriormente, é apresentada a Tabela \ref{metrics}, decorrente do
 estudo de \citeonline{Meirelles2013}, com os intervalos encontrados para C++ e 
 Java.
 
@@ -338,7 +303,7 @@ Java.
 	\begin{center}
 	 \begin{tabular}{|l|l|}
 		\hline
-		Intervalo de Frequência & Intervalo Qualitativo \\ \hline
+		Intervalo de Frequência & Indicador Qualitativo \\ \hline
 		Muito Frequente & Excelente \\ \hline
 		Frequente       & Bom       \\ \hline
 		Pouco Frequente & Regular   \\ \hline
@@ -348,7 +313,9 @@ Java.
 		\label{nomes}
 		\end{center}
 		\end{table}
-
+		
+\FloatBarrier
+	
 	\begin{table}[!ht]
 	\begin{center}
 	\begin{tabular}{ |l|l|l|l| }
@@ -378,7 +345,7 @@ Java.
 		 & Regular & [de 5,1 a 12] & [de 7,1 a 15] \\
 		 & Ruim & [acima de 12] & [acima de 15] \\ \hline
 		 %---------------------------------
-		 
+	
 		 
 		%-------------------------------
 		\multirow{4}{*}{RFC} 
@@ -425,7 +392,12 @@ Java.
 	\label{metrics}
 	\end{center}
 	\end{table}
-
+\FloatBarrier
+	
+Os intervalos, que foram apresentados na Tabela \ref{metrics} 
+serão utilizados como indicadores de qualidade de código-fonte, de modo a 
+simplificar a interpretação da qualidade do código-fonte nos 
+\textit{Dashboards}, do ambiente de \textit{Dwing}, a ser apresentado a seguir. 
 
 	
 	

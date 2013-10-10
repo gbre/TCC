@@ -1,14 +1,110 @@
-\chapter{Dwing}
+% -- Link com de Métricas (Registro Histórico, Comparações, Agregações, Tomada de Decisão)
+\chapter{DWing}
 
-\section{Requisitos de Projeto}
-\section{Data Warehouse}
+Os principais fatores para a adoção de um programa de métricas em organizações 
+de desenvolvimento de software são:
+\begin{inparaenum}[i)]
+\item a regularidade da coleta de dados;
+\item a utilização de uma metodologia eficiente e transparente nessa coleta; 
+\item o uso de ferramentas (não-intrusivas) para automatizar a coleta;
+\item o uso de mecanismos de comunicação de resultados adequados para todos os 
+envolvidos;
+\item o uso de sofisticadas técnicas de análise de dados. 
+\end{inparaenum}
+\cite{Gopal2005} \cite{Silveira2010}.
 
-\subsection{Esquema Estrela}
+\todo[inline, color=green!40]{Descrever Cada um dos itens e mudar o texto}
 
 
-\section{Processo de ETL e Kettle}
+A definição mais difundida entre os pesquisadores apresenta o \textit{Data 
+Warehouse (DW)} com um conjunto de dados integrados, consolidados, históricos, 
+segmentados por assunto, não-voláteis, variáveis em relação ao tempo, e de 
+apoio às decisões gerenciais \cite{Inmon1992}. Em uma outra definição de 
+\textit{Data Warehouse} (DW) é um repositório central e consolidado 
+\cite{Kimball2002}.
 
-\section{Fonte de Coleta das Métricas de Código-Fonte}
+
+	
+\section{Arquitetura de um \textit{Data Warehouse}} 
+\todo[inline, color=green!40]{Colocar Figura}
+\subsection{\textit{Extraction-Transformation-Load}}
+
+As etapas de extração, transformação, carga e atualização do DW, formam o seu
+back-end e caracterizam o processo chamado Extraction-Transform-Load (ETL). 
+Esse processo pode ser dividido em três etapas distintas que somadas podem 
+podendo consumir até 85\% de todo o esforço em um DWing \cite{Kimball2002}.
+
+\begin{easylist}[itemize]
+
+& Extração: No ambiente de \textit{data warehouse}, os dados são inicialmente 
+extraídos de fontes externas de dados para um ambiente de \textit{staging} que 
+\citeonline{Kimball2002} considera com uma área de armazenamento intermediária 
+entre fontes e o \textit{data warehouse}. Normalmente, é de natureza 
+temporária e o seu conteúdo é apagado após a carga dos dados no DW. 
 
 
-\section{Processo de OLAP}
+Os dados podem provir de fontes distintas tais como planilhas, bases relacionais
+em diferentes tipos de banco de dados (MySQL, Oracle, Postgres e etc) ou mesmo 
+de webservices. 
+
+
+& Transformação :
+
+& Carga:
+
+\end{easylist}
+ 
+
+\subsection{\textit{On-Line Analytical Processing} (OLAP)}
+
+O termo OLAP, inicialmente proposto por \citeonline{Codd1993}, 
+é utilizado para caracterizar as aplicações voltadas ao suporte de atividades 
+de análise, com o objetivo de prover a visualização dos dados sob diferentes 
+perspectivas gerenciais e comportar todas as atividades de análise.
+
+As ferramentas de apoio às consultas On-Line Analytical Processing (OLAP) ao DW 
+representam o seu front-end.
+
+\todo[inline, color=green!40]{Citar Consultas OLAP} 
+
+\subsection{Armazém de Dados}
+\todo[inline, color=green!40]{Falar Sobre Data Mart}
+\todo[inline, color=green!40]{Falar Sobre Modelagem Mutidimensional}
+
+\subsection{\textit{Dashboard}}
+
+
+
+
+\section{Projeto de DW} 
+
+\citeonline{Kimball2002} recomenda uma metodologia para o desenvolvimento
+do projeto de um \textit{data warehouse}. 
+Trata-se de uma abordagem de baixo para cima, que no caso de um 
+\textit{data warehouse} que constrói um data mart por vez. As quatro etapas de 
+projeto são:
+
+\newlist{steps}{enumerate}{4}
+\setlist[steps]{ label* = \arabic* -}
+
+\begin{steps}
+	\item Selecionar o Processo de Negócio com requisito fundamental do projeto 
+	DW;
+	
+	\item Declarar a granularidade dos dados necessários para processo de 
+	negócio, isto é, verificar a periodicidade dos dados 
+	(diário, semanal, mensal, anual);
+	
+	\item Escolher as dimensões;
+	
+	\item Identificar os fatos;
+	
+	\item Apresentar, em formas visuais, as análises obtidas das métricas de 
+	código-fonte;
+	
+    \end{steps}
+
+
+	Seguindo esta metodologia proposta anteriormente
+
+	

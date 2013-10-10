@@ -1,12 +1,15 @@
 \chapter{Solução}
-
+\section{Arquitetura da Solução}
 \section{SonarQube}
 O SonarQube~\footnote{Toda a documentação e \textit{downloads} estão disponíveis
 em \url{http://www.sonarqube.org/}}, anteriormente conhecido como Sonar, é uma 
 ferramenta que realiza coleta de dados do código-fonte. Em sua documentação, 
 são citados sete eixos de controle de qualidade cobertos na ferramenta: 
 
-\begin{enumerate}
+\newlist{qualityindex}{enumerate}{4}
+\setlist[qualityindex]{ label* = \arabic* -}
+
+\begin{qualityindex}
 \item Duplicação de Código
 \item Detecção de Complexidade de Código
 \item Padrão de Codificação
@@ -14,7 +17,7 @@ são citados sete eixos de controle de qualidade cobertos na ferramenta:
 \item Arquitetura e Projeto
 \item Potenciais Defeitos
 \item Comentários
-\end{enumerate}
+\end{qualityindex}
 
 %--------------------------------------------%
 \subsection{Escolha do SonarQube}
@@ -98,5 +101,13 @@ regras estabelecidas pelos padrões.
 
 
 
+
 \section{Pentaho}
 
+O Pentaho é um software de código aberto para inteligência empresarial, 
+desenvolvido em Java pela Pentaho Corporation, que apresenta soluções cobrindo 
+as áreas de ETL, \textit{reporting}, OLAP e mineração de dados 
+(\textit{data-mining}). 
+
+
+ 
