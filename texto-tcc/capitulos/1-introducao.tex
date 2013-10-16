@@ -1,46 +1,37 @@
 \chapter{Introdução}
 
-As metodologias ágeis vem ganhando cada vez mais espaço no mercado global 
-de desenvolvimento de software, pois enfatizam a qualidade do produto 
-sobre a qualidade do processo, procurando minimizar a execução 
-de atividades não essenciais ao longo do ciclo de vida de 
-desenvolvimento de software. 
+As metodologias ágeis vem ganhando cada vez mais espaço no mercado global de desenvolvimento de software, pois enfatizam a qualidade do produto sobre a qualidade do processo, procurando minimizar a execução de atividades não essenciais ao longo do ciclo de vida de desenvolvimento de software.
 
-O eXtreme Programming (XP), que é uma metodologia ágil, tem a codificação como 
-atividade chave durante um projeto de desenvolvimento de software 
-\cite{beck1999}. Isso se torna perceptível quando se analisa algumas práticas do 
-XP,~\footnote{Documentação disponível em \url{http://www.extremeprogramming.org}}
-tais como:
+O eXtreme Programming (XP), que é uma metodologia ágil, tem a codificação como atividade chave durante um projeto de desenvolvimento de software \cite{beck1999}. Isso se torna perceptível quando se analisa algumas práticas do XP,~\footnote{Documentação disponível em \url{http://www.extremeprogramming.org}} tais como:
 
 \newlist{pratices}{enumerate}{4}
 \setlist[pratices]{ label* = \arabic* -}
 
 
 \begin{pratices}
-%-----------------------------
+
 \item Padronização do Código: O código é a principal forma de comunicação entre 
 a equipe. A padronização de código o torna consistente e fácil para leitura e 
-refatoração por todo o time. 
-%-----------------------------
+refatoração por todo o time.
+
 \item Propriedade Coletiva do Código: Cada programador pode melhorar qualquer 
 parte do código quando houver a oportunidade.
-%-----------------------------
-\item Programação em Pares: Todo código é escrito por duas pessoas: uma que olha 
-para uma máquina, e outra com um teclado e um mouse.
-%-----------------------------
+
+\item Programação em Pares: Todo código é escrito por duas pessoas: uma que 
+olha para uma máquina, e outra com um teclado e um mouse.
+
 \item Integração Contínua: Todo novo código é integrado ao sistema e, quando 
 integrado, o sistema é totalmente reconstruído do zero e todos os testes devem 
 passar. Caso contrário, o código é descartado.
 
 \end{pratices} 
 
-Dada a importância do código-fonte, infere-se a qualidade do trabalho produzido 
-pela qualidade do código-fonte, sendo um dos métodos mais utilizados
-para tal a análise estática de código-fonte. 
-
-Durante anos, vários trabalhos foram publicados visando a definição formal de 
-métodos de análise estática de código-fonte. Vide os trabalhos de 
-\citeonline{Wichmann95}, \citeonline{Nielson:1999}, \citeonline{Emanuelsson2008}.
+Dada a importância do código-fonte, infere-se a qualidade do trabalho produzido
+ pela qualidade do código-fonte, sendo um dos métodos mais utilizados
+para tal a análise estática de código-fonte. Durante anos, vários trabalhos 
+foram publicados visando a definição formal de métodos de análise estática 
+de código-fonte. Vide os trabalhos de \citeonline{Wichmann95}, 
+\citeonline{Nielson:1999}, \citeonline{Emanuelsson2008}.
 Contudo as ferramentas que realizam o procedimento no código-fonte ainda 
 apresentam problemas, tais como:
 
@@ -50,7 +41,7 @@ apresentam problemas, tais como:
 \begin{problems}
     \item Ausência de resultados consolidados do produto, pois a maior 
 	parte das métricas é extraída de elementos internos menores (Bibliotecas, 
-	Pacotes, Classes,Métodos, Funções) do código-fonte.
+	Pacotes, Classes, Métodos) do código-fonte.
     
 	\item Ausência de mecanismos de tratamento, separação, recuperação, 
 	organização e persistência de dados. 
@@ -67,41 +58,38 @@ apresentam problemas, tais como:
     \end{problems}
 	
 Os problemas enunciados acima trazem muitos prejuízos às organizações que 
-utilizam processos de aferição de qualidade de código-fonte como um indicador do
-desenvolvimento de produtos de software, pois sem possibilidade de manter 
-registros das métricas de código-fonte, torna-se inviável qualquer análise 
+utilizam processos de aferição de qualidade de código-fonte como um indicador do desenvolvimento de produtos de software, pois sem possibilidade de manter 
+registros das métricas de código-fonte, torna-se inviável qualquer análise
 temporal da evolução da qualidade do código-fonte. Além disso, se os dados não 
 são representativos, qualquer análise fica a cargo de experiências anteriores 
 com as métricas de código-fonte.
 
-Dado este contexto, é crucial que dados relacionados às métricas sejam coletados 
-e compartilhados entre projetos e pessoas em uma visão organizacional unificada, 
-para que determinada organização ou time possa compreender o processo de medição 
-e monitoramento de projetos de software e, consequentemente, se 
-tornar mais hábil e eficiente em realizar atividades técnicas relacionadas ao 
-processo de desenvolvimento de software 
-\cite{Chulani2003}.
-
-Vários trabalhos têm mostrado que ambientes de DWing são boas soluções para 
-atender à visão organizacional unificada de métricas de software proposta por 
-\citeonline{Chulani2003}. Vide os trabalhos de \citeonline{Palza2003}, 
-\citeonline{Ruiz2005}, \citeonline{Castellanos2005}, \citeonline{Becker2006}, 
-\citeonline{Folleco2007}, \citeonline{Silveira2010}.
+Dado este contexto, é crucial que dados relacionados às métricas sejam 
+coletados e compartilhados entre projetos e pessoas em uma visão organizacional unificada, para que determinada organização ou time possa compreender o processo de medição e monitoramento de projetos de software e, 
+consequentemente, se tornar mais hábil e eficiente em realizar atividades 
+técnicas relacionadas ao processo de desenvolvimento de software 
+\cite{Chulani2003}. 
 
 
+
+Vários trabalhos têm mostrado que ambientes de \textit{Data Warehousing} 
+(DWing) são boas soluções para atender à visão organizacional unificada de 
+métricas de software proposta por \citeonline{Chulani2003}. Vide os trabalhos 
+de \citeonline{Palza2003}, \citeonline{Ruiz2005}, \citeonline{Castellanos2005},
+\citeonline{Becker2006}, \citeonline{Folleco2007}, \citeonline{Silveira2010}. 
 Tendo os trabalhos, enunciados anteriormente, como norteadores, adotou-se como 
-hipótese de pesquisa deste trabalho que a \textbf{visualização
-e a extração de métricas de código-fonte em ambientes de DWing suprem 
-os problemas encontrados nas ferramentas de análise estática de código-fonte}.
+hipótese de pesquisa deste trabalho que a \textbf{visualização e a extração 
+de métricas de código-fonte em ambientes de DWing suprem os problemas 
+encontrados nas ferramentas de análise estática de código-fonte}. 
 
 
-%------------------------------------------------------------------------------%
+%-----------------------------------------------------------------------------%
 
 
 
 
 
-%------------------------------------------------------------------------------%
+%-----------------------------------------------------------------------------%
 
 \section{Objetivos}
 
@@ -110,8 +98,8 @@ Conclusão de Curso.
 
 \subsection{Objetivos Gerais}
 Sob o prisma da hipótese de pesquisa, há como objetivo geral a proposição e 
-construção  de um ambiente de \textit{Dwing}, para extrair e visualizar métricas
- de código-fonte.
+construção  de um ambiente de \textit{Dwing}, para extrair e visualizar 
+métricas de código-fonte.
 
 
 %------------------------------------------------------------------------------%
@@ -124,18 +112,16 @@ Os objetivos específicos deste trabalho são:
 \setlist[objectives]{ label* = OE\arabic* -}
 
 \begin{objectives}
-	\item Construir o ambiente de Dwing para extração e visualização de métricas 
-	de código-fonte utilizando ferramentas de software livre.
-	
-	\item Analisar a qualidade de um software livre em uma estrutura de estudo 
+	\item Construir o ambiente de Dwing para extração e visualização de 
+	métricas de código-fonte utilizando ferramentas de software livre. 
+
+	\item Analisar a qualidade de um software livre em uma estrutura de estudo
 	de caso.
   
 	\item Incorporar indicadores qualitativos para cada métrica de código-fonte.
 	
-	\item Facilitar o entendimento das métricas de código-fonte.
-	
-	\item Apresentar, em formas visuais, as análises obtidas das métricas de 
-	código-fonte.
+	\item Facilitar o entendimento das métricas de código-fonte, por meio de 
+	apresentação, em formas visuais, das análises obtidas por meio das métricas de código-fonte
 	
     \end{objectives}
 	
@@ -143,9 +129,10 @@ Os objetivos específicos deste trabalho são:
 
 %------------------------------------------------------------------------------%
 
-\subsection {Metodologia de Pesquisa}
+\section {Metodologia de Pesquisa}
 
-\subsection{Organização do Trabalho}
+\section{Organização do Trabalho}
+
 Para a primeira fase deste Trabalho de Conclusão de Curso, além desta 
 introdução, o texto foi organizado em capítulos. O Capítulo 2 apresenta as 
 métricas de software bem como o processo de medição, descrito pela ISO 15939, 

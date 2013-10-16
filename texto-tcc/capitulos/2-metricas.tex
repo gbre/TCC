@@ -20,19 +20,15 @@ qualidade dos produtos e a capacidade de processos organizacionais.
 A \citeonline{ISO:15939} define um processo de medição com base em um modelo de 
 informação, que é mostrado na Figura \ref{informação}, afim de obter produtos de 
 informação para cada necessidade de informação. Para isto, cada necessidade de 
-informação, que é uma situação que requer conhecimento com intuito de gerenciar
-objetivos, metas, riscos e problemas é mapeada em uma construção mensurável que 
-tem em sua origem um conceito mensurável,como por exemplo, tamanho, qualidade, 
-custo afim de mapear um atributo, que é uma característica que permite 
-distiguir qualitivativamente e/ou quantitativamente
-uma entidade, que pode ser um processo, projeto ou produto de software.
-	 
-Por fim cada construção mensurável é mapeada em um ou mais produtos de 
-informação que levam uma ou mais métricas ou medidas, que podem ser 
-classificadas sob critérios apresentados na seção 
-\ref{Classificação das Métricas de Software}. 
-
-
+informação, que é uma situação que requer conhecimento com intuito de 
+gerenciar objetivos, metas, riscos e problemas é mapeada em uma construção 
+mensurável que tem em sua origem um conceito mensurável,como por exemplo, 
+tamanho, qualidade, custo afim de mapear um atributo, que é uma característica 
+que permite distinguir qualitivativamente e/ou quantitativamente
+uma entidade, que pode ser um processo, projeto ou produto de software. Por fim 
+cada construção mensurável é mapeada em um ou mais produtos de informação que 
+levam uma ou mais métricas ou medidas, que podem ser classificadas sob 
+critérios apresentados na seção \ref{Classificação das Métricas de Software}. 
 
 \begin{figure}[h!]
 \centering
@@ -43,12 +39,11 @@ classificadas sob critérios apresentados na seção
 \end{figure}
 \FloatBarrier
 
-O modelo de informação da \citeonline{ISO:15939} 
-é utilizado para construir o propósito geral da medições e a identificação 
-de medidas ou métricas que respondem as necessidades de informação. 
-Em metodologias ágeis, como por exemplo, é possível construir 
-um modelo de informação tal como 
-na Tabela \ref{construção-ágil}.
+O modelo de informação da \citeonline{ISO:15939} é utilizado para construir o 
+propósito geral da medições e a identificação de medidas ou métricas que 
+respondem as necessidades de informação. Em metodologias ágeis, 
+como por exemplo, é possível construir um modelo de informação tal como na 
+Tabela \ref{construção-ágil}.
 
 	\begin{table}[!ht]
 	\begin{center}
@@ -60,7 +55,7 @@ na Tabela \ref{construção-ágil}.
 		\\ \hline
 		Construção Mensurável       & Qualidade do Código-Fonte      
 		\\ \hline
-		Atributos a ser medidos & Classes, Funções, Métodos e Pacotes   
+		Atributos a ser medidos & Classes, Métodos e Pacotes   
 		\\ \hline
 		Produto de Informação   & Indicadores de Qualidade do Código-Fonte      
 		\\ \hline
@@ -77,8 +72,8 @@ na Tabela \ref{construção-ágil}.
 \label {Classificação das Métricas de Software}
 
 As métricas de software possuem uma escala de medição, que é um conjunto 
-ordenado de valores, contínuos ou discretos, ou uma série de 
-categorias as quais entidade é mapeada \cite{ISO:15939}. As escalas podem ser:
+ordenado de valores, contínuos ou discretos, ou uma série de categorias as 
+quais entidade é mapeada \cite{ISO:15939}. As escalas podem ser:
 
 \begin{easylist}[itemize]
 
@@ -176,8 +171,8 @@ podem ser percebidas no código-fonte e algumas são exclusivas dele
 \cite{Meirelles2013}.Desta forma, As métricas de código-fonte são métricas 
 objetivas e tem características como validade, simplicidade, objetividade, 
 fácil obtenção e robustez \cite{Mills:1999}. \citeonline{Meirelles2013} 
-realizou um levantamento sistemático na literatura das métricas de 
-código-fonte. Estas foram categorizadas, nas seguintes categorias, apresentadas 
+realizou um levantamento sistemático na literatura das métricas de código-fonte. 
+Estas foram categorizadas, nas seguintes categorias, apresentadas 
 nas subseções a seguir. 
 
 
@@ -206,11 +201,11 @@ complexidade:
 	programação e que o estilo esteja normalizado \cite{Jones91}.
 	
 	\item[ACCM (\textit{Average Cyclomatic Complexity per Method})] \textbf{
-	Média da Complexidade Ciclomática por Método} mede a complexidade do métodos
-	ou funções de um programa. Essa métrica pode ser representada através de um 
-	grafo de fluxo de controle \cite{McCabe76}. O uso de estruturas de controle,
-	tais como, \textit{if, else, while} aumentam a complexidade ciclomática de 
-	um de um método.
+	Média da Complexidade Ciclomática por Método} mede a complexidade do 
+	métodos ou funções de um programa. Essa métrica pode ser representada 
+	através de um grafo de fluxo de controle \cite{McCabe76}. O uso de 
+	estruturas de controle, tais como, \textit{if, else, while} aumentam a 
+	complexidade ciclomática de um de um método.
 
 \end{description}
 
@@ -232,12 +227,12 @@ as principais métricas de orientação à objetos:
 \begin{description}
 
 	\item[ACC (\textit{Afferent Connections per Class})] 
-	\textbf{Conexões Aferentes por Classe} é número total de classes externas de 
-	um pacote que dependem de classes de dentro desse pacote. Quando calculada 
-	no nível da classe, essa medida também é conhecida como \textit{Fan-in} da 
-	classe, medindo o número de classes das quais a classe é derivada e, assim, 
-	valores elevados indicam uso excessivo de herança múltipla \cite{McCabe94} 
-	\cite{Chidamber94}.
+	\textbf{Conexões Aferentes por Classe} é número total de classes externas 
+	de um pacote que dependem de classes de dentro desse pacote. Quando 
+	calculada no nível da classe, essa medida também é conhecida como 
+	\textit{Fan-in} da classe, medindo o número de classes das quais a classe é 
+	derivada e, assim, valores elevados indicam uso excessivo de herança 
+	múltipla \cite{McCabe94} \cite{Chidamber94}.
 	
 	
 	%-----------------------------
@@ -251,7 +246,7 @@ as principais métricas de orientação à objetos:
 	como LCOM, contudo essa não teve uma grande aceitabilidade. Após críticas e 
 	sugestões a métrica revisada por \citeonline{LCOM4}, que propôs a LCOM4. 
 	Para calcular LCOM4 de um módulo, é necessário construir um gráfico 
-	não-orientado em que os nós são os métodos e atributos de uma classe. Para 
+	não-orientado em que os nós são os métodos e atributos de uma classe. Para
 	cada método, deve haver uma aresta entre ele e um outro método ou variável 
 	que ele usa. O valor da LCOM4 é o número de componentes fracamente 
 	conectados nesse gráfico. 
@@ -259,22 +254,22 @@ as principais métricas de orientação à objetos:
 	
 	%-----------------------------
 	\item[NOM (\textit{Number of Methods})] \textbf{Número de Métodos} é usado 
-	para medir o tamanho das classes em termos das suas operações implementadas. 
-	Essa métrica é usada para ajudar a identificar o potencial de reúso de uma 
-	classe. Em geral, as classes com um grande número de métodos são mais 
-	difíceis de serem reutilizadas, pois elas são propensas a serem menos coesa
-	\cite{Lorenz94}.
+	para medir o tamanho das classes em termos das suas operações 
+	implementadas. Essa métrica é usada para ajudar a identificar o 
+	potencial de reúso de uma classe. Em geral, as classes com um grande 
+	número de métodos são mais difíceis de serem reutilizadas, pois elas 
+	são propensas a serem menos coesa \cite{Lorenz94}.
 	
 
 	%-----------------------------
 	\item [DIT (\textit{Depth of Inheritance Tree})] \textbf{Profundidade da 
 	Árvore de Herança} é o número de superclasses ou classes ancestrais da 
-	classe sendo analisada. São contabilizadas apenas as superclasses do sistema, 
-	ou seja, as classes de bibliotecas não são contabilizadas. Nos casos onde 
-	herança múltipla é permitida, considera-se o maior caminho da classe até uma
-	das raízes da hierarquia. Quanto maior for o valor DIT, maior é o número de 
-	atributos e métodos herdados, e portanto maior é a complexidade 
-	\cite{Shih97}.
+	classe sendo analisada. São contabilizadas apenas as superclasses do 
+	sistema, ou seja, as classes de bibliotecas não são contabilizadas. 
+	Nos casos onde herança múltipla é permitida, considera-se o maior 
+	caminho da classe até uma das raízes da hierarquia. Quanto maior for o 
+	valor DIT, maior é o número de atributos e métodos herdados, e portanto 
+	maior é a complexidade \cite{Shih97}.
 	
 	\item[NOC (\textit{Number of Children})] \textbf{Número de Filhos} é o 
 	número subclasses ou classes filhas que herdam da classe analisada 
@@ -292,12 +287,15 @@ Em sua tese \citeonline{Meirelles2013} analisou as métricas do código-fonte de
 mais bem sucedidas (\textit{Chrome, Firefox, OpenJDK, VLC e entre outros}) e 
 percebeu que há certos valores que são frequentemente encontrados quando se 
 analisa o código-fonte de aplicações que utilizam a mesma linguagem de 
-programação. \citeonline{Meirelles2013} classifica estes intervalos, em 
-\textit{muito frequente, frequente, pouco frequente e não frequente}. Visando o 
-o melhor entendimento das métricas, resolveu-se renomear tal como a Tabela 
-\ref{nomes}. Posteriormente, é apresentada a Tabela \ref{metrics}, decorrente do
-estudo de \citeonline{Meirelles2013}, com os intervalos encontrados para C++ e 
-Java.
+programação. \citeonline{Meirelles2013}, após uma análise estatística dos 
+valores obtidos para cada métrica de código-fonte, classificou estes 
+intervalos, em \textit{muito frequente, frequente, pouco frequente e não 
+frequente}. 
+
+Visando o melhor entendimento das métricas, resolveu-se renomear tal como a 
+Tabela \ref{nomes}. Posteriormente, é apresentada a Tabela \ref{metrics}, 
+decorrente do estudo de \citeonline{Meirelles2013}, com os intervalos 
+encontrados para C++ e Java.
 
 	\begin{table}[!ht]
 	\begin{center}
@@ -394,11 +392,6 @@ Java.
 	\end{table}
 \FloatBarrier
 	
-Os intervalos, que foram apresentados na Tabela \ref{metrics} 
-serão utilizados como indicadores de qualidade de código-fonte, de modo a 
-simplificar a interpretação da qualidade do código-fonte nos 
-\textit{Dashboards}, do ambiente de \textit{Dwing}, a ser apresentado a seguir. 
-
-	
-	
-	
+Os intervalos, que foram apresentados na Tabela \ref{metrics} serão utilizados
+como indicadores de qualidade de código-fonte, de modo a simplificar a 
+interpretação da qualidade do código-fonte nos \textit{Dashboards}, do ambiente de \textit{Dwing}, a ser apresentado a seguir.

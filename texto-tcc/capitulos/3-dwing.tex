@@ -1,110 +1,127 @@
-% -- Link com de Métricas (Registro Histórico, Comparações, Agregações, Tomada de Decisão)
-\chapter{DWing}
+\chapter{\textit{Data Warehousing} (DWing)} 
 
-Os principais fatores para a adoção de um programa de métricas em organizações 
-de desenvolvimento de software são:
-\begin{inparaenum}[i)]
+Os principais fatores para a adoção de um programa de métricas em 
+organizações de desenvolvimento de software são\begin{inparaenum}[i)]
 \item a regularidade da coleta de dados;
 \item a utilização de uma metodologia eficiente e transparente nessa coleta; 
-\item o uso de ferramentas (não-intrusivas) para automatizar a coleta;
-\item o uso de mecanismos de comunicação de resultados adequados para todos os 
-envolvidos;
+\item o uso de ferramentas (não-intrusivas) para automatizar a coleta; 
+\item o uso de mecanismos de comunicação de resultados adequados para todos os envolvidos; 
 \item o uso de sofisticadas técnicas de análise de dados. 
-\end{inparaenum}
-\cite{Gopal2005} \cite{Silveira2010}.
-
-\todo[inline, color=green!40]{Descrever Cada um dos itens e mudar o texto}
+\apud{Gopal2005}{Silveira2010}.
+\end{inparaenum} 
 
 
-A definição mais difundida entre os pesquisadores apresenta o \textit{Data 
-Warehouse (DW)} com um conjunto de dados integrados, consolidados, históricos, 
-segmentados por assunto, não-voláteis, variáveis em relação ao tempo, e de 
-apoio às decisões gerenciais \cite{Inmon1992}. Em uma outra definição de 
-\textit{Data Warehouse} (DW) é um repositório central e consolidado 
+\textit{Data Warehousing} (DWing) é uma coleção de tecnologias de suporte à decisão disposta a capacitar o gerente a tomar as melhores decisões de forma rápida \apud{chaudhuri1997}{andre2000}. Ou seja, trata-se de um processo para montar e gerenciar dados vindos de várias fontes, com o objetivo de prover uma visão analítica de parte ou todo o negócio \cite{gardner1998}.
+
+Desta forma, é possível em um ambiente de \textit{data warehousing} que as métricas de código-fonte sejam coletadas de fontes diversas em uma periodicidade definida, de forma automatizada, não intrusiva ao trabalho da equipe de desenvolvimento e que estas possam mostrar a qualidade total do código-fonte produzido pela equipe durante um determinado período de tempo (dias, meses, anos). 
+
+
+A Figura \ref{dwing} descreve uma arquitetura geral de um ambiente de DWing, sendo que as setas 1 e 2 representam o processo de \textit{Extraction-Transformation-Load (ETL)}, a seta 3 representa as consultas \textit{On-Line Analytical Processing (OLAP)} e por fim a seta representa a visualização dos dados. Cada um dos componentes da Figura \ref{dwing} é descrito nas seções subsequentes.
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[keepaspectratio=true,scale=1]{figuras/Dwing.eps}
+	\caption{Arquitetura de um ambiente de \textit{Data Warehousing} extraído de 
+	\citeonline{andre2000}}
+	\label{dwing}
+\end{figure}
+\FloatBarrier
+
+
+\section{\textit{Extraction-Transformation-Load} (ETL)}
+
+As etapas de extração, transformação, carga e atualização do \textit{data
+warehouse}, formam o back-end e caracterizam o processo chamado Extraction-
+Transform-Load (ETL). Esse processo pode ser dividido em três etapas distintas
+que somadas podem podendo consumir até 85\% de todo o esforço em um DWing
 \cite{Kimball2002}.
 
 
-	
-\section{Arquitetura de um \textit{Data Warehouse}} 
-\todo[inline, color=green!40]{Colocar Figura}
-\subsection{\textit{Extraction-Transformation-Load}}
-
-As etapas de extração, transformação, carga e atualização do DW, formam o seu
-back-end e caracterizam o processo chamado Extraction-Transform-Load (ETL). 
-Esse processo pode ser dividido em três etapas distintas que somadas podem 
-podendo consumir até 85\% de todo o esforço em um DWing \cite{Kimball2002}.
 
 \begin{easylist}[itemize]
 
-& Extração: No ambiente de \textit{data warehouse}, os dados são inicialmente 
-extraídos de fontes externas de dados para um ambiente de \textit{staging} que 
-\citeonline{Kimball2002} considera com uma área de armazenamento intermediária 
-entre fontes e o \textit{data warehouse}. Normalmente, é de natureza 
-temporária e o seu conteúdo é apagado após a carga dos dados no DW. 
+& Extração: No ambiente de \textit{data warehousing}, os dados, que provêm de fontes distintas tais como planilhas, bases relacionais em diferentes tipos de
+banco de dados (MySQL, Oracle, Postgres e etc) ou mesmo de web services, são inicialmente extraídos de fontes externas de dados para um ambiente de 
+\textit{staging} que \citeonline{Kimball2002} considera com uma área de armazenamento intermediária entre fontes e o \textit{data warehouse}. Normalmente, é de natureza temporária e o seu conteúdo é apagado após a carga dos dados no \textit{data Warehouse}. 
+
+& Transformação: Após os dados serem carregados na área de \textit{staging}, 
+os dados passam por processos de transformações diversas. Estas podem envolver
+desde uma simples transformação de ponto para vírgula, até a realização de cálculos, como por exemplo, cálculos estatísticos. 
 
 
-Os dados podem provir de fontes distintas tais como planilhas, bases relacionais
-em diferentes tipos de banco de dados (MySQL, Oracle, Postgres e etc) ou mesmo 
-de webservices. 
-
-
-& Transformação :
-
-& Carga:
+& Carga: Após as devidas transformações dos dados, os dados são carregados, em formato pré-definido pelo projeto do \textit{data Warehouse},  em definitivo no afim de serem utilizados pelas consultas OLAP. 
 
 \end{easylist}
  
+\section{\textit{Data Warehouse}} 
 
-\subsection{\textit{On-Line Analytical Processing} (OLAP)}
-
-O termo OLAP, inicialmente proposto por \citeonline{Codd1993}, 
-é utilizado para caracterizar as aplicações voltadas ao suporte de atividades 
-de análise, com o objetivo de prover a visualização dos dados sob diferentes 
-perspectivas gerenciais e comportar todas as atividades de análise.
-
-As ferramentas de apoio às consultas On-Line Analytical Processing (OLAP) ao DW 
-representam o seu front-end.
-
-\todo[inline, color=green!40]{Citar Consultas OLAP} 
-
-\subsection{Armazém de Dados}
-\todo[inline, color=green!40]{Falar Sobre Data Mart}
-\todo[inline, color=green!40]{Falar Sobre Modelagem Mutidimensional}
-
-\subsection{\textit{Dashboard}}
+\textit{Data Warehouse} (DW) é um conjunto de dados integrados, consolidados,históricos, segmentados por assunto, não-voláteis, variáveis em relação ao tempo, e de apoio às decisões gerenciais \cite{Inmon1992}, ou seja, trata-se de um repositório central e consolidado que se soma ao conjunto de tecnologias que compõem um ambiente maior, que é o DWing \cite{Kimball2002}. 
 
 
+A necessidade de centralização e agregação dos dados em um \textit{data warehouse} mostrou que a modelagem relacional com a utilização das técnicas de normalização, que visam a eliminação da redundância de dados, não é eficiente quando se realiza consultas mais complexas que fazem uso frequente da operação JOIN entre várias tabelas, pois oneram recursos hardware com grandes quantidades de acesso físico a dados. \cite{Kimball2002}
+
+Dado este cenário, \citeonline{Kimball2002} propôs que o \textit{data warehouse} deve ser modelado sob o modelo dimensional, que é um modelo que visa exibir os dados em níveis adequados de detalhes e otimizar consultas complexas \cite{valeria2012}. No modelo dimensional, são aceitos que as tabelas possuam redundância e esparcidade de dados e estas podem ser classificadas em tabelas fatos e tabelas dimensões. Esta contém contém dados textuais, que pode conter vários atributos descritivos que expressam relações hierarquizáveis do negócio. Já uma tabela fato é uma tabela primária no modelo dimensional onde os valores númericos ou medidas do negócio são armazenados. \cite{Kimball2002}
+
+Assim quando se juntam fatos e dimensões, obtém-se o chamado esquema estrela, tal como se mostra na Figura \ref{estrela}. Quando é possível que os registros de uma tabela fato sejam somados em relação a qualquer dimensão, é dito que o fato é aditivo. Já quando é possível somar em relação apenas a algumas dimensões, é dito que o fato é semiaditivo. Já quando o fato é usado apenas para registro e não podem ser somados em relação a nenhuma dimensão, é dito que o fato é não aditivo.
+
+O fato possui uma dimensão temporal inerente associada a este, isto é, há fatos que ocorrem diariamente, como por exemplo, a venda de produtos em um supermercado, contudo é possível que as vendas sejam vistas por visões mensais, trimestrais, semestrais ou anuais logo granuladidade dos fatos é importante de ser lembrada na hora de projetar um \textit{data warehouse}, pois as dimensões devem ser relacionar com a granuladidade do fato.
 
 
-\section{Projeto de DW} 
+\begin{figure}[h!]
+\centering
+\includegraphics[keepaspectratio=false,scale=1]{figuras/estrela.eps}
+\caption{Exemplo de Esquema Estrela extraído de \citeonline{andre2000}}
+\label{estrela}
+\end{figure}
+\FloatBarrier
 
-\citeonline{Kimball2002} recomenda uma metodologia para o desenvolvimento
-do projeto de um \textit{data warehouse}. 
-Trata-se de uma abordagem de baixo para cima, que no caso de um 
-\textit{data warehouse} que constrói um data mart por vez. As quatro etapas de 
-projeto são:
+No esquema da Figura \ref{estrela}, percebe-se que uma tabela fato expressa um relacionamento muitos para muitos com as tabelas dimensões, mostrando assim que a navegabilidade dos dados quantitativos e qualitativos é mais intuitiva quando comparada com o modelo relacional normalizado \cite{Kimball2002}. 
 
-\newlist{steps}{enumerate}{4}
-\setlist[steps]{ label* = \arabic* -}
 
-\begin{steps}
-	\item Selecionar o Processo de Negócio com requisito fundamental do projeto 
-	DW;
-	
+\section{\textit{On-Line Analytical Processing} (OLAP)}
+
+O termo OLAP, inicialmente proposto por \citeonline{Codd1993}, é utilizado para caracterizar as aplicações, que formam o front end do ambiente de \textit{data warehousing}, voltadas ao suporte de atividades de análise, com o objetivo de prover a visualização dos dados sob diferentes perspectivas gerenciais e comportar todas as atividades de análise.
+
+
+Diferentemente das operações de \textit{Online Transaction Processing} (OTLP) que são executadas em bancos dados relacionais, que utilizam a normalização, e visam a eliminação da redudancia de dados,  as operações OLAP são realizadas em um ambiente de \textit{data warehousing}, sendo suportadas por um \textit{data warehouse} projetado em um modelo dimensional. A Tabela \ref{olapxoltp} mostra as principais diferenças das operações \textit{On-Line Analytical Processing} (OLAP) para as operações \textit{Online Transaction Processing} (OTLP)
+
+	\begin{table}[!ht]
+	\begin{center}
+	 \begin{tabular}{|l|l|}
+		\hline
+		OLAP & OLTP \\ \hline
+		Modelagem Dimensional (Tabelas Fato e Dimensão) & Modelagem Relacional com a utilização das formas normais (3N, 4N, 5N) \\ \hline
+		Frequente       & Bom       \\ \hline
+		Pouco Frequente & Regular   \\ \hline
+		Não Frequente   & Ruim      \\ \hline
+		\end{tabular}
+		\caption{Diferenças entre OLAP e OLTP extraida de \citeonline{valeria2012}}
+		\label{olapxoltp}
+		\end{center}
+		\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Projeto de DW}
+
+\citeonline{Kimball2002} recomenda uma metodologia para projetar um
+\textit{data warehouse}. Trata-se dos seguintes passos: \begin{inparaenum}[1)]
+	\item Selecionar o Processo de Negócio com requisito fundamental do 
+	projeto DW;
 	\item Declarar a granularidade dos dados necessários para processo de 
-	negócio, isto é, verificar a periodicidade dos dados 
-	(diário, semanal, mensal, anual);
-	
+	negócio, isto é, verificar a periodicidade de coleta dos dados (diários, semanais, mensais, trimestrais, semestrais ou anuais);
 	\item Escolher as dimensões;
-	
 	\item Identificar os fatos;
-	
-	\item Apresentar, em formas visuais, as análises obtidas das métricas de 
-	código-fonte;
-	
-    \end{steps}
 
+\end{inparaenum} 
 
-	Seguindo esta metodologia proposta anteriormente
-
-	
+Seguindo esta metodologia proposta anteriormente,
