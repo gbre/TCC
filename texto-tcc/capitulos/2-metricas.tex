@@ -2,33 +2,11 @@
 
 \section{Processo de Medição de Software}
 
-Medição é o mapeamento de relações empíricas em relações formais. Isto 
-é, quantificação em símbolos com objetivo de caracterizar uma entidade por 
-meio de seus atributos. \cite{Fenton98}. Visando uma definição operacional, a 
-\citeonline{ISO:15939} define medição como conjunto de operações que visam 
-por meio de um objeto determinar um valor a uma medida ou métrica. \footnote{A 
-definição formal da \citeonline{ISO:15939} não utiliza o termo métrica, 
-sendo que este é definido pelo GQM em \citeonline{Basili96b}, que é uma outra 
-abordagem para medição, contudo compreende-se que o termo medida tem valor 
-semântico equivalente ao de métrica no contexto do presente trabalho}. Alguns 
-modelos de referência, como \citeonline{cmmi2010}, e até a própria 
-\citeonline{ISO:15939} definem medição como uma ferramenta primordial para 
-gerenciar as atividades do desenvolvimento de software e para avaliar a 
-qualidade dos produtos e a capacidade de processos organizacionais. 
+Segundo \citeonline{Fenton98}, medição é o mapeamento de relações empíricas em relações formais. Isto é, quantificação em símbolos com objetivo de caracterizar uma entidade por meio de seus atributos. Contrapondo-se com uma  definição operacional, a \citeonline{ISO:15939} define medição como conjunto de operações que visam por meio de um objeto determinar um valor a uma medida ou métrica. \footnote{A definição formal da \citeonline{ISO:15939} não utiliza o termo métrica, sendo que este é utilizado por abordagens mais antigas como GQM em \citeonline{Basili96b}, que é uma outra abordagem para medição, contudo compreende-se que o termo medida tem valor semântico equivalente ao de métrica no contexto do deste trabalho}. Alguns modelos de referência, como \citeonline{cmmi2010}, e até a própria \citeonline{ISO:15939} definem medição como uma ferramenta primordial para gerenciar as atividades do desenvolvimento de software e para avaliar a qualidade dos produtos e a capacidade de processos organizacionais. 
 
 
-A \citeonline{ISO:15939} define um processo de medição com base em um modelo de 
-informação, que é mostrado na Figura \ref{informação}, afim de obter produtos de 
-informação para cada necessidade de informação. Para isto, cada necessidade de 
-informação, que é uma situação que requer conhecimento com intuito de 
-gerenciar objetivos, metas, riscos e problemas é mapeada em uma construção 
-mensurável que tem em sua origem um conceito mensurável,como por exemplo, 
-tamanho, qualidade, custo afim de mapear um atributo, que é uma característica 
-que permite distinguir qualitivativamente e/ou quantitativamente
-uma entidade, que pode ser um processo, projeto ou produto de software. Por fim 
-cada construção mensurável é mapeada em um ou mais produtos de informação que 
-levam uma ou mais métricas ou medidas, que podem ser classificadas sob 
-critérios apresentados na seção \ref{Classificação das Métricas de Software}. 
+A \citeonline{ISO:15939} define um processo de medição com base em um modelo de
+informação, que é mostrado na Figura \ref{informação}, afim de obter produtos de informação para cada necessidade de informação. Para isto, cada necessidade de informação, que é uma situação que requer conhecimento com intuito de  gerenciar objetivos, metas, riscos e problemas é mapeada em uma construção  mensurável que tem em sua origem um conceito mensurável,como por exemplo,  tamanho, qualidade, custo afim de mapear um atributo, que é uma característica  que permite distinguir qualitivativamente e/ou quantitativamente uma entidade, que pode ser um processo, projeto ou produto de software. Por fim  cada construção mensurável é mapeada em um ou mais produtos de informação que  levam uma ou mais métricas ou medidas, que podem ser classificadas sob  critérios apresentados na seção \ref{Classificação das Métricas de Software}.
 
 \begin{figure}[h!]
 \centering
@@ -41,8 +19,7 @@ critérios apresentados na seção \ref{Classificação das Métricas de Softwar
 
 O modelo de informação da \citeonline{ISO:15939} é utilizado para construir o 
 propósito geral da medições e a identificação de medidas ou métricas que 
-respondem as necessidades de informação. Em metodologias ágeis, 
-como por exemplo, é possível construir um modelo de informação tal como na 
+respondem as necessidades de informação. Em metodologias ágeis, como por exemplo, é possível construir um modelo de informação tal como na 
 Tabela \ref{construção-ágil}.
 
 	\begin{table}[!ht]
@@ -156,28 +133,18 @@ Segundo a International Working Conference on Source Code Analysis and
 Manipulation (SCAM), O código-fonte é qualquer especificação executável 
 de um sistema de software. Por conseguinte, se inclui desde código de máquina, 
 até linguagens de alto nível ou representações gráficas executáveis. 
-\cite{harman2010source}.
+\cite{harman2010source}. Dentre as inúmeras características que fazem um bom software, várias delas podem ser percebidas no código-fonte e algumas são exclusivas dele \cite{Meirelles2013}, isto é, o código-fonte revela muitas características de um bom desenvolvimento de software.
  
-Popularmente, o termo análise estática de código se refere à uma análise 
-automatizada das estruturas internas do código, 
-em nível de linguagem de programação, sem realizar a execução, afim de 
-obter métricas de código-fonte \cite{Terra2008} 
+Uma das formas de verificação da qualidade do código fonte é a analise estática de código, que se refere à uma análise automatizada das estruturas internas do código, em nível de linguagem de programação, sem realizar a execução, afim de obter métricas de código-fonte \cite{Terra2008} 
 \cite{Emanuelsson2008} \cite{Wichmann95}  \cite{Nielson:1999} 
-\cite{Sommerville10}
- 
- 
-Dentre as inúmeras características que fazem um bom software, várias delas 
-podem ser percebidas no código-fonte e algumas são exclusivas dele 
-\cite{Meirelles2013}.Desta forma, As métricas de código-fonte são métricas 
-objetivas e tem características como validade, simplicidade, objetividade, 
-fácil obtenção e robustez \cite{Mills:1999}. \citeonline{Meirelles2013} 
-realizou um levantamento sistemático na literatura das métricas de código-fonte. 
-Estas foram categorizadas, nas seguintes categorias, apresentadas 
-nas subseções a seguir. 
+\cite{Sommerville10}. 
+
+As métricas de código-fonte são objetivas e tem características como validade, simplicidade, objetividade, fácil obtenção e robustez \cite{Mills:1999}. \citeonline{Meirelles2013} realizou um levantamento sistemático na literatura das métricas de código-fonte. Estas foram categorizadas, nas seguintes categorias, apresentadas nas subseções a seguir. 
 
 
-%-----------------------------------------------------------------------------------------------------------------------------
+%--------------------------------------------
 \subsection{Métrica de Tamanho e Complexidade}
+
 \label{métricas tamanho e complexidade} 
 
 O tamanho do código-fonte foi um dos primeiros conceitos mensuráveis do 

@@ -12,29 +12,34 @@
 	"buffers":
 	[
 		{
-			"file": "1-introducao.tex",
-			"settings":
-			{
-				"buffer_size": 6445,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "2-metricas.tex",
 			"settings":
 			{
-				"buffer_size": 17311,
+				"buffer_size": 17372,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "\\chapter{\\textit{Data Warehousing} (DWing)} \n\nOs principais fatores para a adoção de um programa de métricas em \norganizações de desenvolvimento de software são\\begin{inparaenum}[i)]\n\\item a regularidade da coleta de dados;\n\\item a utilização de uma metodologia eficiente e transparente nessa coleta; \n\\item o uso de ferramentas (não-intrusivas) para automatizar a coleta; \n\\item o uso de mecanismos de comunicação de resultados adequados para todos os envolvidos; \n\\item o uso de sofisticadas técnicas de análise de dados. \n\\apud{Gopal2005}{Silveira2010}.\n\\end{inparaenum} \n\n\n\\textit{Data Warehousing} (DWing) é uma coleção de tecnologias de suporte à decisão disposta a capacitar o gerente a tomar as melhores decisões de forma rápida \\apud{chaudhuri1997}{andre2000}. Ou seja, trata-se de um processo para montar e gerenciar dados vindos de várias fontes, com o objetivo de prover uma visão analítica de parte ou todo o negócio \\cite{gardner1998}.\n\nDesta forma, é possível em um ambiente de \\textit{data warehousing} que as métricas de código-fonte sejam coletadas de fontes diversas em uma periodicidade definida, de forma automatizada, não intrusiva ao trabalho da equipe de desenvolvimento e que estas possam mostrar a qualidade total do código-fonte produzido pela equipe durante um determinado período de tempo (dias, meses, anos). \n\n\nA Figura \\ref{dwing} descreve uma arquitetura geral de um ambiente de DWing, sendo que as setas 1 e 2 representam o processo de \\textit{Extraction-Transformation-Load (ETL)}, a seta 3 representa as consultas \\textit{On-Line Analytical Processing (OLAP)} e por fim a seta representa a visualização dos dados. Cada um dos componentes da Figura \\ref{dwing} é descrito nas seções subsequentes.\n\n\\begin{figure}[h!]\n\\centering\n	\\includegraphics[keepaspectratio=true,scale=1]{figuras/Dwing.eps}\n	\\caption{Arquitetura de um ambiente de \\textit{Data Warehousing} extraído de \n	\\citeonline{andre2000}}\n	\\label{dwing}\n\\end{figure}\n\\FloatBarrier\n\n\n\\section{\\textit{Extraction-Transformation-Load} (ETL)}\n\nAs etapas de extração, transformação, carga e atualização do \\textit{data\nwarehouse}, formam o back-end e caracterizam o processo chamado Extraction-\nTransform-Load (ETL). Esse processo pode ser dividido em três etapas distintas\nque somadas podem podendo consumir até 85\\% de todo o esforço em um DWing\n\\cite{Kimball2002}.\n\n\n\n\\begin{easylist}[itemize]\n\n& Extração: No ambiente de \\textit{data warehousing}, os dados, que provêm de fontes distintas tais como planilhas, bases relacionais em diferentes tipos de\nbanco de dados (MySQL, Oracle, Postgres e etc) ou mesmo de web services, são inicialmente extraídos de fontes externas de dados para um ambiente de \n\\textit{staging} que \\citeonline{Kimball2002} considera com uma área de armazenamento intermediária entre fontes e o \\textit{data warehouse}. Normalmente, é de natureza temporária e o seu conteúdo é apagado após a carga dos dados no \\textit{data Warehouse}. \n\n& Transformação: Após os dados serem carregados na área de \\textit{staging}, \nos dados passam por processos de transformações diversas. Estas podem envolver\ndesde uma simples transformação de ponto para vírgula, até a realização de cálculos, como por exemplo, cálculos estatísticos. \n\n\n& Carga: Após as devidas transformações dos dados, os dados são carregados em definitivo no \\textit{Data Warehouse} afim de serem utilizados pelas consultas OLAP. Dada a granuladidade do dado, é possível que os dados sejam carregados diariamente, ou em agregações maiores, tais como semanas, meses, anos.\n\n\\end{easylist}\n \n\\section{\\textit{Data Warehouse}} \n\n\\textit{Data Warehouse} (DW) é um conjunto de dados integrados, consolidados,históricos, segmentados por assunto, não-voláteis, variáveis em relação ao tempo, e de apoio às decisões gerenciais \\cite{Inmon1992}, ou seja, trata-se de um repositório central e consolidado que se soma ao conjunto de tecnologias que compõem um ambiente maior, que é o DWing \\cite{Kimball2002}. \n\n\nA necessidade de centralização e agregação dos dados em um \\textit{data warehouse} mostrou que a modelagem relacional com a utilização das técnicas de normalização, que visam a eliminação da redundância de dados, não é eficiente quando se realiza consultas mais complexas que fazem uso frequente da operação JOIN entre várias tabelas, pois oneram recursos hardware com grandes quantidades de acesso físico a dados. \\cite{Kimball2002}\n\nDado este cenário, \\citeonline{Kimball2002} propôs que o \\textit{data warehouse} deve ser modelado sob o modelo dimensional, que é um modelo que visa exibir os dados em níveis adequados de detalhes e otimizar consultas complexas \\cite{valeria2012}. No modelo dimensional, são aceitos que as tabelas possuam redundância e esparcidade de dados e estas podem ser classificadas em tabelas fatos e tabelas dimensões. \\cite{Kimball2002}\n\nSegundo \\citeonline{Kimball2002}, uma tabela dimensão contém dados textuais, sendo que esta pode conter vários atributos descritivos que expressam relações hierarquizáveis do negócio. Já uma tabela fato é uma tabela primária no modelo dimensional onde os valores númericos são armazenados, ou seja, em cada linha da tabela fato há uma medida quantitativa do negócio. Assim quando se juntam fatos e dimensões, obtém-se o chamado esquema estrela, tal como se mostra na Figura \\ref{estrela}.\n\n\nOs fatos aditivos podem ser somados em relação a qualquer dimensão. Já os fatos semiaditivos podem ser somados em relação a algumas dimensões, porém, não todas. E os fatos não-aditivos não podem ser somados de jeito nenhum, são usados apenas para o registro de eventos.\n\n\n\\begin{figure}[h!]\n\\centering\n\\includegraphics[keepaspectratio=false,scale=1]{figuras/estrela.eps}\n\\caption{Exemplo de Esquema Estrela extraído de \\citeonline{andre2000}}\n\\label{estrela}\n\\end{figure}\n\\FloatBarrier\n\nNo esquema da Figura \\ref{estrela}, percebe-se que uma tabela fato expressa um relacionamento muitos para muitos com as tabelas dimensões, mostrando assim que a navegabilidade dos dados quantitativos e qualitativos é mais intuitiva quando comparada com o modelo relacional normalizado \\cite{Kimball2002}. Quando é possível a relação de um fato com qualquer dimensão, é dito que o fato aditivo e quando há apenas relações com algumas dimensões, é dito que o dado é semiaditivo e\n\n\n\\section{\\textit{On-Line Analytical Processing} (OLAP)}\n\nO termo OLAP, inicialmente proposto por \\citeonline{Codd1993}, é utilizado para caracterizar as aplicações voltadas, que forma o front end do ambiente de \\textit{data warehousing}, ao suporte de atividades de análise, com o objetivo de prover a visualização dos dados sob diferentes perspectivas gerenciais e comportar todas as atividades de análise.\n\n\n\n\n\n\n\\todo[inline, color=green!40]{Citar Consultas OLAP}\n\\todo[inline, color=green!40]{Comparação OLAP X OLTP}\n\n\n\n\n\n\n\n\\section{Projeto de DW}\n\n\\citeonline{Kimball2002} recomenda uma metodologia para projetar um\n\\textit{data warehouse}. Trata-se dos seguintes passos: \\begin{inparaenum}[1)]\n	\\item Selecionar o Processo de Negócio com requisito fundamental do \n	projeto DW;\n	\\item Declarar a granularidade dos dados necessários para processo de \n	negócio, isto é, verificar a periodicidade dos dados (diário, semanal, mensal, anual);\n	\\item Escolher as dimensões;\n	\\item Identificar os fatos;\n	\\item Apresentar, em formas visuais, as análises obtidas das métricas de\n	código-fonte;\n\\end{inparaenum} \n\nSeguindo esta metodologia proposta anteriormente,\n",
 			"file": "3-dwing.tex",
-			"file_size": 7556,
-			"file_write_time": 130263127568507421,
 			"settings":
 			{
-				"buffer_size": 7459,
+				"buffer_size": 10728,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.js",
+			"settings":
+			{
+				"buffer_size": 290,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "4-solucao.tex",
+			"settings":
+			{
+				"buffer_size": 4667,
 				"line_ending": "Unix"
 			}
 		},
@@ -47,11 +52,11 @@
 			}
 		},
 		{
-			"file": "4-solucao.tex",
+			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/agradecimentos.tex",
 			"settings":
 			{
-				"buffer_size": 4486,
-				"line_ending": "Unix"
+				"buffer_size": 2368,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -74,16 +79,16 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 196.0,
+		"height": 311.0,
 		"selected_items":
 		[
 			[
-				"Package Control: re",
-				"Package Control: Remove Package"
-			],
-			[
 				"Package Control: ",
 				"Package Control: Install Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
 			]
 		],
 		"width": 400.0
@@ -106,6 +111,17 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/2.txt",
+		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/1-introducao.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/capitulos/1-introducao.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/time.js",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.js",
+		"/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/smell.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/smell.log",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/abreviaturas.tex",
+		"/C/Users/Guilherme/Documents/GitHub/SRA.wiki/l1w2nffg.0av.txt",
+		"/C/Users/Guilherme/Downloads/Ruby Programming Ebooks 2008/Ruby by Example - Concepts and Code, No Starch Press (2007).pdf.",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/simbolos.tex",
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/4-produtos.tex",
 		"/C/Users/Guilherme/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/README.markdown",
 		"/C/Users/Guilherme/Downloads/Dwing/dwing/dwing.tex",
@@ -140,6 +156,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"que ainda",
+			"mostra",
 			"armazém",
 			"tex",
 			"master",
@@ -163,7 +181,7 @@
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
-		"wrap": true
+		"wrap": false
 	},
 	"groups":
 	[
@@ -173,19 +191,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "1-introducao.tex",
+					"file": "2-metricas.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6445,
+						"buffer_size": 17372,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6445,
-								6445
+								8260,
+								8260
 							]
 						],
 						"settings":
@@ -194,31 +212,32 @@
 							[
 								80
 							],
+							"spell_check": false,
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
 							"translate_tabs_to_spaces": false,
 							"wrap_width": 80
 						},
 						"translation.x": 0.0,
-						"translation.y": 2346.0,
+						"translation.y": 5133.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "2-metricas.tex",
+					"file": "3-dwing.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17311,
+						"buffer_size": 10728,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5545,
-								5295
+								10728,
+								10728
 							]
 						],
 						"settings":
@@ -229,30 +248,59 @@
 							],
 							"spell_check": false,
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": false,
+							"word_wrap": true,
 							"wrap_width": 80
 						},
 						"translation.x": 0.0,
-						"translation.y": 1779.0,
+						"translation.y": 4161.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "3-dwing.tex",
+					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7459,
+						"buffer_size": 290,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6297,
-								6297
+								145,
+								145
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "4-solucao.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4667,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
 							]
 						],
 						"settings":
@@ -261,20 +309,17 @@
 							[
 								80
 							],
-							"spell_check": false,
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": true,
 							"wrap_width": 80
 						},
 						"translation.x": 0.0,
-						"translation.y": 1962.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/bibliografia.bib",
 					"semi_transient": false,
 					"settings":
@@ -286,8 +331,8 @@
 						"selection":
 						[
 							[
-								8863,
-								8853
+								8208,
+								8195
 							]
 						],
 						"settings":
@@ -297,45 +342,41 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4528.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "4-solucao.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4486,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"rulers":
-							[
-								80
-							],
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"wrap_width": 80
-						},
-						"translation.x": 0.0,
-						"translation.y": 951.0,
+						"translation.y": 3139.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
+					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/agradecimentos.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2368,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2125,
+								2125
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"wrap_width": 80
+						},
+						"translation.x": 0.0,
+						"translation.y": 62.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "5-consideracoes.tex",
 					"semi_transient": false,
 					"settings":
@@ -367,7 +408,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/pacotes.tex",
 					"semi_transient": false,
 					"settings":
@@ -481,5 +522,6 @@
 	"status_bar_visible": true,
 	"template_settings":
 	{
+		"max_columns": 4
 	}
 }

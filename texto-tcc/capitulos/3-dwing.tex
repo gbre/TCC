@@ -60,11 +60,9 @@ desde uma simples transformação de ponto para vírgula, até a realização de
 
 A necessidade de centralização e agregação dos dados em um \textit{data warehouse} mostrou que a modelagem relacional com a utilização das técnicas de normalização, que visam a eliminação da redundância de dados, não é eficiente quando se realiza consultas mais complexas que fazem uso frequente da operação JOIN entre várias tabelas, pois oneram recursos hardware com grandes quantidades de acesso físico a dados. \cite{Kimball2002}
 
-Dado este cenário, \citeonline{Kimball2002} propôs que o \textit{data warehouse} deve ser modelado sob o modelo dimensional, que é um modelo que visa exibir os dados em níveis adequados de detalhes e otimizar consultas complexas \cite{valeria2012}. No modelo dimensional, são aceitos que as tabelas possuam redundância e esparcidade de dados e estas podem ser classificadas em tabelas fatos e tabelas dimensões. Esta contém contém dados textuais, que pode conter vários atributos descritivos que expressam relações hierarquizáveis do negócio. Já uma tabela fato é uma tabela primária no modelo dimensional onde os valores númericos ou medidas do negócio são armazenados. \cite{Kimball2002}
+Dado este cenário, \citeonline{Kimball2002} propôs que o \textit{data warehouse} deve ser modelado sob o modelo dimensional, que é um modelo que visa exibir os dados em níveis adequados de detalhes e otimizar consultas complexas \cite{valeria2012}. No modelo dimensional, são aceitos que as tabelas possuam redundância e esparcidade de dados e estas podem ser classificadas em tabelas fatos e tabelas dimensões. Esta contém contém dados textuais, que pode conter vários atributos descritivos que expressam relações hierarquizáveis do negócio. Já uma tabela fato é uma tabela primária no modelo dimensional onde os valores númericos ou medidas do negócio são armazenados \cite{Kimball2002}.
 
-Assim quando se juntam fatos e dimensões, obtém-se o chamado esquema estrela, tal como se mostra na Figura \ref{estrela}. Quando é possível que os registros de uma tabela fato sejam somados em relação a qualquer dimensão, é dito que o fato é aditivo. Já quando é possível somar em relação apenas a algumas dimensões, é dito que o fato é semiaditivo. Já quando o fato é usado apenas para registro e não podem ser somados em relação a nenhuma dimensão, é dito que o fato é não aditivo.
-
-O fato possui uma dimensão temporal inerente associada a este, isto é, há fatos que ocorrem diariamente, como por exemplo, a venda de produtos em um supermercado, contudo é possível que as vendas sejam vistas por visões mensais, trimestrais, semestrais ou anuais logo granuladidade dos fatos é importante de ser lembrada na hora de projetar um \textit{data warehouse}, pois as dimensões devem ser relacionar com a granuladidade do fato.
+Assim quando se juntam fatos e dimensões, obtém-se o chamado esquema estrela, tal como se mostra na Figura \ref{estrela}. Quando é possível que os registros de uma tabela fato sejam somados em relação a qualquer dimensão, é dito que o fato é aditivo. Já quando é possível somar em relação apenas a algumas dimensões, é dito que o fato é semiaditivo. Já quando o fato é usado apenas para registro e não podem ser somados em relação a nenhuma dimensão, é dito que o fato é não aditivo \cite{Inmon1992}.
 
 
 \begin{figure}[h!]
@@ -75,53 +73,81 @@ O fato possui uma dimensão temporal inerente associada a este, isto é, há fat
 \end{figure}
 \FloatBarrier
 
-No esquema da Figura \ref{estrela}, percebe-se que uma tabela fato expressa um relacionamento muitos para muitos com as tabelas dimensões, mostrando assim que a navegabilidade dos dados quantitativos e qualitativos é mais intuitiva quando comparada com o modelo relacional normalizado \cite{Kimball2002}. 
+
+No esquema da Figura \ref{estrela}, percebe-se que uma tabela fato expressa um relacionamento muitos para muitos com as tabelas dimensões, mostrando assim que a navegabilidade dos dados quantitativos e qualitativos é mais intuitiva quando comparada com o modelo relacional normalizado \cite{Kimball2002}. Além disso, verifica-se que o fato possui uma dimensão temporal inerente associada a este, isto é, há fatos que ocorrem diariamente, como por exemplo, a venda de produtos em um supermercado, contudo é possível que as vendas sejam vistas por visões mensais, trimestrais, semestrais ou anuais logo a granuladidade dos fatos é deve ser considerada na hora de projetar um \textit{data warehouse}.
+
+
 
 
 \section{\textit{On-Line Analytical Processing} (OLAP)}
 
-O termo OLAP, inicialmente proposto por \citeonline{Codd1993}, é utilizado para caracterizar as aplicações, que formam o front end do ambiente de \textit{data warehousing}, voltadas ao suporte de atividades de análise, com o objetivo de prover a visualização dos dados sob diferentes perspectivas gerenciais e comportar todas as atividades de análise.
+O termo OLAP, inicialmente proposto por \citeonline{Codd1993}, é utilizado para caracterizar as aplicações que proveem suporte à operações de consulta e análise em um \textit{data warehouse} projetado sobre um modelo dimensional \cite{Kimball2002}. Isto permite consultas mais flexíveis quando comparadas com as consultas \textit{Online Transaction Processing} (OTLP) que são executadas em bancos dados relacionais normalizados  visando a eliminação da redudância de dados.
 
-
-Diferentemente das operações de \textit{Online Transaction Processing} (OTLP) que são executadas em bancos dados relacionais, que utilizam a normalização, e visam a eliminação da redudancia de dados,  as operações OLAP são realizadas em um ambiente de \textit{data warehousing}, sendo suportadas por um \textit{data warehouse} projetado em um modelo dimensional. A Tabela \ref{olapxoltp} mostra as principais diferenças das operações \textit{On-Line Analytical Processing} (OLAP) para as operações \textit{Online Transaction Processing} (OTLP)
+As principais diferenças das operações \textit{On-Line Analytical Processing} (OLAP) para as operações 
+\textit{Online Transaction Processing} (OTLP) são apresentados na Tabela 
+\ref{olapxoltp}.
 
 	\begin{table}[!ht]
 	\begin{center}
-	 \begin{tabular}{|l|l|}
+	 \begin{tabular}{|p{5cm}|p{5cm}|}
 		\hline
 		OLAP & OLTP \\ \hline
 		Modelagem Dimensional (Tabelas Fato e Dimensão) & Modelagem Relacional com a utilização das formas normais (3N, 4N, 5N) \\ \hline
-		Frequente       & Bom       \\ \hline
-		Pouco Frequente & Regular   \\ \hline
-		Não Frequente   & Ruim      \\ \hline
+		Dados armazenados em nível transacional e agregado    & Dados em nível em nível transacional        \\ \hline
+		Visa o diminuir o uso do JOIN & Faz uso constante de Join   \\ \hline
+		Estrutura de tipicamente estática   & Estrutura tipicamente dinâmica      \\ \hline
+		Proveem informações atuais e do passado & Geralmente sem suporte a estado temporal dos dados
+		      \\ \hline
 		\end{tabular}
-		\caption{Diferenças entre OLAP e OLTP extraida de \citeonline{valeria2012}}
+		\caption{Diferenças entre OLAP e OLTP extraído de \citeonline{valeria2012} e \citeonline{andre2000}}
 		\label{olapxoltp}
 		\end{center}
 		\end{table}
 
+As operações OLAP tem como objetivo prover visualização dos dados sob diferentes perspectivas gerenciais e comportar todas as atividades de análise. Estas podem ser feitas de maneira \textit{ad hoc}, por meio das ferramentas de suporte a OLAP, contudo há algumas, que são documentadas pela literatura, e são classificadas em dois grupos: Análise Prospectiva e Análise Seletiva \apud{chaudhuri1997}{andre2000}.
+
+A análise prospectiva consiste em analisar a partir de um conjunto inicial de dados para chegar a dados mais detalhados ou menos detalhados \cite{Inmon1992}. Já análise análise seletiva tem como objetivo trazer a evidência para dados \cite{andre2000}. Entre as operações de análise prospectiva estão:
+
+\begin{easylist}[itemize]
+
+& \textit{Drill-Down}: Descer no nível de detalhes dos dados de uma dimensão. Ou seja nada mais é que adicionar cabeçalhos de linha de tabelas de dimensão \cite{Kimball2002}
+
+& \textit{Roll-Up}: contrário de Drill-Down, ou seja, caminhar para a visão de dados mais agregados \apud{Kimball2002}{andre2000}. 
+
+& Drill-Across: significa caminhar a partir de uma dimensão para
+outra dimensão, combinando-as para mudar o enfoque da
+análise \cite{andre2000}.
+
+\end{easylist}
+
+Entre as operações de análise seletiva estão:
+
+\begin{easylist}[itemize]
+
+& \textit{Slice and Dice} : Em português, significa cortar e fatiar. Esta operação seleciona pedaços transversais do modelo dimensional e em seguida aplica critérios de seleção sobre este pedaço. \cite{andre2000}. Ou seja trata-se de uma operação semelhante a clásula WHERE do SQL \cite{valeria2012}
+
+& \textit{Pivoting} : Trata-se de uma operação de rotação, isto é, muda-se a orientação das tabelas dimensionais afim de restrigir a visualização de dimensões em um relatório. \cite{andre2000}.
+
+\end{easylist}
 
 
+\section{Requisitos de DWing}
 
+\citeonline{Kimball2002} enuncia que o ambiente de DWing nasce na necessidade do negócio e logo o projeto de um \textit{data warehouse} deve seguir os seguintes passos: 
 
-
-
-
-
-
-
-
-\section{Projeto de DW}
-
-\citeonline{Kimball2002} recomenda uma metodologia para projetar um
-\textit{data warehouse}. Trata-se dos seguintes passos: \begin{inparaenum}[1)]
+\begin{inparaenum}[1)]
 	\item Selecionar o Processo de Negócio com requisito fundamental do 
 	projeto DW;
+	
 	\item Declarar a granularidade dos dados necessários para processo de 
 	negócio, isto é, verificar a periodicidade de coleta dos dados (diários, semanais, mensais, trimestrais, semestrais ou anuais);
+	
 	\item Escolher as dimensões;
+	
 	\item Identificar os fatos;
 
 \end{inparaenum} 
 
-Seguindo esta metodologia proposta anteriormente,
+Visando a construção do ambiente de DWing para extração e visualização das métricas de código-fonte. O projeto de DW apresenta como processo de negócio a a extração e visutalização das métricas de código-fonte
+
+Seguindo a metolodogia proposta anteriormente, apresenta-se no Capítulo \ref{estudo de caso}, o ambiente DWing que fora construído e instanciado neste Trabalho de Conclusão de Curso. 
