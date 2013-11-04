@@ -23,23 +23,35 @@
 			"file": "3-dwing.tex",
 			"settings":
 			{
-				"buffer_size": 10728,
+				"buffer_size": 10830,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.js",
+			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.properties",
 			"settings":
 			{
-				"buffer_size": 290,
+				"buffer_size": 96,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "4-solucao.tex",
+			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/helpers",
 			"settings":
 			{
-				"buffer_size": 4667,
+				"buffer_size": 4007,
+				"line_ending": "Windows",
+				"name": "SELECT idInterval FROM (Select idInterval,"
+			}
+		},
+		{
+			"contents": "\\chapter{Estudo de Caso de Ambiente de DWing}\n\\label{estudo de caso}\n\n% \\section{Arquitetura da Solução}\n% \\section{SonarQube}\n% O SonarQube~\\footnote{Toda a documentação e \\textit{downloads} estão disponíveis\n% em \\url{http://www.sonarqube.org/}}, anteriormente conhecido como Sonar, é uma \n% ferramenta que realiza coleta de dados do código-fonte. Em sua documentação, \n% são citados sete eixos de controle de qualidade cobertos na ferramenta: \n\n% \\newlist{qualityindex}{enumerate}{4}\n% \\setlist[qualityindex]{ label* = \\arabic* -}\n\n% \\begin{qualityindex}\n% \\item Duplicação de Código\n% \\item Detecção de Complexidade de Código\n% \\item Padrão de Codificação\n% \\item Testes Unitários\n% \\item Arquitetura e Projeto\n% \\item Potenciais Defeitos\n% \\item Comentários\n% \\end{qualityindex}\n\n% %--------------------------------------------%\n% \\subsection{Escolha do SonarQube}\n% O SonarQube foi escolhido como ferramenta para extração de dados do código-fonte\n%  devido as seguintes características:\n% \\begin{description}\n  \n% \\item [Ferramenta Livre:] O SonarQube é uma ferramenta livre que está \n% licenciada sob a GNU LPGL 3, que é uma das licenças de software livre.\n\n% \\item [Suporte a várias Linguagens de Programação:]  É realizada coleta em \n% mais de 20 linguagens de programação, como por exemplo, Java, C\\#, Python, \n% C++, .Net, PHP e entre outras.\n\n% \\item [Multiplataforma:] Há suporte para os sistemas operacionais Windows, \n% Linux, Mac OS e há também para servidores de aplicação Java, como por exemplo,\n% o Apache Tomcat. \n\n% \\item [Integração com Ferramentas de Integração Contínua:] é possível realizar\n% a integração com ferramentas de integração contínua, como por exemplo, \n% Jenkins. Assim a cada versão bem sucedida de construção do código-fonte, é \n% possível aferir a qualidade do código.\n\n% \\item [Persistência em Base de Dados:] toda a coleta de dados é persistida em \n% uma base de dados. Há suporte para as principais ferramentas de bancos de \n% dados utilizadas no mercado: MySQL, PostgreSQL e Oracle.\n\n% \\item [Interface Amigável:] Diferentemente de outras ferramentas disponíveis \n% no mercado, o SonarQube tem interface web, ou seja, é possível visualização \n% das métricas do código-fonte seja realizada em navegador a escolha do usuário.\n% É possível ainda visualizar todo o código-fonte analisado.\n\n% \\item [Integração com Ferramentas de Gestão de Defeitos:] É possível integrar \n% com ferramentas de gestão de defeitos, tais como Mantis e JIRA.\n\n% \\item [Suporte a Muti produtos:] Há suporte para visualização de métricas de \n%  mais um Produto.\n\n% \\item [Suporte a Multi-Idiomas:] Há suporte para Inglês, Japonês, Russo, \n% Francês, Italiano, Espanhol e Português.\n\n% \\item [Diversidade de Plugins:] O SonarQube permite a \n% extensão de funcionalidades por meio de plugins, sendo que há uma variedade de \n% plugins para mais diversas necessidades disponíveis para \\textit{download}. \n% Cabe ressaltar que alguns são gratuitos e outros tem licença comercial.\n\n% \\item [Presença de Web Service:] Há um Web Service que extrai as métricas \n% disponíveis para diversos formatos, tais como JSON, XML e CSV.\n\n% \\end{description}\n\n\n% %--------------------------------------------%\n\n\n% \\subsection {Limitações Observadas}\n% Após uma análise ostensiva na ferramenta, concluiu-se que o SonarQube apresenta \n% as seguintes limitações:\n\n% \\begin{description}\n\n% \\item [Ausência de Visão Consolidada de Métricas:]  A maior parte das métricas\n% que SonarQube estão apenas no âmbito de Classes ou Pacotes.\n\n% \\item [Impossibilidade Definição de Múltiplos Intervalos:]  O sonarQube não \n% permite a configuração de múltiplos intervalos. É definido apenas, um \n% intervalo de alerta (amarelo) e um intervalo de atenção (vermelho).\n\n% \\item [Ausência de Avaliações Qualitativas:] As métricas não trazem nenhuma \n% avaliação qualitativa associada, ou seja, sem o conhecimento específico do \n% significado de cada métrica, a interpretação dos valores obtidos não é \n% representativo nem elucidativo sobre a qualidade do código.\n\n% \\item [Métricas como Violações:] O SonarQube utiliza para coletar dados de \n% código-fonte, em algumas linguagens de programação, coletores que são \n% identificadores de padrões de codificação. Isso quer dizer que algumas métricas \n% não são apresentadas com valor absoluto, apenas são indicadas como violações à \n% regras estabelecidas pelos padrões. \n\n% \\end{description}\n\n\n\n\n% \\section{Pentaho}\n\n% O Pentaho é um software de código aberto para inteligência empresarial, \n% desenvolvido em Java pela Pentaho Corporation, que apresenta soluções cobrindo \n% as áreas de ETL, \\textit{reporting}, OLAP e mineração de dados \n% (\\textit{data-mining}). \n\n\n \n",
+			"file": "4-solucao.tex",
+			"file_size": 4856,
+			"file_write_time": 130278115349253494,
+			"settings":
+			{
+				"buffer_size": 4696,
 				"line_ending": "Unix"
 			}
 		},
@@ -111,11 +123,15 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Guilherme/Documents/parada.xml",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/Pentaho/Pentaho PDI/plugins/spoon/agile-bi/platform/pentaho-solutions/system/metadata/MySQL.properties",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/date.properties",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/metrics.js",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/time.js",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.js",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/2.txt",
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/1-introducao.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/capitulos/1-introducao.tex",
-		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/time.js",
-		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.js",
 		"/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/smell.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/smell.log",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/abreviaturas.tex",
@@ -142,7 +158,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -156,6 +172,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"date",
+			"data",
+			"ou seja",
 			"que ainda",
 			"mostra",
 			"armazém",
@@ -229,15 +248,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10728,
+						"buffer_size": 10830,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10728,
-								10728
+								10829,
+								10829
 							]
 						],
 						"settings":
@@ -254,31 +273,31 @@
 							"wrap_width": 80
 						},
 						"translation.x": 0.0,
-						"translation.y": 4161.0,
+						"translation.y": 4481.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.js",
+					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.properties",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 290,
+						"buffer_size": 96,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								145,
-								145
+								96,
+								31
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/Java/JavaProperties.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -288,19 +307,47 @@
 				},
 				{
 					"buffer": 3,
-					"file": "4-solucao.tex",
+					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/helpers",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4667,
+						"buffer_size": 4007,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								40,
-								40
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "SELECT idInterval FROM (Select idInterval,",
+							"syntax": "Packages/SQL/SQL.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "4-solucao.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4696,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								69,
+								69
 							]
 						],
 						"settings":
@@ -319,7 +366,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/bibliografia.bib",
 					"semi_transient": false,
 					"settings":
@@ -342,13 +389,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3139.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/agradecimentos.tex",
 					"semi_transient": false,
 					"settings":
@@ -376,7 +423,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "5-consideracoes.tex",
 					"semi_transient": false,
 					"settings":
@@ -408,7 +455,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/pacotes.tex",
 					"semi_transient": false,
 					"settings":

@@ -6,26 +6,38 @@ organizações de desenvolvimento de software são\begin{inparaenum}[i)]
 \item a utilização de uma metodologia eficiente e transparente nessa coleta; 
 \item o uso de ferramentas (não-intrusivas) para automatizar a coleta; 
 \item o uso de mecanismos de comunicação de resultados adequados para todos os envolvidos; 
-\item o uso de sofisticadas técnicas de análise de dados. 
+\item o uso de sofisticadas técnicas de análise de dados;
 \apud{Gopal2005}{Silveira2010}.
 \end{inparaenum} 
 
 
-\textit{Data Warehousing} (DWing) é uma coleção de tecnologias de suporte à decisão disposta a capacitar o gerente a tomar as melhores decisões de forma rápida \apud{chaudhuri1997}{andre2000}. Ou seja, trata-se de um processo para montar e gerenciar dados vindos de várias fontes, com o objetivo de prover uma visão analítica de parte ou todo o negócio \cite{gardner1998}.
+\textit{Data Warehousing} (DWing) é uma coleção de tecnologias de suporte à decisão disposta a capacitar os reponsáveis por tomar decisões a fazê-las de forma mais rápida \apud{chaudhuri1997}{andre2000}. Em outras palavras, trata-se de um processo para montar e gerenciar dados vindos de várias fontes, com o objetivo de prover uma visão analítica de parte ou todo o negócio \cite{gardner1998}. Desta forma, é possível em um ambiente de \textit{data warehousing} que as métricas de código-fonte sejam coletadas de fontes diversas em uma periodicidade definida, de forma automatizada, não intrusiva ao trabalho da equipe de desenvolvimento e que estas possam mostrar a qualidade total do código-fonte produzido pela equipe durante um determinado período de tempo (dias, meses, anos). 
 
-Desta forma, é possível em um ambiente de \textit{data warehousing} que as métricas de código-fonte sejam coletadas de fontes diversas em uma periodicidade definida, de forma automatizada, não intrusiva ao trabalho da equipe de desenvolvimento e que estas possam mostrar a qualidade total do código-fonte produzido pela equipe durante um determinado período de tempo (dias, meses, anos). 
-
-
-A Figura \ref{dwing} descreve uma arquitetura geral de um ambiente de DWing, sendo que as setas 1 e 2 representam o processo de \textit{Extraction-Transformation-Load (ETL)}, a seta 3 representa as consultas \textit{On-Line Analytical Processing (OLAP)} e por fim a seta representa a visualização dos dados. Cada um dos componentes da Figura \ref{dwing} é descrito nas seções subsequentes.
 
 \begin{figure}[h!]
 \centering
-	\includegraphics[keepaspectratio=true,scale=1]{figuras/Dwing.eps}
+	\includegraphics[keepaspectratio=true,scale=1.1]{figuras/Dwing.eps}
 	\caption{Arquitetura de um ambiente de \textit{Data Warehousing} extraído de 
 	\citeonline{andre2000}}
 	\label{dwing}
 \end{figure}
 \FloatBarrier
+
+
+
+A Figura \ref{dwing} descreve uma arquitetura geral de um ambiente de DWing, de tal forma que,
+
+\begin{inparaenum}[i)]
+	\item As setas 1 e 2 representam o processo de \textit{Extraction-Transformation-Load};
+	
+	\item A seta 3 representa as consultas \textit{On-Line Analytical Processing (OLAP)};
+	
+	\item por fim a seta 4 representa a visualização dos dados;
+
+\end{inparaenum}
+ 
+ 	Cada um dos componentes da Figura \ref{dwing} é descrito nas seções subsequentes.
+
 
 
 \section{\textit{Extraction-Transformation-Load} (ETL)}
@@ -35,6 +47,7 @@ warehouse}, formam o back-end e caracterizam o processo chamado Extraction-
 Transform-Load (ETL). Esse processo pode ser dividido em três etapas distintas
 que somadas podem podendo consumir até 85\% de todo o esforço em um DWing
 \cite{Kimball2002}.
+
 
 
 
@@ -60,9 +73,10 @@ desde uma simples transformação de ponto para vírgula, até a realização de
 
 A necessidade de centralização e agregação dos dados em um \textit{data warehouse} mostrou que a modelagem relacional com a utilização das técnicas de normalização, que visam a eliminação da redundância de dados, não é eficiente quando se realiza consultas mais complexas que fazem uso frequente da operação JOIN entre várias tabelas, pois oneram recursos hardware com grandes quantidades de acesso físico a dados. \cite{Kimball2002}
 
-Dado este cenário, \citeonline{Kimball2002} propôs que o \textit{data warehouse} deve ser modelado sob o modelo dimensional, que é um modelo que visa exibir os dados em níveis adequados de detalhes e otimizar consultas complexas \cite{valeria2012}. No modelo dimensional, são aceitos que as tabelas possuam redundância e esparcidade de dados e estas podem ser classificadas em tabelas fatos e tabelas dimensões. Esta contém contém dados textuais, que pode conter vários atributos descritivos que expressam relações hierarquizáveis do negócio. Já uma tabela fato é uma tabela primária no modelo dimensional onde os valores númericos ou medidas do negócio são armazenados \cite{Kimball2002}.
+Dado esse cenário, \citeonline{Kimball2002} propôs que o \textit{data warehouse} deve ser projetado de acordo com as técnicas de modelagem dimensional, que visam exibir os dados em níveis adequados de detalhes e otimizar consultas complexas \cite{valeria2012}. No modelo dimensional, são aceitos que as tabelas possuam redundância e esparcidade de dados e estas podem ser classificadas em tabelas fatos e tabelas dimensões. Estas contém dados textuais, que pode conter vários atributos descritivos que expressam relações hierarquizáveis do negócio. Já uma tabela fato é uma tabela primária no modelo dimensional onde os valores númericos ou medidas do negócio são armazenados \cite{Kimball2002}.
 
-Assim quando se juntam fatos e dimensões, obtém-se o chamado esquema estrela, tal como se mostra na Figura \ref{estrela}. Quando é possível que os registros de uma tabela fato sejam somados em relação a qualquer dimensão, é dito que o fato é aditivo. Já quando é possível somar em relação apenas a algumas dimensões, é dito que o fato é semiaditivo. Já quando o fato é usado apenas para registro e não podem ser somados em relação a nenhuma dimensão, é dito que o fato é não aditivo \cite{Inmon1992}.
+
+Assim quando se juntam fatos e dimensões, obtém-se o chamado esquema estrela, tal como se mostra na Figura \ref{estrela}. Quando os registros de uma tabela fato, podem ser somados a qualquer dimensão, é dito que o fato é aditivo. Quando é possível apenas somar em relação a algumas dimensões, é dito que o fato é semiaditivo. Já quando o fato é usado apenas para registro e não pode ser somado em relação a nenhuma dimensão, é dito que o fato é não aditivo \cite{Inmon1992}.
 
 
 \begin{figure}[h!]
@@ -74,14 +88,14 @@ Assim quando se juntam fatos e dimensões, obtém-se o chamado esquema estrela, 
 \FloatBarrier
 
 
-No esquema da Figura \ref{estrela}, percebe-se que uma tabela fato expressa um relacionamento muitos para muitos com as tabelas dimensões, mostrando assim que a navegabilidade dos dados quantitativos e qualitativos é mais intuitiva quando comparada com o modelo relacional normalizado \cite{Kimball2002}. Além disso, verifica-se que o fato possui uma dimensão temporal inerente associada a este, isto é, há fatos que ocorrem diariamente, como por exemplo, a venda de produtos em um supermercado, contudo é possível que as vendas sejam vistas por visões mensais, trimestrais, semestrais ou anuais logo a granuladidade dos fatos é deve ser considerada na hora de projetar um \textit{data warehouse}.
+No esquema da Figura \ref{estrela}, percebe-se que uma tabela fato expressa um relacionamento muitos para muitos com as tabelas dimensões, mostrando assim que a navegabilidade dos dados quantitativos e qualitativos é mais intuitiva quando comparada com o modelo relacional normalizado \cite{Kimball2002}. Além disso, verifica-se que a tabela fato possui uma dimensão temporal associada, isto é, há fatos que ocorrem diariamente, como por exemplo, a venda de produtos em um supermercado. Contudo, é possível que as vendas sejam vistas por visões mensais, trimestrais, semestrais ou anuais. Logo, a granuladidade dos fatos é deve ser considerada na hora de projetar um \textit{data warehouse}.
 
 
 
 
 \section{\textit{On-Line Analytical Processing} (OLAP)}
 
-O termo OLAP, inicialmente proposto por \citeonline{Codd1993}, é utilizado para caracterizar as aplicações que proveem suporte à operações de consulta e análise em um \textit{data warehouse} projetado sobre um modelo dimensional \cite{Kimball2002}. Isto permite consultas mais flexíveis quando comparadas com as consultas \textit{Online Transaction Processing} (OTLP) que são executadas em bancos dados relacionais normalizados  visando a eliminação da redudância de dados.
+O termo OLAP, inicialmente proposto por \citeonline{Codd1993}, é utilizado para caracterizar as operações de consulta e análise em um \textit{data warehouse} projetado sobre um modelo dimensional \cite{Kimball2002}. Isto permite consultas mais flexíveis quando comparadas com as consultas \textit{Online Transaction Processing} (OTLP) que são executadas em bancos dados relacionais normalizados  visando a eliminação da redudância de dados.
 
 As principais diferenças das operações \textit{On-Line Analytical Processing} (OLAP) para as operações 
 \textit{Online Transaction Processing} (OTLP) são apresentados na Tabela 
@@ -104,15 +118,15 @@ As principais diferenças das operações \textit{On-Line Analytical Processing}
 		\end{center}
 		\end{table}
 
-As operações OLAP tem como objetivo prover visualização dos dados sob diferentes perspectivas gerenciais e comportar todas as atividades de análise. Estas podem ser feitas de maneira \textit{ad hoc}, por meio das ferramentas de suporte a OLAP, contudo há algumas, que são documentadas pela literatura, e são classificadas em dois grupos: Análise Prospectiva e Análise Seletiva \apud{chaudhuri1997}{andre2000}.
+As operações OLAP tem como objetivo prover visualização dos dados sob diferentes perspectivas gerenciais e comportar todas as atividades de análise. Estas podem ser feitas de maneira \textit{ad hoc}, por meio das ferramentas de suporte à operações OLAP. Contudo, há algumas, que são documentadas pela literatura, e são classificadas em dois grupos: Análise Prospectiva e Análise Seletiva \apud{chaudhuri1997}{andre2000}.
 
-A análise prospectiva consiste em analisar a partir de um conjunto inicial de dados para chegar a dados mais detalhados ou menos detalhados \cite{Inmon1992}. Já análise análise seletiva tem como objetivo trazer a evidência para dados \cite{andre2000}. Entre as operações de análise prospectiva estão:
+A análise prospectiva consiste em realizar a análise a partir de um conjunto inicial de dados para chegar a dados mais detalhados ou menos detalhados \cite{Inmon1992}. Já a análise seletiva tem como objetivo trazer à evidência para os dados \cite{andre2000}. Entre as operações de análise prospectiva estão:
 
 \begin{easylist}[itemize]
 
-& \textit{Drill-Down}: Descer no nível de detalhes dos dados de uma dimensão. Ou seja nada mais é que adicionar cabeçalhos de linha de tabelas de dimensão \cite{Kimball2002}
+& \textit{Drill-Down}: Descer no nível de detalhes dos dados de uma dimensão. isto é,  adicionar cabeçalhos de linha de tabelas de dimensão \cite{Kimball2002}
 
-& \textit{Roll-Up}: contrário de Drill-Down, ou seja, caminhar para a visão de dados mais agregados \apud{Kimball2002}{andre2000}. 
+& \textit{Roll-Up}: contrário de Drill-Down, trata-se caminhar para a visão de dados mais agregados \apud{Kimball2002}{andre2000}. 
 
 & Drill-Across: significa caminhar a partir de uma dimensão para
 outra dimensão, combinando-as para mudar o enfoque da
@@ -130,8 +144,9 @@ Entre as operações de análise seletiva estão:
 
 \end{easylist}
 
+\section {Visualização de Dados}
 
-\section{Requisitos de DWing}
+\section{Metodologia do Projeto do \textit{Data Warehouse}}
 
 \citeonline{Kimball2002} enuncia que o ambiente de DWing nasce na necessidade do negócio e logo o projeto de um \textit{data warehouse} deve seguir os seguintes passos: 
 
@@ -148,6 +163,8 @@ Entre as operações de análise seletiva estão:
 
 \end{inparaenum} 
 
-Visando a construção do ambiente de DWing para extração e visualização das métricas de código-fonte. O projeto de DW apresenta como processo de negócio a a extração e visutalização das métricas de código-fonte
 
-Seguindo a metolodogia proposta anteriormente, apresenta-se no Capítulo \ref{estudo de caso}, o ambiente DWing que fora construído e instanciado neste Trabalho de Conclusão de Curso. 
+Seguindo a metolodogia proposta por \citeonline{Kimball2002}, entendeu-se que o processo de negócio, neste trabalho de conclusão de curso, foi avaliar a qualidade do código-fonte continuamente por meio das métricas de código-fonte.
+Os demais passos da metodologia, tais como, a granulidade dos dados, identificação dos fatos e dimensões são apresentados no Capítulo \ref{estudo de caso}.
+
+
