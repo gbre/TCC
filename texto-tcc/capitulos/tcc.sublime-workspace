@@ -15,7 +15,7 @@
 			"file": "2-metricas.tex",
 			"settings":
 			{
-				"buffer_size": 17372,
+				"buffer_size": 17402,
 				"line_ending": "Windows"
 			}
 		},
@@ -23,43 +23,39 @@
 			"file": "3-dwing.tex",
 			"settings":
 			{
-				"buffer_size": 10830,
+				"buffer_size": 13119,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.properties",
+			"file": "4-solucao.tex",
 			"settings":
 			{
-				"buffer_size": 96,
+				"buffer_size": 6900,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/2.txt",
+			"settings":
+			{
+				"buffer_size": 400,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/helpers",
+			"file": "1-introducao.tex",
 			"settings":
 			{
-				"buffer_size": 4007,
-				"line_ending": "Windows",
-				"name": "SELECT idInterval FROM (Select idInterval,"
-			}
-		},
-		{
-			"contents": "\\chapter{Estudo de Caso de Ambiente de DWing}\n\\label{estudo de caso}\n\n% \\section{Arquitetura da Solução}\n% \\section{SonarQube}\n% O SonarQube~\\footnote{Toda a documentação e \\textit{downloads} estão disponíveis\n% em \\url{http://www.sonarqube.org/}}, anteriormente conhecido como Sonar, é uma \n% ferramenta que realiza coleta de dados do código-fonte. Em sua documentação, \n% são citados sete eixos de controle de qualidade cobertos na ferramenta: \n\n% \\newlist{qualityindex}{enumerate}{4}\n% \\setlist[qualityindex]{ label* = \\arabic* -}\n\n% \\begin{qualityindex}\n% \\item Duplicação de Código\n% \\item Detecção de Complexidade de Código\n% \\item Padrão de Codificação\n% \\item Testes Unitários\n% \\item Arquitetura e Projeto\n% \\item Potenciais Defeitos\n% \\item Comentários\n% \\end{qualityindex}\n\n% %--------------------------------------------%\n% \\subsection{Escolha do SonarQube}\n% O SonarQube foi escolhido como ferramenta para extração de dados do código-fonte\n%  devido as seguintes características:\n% \\begin{description}\n  \n% \\item [Ferramenta Livre:] O SonarQube é uma ferramenta livre que está \n% licenciada sob a GNU LPGL 3, que é uma das licenças de software livre.\n\n% \\item [Suporte a várias Linguagens de Programação:]  É realizada coleta em \n% mais de 20 linguagens de programação, como por exemplo, Java, C\\#, Python, \n% C++, .Net, PHP e entre outras.\n\n% \\item [Multiplataforma:] Há suporte para os sistemas operacionais Windows, \n% Linux, Mac OS e há também para servidores de aplicação Java, como por exemplo,\n% o Apache Tomcat. \n\n% \\item [Integração com Ferramentas de Integração Contínua:] é possível realizar\n% a integração com ferramentas de integração contínua, como por exemplo, \n% Jenkins. Assim a cada versão bem sucedida de construção do código-fonte, é \n% possível aferir a qualidade do código.\n\n% \\item [Persistência em Base de Dados:] toda a coleta de dados é persistida em \n% uma base de dados. Há suporte para as principais ferramentas de bancos de \n% dados utilizadas no mercado: MySQL, PostgreSQL e Oracle.\n\n% \\item [Interface Amigável:] Diferentemente de outras ferramentas disponíveis \n% no mercado, o SonarQube tem interface web, ou seja, é possível visualização \n% das métricas do código-fonte seja realizada em navegador a escolha do usuário.\n% É possível ainda visualizar todo o código-fonte analisado.\n\n% \\item [Integração com Ferramentas de Gestão de Defeitos:] É possível integrar \n% com ferramentas de gestão de defeitos, tais como Mantis e JIRA.\n\n% \\item [Suporte a Muti produtos:] Há suporte para visualização de métricas de \n%  mais um Produto.\n\n% \\item [Suporte a Multi-Idiomas:] Há suporte para Inglês, Japonês, Russo, \n% Francês, Italiano, Espanhol e Português.\n\n% \\item [Diversidade de Plugins:] O SonarQube permite a \n% extensão de funcionalidades por meio de plugins, sendo que há uma variedade de \n% plugins para mais diversas necessidades disponíveis para \\textit{download}. \n% Cabe ressaltar que alguns são gratuitos e outros tem licença comercial.\n\n% \\item [Presença de Web Service:] Há um Web Service que extrai as métricas \n% disponíveis para diversos formatos, tais como JSON, XML e CSV.\n\n% \\end{description}\n\n\n% %--------------------------------------------%\n\n\n% \\subsection {Limitações Observadas}\n% Após uma análise ostensiva na ferramenta, concluiu-se que o SonarQube apresenta \n% as seguintes limitações:\n\n% \\begin{description}\n\n% \\item [Ausência de Visão Consolidada de Métricas:]  A maior parte das métricas\n% que SonarQube estão apenas no âmbito de Classes ou Pacotes.\n\n% \\item [Impossibilidade Definição de Múltiplos Intervalos:]  O sonarQube não \n% permite a configuração de múltiplos intervalos. É definido apenas, um \n% intervalo de alerta (amarelo) e um intervalo de atenção (vermelho).\n\n% \\item [Ausência de Avaliações Qualitativas:] As métricas não trazem nenhuma \n% avaliação qualitativa associada, ou seja, sem o conhecimento específico do \n% significado de cada métrica, a interpretação dos valores obtidos não é \n% representativo nem elucidativo sobre a qualidade do código.\n\n% \\item [Métricas como Violações:] O SonarQube utiliza para coletar dados de \n% código-fonte, em algumas linguagens de programação, coletores que são \n% identificadores de padrões de codificação. Isso quer dizer que algumas métricas \n% não são apresentadas com valor absoluto, apenas são indicadas como violações à \n% regras estabelecidas pelos padrões. \n\n% \\end{description}\n\n\n\n\n% \\section{Pentaho}\n\n% O Pentaho é um software de código aberto para inteligência empresarial, \n% desenvolvido em Java pela Pentaho Corporation, que apresenta soluções cobrindo \n% as áreas de ETL, \\textit{reporting}, OLAP e mineração de dados \n% (\\textit{data-mining}). \n\n\n \n",
-			"file": "4-solucao.tex",
-			"file_size": 4856,
-			"file_write_time": 130278115349253494,
-			"settings":
-			{
-				"buffer_size": 4696,
-				"line_ending": "Unix"
+				"buffer_size": 6857,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/bibliografia.bib",
 			"settings":
 			{
-				"buffer_size": 18100,
+				"buffer_size": 18354,
 				"line_ending": "Windows"
 			}
 		},
@@ -67,7 +63,7 @@
 			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/agradecimentos.tex",
 			"settings":
 			{
-				"buffer_size": 2368,
+				"buffer_size": 2431,
 				"line_ending": "Windows"
 			}
 		},
@@ -77,14 +73,6 @@
 			{
 				"buffer_size": 2192,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/pacotes.tex",
-			"settings":
-			{
-				"buffer_size": 678,
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -123,13 +111,31 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.properties",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/project.js",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/pacotes.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/modelo/elementosdopostexto.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/modelo/elementosdotexto.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.tex",
+		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/Makefile",
+		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/4-produtos.tex",
+		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/fixos/pacotes.tex",
+		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/3-proposta.tex",
+		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/trabalho.tex",
+		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/2-escopo.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/helpers",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/2.txt",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/bonita-metrics-27-10.js",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/q04rmzso.bst.txt",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/u1k2sb02.l0y.txt",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/metrics-13-10.js",
+		"/C/Users/Guilherme/Documents/dumps/Dump20131103.sql",
 		"/C/Users/Guilherme/Documents/parada.xml",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/Pentaho/Pentaho PDI/plugins/spoon/agile-bi/platform/pentaho-solutions/system/metadata/MySQL.properties",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/date.properties",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/metrics.js",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/time.js",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.js",
-		"/C/Users/Guilherme/Dropbox/Unb/TCC/2.txt",
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/1-introducao.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/capitulos/1-introducao.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/smell.tex",
@@ -138,10 +144,8 @@
 		"/C/Users/Guilherme/Documents/GitHub/SRA.wiki/l1w2nffg.0av.txt",
 		"/C/Users/Guilherme/Downloads/Ruby Programming Ebooks 2008/Ruby by Example - Concepts and Code, No Starch Press (2007).pdf.",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/simbolos.tex",
-		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/4-produtos.tex",
 		"/C/Users/Guilherme/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/README.markdown",
 		"/C/Users/Guilherme/Downloads/Dwing/dwing/dwing.tex",
-		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.tex",
 		"/C/Users/Guilherme/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/LaTeXTools Preferences.sublime-settings",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/informacoes.tex",
 		"/C/Users/Guilherme/Downloads/latex/template-latex/sbc-template.tex",
@@ -158,7 +162,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -172,6 +176,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"aferição",
+			"qual",
+			"equação",
 			"date",
 			"data",
 			"ou seja",
@@ -214,15 +221,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17372,
+						"buffer_size": 17402,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8260,
-								8260
+								17369,
+								17369
 							]
 						],
 						"settings":
@@ -237,7 +244,7 @@
 							"wrap_width": 80
 						},
 						"translation.x": 0.0,
-						"translation.y": 5133.0,
+						"translation.y": 5995.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -248,15 +255,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10830,
+						"buffer_size": 13119,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10829,
-								10829
+								5910,
+								5910
 							]
 						],
 						"settings":
@@ -273,81 +280,26 @@
 							"wrap_width": 80
 						},
 						"translation.x": 0.0,
-						"translation.y": 4481.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.properties",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 96,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								96,
-								31
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Java/JavaProperties.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/helpers",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4007,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_name": "SELECT idInterval FROM (Select idInterval,",
-							"syntax": "Packages/SQL/SQL.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "4-solucao.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4696,
+						"buffer_size": 6900,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								69,
-								69
+								1882,
+								1882
 							]
 						],
 						"settings":
@@ -360,7 +312,63 @@
 							"wrap_width": 80
 						},
 						"translation.x": 0.0,
+						"translation.y": 570.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/2.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 400,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								400,
+								227
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "1-introducao.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6857,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2571,
+								2551
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"wrap_width": 80
+						},
+						"translation.x": 0.0,
+						"translation.y": 542.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -371,15 +379,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 18100,
+						"buffer_size": 18354,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8208,
-								8195
+								15136,
+								15141
 							]
 						],
 						"settings":
@@ -389,7 +397,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 6969.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -400,15 +408,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2368,
+						"buffer_size": 2431,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2125,
-								2125
+								2261,
+								2261
 							]
 						],
 						"settings":
@@ -417,7 +425,7 @@
 							"wrap_width": 80
 						},
 						"translation.x": 0.0,
-						"translation.y": 62.0,
+						"translation.y": 198.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -453,40 +461,13 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/pacotes.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 678,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -522,7 +503,7 @@
 	"project": "tcc.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 42.0
 	},
 	"save_all_on_build": false,
 	"select_file":

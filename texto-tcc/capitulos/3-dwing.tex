@@ -73,22 +73,52 @@ desde uma simples transformação de ponto para vírgula, até a realização de
 
 A necessidade de centralização e agregação dos dados em um \textit{data warehouse} mostrou que a modelagem relacional com a utilização das técnicas de normalização, que visam a eliminação da redundância de dados, não é eficiente quando se realiza consultas mais complexas que fazem uso frequente da operação JOIN entre várias tabelas, pois oneram recursos hardware com grandes quantidades de acesso físico a dados. \cite{Kimball2002}
 
-Dado esse cenário, \citeonline{Kimball2002} propôs que o \textit{data warehouse} deve ser projetado de acordo com as técnicas de modelagem dimensional, que visam exibir os dados em níveis adequados de detalhes e otimizar consultas complexas \cite{valeria2012}. No modelo dimensional, são aceitos que as tabelas possuam redundância e esparcidade de dados e estas podem ser classificadas em tabelas fatos e tabelas dimensões. Estas contém dados textuais, que pode conter vários atributos descritivos que expressam relações hierarquizáveis do negócio. Já uma tabela fato é uma tabela primária no modelo dimensional onde os valores númericos ou medidas do negócio são armazenados \cite{Kimball2002}.
+Dado esse cenário, \citeonline{Kimball2002} propôs que o \textit{data warehouse} deve ser projetado de acordo com as técnicas de modelagem dimensional, que visam exibir os dados em níveis adequados de detalhes e otimizar consultas complexas \cite{valeria2012}. No modelo dimensional, são aceitos que as tabelas possuam redundância e esparcidade de dados e estas podem ser classificadas em tabelas fatos e tabelas dimensões. Estas contém dados textuais, que pode conter vários atributos descritivos que expressam relações hierarquizáveis do negócio. Já uma tabela fato é uma tabela primária no modelo dimensional onde os valores númericos ou medidas do negócio são armazenados \cite{Kimball2002}. 
 
 
-Assim quando se juntam fatos e dimensões, obtém-se o chamado esquema estrela, tal como se mostra na Figura \ref{estrela}. Quando os registros de uma tabela fato, podem ser somados a qualquer dimensão, é dito que o fato é aditivo. Quando é possível apenas somar em relação a algumas dimensões, é dito que o fato é semiaditivo. Já quando o fato é usado apenas para registro e não pode ser somado em relação a nenhuma dimensão, é dito que o fato é não aditivo \cite{Inmon1992}.
+Quando se juntam fatos e dimensões desnormalizadas, obtém-se o chamado esquema estrela, tal como se mostra na Figura \ref{estrela}. Quando em um modelo dimensional, se faz necessário uso da normalização, o modelo passa então a ser chamado por \textit{modelo snowflake}, cujo ganho de espaço é menor que 1\% do total necessário para armazenar o esquema do \textit{data warehouse} \apud{valeria2012}{Kimball2002}. Em ambos os casos, quando se relaciona três dimensões, obtém-se os cubos de dados \cite{Kimball2002}, tal como se mostra na figura \ref{cube}
 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[keepaspectratio=false,scale=1]{figuras/estrela.eps}
-\caption{Exemplo de Esquema Estrela extraído de \citeonline{andre2000}}
+\includegraphics[keepaspectratio=false,scale=0.85]{figuras/star_schema.eps}
+\caption{Exemplo de Esquema Estrela extraído de \citeonline{valeria2012}}
 \label{estrela}
 \end{figure}
 \FloatBarrier
 
 
-No esquema da Figura \ref{estrela}, percebe-se que uma tabela fato expressa um relacionamento muitos para muitos com as tabelas dimensões, mostrando assim que a navegabilidade dos dados quantitativos e qualitativos é mais intuitiva quando comparada com o modelo relacional normalizado \cite{Kimball2002}. Além disso, verifica-se que a tabela fato possui uma dimensão temporal associada, isto é, há fatos que ocorrem diariamente, como por exemplo, a venda de produtos em um supermercado. Contudo, é possível que as vendas sejam vistas por visões mensais, trimestrais, semestrais ou anuais. Logo, a granuladidade dos fatos é deve ser considerada na hora de projetar um \textit{data warehouse}.
+\begin{figure}[h!]
+\centering
+\includegraphics[keepaspectratio=false,scale=0.85]{figuras/cube.eps}
+\caption{Exemplo de Cubo Multidimensional de dados extraído de \citeonline{valeria2012}}
+\label{cube}
+\end{figure}
+\FloatBarrier
+
+
+No esquema da Figura \ref{estrela}, percebe-se que uma tabela fato expressa um relacionamento muitos para muitos com as tabelas dimensões, mostrando assim que a navegabilidade dos dados quantitativos e qualitativos é mais intuitiva quando comparada com o modelo relacional normalizado \cite{Kimball2002}. Além disso, verifica-se que a tabela fato possui uma dimensão temporal associada, isto é, há fatos que ocorrem diariamente, como por exemplo, a venda de produtos em um supermercado. Contudo, é possível que as vendas sejam vistas por visões mensais, trimestrais, semestrais ou anuais. Logo, a granuladidade dos fatos deve ser considerada na hora de projetar um \textit{data warehouse}. Além disto, deve-se ainda considerar a características do fato, pois quando os registros de uma tabela fato, podem ser somados a qualquer dimensão, é dito que o fato é aditivo. Quando é possível apenas somar em relação a algumas dimensões, é dito que o fato é semiaditivo. Já quando o fato é usado apenas para registro e não pode ser somado em relação a nenhuma dimensão, é dito que o fato é não aditivo \cite{Inmon1992}.
+
+\subsection{Metodologia do Projeto do \textit{Data Warehouse}}
+
+\citeonline{Kimball2002} enuncia que o ambiente de DWing nasce na necessidade do negócio e logo o projeto de um \textit{data warehouse} deve seguir os seguintes passos: 
+
+\begin{inparaenum}[1)]
+	\item Selecionar o Processo de Negócio com requisito fundamental do 
+	projeto DW;
+	
+	\item Declarar a granularidade dos dados necessários para processo de 
+	negócio, isto é, verificar a periodicidade de coleta dos dados (diários, semanais, mensais, trimestrais, semestrais ou anuais);
+	
+	\item Escolher as dimensões;
+	
+	\item Identificar os fatos;
+
+\end{inparaenum} 
+
+
+Seguindo a metolodogia proposta por \citeonline{Kimball2002}, entende-se que o processo de negócio, neste trabalho de conclusão de curso, foi avaliar a qualidade do código-fonte continuamente por meio das métricas de código-fonte.
+Os demais passos da metodologia, tais como, a granulidade dos dados, identificação dos fatos e dimensões serão apresentados no Capítulo \ref{estudo de caso}.
 
 
 
@@ -109,14 +139,31 @@ As principais diferenças das operações \textit{On-Line Analytical Processing}
 		Modelagem Dimensional (Tabelas Fato e Dimensão) & Modelagem Relacional com a utilização das formas normais (3N, 4N, 5N) \\ \hline
 		Dados armazenados em nível transacional e agregado    & Dados em nível em nível transacional        \\ \hline
 		Visa o diminuir o uso do JOIN & Faz uso constante de Join   \\ \hline
-		Estrutura de tipicamente estática   & Estrutura tipicamente dinâmica      \\ \hline
+		Análise de Dados & Atualização de dados
+		\\ \hline
+		Estrutura de tipicamente estática  & Estrutura tipicamente dinâmica      \\ \hline
 		Proveem informações atuais e do passado & Geralmente sem suporte a estado temporal dos dados
 		      \\ \hline
+
 		\end{tabular}
-		\caption{Diferenças entre OLAP e OLTP extraído de \citeonline{valeria2012} e \citeonline{andre2000}}
+		\caption{Diferenças entre OLAP e OLTP extraído de \citeonline{valeria2012}, \citeonline{andre2000} e \citeonline{hilmer2002}}
 		\label{olapxoltp}
 		\end{center}
 		\end{table}
+		\FloatBarrier
+
+Segundo \citeonline{hilmer2002}, a consolidação é uma das mais importantes operações OLAP. Ela envolve a agregação de dados sobre uma ou mais hierarquias de dimensões. A generalização de uma consulta de consolidação pode ser representada formalmente através de: 
+
+\textbf{Select} $\displaystyle P,F_{1}(m_1),..., F_p(m_p)$
+
+\textbf{From} $\displaystyle C(D_1(A_{11}),...,D_n(A_{n+1})$
+
+\textbf{Where} $\displaystyle \phi(D_1)$ \textbf{and} ... \textbf{and}  $\displaystyle\phi(D_n)$
+
+\textbf{Group by} G
+
+onde P representa os atributos a serem selecionados das dimensões. $\displaystyle F_{i}(m_1)$ para $\displaystyle (1 \leq i \leq p) $ representando uma função de agregação. A clásula \textbf{From} $\displaystyle C(D_1(A_{11}),...,D_n(A_{n+1})$ indica que a fonte de dados está indexada por suas tabelas dimensões, sendo que cada uma destas é referenciada como $\displaystyle D_i ... D_n $ onde  $\displaystyle D_i $ contém  $\displaystyle K_i$ atributos de  $\displaystyle D_i(A_{i1})$, ... $ \displaystyle D_i(A_{ik_{i}}) $ que descrevem a dimensão.  A clásula \textbf{Where} $\displaystyle \phi(D_i)$ é o predicado $\displaystyle (D_i(A_{ij}) = v_{ij}$, onde $\displaystyle v_{ij} \in dom(D_i(A_{ij}))$ onde $\displaystyle (1 \leq i \leq n) $ e $\displaystyle (1 \leq j \leq K_{i}) $. A clásula \textbf{Group by} G $\displaystyle \subset {D_{i}(A_{ij})} $ tal que $\displaystyle (1 \leq i \leq n) $ e $\displaystyle (1 \leq j \leq K_{i})$.
+
 
 As operações OLAP tem como objetivo prover visualização dos dados sob diferentes perspectivas gerenciais e comportar todas as atividades de análise. Estas podem ser feitas de maneira \textit{ad hoc}, por meio das ferramentas de suporte à operações OLAP. Contudo, há algumas, que são documentadas pela literatura, e são classificadas em dois grupos: Análise Prospectiva e Análise Seletiva \apud{chaudhuri1997}{andre2000}.
 
@@ -124,7 +171,7 @@ A análise prospectiva consiste em realizar a análise a partir de um conjunto i
 
 \begin{easylist}[itemize]
 
-& \textit{Drill-Down}: Descer no nível de detalhes dos dados de uma dimensão. isto é,  adicionar cabeçalhos de linha de tabelas de dimensão \cite{Kimball2002}
+& \textit{Drill-Down}: Descer no nível de detalhes dos dados de uma dimensão. isto é, adicionar cabeçalhos de linha de tabelas de dimensão \cite{Kimball2002}.
 
 & \textit{Roll-Up}: contrário de Drill-Down, trata-se caminhar para a visão de dados mais agregados \apud{Kimball2002}{andre2000}. 
 
@@ -138,7 +185,7 @@ Entre as operações de análise seletiva estão:
 
 \begin{easylist}[itemize]
 
-& \textit{Slice and Dice} : Em português, significa cortar e fatiar. Esta operação seleciona pedaços transversais do modelo dimensional e em seguida aplica critérios de seleção sobre este pedaço. \cite{andre2000}. Ou seja trata-se de uma operação semelhante a clásula WHERE do SQL \cite{valeria2012}
+& \textit{Slice and Dice} : Em português, significa cortar e fatiar. Esta operação seleciona pedaços transversais do modelo dimensional e em seguida aplica critérios de seleção sobre este pedaço. \cite{andre2000}. Ou seja trata-se de uma operação semelhante a clásula WHERE do SQL \cite{valeria2012}.
 
 & \textit{Pivoting} : Trata-se de uma operação de rotação, isto é, muda-se a orientação das tabelas dimensionais afim de restrigir a visualização de dimensões em um relatório. \cite{andre2000}.
 
@@ -146,25 +193,5 @@ Entre as operações de análise seletiva estão:
 
 \section {Visualização de Dados}
 
-\section{Metodologia do Projeto do \textit{Data Warehouse}}
-
-\citeonline{Kimball2002} enuncia que o ambiente de DWing nasce na necessidade do negócio e logo o projeto de um \textit{data warehouse} deve seguir os seguintes passos: 
-
-\begin{inparaenum}[1)]
-	\item Selecionar o Processo de Negócio com requisito fundamental do 
-	projeto DW;
-	
-	\item Declarar a granularidade dos dados necessários para processo de 
-	negócio, isto é, verificar a periodicidade de coleta dos dados (diários, semanais, mensais, trimestrais, semestrais ou anuais);
-	
-	\item Escolher as dimensões;
-	
-	\item Identificar os fatos;
-
-\end{inparaenum} 
-
-
-Seguindo a metolodogia proposta por \citeonline{Kimball2002}, entendeu-se que o processo de negócio, neste trabalho de conclusão de curso, foi avaliar a qualidade do código-fonte continuamente por meio das métricas de código-fonte.
-Os demais passos da metodologia, tais como, a granulidade dos dados, identificação dos fatos e dimensões são apresentados no Capítulo \ref{estudo de caso}.
 
 

@@ -1,7 +1,72 @@
-\chapter{Estudo de Caso de Ambiente de DWing}
+\chapter{Implementação do Ambiente de DWing}
 \label{estudo de caso}
 
-% \section{Arquitetura da Solução}
+\section{Arquitetura da Implementação}
+
+Para a implementação do ambiente do DWing para métricas de código-fonte, foi definida a arquitetura tal como se mostra Figura \ref{arquitetura}.
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=false,scale=0.20]{figuras/arquitetura-dwing.eps}
+\caption{Arquitetura do Ambiente de Dwing para Métricas de Código-Fonte}
+\label{arquitetura}
+\end{figure}
+\FloatBarrier
+
+Para selecionar as ferramentas, que implementarão cada um dos componentes do ambiente DWing, estabeleceram-se critérios gerais de seleção tal como pode ser visto na Tabela \ref{seleção}.
+
+
+	\begin{table}[!ht]
+	\begin{center}
+	 \begin{tabular}{|l|l|}
+		\hline
+		Identificador & Critério 
+		\\ \hline
+		CG01 & A ferramenta deve possuir código aberto.  
+		\\ \hline
+		CG02 & A ferramenta deve ter documentação disponível em inglês e português.      
+		\\ \hline
+		CG03 & A ferramenta deve possuir uma comunidade ativa em seu uso.
+		\\ \hline
+		CG04 & A ferramenta deve possuir releases estáveis.    
+		\\ \hline
+		\end{tabular}
+		\caption{Critérios Gerais de escolha das ferramentas}
+		\label{seleção}
+		\end{center}
+		\end{table}	
+
+
+\section{Ferramenta de Análise Estática de Código-Fonte}
+
+Além dos critérios gerais estabelecidos, para escolha da ferramenta de análise estática de código-fonte, estabeleceram-se os critérios específicos para seleção de ferramentas de análise estática de código fonte (CAE) apresentados na Tabela \ref{specific}
+
+
+	\begin{table}[!ht]
+	\begin{center}
+	 \begin{tabular}{|l|p{10cm}|}
+		\hline
+		Identificador & Critério 
+		\\ \hline
+		CAE01 & A ferramenta deve provê as métricas de código-fonte, que foram definidas na Tabela \ref{metrics}.
+		\\ \hline
+		CAE02 & A ferramenta deve possuir saída de dados em algum formato, tais como PDF,JSON,TXT,CSV e entre outros.      
+		\\ \hline
+		\end{tabular}
+		\caption{Critérios Específicos para Ferramenta de Análise Estática de Código-Fonte}
+		\label{specific}
+		\end{center}
+		\end{table}	
+
+
+\section{Ferramenta de Extração, Transformação e Carga (ETL)}
+
+\section{Projeto do \textit{Data Warehouse}}
+
+\section{Ferramenta de Apoio as Consultas OLAP e Visualização de Dados}
+% Critérios de Selecção de Ferramentas
+
 % \section{SonarQube}
 % O SonarQube~\footnote{Toda a documentação e \textit{downloads} estão disponíveis
 % em \url{http://www.sonarqube.org/}}, anteriormente conhecido como Sonar, é uma 
