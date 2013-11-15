@@ -175,23 +175,119 @@ A análise prospectiva consiste em realizar a análise a partir de um conjunto i
 
 & \textit{Roll-Up}: contrário de Drill-Down, trata-se caminhar para a visão de dados mais agregados \apud{Kimball2002}{andre2000}. 
 
-& Drill-Across: significa caminhar a partir de uma dimensão para
-outra dimensão, combinando-as para mudar o enfoque da
-análise \cite{andre2000}.
 
 \end{easylist}
+
+Considerando o exemplo do total de vendas no mês de novembro em uma rede lojas, que agregam as Lojas Sul, Norte e Oeste tal como se mostra a Tabela \ref{before}, a operação Drill-Down pode ser exemplificada, quando se adiciona a dimensão Produto na Tabela \ref{before}, isto é, aumentando o nível de detalhes, tendo então como resultado a Tabela \ref{after}. Já a operação de Roll-Up é o contrário, isto é diminuir o nível de datalhe partindo da Tabela 
+\ref{after} para Tabela \ref{before}.
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Mês & Loja & Total de Unidades Vendidas \\ \hline
+Novembro & Loja Sul & 200                        \\ \hline
+Novembro & Loja Norte & 300                        \\ \hline
+Novembro & Loja Oeste & 230                        \\ \hline
+\end{tabular}
+\caption{Exemplo do Total de Vendas de uma Rede de Lojas no mês de Novembro}
+\label{before}
+\end{table}
+\FloatBarrier
+
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\multirow{2}{*}{Mês} & \multirow{2}{*}{Loja} & \multicolumn{4}{c|}{Produto}                 \\ \cline{3-6} 
+                     &                       & Produto A & Produto B & Produto C & Produto D \\ \hline
+Novembro             & Loja Sul              & 10        & 70        & 50        & 70        \\ \hline
+Novembro             & Loja Norte            & 100       & 60        & 50        & 90        \\ \hline
+Novembro             & Loja Oeste            & 25        & 78        & 67        & 60        \\ \hline
+\end{tabular}
+\caption{Exemplo do Total de Vendas de uma rede de lojas no mês de novembro com a dimensão Produto}
+\label{after}
+\end{table}
+
+\begin{easylist}[itemize]
+
+& Drill-Across: significa caminhar a partir de uma dimensão para
+outra dimensão, combinando-as para mudar o enfoque da
+análise \cite{andre2000}. O Drill Across pode ser aplicado à Tabela \ref{before}, obtendo assim a Tabela \ref{after-across}.
+\end{easylist}
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{Loja Norte} \\ \hline
+\cline{1-2}
+Produto         & Novembro       \\ \hline
+Produto A & 100 \\ \hline
+Produto B & 60  \\ \hline
+Produto C & 50  \\ \hline
+Produto D & 60  \\ \hline
+
+\end{tabular}
+\caption{Exemplo do Total de vendas da loja norte no mês de novembro}
+\label{after-across}
+\end{table}
 
 Entre as operações de análise seletiva estão:
 
 \begin{easylist}[itemize]
 
-& \textit{Slice and Dice} : Em português, significa cortar e fatiar. Esta operação seleciona pedaços transversais do modelo dimensional e em seguida aplica critérios de seleção sobre este pedaço. \cite{andre2000}. Ou seja trata-se de uma operação semelhante a clásula WHERE do SQL \cite{valeria2012}.
+& \textit{Slice and Dice} : Em português, significa cortar e fatiar. Esta operação seleciona pedaços transversais do modelo dimensional e em seguida aplica critérios de seleção sobre este pedaço. \cite{andre2000}. Ou seja trata-se de uma operação semelhante a clásula WHERE do SQL \cite{valeria2012}. A operação pode ser aplicada na Tabela \ref{before-slice}, obtendo assim a Tabela \ref{after-slice}
 
-& \textit{Pivoting} : Trata-se de uma operação de rotação, isto é, muda-se a orientação das tabelas dimensionais afim de restrigir a visualização de dimensões em um relatório. \cite{andre2000}.
 
 \end{easylist}
 
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Produto                                          & \multicolumn{1}{|c|}{Loja} & Outubro & Novembro & Dezembro \\ \hline
+
+%-------------------------------
+\multicolumn{1}{|c|}{\multirow{3}{*}{Produto A}} & Loja Sul                   & 50      & 10       & 20       \\ \cline{2-5} 
+& Loja Norte                 & 60      & 100      & 24       \\ \cline{2-5} 
+& Loja Oeste                 & 70      & 25       & 53       \\ \hline
+
+%-------------------------------------
+\multirow{3}{*}{Produto B}                       & Loja Sul                   & 32      & 70       & 20       \\ \cline{2-5} 
+& Loja Norte                 & 42      & 60       & 43       \\ \cline{2-5}
+
+& Loja Oeste                 & 56      & 78       & 56       \\ \hline
+
+
+%--------------------------
+\multirow{3}{*}{Produto C}                       & Loja Sul                   & 34      & 50       & 23       \\ \cline{2-5} 
+& Loja Norte                 & 45      & 50       & 74       \\ \cline{2-5} 
+& Loja Oeste                 & 83      & 67       & 65       \\ \hline
+
+
+%------------------------------------
+\multirow{3}{*}{Produto D}                       & Loja Sul                   & 56      & 70       & 35       \\ \cline{2-5} 
+& Loja Norte                 & 12      & 90       & 34       \\ \cline{2-5} 
+& Loja Oeste                 & 64      & 60       & 23       \\ \hline
+
+\end{tabular}
+\caption{Exemplo de Vendas por produto de uma rede de lojas nos meses de novembro e dezembro}
+\label{before-slice}
+\end{table}
+
+
+\begin{easylist}[itemize]
+
+& \textit{Pivoting} : Trata-se de uma operação de rotação de 90º em um cubo multidimensional, isto é, muda-se a orientação das tabelas dimensionais afim de restrigir a visualização das dimensões em uma tabela. \cite{andre2000}. A operação de Pivoting pode ser exemplificada ao partir da Tabela \ref{before-pivoting} para Tabela \ref{after-pivoting}
+
+
+\end{easylist}
+
+
+
+
 \section {Visualização de Dados}
 
-
-
+Os números tem importantes histórias a contar e cabe a quem desejar comunicá-los, saber a forma mais efetiva de fazê-lo.

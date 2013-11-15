@@ -49,17 +49,105 @@ Além dos critérios gerais estabelecidos, para escolha da ferramenta de anális
 		\hline
 		Identificador & Critério 
 		\\ \hline
-		CAE01 & A ferramenta deve provê as métricas de código-fonte para as linguagens de programação, tal como especificado na Tabela 
+		CAE01 & A ferramenta deve prover as métricas de código-fonte para as linguagens de programação, tal como especificado na Tabela \ref{metrics}.
 		\\ \hline
-		CAE02 & A ferramenta deve possuir saída de dados em algum formato, tais como PDF,JSON,TXT,CSV e entre outros.      
+		CAE02 & A ferramenta deve possuir saída de dados em arquivo em alguns dos seguintes formatos: JSON, XML, TXT, CSV.      
 		\\ \hline
-		CAE03 & A ferramenta deve possuir um meio de extação de dados.     
+		CAE03 & A ferramenta deve ser mutiplataforma.
 		\\ \hline
 		\end{tabular}
 		\caption{Critérios Específicos para Ferramenta de Análise Estática de Código-Fonte}
 		\label{specific}
 		\end{center}
 		\end{table}	
+
+Após a realização de uma busca por ferramentas, foram encontradas o SonarQube~\footnote{Disponível em \url{http://www.sonarqube.org/}} e Analizo~\footnote{Disponível em \url{http:/http://analizo.org/}} queAs principais características de ambas são apresentadas na Tabela \ref{dados-ferramentas-estatica}
+\begin{savenotes}
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|p{5cm}|p{4.5cm}|p{5cm}|}
+\hline
+
+Característica 
+
+&
+
+\begin{center}
+\includegraphics[keepaspectratio=false,scale=0.48]{figuras/analizo.eps} 
+\end{center}
+
+
+&
+
+
+
+\begin{center}
+\includegraphics[keepaspectratio=false,scale=0.48]{figuras/sonarqube.eps} 
+\end{center}
+
+
+
+
+
+   
+\\ \hline
+
+
+%--------------------------
+Linguagens com Suporte  & C, C++, Java & C, C++, Java, PHP,Scala, Python, Delphi, Pascal, Flex, ActionScript, Javascript, Groovy~\footnote{O SonarQube oferece suporte comercial a outras linguagens, contudo foram listadas apenas que tem suporte por meio de \textit{plugins} de código-aberto} \\ \hline
+Licença  & GNU GPL3 & GNU LGPL3  \\ \hline
+
+
+
+%--------------------------
+Formato de Saída das Métricas  & CSV, YAML & JSON, XML, CSV \\ \hline
+
+%--------------------------
+Plataforma  &Windows, Linux, Mac OS X e Servidores de Aplicação Java & Debian e Ubuntu                                                                                              \\ \hline
+
+%--------------------------
+Integração com outras ferramentas & Mezuro,Kalibro & Jenkins, Hudson, Mantis, JIRA, Crowd e entre outros \\ \hline
+
+%--------------------------
+\multirow{4}{5cm}{Números do Repositório Oficial no GitHub em 14/11/2013}
+& \textit{Commits:} 7532 & \textit{Commits:} 639\\ \cline{2-3} 
+
+&\textit{Branches:} 16 & \textit{Branches:} 1  \\ \cline{2-3} 
+& Contribuidores: 18 & Contribuidores: 7  \\ \cline{2-3} 
+& \textit{Releases:} 36  & \textit{Releases:} 27
+
+ \\ \hline
+
+%--------------------------
+Número de Casos Abertos no \textit{Issue Tracker} em 14/11/2013 & 552  & 26 
+\\ \hline
+
+%--------------------------
+Sistema de Controle de Versões & Git & Git \\ \hline
+
+%--------------------------
+Idioma com Suporte & Inglês & Inglês, Português, Japonês, Italiano, Chinês, Francês, Grego e Espanhol \\ \hline
+
+%------------------------
+Idioma da Documentação & Inglês & Inglês
+
+\\ \hline
+%-----------------------
+Última Versão Estável & 1.17.0 & 4.0  
+
+\\ \hline
+ %-----------------------
+Data de Lançamento da Última Versão Estável & 31 de Janeiro de 2013 & 4 de Novembro de 2013
+
+\\ \hline
+\end{tabular}
+\caption{Caractrísticas do SonarQube e do Analizo}
+\label{dados-ferramentas-estatica}
+\end{table}
+\end{savenotes}
+
+Tendo as características gerais de cada ferramenta levantadas, foram comparadas (SonarQube e Analizo) quanto aos critérios gerais e aos critérios específicos para ferramentas de análise estática, tal como se mostra na Tabela \ref{compare}
+
 
 
 \section{Ferramenta de Extração, Transformação e Carga (ETL)}
