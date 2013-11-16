@@ -171,9 +171,9 @@ A análise prospectiva consiste em realizar a análise a partir de um conjunto i
 
 \begin{easylist}[itemize]
 
-& \textit{Drill-Down}: Descer no nível de detalhes dos dados de uma dimensão. isto é, adicionar cabeçalhos de linha de tabelas de dimensão \cite{Kimball2002}.
+& \textit{Drill-Down:} Descer no nível de detalhes dos dados de uma dimensão. isto é, adicionar cabeçalhos de linha de tabelas de dimensão \cite{Kimball2002}.
 
-& \textit{Roll-Up}: contrário de Drill-Down, trata-se caminhar para a visão de dados mais agregados \apud{Kimball2002}{andre2000}. 
+& \textit{Roll-Up:} contrário de Drill-Down, trata-se caminhar para a visão de dados mais agregados \apud{Kimball2002}{andre2000}. 
 
 
 \end{easylist}
@@ -212,7 +212,7 @@ Novembro             & Loja Oeste            & 25        & 78        & 67       
 
 \begin{easylist}[itemize]
 
-& Drill-Across: significa caminhar a partir de uma dimensão para
+& \textit{Drill-Across:} significa caminhar a partir de uma dimensão para
 outra dimensão, combinando-as para mudar o enfoque da
 análise \cite{andre2000}. O Drill Across pode ser aplicado à Tabela \ref{before}, obtendo assim a Tabela \ref{after-across}.
 \end{easylist}
@@ -238,7 +238,7 @@ Entre as operações de análise seletiva estão:
 
 \begin{easylist}[itemize]
 
-& \textit{Slice and Dice} : Em português, significa cortar e fatiar. Esta operação seleciona pedaços transversais do modelo dimensional e em seguida aplica critérios de seleção sobre este pedaço. \cite{andre2000}. Ou seja trata-se de uma operação semelhante a clásula WHERE do SQL \cite{valeria2012}. A operação pode ser aplicada na Tabela \ref{before-slice}, obtendo assim a Tabela \ref{after-slice}
+& \textit{Slice and Dice:} Em português, significa cortar e fatiar. Esta operação seleciona pedaços transversais do modelo dimensional e em seguida aplica critérios de seleção sobre este pedaço. \cite{andre2000}. Ou seja trata-se de uma operação semelhante a clásula WHERE do SQL \cite{valeria2012}. A operação pode ser aplicada na Tabela \ref{before-slice}, obtendo assim a Tabela \ref{after-slice}
 
 
 \end{easylist}
@@ -278,16 +278,87 @@ Produto                                          & \multicolumn{1}{|c|}{Loja} & 
 \end{table}
 
 
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|l|l|l|}
+\hline
+\multicolumn{1}{|l|}{Produto} & \multicolumn{1}{|c|}{Loja} & Outubro & Novembro \\ \hline
+\multirow{3}{*}{Produto A}    & Loja Sul                   & 50      & 10       \\ \cline{2-4} 
+\multicolumn{1}{|l|}{}        & Loja Norte                 & 60      & 100      \\ \cline{2-4} 
+\multicolumn{1}{|l|}{}        & Loja Oeste                 & 70      & 25       \\ \hline
+\end{tabular}
+\caption{Exemplo de Vendas do Produto A na rede de lojas}
+\label{after-slice}
+\end{table}
+
+
 \begin{easylist}[itemize]
 
-& \textit{Pivoting} : Trata-se de uma operação de rotação de 90º em um cubo multidimensional, isto é, muda-se a orientação das tabelas dimensionais afim de restrigir a visualização das dimensões em uma tabela. \cite{andre2000}. A operação de Pivoting pode ser exemplificada ao partir da Tabela \ref{before-pivoting} para Tabela \ref{after-pivoting}
+& \textit{Pivoting:} Trata-se de uma operação de rotação de 90º em um cubo multidimensional, isto é, muda-se a orientação das tabelas dimensionais afim de restrigir a visualização das dimensões em uma tabela. \cite{andre2000}. A operação de Pivoting pode ser exemplificada ao partir da Tabela \ref{before-slice} para Tabela \ref{after-pivoting}
 
 
 \end{easylist}
 
 
 
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|c|l|l|l|l|}
+\hline
+\multicolumn{1}{|l|}{Loja}                        & Produto   & Outubro  & Novembro  & Dezembro \\ \hline
+\multirow{4}{*}{Loja Sul}                         & Produto A & 50       & 10        & 20       \\ \cline{2-5} 
+\multicolumn{1}{|l|}{}                            & Produto B & 32       & 70        & 20       \\ \cline{2-5} 
+\multicolumn{1}{|l|}{}                            & Produto C & 34       & 50        & 23       \\ \cline{2-5} 
+\multicolumn{1}{|l|}{}                            & Produto D & 56       & 70        & 35       \\ \hline
+\multirow{4}{*}{Loja Norte}                       & Produto A & 60       & 100       & 24       \\ \cline{2-5} 
+                                                  & Produto B & 42       & 60        & 43       \\ \cline{2-5} 
+                                                  & Produto C & 45       & 50        & 74       \\ \cline{2-5} 
+                                                  & Produto D & 12       & 90        & 34       \\ \hline
+\multicolumn{1}{|l|}{\multirow{4}{*}{Loja Oeste}} & Produto A & 70       & 25        & 53       \\ \cline{2-5} 
+\multicolumn{1}{|l|}{}                            & Produto B & 56       & 78        & 56       \\ \cline{2-5} 
+\multicolumn{1}{|l|}{}                            & Produto C & 83       & 67        & 65       \\ \cline{2-5} 
+\multicolumn{1}{|l|}{}                            & Produto D & 64       & 60        & 23       \\ \hline
+\end{tabular}
+\caption{Exemplo de Vendas por loja para cada um dos produtos nos meses de novembro e dezembro}
+\label{after-pivoting}
+\end{table}
+
+
 
 \section {Visualização de Dados}
 
-Os números tem importantes histórias a contar e cabe a quem desejar comunicá-los, saber a forma mais efetiva de fazê-lo.
+Dados transmitem importantes informações, logo cabe a quem deseja comunicá-los, escolher a forma mais efetiva de fazê-lo \cite{raquel2013}. Segundo \citeonline{raquel2013}, tabelas e gráficos são as formas mais comuns de transmitir as informações quantitativas, sendo que\begin{inparaenum}[i)]
+\item tabelas são utilizadas para consulta de valores individuais que podem ser comparados envolvendo, em certos casos, mais de uma unidade de medida;
+\item gráficos são indicados para exibição de informação quantitativa nal qual os valores indicam pontos de interesse e estes podem ser comparados por sua similaridades e dessimilaridades\end{inparaenum}. 
+
+
+\citeonline{few2009now} destaca que ainda que técnicas tradicionais de visualização de dados tais como, tabelas, histogramas, gráficos de pizza, podem descrever quase todos os tipos da relação quantitativa tais como, séries temporais, desvio, parte-todo, distribuição, etc; as representações tradicionais não são suficientes para transmitir ao receptor efetivamente a mensagem que dados trnasmitem. Além disso,\citeonline{few2009now} enuncia que as técnicas tradicionais de visualização não tem nenhum poder de flexibilização quanto a visualização de dados.
+
+
+Uma das técnicas de visualização de dados que tem se destacado é o uso de \textit{dashboards}, que é uma representação visual das informalçoes mais importantes necessárias para atingir um ou mais objetivos que cabe inteiramente em uma tela de computador de forma que podem ser monitoradas simultaneamente \cite{raquel2013}, tal como se mostra na Figura \ref{dashboard}
+e na Figura \ref{dashboard2}.
+
+\begin{figure}[ht!]
+\centering
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/dashboard.eps}
+	\caption{Exemplo de Dashboard extraído de 
+	\citeonline{raquel2013}}
+	\label{dashboard}
+\end{figure}
+\FloatBarrier
+
+
+\begin{figure}[ht!]
+\centering
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/dashboard2.eps}
+	\caption{Outro exemplo de Dashboard extraído de 
+	\citeonline{raquel2013}}
+	\label{dashboard2}
+\end{figure}
+\FloatBarrier
+
+Em um próximo passo do trabalho, pretende-se implementar o \textit{Dashboard} para a visualização das métricas de código-fonte, dado que segundo \citeonline{raquel2013} um \textit{dashboard} tem como papel estrátegico a apresentação dos principais indicadores para tomada de decisão, logo comunicando os dados de maneira mais eficiente quando comparado com a exibição tabelas e gráficos isolados.
+
+
+
+
