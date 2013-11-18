@@ -1,39 +1,18 @@
 \chapter{Introdução}
 
-As metodologias ágeis vem ganhando cada vez mais espaço no mercado global de desenvolvimento de software, pois enfatizam a qualidade do produto sobre a qualidade do processo, procurando minimizar a execução de atividades não essenciais ao longo do ciclo de vida de desenvolvimento de software.
 
-O eXtreme Programming (XP), que é uma metodologia ágil, tem a codificação como atividade chave durante um projeto de desenvolvimento de software \cite{beck1999}. Isso se torna perceptível quando se analisa algumas práticas do XP,~\footnote{Documentação disponível em \url{http://www.extremeprogramming.org}} tais como:
-
-\newlist{pratices}{enumerate}{4}
-\setlist[pratices]{ label* = \arabic* -}
+Dentre as inúmeras características que fazem um bom software, várias delas podem ser percebidas no código-fonte e algumas são exclusivas dele \cite{Meirelles2013}. Logo decisões de desenvolvedores, que impactam fortemente sobre a qualidade do código-fonte, podem podem gerar trechos de código não coesos, que venham a se desfazer com o tempo, que aumentam exponencialmente a chance de manutenções corretivas onerosas \cite{Meirelles2013} \cite{beck2007implementation} \cite{beck1999}.
 
 
-\begin{pratices}
 
-\item Padronização do Código: O código é a principal forma de comunicação entre 
-a equipe. A padronização de código o torna consistente e fácil para leitura e 
-refatoração por todo o time.
+Portato avaliar continuamente a qualidade do código-fonte, pode identificar antecipadamente trechos a serem melhorados, atingindo assim maiores graus de manutenibilidade, coesão, entendimento e legibilidade \cite{fowler1999refactoring}. Entre os vários métodos de análise da qualidade, está a análise estática de código-fonte, que se refere a uma análise automatizada das estruturas internas do código, em nível de linguagem de programação, sem realizar a execução do mesmo, com objetivo de obter métricas de código-fonte \cite{Terra2008} 
+\cite{Emanuelsson2008} \cite{Wichmann95}  \cite{Nielson:1999} 
+\cite{Sommerville10}. 
 
-\item Propriedade Coletiva do Código: Cada programador pode melhorar qualquer 
-parte do código quando houver a oportunidade.
-
-\item Programação em Pares: Todo código é escrito por duas pessoas: uma que 
-olha para uma máquina, e outra com um teclado e um mouse.
-
-\item Integração Contínua: Todo novo código é integrado ao sistema e, quando 
-integrado, o sistema é totalmente reconstruído do zero e todos os testes devem 
-passar. Caso contrário, o código é descartado.
-
-\end{pratices} 
-
-Dada a importância do código-fonte, infere-se a qualidade do trabalho produzido
- pela qualidade do código-fonte, sendo um dos métodos mais utilizados
-para tal a análise estática de código-fonte. Durante anos, vários trabalhos 
-foram publicados visando a definição formal de métodos de análise estática 
-de código-fonte. Vide os trabalhos de \citeonline{Wichmann95}, 
-\citeonline{Nielson:1999}, \citeonline{Emanuelsson2008}.
-Contudo as ferramentas que realizam o procedimento no código-fonte ainda 
-apresentam problemas, tais como:
+Durante anos, vários trabalhos foram publicados visando definição formal de métodos de análise estática de código, como por exemplo, os trabalhos de \citeonline{Wichmann95}, 
+\citeonline{Nielson:1999} e \citeonline{Emanuelsson2008}.
+Contudo as ferramentas que realizam este procedimento sobre o código-fonte 
+apresentam alguns problemas, tais como:
 
 \newlist{problems}{enumerate}{4}
 \setlist[problems]{ label* = P\arabic* -}
@@ -57,8 +36,8 @@ apresentam problemas, tais como:
 	
     \end{problems}
 	
-Os problemas enunciados acima trazem muitos prejuízos às organizações que 
-utilizam processos de aferição de qualidade de código-fonte como um indicador do desenvolvimento de bons produtos de software, pois sem possibilidade de manter registros das métricas de código-fonte, torna-se inviável qualquer análise temporal da evolução da qualidade do código-fonte. 
+Os problemas enunciados anteriormente trazem muitos prejuízos às organizações que 
+utilizam processos de aferição de qualidade de código-fonte como um indicador do desenvolvimento de bons produtos de software, pois sem possibilidade de manter registros das métricas de código-fonte, torna-se inviável qualquer análise temporal da evolução da qualidade do produto de software. 
 
 Dado este contexto, é crucial que dados relacionados às métricas sejam 
 coletados e compartilhados entre projetos e pessoas em uma visão organizacional unificada, para que determinada organização ou time possa compreender o processo de medição e monitoramento de projetos de software e, 
@@ -129,8 +108,8 @@ A metodologia de pesquisa deste trabalho foi constituída de pesquisa documental
 Para a primeira fase deste Trabalho de Conclusão de Curso, além desta 
 introdução, o texto foi organizado em capítulos. O Capítulo 2 apresenta as 
 métricas de software bem como o processo de medição, descrito pela ISO 15939, 
-as métricas de software bem como as métricas de código-fonte. O Capítulo 3 
+e as métricas de código-fonte. O Capítulo 3 
 apresenta conceitualmente o ambiente de \textit{data warehousing} (DWing). O 
-Capítulo 4 apresenta a proposta de ambiente de DWing construída neste 
+Capítulo 4 apresenta a implementação do ambiente de DWing construída neste 
 trabalho. Por fim, o capítulo 5 apresenta as considerações finais com uso do 
 ambiente de DWing na extração e visualização de métricas de código-fonte. 

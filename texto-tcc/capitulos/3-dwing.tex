@@ -100,27 +100,20 @@ Quando se juntam fatos e dimensões desnormalizadas, obtém-se o chamado esquema
 No esquema da Figura \ref{estrela}, percebe-se que uma tabela fato expressa um relacionamento muitos para muitos com as tabelas dimensões, mostrando assim que a navegabilidade dos dados quantitativos e qualitativos é mais intuitiva quando comparada com o modelo relacional normalizado \cite{Kimball2002}. Além disso, verifica-se que a tabela fato possui uma dimensão temporal associada, isto é, há fatos que ocorrem diariamente, como por exemplo, a venda de produtos em um supermercado. Contudo, é possível que as vendas sejam vistas por visões mensais, trimestrais, semestrais ou anuais. Logo, a granuladidade dos fatos deve ser considerada na hora de projetar um \textit{data warehouse}. Além disto, deve-se ainda considerar a características do fato, pois quando os registros de uma tabela fato, podem ser somados a qualquer dimensão, é dito que o fato é aditivo. Quando é possível apenas somar em relação a algumas dimensões, é dito que o fato é semiaditivo. Já quando o fato é usado apenas para registro e não pode ser somado em relação a nenhuma dimensão, é dito que o fato é não aditivo \cite{Inmon1992}.
 
 \subsection{Metodologia do Projeto do \textit{Data Warehouse}}
-
+\label{metodologia-dw}
 \citeonline{Kimball2002} enuncia que o ambiente de DWing nasce na necessidade do negócio e logo o projeto de um \textit{data warehouse} deve seguir os seguintes passos: 
 
 \begin{inparaenum}[1)]
 	\item Selecionar o Processo de Negócio com requisito fundamental do 
 	projeto DW;
 	
-	\item Declarar a granularidade dos dados necessários para processo de 
-	negócio, isto é, verificar a periodicidade de coleta dos dados (diários, semanais, mensais, trimestrais, semestrais ou anuais);
+	\item Verificar a periodicidade de coleta dos dados do processo de negócio (diários, semanais, mensais, trimestrais, semestrais ou anuais);
 	
-	\item Escolher as dimensões;
+	\item Identificar as dimensões;
 	
 	\item Identificar os fatos;
 
 \end{inparaenum} 
-
-
-Seguindo a metolodogia proposta por \citeonline{Kimball2002}, entende-se que o processo de negócio, neste trabalho de conclusão de curso, foi avaliar a qualidade do código-fonte continuamente por meio das métricas de código-fonte.
-Os demais passos da metodologia, tais como, a granulidade dos dados, identificação dos fatos e dimensões serão apresentados no Capítulo \ref{estudo de caso}.
-
-
 
 
 \section{\textit{On-Line Analytical Processing} (OLAP)}

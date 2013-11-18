@@ -25,7 +25,7 @@ Para selecionar as ferramentas, que implementarão cada um dos componentes do am
 		\\ \hline
 		CG01 & A ferramenta deve possuir código aberto.  
 		\\ \hline
-		CG02 & A ferramenta deve ter documentação disponível em inglês e português.      
+		CG02 & A ferramenta deve ter documentação disponível em inglês ou português.      
 		\\ \hline
 		CG03 & A ferramenta deve possuir uma comunidade ativa em seu uso.
 		\\ \hline
@@ -61,7 +61,8 @@ Além dos critérios gerais estabelecidos, para escolha da ferramenta de anális
 		\end{center}
 		\end{table}	
 
-Após a realização de uma busca por ferramentas, foram encontradas o SonarQube~\footnote{Disponível em \url{http://www.sonarqube.org/}} e Analizo~\footnote{Disponível em \url{http:/http://analizo.org/}} cujas principais características de ambas são apresentadas na Tabela \ref{dados-ferramentas-estatica}
+Após a realização de uma busca por ferramentas de análise estática de código-fonte, foram pre-selecionados o SonarQube~\footnote{Disponível em \url{http://www.sonarqube.org/}} e Analizo~\footnote{Disponível em \url{http:/http://analizo.org/}} cujas principais características de ambas são apresentadas na Tabela \ref{dados-ferramentas-estatica}.
+
 \begin{savenotes}
 \begin{table}[!ht]
 \centering
@@ -100,7 +101,7 @@ Licença  & GNU GPL3 & GNU LGPL3  \\ \hline
 
 
 %--------------------------
-Formato de Saída das Métricas  & CSV, YAML & JSON, XML, CSV \\ \hline
+Formato de Saída das Métricas  & YAML & JSON, XML \\ \hline
 
 %--------------------------
 Plataforma  &Windows, Linux, Mac OS X e Servidores de Aplicação Java & Debian e Ubuntu                                                                                              \\ \hline
@@ -110,16 +111,16 @@ Integração com outras ferramentas & Mezuro,Kalibro & Jenkins, Hudson, Mantis, 
 
 %--------------------------
 \multirow{4}{5cm}{Números do Repositório Oficial no GitHub em 14/11/2013}
-& \textit{Commits:} 7532 & \textit{Commits:} 639\\ \cline{2-3} 
+& \textit{Commits:} 639  & \textit{Commits:} 7532\\ \cline{2-3} 
 
-&\textit{Branches:} 16 & \textit{Branches:} 1  \\ \cline{2-3} 
-& Contribuidores: 18 & Contribuidores: 7  \\ \cline{2-3} 
-& \textit{Releases:} 36  & \textit{Releases:} 27
+&\textit{Branches:} 1 & \textit{Branches:} 16  \\ \cline{2-3} 
+& Contribuidores: 7 & Contribuidores: 18 \\ \cline{2-3} 
+& \textit{Releases:} 27  & \textit{Releases:} 36
 
  \\ \hline
 
 %--------------------------
-Número de Casos Abertos no \textit{Issue Tracker} em 14/11/2013 & 552  & 26 
+Número de Casos Abertos no \textit{Issue Tracker} em 14/11/2013 & 26  & 552  
 \\ \hline
 
 %--------------------------
@@ -147,125 +148,150 @@ Data de Lançamento da Última Versão Estável & 31 de Janeiro de 2013 & 4 de N
 \FloatBarrier
 \end{savenotes}
 
-Tendo as características gerais de cada ferramenta levantadas, foram comparadas (SonarQube e Analizo) quanto aos critérios gerais e aos critérios específicos para ferramentas de análise estática, tal como se mostra na Tabela \ref{compare}
+Tendo as características gerais de cada ferramenta levantadas, foram comparadas (SonarQube e Analizo) quanto aos critérios gerais e aos critérios específicos para ferramentas de análise estática, tal como se mostra na Tabela \ref{compare}.
+
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Critérios & SonarQube  & Analizo    \\ \hline
+CG01      & \checkmark & \checkmark \\ \hline
+CG02      & \checkmark & \checkmark \\ \hline
+CG03      & \checkmark & \checkmark \\ \hline
+CG04      & \checkmark & \checkmark \\ \hline
+CAE01     & \checkmark & \checkmark \\ \hline
+CAE02     & \checkmark & \checkmark \\ \hline
+CAE03     & \checkmark & \xmark     \\ \hline
+\end{tabular}
+\caption{Análise do SonarQube e do Analizo quanto aos critérios gerais e quanto aos critérios específicos de ferramentas de análise estática}
+\label{compare}
+\end{table}
+\FloatBarrier
+
+
+Dado a comparação, percebe-se que ambas as ferramentas cumprem o próposito geral de levantar as métricas de código-fonte, com a diferença que SonarQube possui um suporte a mais linguagens de programação quando comparado com o Analizo, contudo dado que o escopo da análise de \citeonline{Meirelles2013} se restringe a Java e C++, logo a falta de suporte à outras linguagens que o SonarQube suporta não é fator excludente da utilização do Analizo.
+
+Percebe-se, ainda devido aos critérios específicos de selação de ferramentas de análise estática, que o Analizo tem uma plataforma específica, sendo que o SonarQube é mutiplataforma. Contudo, entende-se que como há objetivo de construir um ambiente de \textit{Data Warehousing} utilizando ferramentas livres, logo poder-se-ia escolher também uma plataforma livre tal como o Ubuntu ou Debian.
+
+A escolha foi ponderada então pelo formato de saída do arquivo. \citeonline{fonseca2007alternativas} realizou um estudo experimental entre XML, JSON (Formatos de Saída do SonarQube) e YAML (Formato de Saída do Analizo), que é mostrado na Figura \ref{jsonvsyaml}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=false,scale=1]{figuras/json.eps}
+\caption{Comparação entre JSON, YAML e XML extraído de \citeonline{fonseca2007alternativas}}
+\label{jsonvsyaml}
+\end{figure}
+\FloatBarrier
+
+Após a análise da Figura \ref{jsonvsyaml}, percebe-se que o YAML perde em desempenho para JSON e XML quando o número de elementos aumenta gradativamente. Em projetos de software, é natural que estes cresçam cada vez mais, tal como especifica a segunda lei de \citeonline{Lehman1980b}, logo o formato JSON ou XML é mais adequado, fazendo com que a ferramenta SonarQube seja mais indicada para o contexto deste trabalho.
+
+Entre JSON e XML, \citeonline{fonseca2007alternativas} conclui que o transporte de dados é mais rápido utilizando JSON, pois se permite transportar
+um objeto serializado arbitrariamente complexo, e transformá-lo num objeto
+JavaScript sem grandes problemas, enquanto que o XML se deve construir um \textit{parser} para interpretar os dados. Por este motivo, foi escolhido para extração das métricas de código-fonte neste trabalho, o formato JSON provido pela ferramenta SonarQube. 
+
+
+\subsection{Acompanhamento das Métricas de Código-Fonte de um Software Livre}
+
+Com o objetivo de validar a implementação do ambiente de DWing para métricas de código-fonte, escolheu-se nesta etapa do trabalho de conclusão de curso, acompanhar a qualidade de um software livre conforme especificado pelo objetivo específico OE2.
+
+Dado que os intervalos constituídos da análise de \citeonline{Meirelles2013}, apresentados na seção \ref{Intervalos das Métricas}, são para as linguagens de programação C++ e Java, há então a restritividade quanto ao acompanhamento de projetos feitos nessas linguagens.
+
+Após uma leitura da documentação do SonarQube, descobriu-se que este mantém um repositório de análises de código-fonte de projetos de software livre, chamado Nemo~\footnote{Disponível em \url{http://nemo.sonarqube.org/}}. O Nemo disponibiliza projetos feitos nas linguagens Java, Javascript, Groovy e entre outros. Limitando-se apenas a linguagem Java, dado que não foi encontrado nenhum projeto C++ no repositório com grande frequência de atualizações, obteve-se cerca de 178 projetos.
+
+A fim de se detectar projetos que tinham a maior taxa de atualização no repositório de análises do Nemo, percebeu-se que o projeto \textbf{Apache Maven} era um dos que mais se mantinham atualizados. Feito em linguagem Java, este projeto disponibiliza uma nova análise sobre o código-fonte a cada semana. Diante disso, foi escolhido o Apache Maven como o software a ser monitorado no ambiente de DWing. 
 
 
 
-\section{Ferramenta de Extração, Transformação e Carga (ETL)}
 
 \section{Projeto do \textit{Data Warehouse}}
 
-\section{Ferramenta de Apoio as Consultas OLAP e Visualização de Dados}
-% Critérios de Selecção de Ferramentas
+O \textit{Data Warehouse} como elemento central do ambiente de \textit{Data Warehousing} deve ser o primeiro a ser projetado \cite{Kimball2002}. Isso ocorre pois o DW deve ser dirigido ao negócio. Logo a modificação do DW impacta principalmente na carga dos dados, na etapa de extração, transformação e carga, requerendo modificações conforme o DW venha a mudar.
 
-% \section{SonarQube}
-% O SonarQube~\footnote{Toda a documentação e \textit{downloads} estão disponíveis
-% em \url{http://www.sonarqube.org/}}, anteriormente conhecido como Sonar, é uma 
-% ferramenta que realiza coleta de dados do código-fonte. Em sua documentação, 
-% são citados sete eixos de controle de qualidade cobertos na ferramenta: 
-
-% \newlist{qualityindex}{enumerate}{4}
-% \setlist[qualityindex]{ label* = \arabic* -}
-
-% \begin{qualityindex}
-% \item Duplicação de Código
-% \item Detecção de Complexidade de Código
-% \item Padrão de Codificação
-% \item Testes Unitários
-% \item Arquitetura e Projeto
-% \item Potenciais Defeitos
-% \item Comentários
-% \end{qualityindex}
-
-% %--------------------------------------------%
-% \subsection{Escolha do SonarQube}
-% O SonarQube foi escolhido como ferramenta para extração de dados do código-fonte
-%  devido as seguintes características:
-% \begin{description}
-  
-% \item [Ferramenta Livre:] O SonarQube é uma ferramenta livre que está 
-% licenciada sob a GNU LPGL 3, que é uma das licenças de software livre.
-
-% \item [Suporte a várias Linguagens de Programação:]  É realizada coleta em 
-% mais de 20 linguagens de programação, como por exemplo, Java, C\#, Python, 
-% C++, .Net, PHP e entre outras.
-
-% \item [Multiplataforma:] Há suporte para os sistemas operacionais Windows, 
-% Linux, Mac OS e há também para servidores de aplicação Java, como por exemplo,
-% o Apache Tomcat. 
-
-% \item [Integração com Ferramentas de Integração Contínua:] é possível realizar
-% a integração com ferramentas de integração contínua, como por exemplo, 
-% Jenkins. Assim a cada versão bem sucedida de construção do código-fonte, é 
-% possível aferir a qualidade do código.
-
-% \item [Persistência em Base de Dados:] toda a coleta de dados é persistida em 
-% uma base de dados. Há suporte para as principais ferramentas de bancos de 
-% dados utilizadas no mercado: MySQL, PostgreSQL e Oracle.
-
-% \item [Interface Amigável:] Diferentemente de outras ferramentas disponíveis 
-% no mercado, o SonarQube tem interface web, ou seja, é possível visualização 
-% das métricas do código-fonte seja realizada em navegador a escolha do usuário.
-% É possível ainda visualizar todo o código-fonte analisado.
-
-% \item [Integração com Ferramentas de Gestão de Defeitos:] É possível integrar 
-% com ferramentas de gestão de defeitos, tais como Mantis e JIRA.
-
-% \item [Suporte a Muti produtos:] Há suporte para visualização de métricas de 
-%  mais um Produto.
-
-% \item [Suporte a Multi-Idiomas:] Há suporte para Inglês, Japonês, Russo, 
-% Francês, Italiano, Espanhol e Português.
-
-% \item [Diversidade de Plugins:] O SonarQube permite a 
-% extensão de funcionalidades por meio de plugins, sendo que há uma variedade de 
-% plugins para mais diversas necessidades disponíveis para \textit{download}. 
-% Cabe ressaltar que alguns são gratuitos e outros tem licença comercial.
-
-% \item [Presença de Web Service:] Há um Web Service que extrai as métricas 
-% disponíveis para diversos formatos, tais como JSON, XML e CSV.
-
-% \end{description}
+Seguindo a metolodogia proposta por \citeonline{Kimball2002}, apresentada na seção \ref{metodologia-dw}, entende-se que o processo de negócio deste trabalho de conclusão de curso, é avaliar a qualidade do código-fonte continuamente por meio das métricas de código-fonte. \citeonline{Kimball2002} enuncia que o segundo passo após a indentificação do processo de negócio, é a identificação da peridiociodade dos dados coletados pelo mesmo.
 
 
-% %--------------------------------------------%
+No processo de negócio de métricas de código-fonte, a periodicidade de coleta dos dados é variável, isto é, depende de projeto a projeto. Visando atender a maior parte dos casos possíveis, identificou-se a menor granuladidade para agregação: o dia. Isto ocorre, pois as ferramentas de integração contínua, que são muito utilizadas em ambientes ágeis \cite{beckarticle1999}, permitem a estabilização de um pacote de software por dia, logo a menor análise do código-fonte pode ser realizada sobre esse pacote estável diariamente. Contudo, há projetos que liberam versões estáveis com mais tempo, portanto se deve permitir agregações maiores tais como, mês, trimestre, semestre e ano. Para esta etapa do trabalho de conclusão de curso, optou-se pela implementação da agregação diária.
 
 
-% \subsection {Limitações Observadas}
-% Após uma análise ostensiva na ferramenta, concluiu-se que o SonarQube apresenta 
-% as seguintes limitações:
-
-% \begin{description}
-
-% \item [Ausência de Visão Consolidada de Métricas:]  A maior parte das métricas
-% que SonarQube estão apenas no âmbito de Classes ou Pacotes.
-
-% \item [Impossibilidade Definição de Múltiplos Intervalos:]  O sonarQube não 
-% permite a configuração de múltiplos intervalos. É definido apenas, um 
-% intervalo de alerta (amarelo) e um intervalo de atenção (vermelho).
-
-% \item [Ausência de Avaliações Qualitativas:] As métricas não trazem nenhuma 
-% avaliação qualitativa associada, ou seja, sem o conhecimento específico do 
-% significado de cada métrica, a interpretação dos valores obtidos não é 
-% representativo nem elucidativo sobre a qualidade do código.
-
-% \item [Métricas como Violações:] O SonarQube utiliza para coletar dados de 
-% código-fonte, em algumas linguagens de programação, coletores que são 
-% identificadores de padrões de codificação. Isso quer dizer que algumas métricas 
-% não são apresentadas com valor absoluto, apenas são indicadas como violações à 
-% regras estabelecidas pelos padrões. 
-
-% \end{description}
+Seguindo os passos subsequentes da metodologia proposta por \citeonline{Kimball2002}, foram identificados as dimensões e o fato por meio da modelagem multidimensional, tal como mostra a Figura \ref{esquema}, utilizado a ferramenta MySQL Workbench~\footnote{Disponível em \url{http://dev.mysql.com/downloads/tools/workbench/}} que é um software de código aberto com licença GPL 2.0.
 
 
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=false,scale=0.60]{apendices/esquema.eps}
+\caption{Modelo multidimensional do \textit{Data Warehouse}}
+\label{esquema}
+\end{figure}
+\FloatBarrier
+
+Foi necessário utilizar a normalização na tabela \textit{Range}, para a tabela Metric e Language, pois cada intervalo de referência, tal como citado na seção \ref{Intervalos das Métricas}, decorrente da análise de \citeonline{Meirelles2013}, refere-se a uma métrica específica e a uma linguagem de programação. O modelo multidimensional, que tem seu SQL resultante apresentado no Apêndice \ref{sql-datawarehouse}, foi implementado no MySQL Community Server ~\footnote{Disponível em \url{http://dev.mysql.com/downloads/mysql/}} que também possui uma licença de código aberto GPL 2.0
+
+Quanto ao fato (Metric\_Fact) é possível dizer que o mesmo é não aditivo, pois as métricas de código-fonte não podem ser somadas a nenhuma dimensão. Este fato é calculado por meio do 75º percentil na etapa de transformação dos dados, tal como explicado na seção \ref{Intervalos das Métricas}.
 
 
-% \section{Pentaho}
+\section{Ferramentas de Dwing}
 
-% O Pentaho é um software de código aberto para inteligência empresarial, 
-% desenvolvido em Java pela Pentaho Corporation, que apresenta soluções cobrindo 
-% as áreas de ETL, \textit{reporting}, OLAP e mineração de dados 
-% (\textit{data-mining}). 
-
-
+Tendo em vista que o \textit{Data Warehouse} foi projetado em um modelo dimensional, é possível construir tanto o processo de \textit{Extraction-Transformation-Load} quanto as operações de consulta OLAP. Entre as alternativas de código aberto que suportam este ambiente como um todo, está o Pentaho BI Suite Community Edition. Este apresenta soluções que cobrem 
+as áreas de ETL, \textit{reporting}, OLAP e mineração de dados. Cada um dos componentes utilizados é apresentado e analisado nas seções subsequentes.
  
+
+
+\subsection{Implementação da Extração, Transformação e Carga dos Dados}
+
+O Pentaho Data Integration Community Edition ou Kettle, como é conhecido pela comunidade que o desenvolve, é feito na linguagem Java e implementa o processo de ETL (Extração, Transformação e Carga de Dados). A interface do Kettle é mostrada na Figura \ref{pdi} e as principais características do Kettle e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{kettle}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=false,scale=0.45]{figuras/pdi.eps}
+\caption{Interface do Kettle}
+\label{pdi}
+\end{figure}
+\FloatBarrier
+ 
+
+\begin{table}[!ht]
+\begin{tabular}{|p{4.5cm}|p{5.0cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
+\hline
+Característica                                          
+
+&
+
+
+
+\begin{center}
+\includegraphics[keepaspectratio=false,scale=0.48]{figuras/kettle-logo.eps} 
+\end{center}                                              
+
+& CG01 
+
+& CG02       
+
+& CG03       
+
+
+& CG04       
+
+
+\\ \hline
+
+Licença                                                 & Apache License 2.0                              & \checkmark &            &            &            \\ \hline
+Integração com Banco de Dados                           & MySQL, SQLServer, Postgree, Oracle entre outros &            &            &            &            \\ \hline
+Formatos Aceitos de Entrada de Dados                    & XML, TXT, JSON, ODS, XLS, CSV, Tabelas, YAML    &            &            &            &            \\ \hline
+Ultima Versão Estável (14/11/2013)                      & 4.4                                             &            &            &            & \checkmark \\ \hline
+Quantidade de Commits no Repositório Oficial            & 10.000+                                         &            &            & \checkmark &            \\ \hline
+Idioma da Documentação                                  & Inglês                                          &            & \checkmark &            &            \\ \hline
+Quantidade de Casos Abertos no \textit{Issue Tracker} & 6000                                            &            &            & \checkmark &            \\ \hline
+
+\end{tabular}
+\caption{Características do Kettle e avaliação quanto aos critérgios gerais de seleção de ferramentas}
+\label{kettle}
+\end{table}
+\FloatBarrier	
+
+O Kettle possui dois tipos de componentes internos: \textit{Transformation} e \textit{Job}. O primeiro permite mover dados de uma origem até um destino, já a \textit{Transformation} permite executar tarefas, em nível mais alto, de fluxo de controle, tais como, mandar um email em caso de falha, baixar um arquivo, executar transformações  e entre outras atividades.
+
+Para a implementação do ETL no Kettle, utilizou-se os arquivos resultantes da análise do SonarQube em JSON e conexão com o MySQL Server, onde foi implementado o Data Warehouse. As implementações detalhadas de \textit{Transformation} e \textit{Job} são apresentados no apêndice \ref{kettle-implementação}.
+
+
+\subsection{Implementação das Consultas OLAP e Visualização de Dados}
