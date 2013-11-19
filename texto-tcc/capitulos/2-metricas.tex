@@ -136,7 +136,7 @@ até linguagens de alto nível ou representações gráficas executáveis.
 \cite{harman2010source}. 
 
 
-Portanto as métricas de código-fonte que são obtidas por meio da análise estática de código-fonte são obtidas por meio de especificações executáveis do software, isto é, trechos de código escritos em alguma linguagem de programação, são métricas objetivas e tem características como validade, simplicidade, objetividade, fácil obtenção e robustez \cite{Mills:1999}. \citeonline{Meirelles2013} realizou um levantamento sistemático na literatura das métricas de código-fonte. Estas foram categorizadas, nas seguintes categorias, apresentadas nas subseções a seguir. 
+Portanto as métricas de código-fonte quando obtidas por meio da análise estática de código-fonte, advém de especificações executáveis do software, isto é, trechos de código escritos em alguma linguagem de programação. Isto confere as métricas de código-fonte a classificação de métricas objetivas e características como validade, simplicidade, objetividade, fácil obtenção e robustez \cite{Mills:1999}. \citeonline{Meirelles2013} realizou um levantamento sistemático na literatura das métricas de código-fonte. Estas foram categorizadas, nas categorias apresentadas nas subseções a seguir. 
 
 
 %--------------------------------------------
@@ -246,17 +246,13 @@ as principais métricas de orientação à objetos:
 	
 \subsection{Intervalos da Métricas}
 \label{Intervalos das Métricas}
-Em sua tese \citeonline{Meirelles2013} analisou as métricas do código-fonte de 
-38 projetos de software livre, em um total de 344.872 classes das aplicações 
-mais bem sucedidas (\textit{Chrome, Firefox, OpenJDK, VLC e entre outros}) e 
-percebeu que há certos valores que são frequentemente encontrados quando se 
-analisa o código-fonte de aplicações que utilizam a mesma linguagem de 
-programação. \citeonline{Meirelles2013}, após uma análise estatística com o 75º percentil dos valores obtidos para cada métrica de código-fonte, classificou estes 
-intervalos, em \textit{muito frequente, frequente, pouco frequente e não 
-frequente}. 
 
-Visando o melhor entendimento das métricas, resolveu-se renomear tal como a 
-Tabela \ref{nomes}. Posteriormente, é apresentada a Tabela \ref{metrics}, 
+No trabalho de \citeonline{Meirelles2013}, foram analisadas métricas do código-fonte de 
+38 projetos de software livre, em um total de 344.872 classes das aplicações 
+mais utlizadas de software livre, tais como, \textbf{Chrome, Firefox, OpenJDK, VLC} e entre outros. Após uma análise estatística com o 75º percentil dos valores obtidos para cada métrica de código-fonte, \citeonline{Meirelles2013} percebeu que há certos valores que são frequentemente encontrados quando se 
+analisa o código-fonte de aplicações de mesma linguagem de programação. De forma a agregar valores comuns, \citeonline{Meirelles2013} classificou as métricas de código-fonte nos seguintes intervalos: \textit{muito frequente, frequente, pouco frequente e não frequente}. 
+
+Visando o melhor entendimento das métricas, renomeou-se os intervalos tal como a Tabela \ref{nomes}. Posteriormente, apresenta-se a Tabela \ref{metrics}, 
 decorrente do estudo de \citeonline{Meirelles2013}, com os intervalos 
 encontrados para C++ e Java.
 
@@ -337,7 +333,8 @@ encontrados para C++ e Java.
 		 & Excelente & [de 0 a 2] & [de 0 a 1] \\
 		 & Bom & [de 3 a 4] & [de 2 a 3] \\
 		 & Regular & [de 5 a 6] & [de 3 a 4] \\
-		 & Ruim & [acima de 6] & [acima de 4] \\ \hline
+		 &
+		  Ruim & [acima de 6] & [acima de 4] \\ \hline
 		 %---------------------------------
 		
 		%-------------------------------

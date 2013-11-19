@@ -32,7 +32,7 @@ Para selecionar as ferramentas, que implementarão cada um dos componentes do am
 		CG04 & A ferramenta deve possuir releases estáveis.    
 		\\ \hline
 		\end{tabular}
-		\caption{Critérios Gerais de escolha das ferramentas}
+		\caption{Critérios Gerais de seleção de ferramentas}
 		\label{seleção}
 		\end{center}
 		\end{table}	
@@ -100,6 +100,11 @@ Licença  & GNU GPL3 & GNU LGPL3  \\ \hline
 
 
 
+%-----------------------------------
+
+Métricas de Código-Fonte fornecidas  & 9 métricas em âmbito de Projeto e 16 métricas em âmbito de Classe \cite{Meirelles2013} & 12 métricas em âmbito de Classe, 8 métricas em âmbito de projeto. \\ \hline
+
+
 %--------------------------
 Formato de Saída das Métricas  & YAML & JSON, XML \\ \hline
 
@@ -107,7 +112,7 @@ Formato de Saída das Métricas  & YAML & JSON, XML \\ \hline
 Plataforma  &Windows, Linux, Mac OS X e Servidores de Aplicação Java & Debian e Ubuntu                                                                                              \\ \hline
 
 %--------------------------
-Integração com outras ferramentas & Mezuro,Kalibro & Jenkins, Hudson, Mantis, JIRA, Crowd e entre outros \\ \hline
+Integração com outras ferramentas & Mezuro, Kalibro & Jenkins, Hudson, Mantis, JIRA, Crowd e entre outros \\ \hline
 
 %--------------------------
 \multirow{4}{5cm}{Números do Repositório Oficial no GitHub em 14/11/2013}
@@ -142,7 +147,7 @@ Data de Lançamento da Última Versão Estável & 31 de Janeiro de 2013 & 4 de N
 
 \\ \hline
 \end{tabular}
-\caption{Caractrísticas do SonarQube e do Analizo}
+\caption{Características do SonarQube e do Analizo}
 \label{dados-ferramentas-estatica}
 \end{table}
 \FloatBarrier
@@ -239,7 +244,7 @@ as áreas de ETL, \textit{reporting}, OLAP e mineração de dados. Cada um dos c
 
 \subsection{Implementação da Extração, Transformação e Carga dos Dados}
 
-O Pentaho Data Integration Community Edition ou Kettle, como é conhecido pela comunidade que o desenvolve, é feito na linguagem Java e implementa o processo de ETL (Extração, Transformação e Carga de Dados). A interface do Kettle é mostrada na Figura \ref{pdi} e as principais características do Kettle e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{kettle}.
+O Pentaho Data Integration Community Edition ou Kettle\footnote{Disponível em \url{http://kettle.pentaho.com/}}, como é conhecido pela comunidade que o desenvolve, é feito na linguagem Java e implementa o processo de ETL (Extração, Transformação e Carga de Dados). A interface do Kettle é mostrada na Figura \ref{pdi} e as principais características do Kettle e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{kettle}.
 
 \begin{figure}[ht!]
 \centering
@@ -276,15 +281,15 @@ Característica
 \\ \hline
 
 Licença                                                 & Apache License 2.0                              & \checkmark &            &            &            \\ \hline
-Integração com Banco de Dados                           & MySQL, SQLServer, Postgree, Oracle entre outros &            &            &            &            \\ \hline
+Integração com Banco de Dados                           & MySQL, SQLServer, PostgreSQL, Oracle entre outros &            &            &            &            \\ \hline
 Formatos Aceitos de Entrada de Dados                    & XML, TXT, JSON, ODS, XLS, CSV, Tabelas, YAML    &            &            &            &            \\ \hline
 Ultima Versão Estável (14/11/2013)                      & 4.4                                             &            &            &            & \checkmark \\ \hline
 Quantidade de Commits no Repositório Oficial            & 10.000+                                         &            &            & \checkmark &            \\ \hline
 Idioma da Documentação                                  & Inglês                                          &            & \checkmark &            &            \\ \hline
-Quantidade de Casos Abertos no \textit{Issue Tracker} & 6000                                            &            &            & \checkmark &            \\ \hline
+Quantidade de Casos Abertos no \textit{Issue Tracker} & 2875                                           &            &            & \checkmark &            \\ \hline
 
 \end{tabular}
-\caption{Características do Kettle e avaliação quanto aos critérgios gerais de seleção de ferramentas}
+\caption{Características do Kettle e avaliação quanto aos critérios gerais de seleção de ferramentas}
 \label{kettle}
 \end{table}
 \FloatBarrier	
@@ -295,3 +300,52 @@ Para a implementação do ETL no Kettle, utilizou-se os arquivos resultantes da 
 
 
 \subsection{Implementação das Consultas OLAP e Visualização de Dados}
+
+Para a implementação das consultas OLAP e Visualização de dados, foram utilizadas duas ferramentas do ambiente Pentaho BI Suite Community Edition. A primeira é o Pentaho BI Platform\footnote{Disponível em \url{http://community.pentaho.com/projects/bi_platform/}}, que tem as principais características  e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{biserver}.
+
+
+
+\begin{table}[!ht]
+\begin{tabular}{|p{4.5cm}|p{5.0cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
+\hline
+Característica                                          
+
+&
+
+
+
+\begin{center}
+\includegraphics[keepaspectratio=false,scale=0.48]{figuras/pentaho_logo.eps} 
+\end{center}                                              
+
+& CG01 
+
+& CG02       
+
+& CG03       
+
+
+& CG04       
+
+
+\\ \hline
+
+Licença                                                 & Apache License 2.0                              & \checkmark &            &            &            \\ \hline
+Integração com Banco de Dados                           & MySQL, SQLServer, PostgreSQL, Oracle entre outros &            &            &            &            \\ \hline
+Linguagem em que foi densenvolvida & Java &            &            &            &
+
+ \\ \hline
+Ultima Versão Estável (14/11/2013)                      & 4.8                                             &            &            &            & \checkmark \\ \hline
+Quantidade de Commits no Repositório Oficial em 14/11/2013            & 3700.                                         &            &            & \checkmark &            \\ \hline
+Idioma da Documentação                                  & Inglês                                          &            & \checkmark &            &            \\ \hline
+Quantidade de Casos Abertos no \textit{Issue Tracker} & 1489                                            &            &            & \checkmark &            \\ \hline
+
+\end{tabular}
+\caption{Características do Pentaho BI Platform e avaliação quanto aos critérios gerais de seleção de ferramentas}
+\label{biserver}
+\end{table}
+\FloatBarrier
+
+
+
+
