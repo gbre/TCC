@@ -9,7 +9,7 @@ Para a implementação do ambiente do DWing para métricas de código-fonte, foi
 \begin{figure}[ht!]
 \centering
 \includegraphics[keepaspectratio=false,scale=0.20]{figuras/arquitetura-dwing.eps}
-\caption{Arquitetura do Ambiente de Dwing para Métricas de Código-Fonte}
+\caption{Arquitetura do Ambiente de DWing para Métricas de Código-Fonte}
 \label{arquitetura}
 \end{figure}
 \FloatBarrier
@@ -225,7 +225,7 @@ Seguindo os passos subsequentes da metodologia proposta por \citeonline{Kimball2
 \begin{figure}[ht!]
 \centering
 \includegraphics[keepaspectratio=false,scale=0.60]{apendices/esquema.eps}
-\caption{Modelo multidimensional do \textit{Data Warehouse}}
+\caption{Modelo Multidimensional do \textit{Data Warehouse}}
 \label{esquema}
 \end{figure}
 \FloatBarrier
@@ -243,7 +243,7 @@ as áreas de ETL, \textit{reporting}, OLAP e mineração de dados. Cada um dos c
 
 
 \subsection{Implementação da Extração, Transformação e Carga dos Dados}
-
+\label{implementação-ETL}
 O Pentaho Data Integration Community Edition ou Kettle\footnote{Disponível em \url{http://kettle.pentaho.com/}}, como é conhecido pela comunidade que o desenvolve, é feito na linguagem Java e implementa o processo de ETL (Extração, Transformação e Carga de Dados). A interface do Kettle é mostrada na Figura \ref{pdi} e as principais características do Kettle e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{kettle}.
 
 \begin{figure}[ht!]
@@ -284,7 +284,7 @@ Licença                                                 & Apache License 2.0   
 Integração com Banco de Dados                           & MySQL, SQLServer, PostgreSQL, Oracle entre outros &            &            &            &            \\ \hline
 Formatos Aceitos de Entrada de Dados                    & XML, TXT, JSON, ODS, XLS, CSV, Tabelas, YAML    &            &            &            &            \\ \hline
 Ultima Versão Estável (14/11/2013)                      & 4.4                                             &            &            &            & \checkmark \\ \hline
-Quantidade de Commits no Repositório Oficial            & 10.000+                                         &            &            & \checkmark &            \\ \hline
+Quantidade de Commits no Repositório Oficial            & 10.000                                         &            &            & \checkmark &            \\ \hline
 Idioma da Documentação                                  & Inglês                                          &            & \checkmark &            &            \\ \hline
 Quantidade de Casos Abertos no \textit{Issue Tracker} & 2875                                           &            &            & \checkmark &            \\ \hline
 
@@ -301,8 +301,10 @@ Para a implementação do ETL no Kettle, utilizou-se os arquivos resultantes da 
 
 \subsection{Implementação das Consultas OLAP e Visualização de Dados}
 
-Para a implementação das consultas OLAP e Visualização de dados, foram utilizadas duas ferramentas do ambiente Pentaho BI Suite Community Edition. A primeira é o Pentaho BI Platform\footnote{Disponível em \url{http://community.pentaho.com/projects/bi_platform/}}, que tem as principais características  e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{biserver}.
+Para a implementação das consultas OLAP e Visualização de dados, torna-se necessário a utilização do Pentaho BI Platform\footnote{Disponível em \url{http://community.pentaho.com/projects/bi_platform/}}, que é uma ferramenta provê a arquitetura e a infraestrutura para soluções de \textit{Business Inteligence}, \textit{Data Mining} e a camada de visualização de dados do \textit{Data Warehouse}.
 
+
+O Pentaho BiPlatform, cuja interface inicial apresentada na Figura \ref{BIplatform}, tem as principais características e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{biserver}. 
 
 
 \begin{table}[!ht]
@@ -336,7 +338,7 @@ Linguagem em que foi densenvolvida & Java &            &            &           
 
  \\ \hline
 Ultima Versão Estável (14/11/2013)                      & 4.8                                             &            &            &            & \checkmark \\ \hline
-Quantidade de Commits no Repositório Oficial em 14/11/2013            & 3700.                                         &            &            & \checkmark &            \\ \hline
+Quantidade de Commits no Repositório Oficial em 14/11/2013            & 3700                                         &            &            & \checkmark &            \\ \hline
 Idioma da Documentação                                  & Inglês                                          &            & \checkmark &            &            \\ \hline
 Quantidade de Casos Abertos no \textit{Issue Tracker} & 1489                                            &            &            & \checkmark &            \\ \hline
 
@@ -349,3 +351,100 @@ Quantidade de Casos Abertos no \textit{Issue Tracker} & 1489                    
 
 
 
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=false,scale=0.45]{figuras/pentahoBI.eps}
+\caption{Interface do Pentaho BI Platform}
+\label{BIplatform}
+\end{figure}
+\FloatBarrier
+ 
+
+A ferramenta Pentaho BI Platform como a infraestrutura do ambiente de \textit{Data Warehousing}, possui arquitetura extensível por plugins diversos que realizam diversas operações, tais como, criação de relatórios, visualização dos dados em tabelas e gráficos e entre outros. Entre os plugins disponíveis, está o Saiku Analitics que oferece serviços de apoio a operações OLAP e à visualização de dados. As características gerais do Saiku Analitics, bem como a avaliação quanto aos critérios gerais de seleção de ferramentas, são apresentados na Tabela \ref{saiku}. 
+
+\begin{table}[!ht]
+\begin{tabular}{|p{4.5cm}|p{5.0cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
+\hline
+Característica                                          
+
+&
+
+
+\begin{center}
+\includegraphics[keepaspectratio=false,scale=0.4]{figuras/saiku_olap_logo.eps} 
+\end{center}                                              
+
+& CG01 
+
+& CG02       
+
+& CG03       
+
+
+& CG04       
+
+
+\\ \hline
+
+Licença                                                 & GPL 2.0                              & \checkmark &            &            &            \\ \hline
+Componentes de Visualização                           & Tabelas e Gráficos &            &            &            &            \\ \hline
+Gráficos com Suporte & Gráfico de Pizza, Gráfico de Linhas, Gráfico de Área, Gráfico de Setor e entre outros &            &            &            &
+
+ \\ \hline
+Ultima Versão Estável (14/11/2013)                      & 2.5                                             &            &            &            & \checkmark \\ \hline
+Quantidade de Commits no Repositório Oficial em 14/11/2013            & 790                                         &            &            & \checkmark &            \\ \hline
+Idioma da Documentação                                  & Inglês                                          &            & \checkmark &            &            \\ \hline            
+Quantidade de Casos Abertos no \textit{Issue Tracker} & 227                                           &&            & \checkmark &            \\ \hline
+
+\end{tabular}
+\caption{Características do Saiku Analytics e avaliação quanto aos critérios gerais de seleção de ferramentas}
+\label{saiku}
+\end{table}
+\FloatBarrier
+
+
+O Saiku Analytics, tem em sua arquitetura, um outro componente da arquitetura do Pentaho BI Suite, que é o Mondrian OLAP Server. Este permite ao Saiku, que sejam realizadas consultas \textit{ad hoc} com as dimensões do cubo, de um esquema dimensional, realizando \textit{drag and drop} das colunas das dimensões.
+
+Há também, a possibilidade, da realização de consultas por meio da escrita de \textit{queries} em linguagem MDX \textit{(MulitDimensional eXpressions)}. Esta foi proposta por \citeonline{spofford2006mdx} como uma forma de escrever consultas mais otimizadas para bases seguem o modelo dimensional, tal como mostra o trecho de Código-Fonte \ref{MDX}.
+
+
+
+
+\begin{center}
+\begin{minipage}{0.5\textwidth}
+
+\begin{lstlisting}[caption=Exemplo de \textit{Query} em linguagem MDX, label=MDX]
+ SELECT
+   { [Measures].[Loja] } ON COLUMNS,
+   { [Tempo].[2002], [Tempo].[2003] } ON ROWS
+FROM Vendas
+WHERE ( [Loja].[Loja Sul]) 
+
+\end{lstlisting}
+\end{minipage}
+\end{center}
+\FloatBarrier
+
+
+Após a carga das métricas de código-fonte do projeto Apache Maven no \textit{data warehouse} foi possível então realizar a implementação de algumas consultas OLAP, \textit{ad hoc}, para eventual visualização de dados em tabela e gráficos tal como mostra a Figura \ref{table} e a Figura \ref{chart}. 
+
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=false,scale=0.83]{figuras/indicadores.eps}
+\caption{Visualização de dados do Apache Maven em formato de tabela no Saiku Analytics}
+\label{table}
+\end{figure}
+\FloatBarrier
+ 
+
+
+
+\begin{figure}[ht!]
+\includegraphics[keepaspectratio=false,scale=0.63]{figuras/indicadores_graficos.eps}
+\caption{Visualização de dados do Apache Maven em formato de gráfico de barras no Saiku Analytics}
+\label{chart}
+\end{figure}
+\FloatBarrier
+ 
