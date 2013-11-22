@@ -224,15 +224,15 @@ Seguindo os passos subsequentes da metodologia proposta por \citeonline{Kimball2
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[keepaspectratio=false,scale=0.60]{apendices/esquema.eps}
+\includegraphics[keepaspectratio=false,scale=0.60]{figuras/esquema.eps}
 \caption{Modelo Multidimensional do \textit{Data Warehouse}}
 \label{esquema}
 \end{figure}
 \FloatBarrier
 
-Foi necessário utilizar a normalização na tabela \textit{Range}, para a tabela Metric e Language, pois cada intervalo de referência, tal como citado na seção \ref{Intervalos das Métricas}, decorrente da análise de \citeonline{Meirelles2013}, refere-se a uma métrica específica e a uma linguagem de programação. O modelo multidimensional, que tem seu SQL resultante apresentado no Apêndice \ref{sql-datawarehouse}, foi implementado no MySQL Community Server ~\footnote{Disponível em \url{http://dev.mysql.com/downloads/mysql/}} que também possui uma licença de código aberto GPL 2.0
+O modelo multidimensional, que tem seu SQL resultante apresentado no Apêndice \ref{sql-datawarehouse}, foi implementado no MySQL Community Server ~\footnote{Disponível em \url{http://dev.mysql.com/downloads/mysql/}} que também possui uma licença de código aberto GPL 2.0
 
-Quanto ao fato (Metric\_Fact) é possível dizer que o mesmo é não aditivo, pois as métricas de código-fonte não podem ser somadas a nenhuma dimensão. Este fato é calculado por meio do 75º percentil na etapa de transformação dos dados, tal como explicado na seção \ref{Intervalos das Métricas}.
+Quanto ao fato (Metric\_Fact) é possível dizer que o mesmo é semi-aditivo, pois as métricas de código-fonte não podem ser somadas a nenhuma dimensão. Este fato é calculado por meio do 75º percentil na etapa de transformação dos dados, tal como explicado na seção \ref{Intervalos das Métricas}.
 
 
 \section{Ferramentas de Dwing}
