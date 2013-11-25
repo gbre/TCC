@@ -1,17 +1,17 @@
 \chapter{Introdução}
 
 
-Dentre as inúmeras características que fazem um bom software, várias delas podem ser percebidas no código-fonte e algumas são exclusivas dele \cite{Meirelles2013}. Logo decisões de desenvolvedores, que impactam fortemente sobre a qualidade do código-fonte, podem podem gerar trechos de código não coesos, que venham a se desfazer com o tempo, que aumentam exponencialmente a chance de manutenções corretivas onerosas \cite{Meirelles2013} \cite{beck2007implementation} \cite{beck1999}.
+Dentre as inúmeras características que fazem um bom software, várias delas podem ser percebidas no código-fonte e algumas são exclusivas dele \cite{Meirelles2013}. Logo, decisões de desenvolvedores, que impactam fortemente sobre a qualidade do código-fonte, podem gerar trechos de código não coesos, que venham a se desfazer com o tempo e que aumentam exponencialmente a chance de manutenções corretivas onerosas \cite{Meirelles2013} \cite{beck2007implementation} \cite{beck1999}.
 
 
 
-Portato avaliar continuamente a qualidade do código-fonte, pode identificar antecipadamente trechos a serem melhorados, atingindo assim maiores graus de manutenibilidade, coesão, entendimento e legibilidade \cite{fowler1999refactoring}. Entre os vários métodos de análise da qualidade, está a análise estática de código-fonte, que se refere a uma análise automatizada das estruturas internas do código, em nível de linguagem de programação, sem realizar a execução do mesmo, com objetivo de obter métricas de código-fonte \cite{Terra2008} 
+Portanto, avaliar continuamente a qualidade do código-fonte pode identificar antecipadamente trechos a serem melhorados, atingindo assim maiores graus de manutenibilidade, coesão, entendimento e legibilidade \cite{fowler1999refactoring}. Entre os vários métodos de análise da qualidade, está a análise estática de código-fonte, que se refere a uma análise automatizada das estruturas internas do código, em nível de linguagem de programação, sem realizar a execução do mesmo, com objetivo de obter métricas de código-fonte \cite{Terra2008} 
 \cite{Emanuelsson2008} \cite{Wichmann95}  \cite{Nielson:1999} 
 \cite{Sommerville10}. 
 
-Durante anos, vários trabalhos foram publicados visando definição formal de métodos de análise estática de código, como por exemplo, os trabalhos de \citeonline{Wichmann95}, 
+Durante anos, vários trabalhos foram publicados visando a definição formal de métodos de análise estática de código, como por exemplo, os trabalhos de \citeonline{Wichmann95}, 
 \citeonline{Nielson:1999} e \citeonline{Emanuelsson2008}.
-Contudo as ferramentas que realizam este procedimento sobre o código-fonte 
+Contudo, as ferramentas que realizam este procedimento sobre o código-fonte 
 apresentam alguns problemas, tais como:
 
 \newlist{problems}{enumerate}{4}
@@ -31,7 +31,7 @@ apresentam alguns problemas, tais como:
 	\cite{Meirelles2013}. 
 	
 	\item Em grande parte das ferramentas, a visualização dos resultados não é 
-	agradável, isto é, são apresentados um conjunto de dados em uma janela 
+	agradável, isto é, é apresentado um conjunto de dados em uma janela 
 	terminal contendo os valores das métricas.
 	
     \end{problems}
@@ -52,9 +52,22 @@ Vários trabalhos têm mostrado que ambientes de \textit{Data Warehousing}
 métricas de software proposta por \citeonline{Chulani2003}. Vide os trabalhos 
 de \citeonline{Palza2003}, \citeonline{Ruiz2005}, \citeonline{Castellanos2005},
 \citeonline{Becker2006}, \citeonline{Folleco2007}, \citeonline{Silveira2010}. 
-Tendo os trabalhos, enunciados anteriormente, como norteadores, adotou-se como 
-hipótese de pesquisa deste trabalho que a \textbf{visualização e a extração 
-de métricas de código-fonte em ambientes de DWing possibilitam as equipes maior poder de análise sobre a qualidade do código fonte quando comparada com as análises providas por ferramentas de análise estática de código-fonte isoladamente}. 
+
+Tendo os trabalhos, enunciados anteriormente, como o referencial teórico para ambientes de \textit{Data Warehousing}, adotou-se como questão de pesquisa deste trabalho: 
+
+
+\newlist{questions}{enumerate}{3}
+\setlist[questions]{ label* = Q\arabic* -}
+
+\begin{questions}
+
+	\item A visualização das métricas de código-fonte em ambientes de DWing confere maior visibilidade da qualidade geral do código-fonte de um determinado projeto?
+	
+\end{questions}
+
+
+Com o intuito de verificar a questão de pesquisa, adotou-se como hipótese de pesquisa que \textbf{visualização e a extração 
+de métricas de código-fonte em ambientes de DWing possibilitam as equipes maior poder de análise sobre a qualidade geral do código fonte quando comparada com as análises providas por ferramentas de análise estática de código-fonte isoladamente}. 
 
 
 %-----------------------------------------------------------------------------%
@@ -70,8 +83,8 @@ de métricas de código-fonte em ambientes de DWing possibilitam as equipes maio
 Esta seção apresenta o objetivo geral e os objetivos específicos deste Trabalho de Conclusão de Curso.
 
 \subsection{Objetivo Geral}
-Sob o prisma da hipótese de pesquisa, há como objetivo geral a proposição e 
-construção de um ambiente de \textit{Data Warehousing}, para extrair e visualizar métricas de código-fonte com objetivo de que a interpretação das métricas de código-fonte venha a ser facilitada.
+Sob o prisma da questão de pesquisa, o objetivo geral deste trabalho é construir a visualização de métricas de código-fonte em um ambiente de \textit{Data Warehousing} (DWing) a fim de se validãr a hipótese de pesquisa.
+
 
 %------------------------------------------------------------------------------%
 
@@ -83,15 +96,10 @@ Os objetivos específicos deste trabalho são:
 \setlist[objectives]{ label* = OE\arabic* -}
 
 \begin{objectives}
-	\item Construir o ambiente de Dwing para extração e visualização de 
-	métricas de código-fonte utilizando ferramentas de software livre. 
 
-	\item Analisar a qualidade de um software livre afim de validar a utilização do ambiente de DWing para métricas de código-fonte.
-  
-	\item Incorporar indicadores qualitativos para cada métrica de código-fonte.
-	
-	\item Facilitar o entendimento das métricas de código-fonte, por meio de 
-	apresentação, em formas visuais, das análises obtidas por meio das métricas de código-fonte
+	\item Construir o ambiente de DWing com ferramentas de software livre.
+
+	\item Analisar a qualidade de um software livre a fim de instanciar a visualização das métricas de código-fonte em ambientes de DWing.
 	
     \end{objectives}
 	
@@ -101,7 +109,22 @@ Os objetivos específicos deste trabalho são:
 
 \section {Metodologia de Pesquisa}
 
-A metodologia de pesquisa deste trabalho foi constituída de pesquisa documental para a construção do referencial teórico e experimental para construção do ambiente de DWing instanciado em um caso de avaliação de qualidade de código-fonte de software livre escolhido. 
+A metodologia de pesquisa deste trabalho foi construída em etapas. Para a primeira etapa, realizou-se pesquisa bibliográfica para a construção do referencial teórico. 
+
+Na segunda etapa, realizou-se um estudo comparativo entre ferramentas livres para a construção do ambiente de \textit{Data Warehousing}. 
+
+Após o levantamento das ferramentas, construiu-se o ambiente \textit{Data Warehousing}, em pequenos ciclos de produção. Para o acompanhamento das atividades de implementação, utilizou-se o Quadro \textit{Kanban}, que foi inventado pela Toyota com objetivo de controlar o fluxo da produção, mostrado na Figura \ref{kanban}.
+
+
+\begin{figure}[h]
+\centering
+         \includegraphics[keepaspectratio=true,scale=0.40]{figuras/kanban.eps}
+         \caption{Quadro \textit{Kanban} do Trabalho de Conclusão de Curso}
+         \label{kanban}
+ \end{figure}
+
+Após a construção do ambiente de \textit{Data Warehousing}, foi realizado um estudo de caso de coleta de métricas de código-fonte de um software livre com intuito de verificar a hipótese de pesquisa.
+
 
 \section{Organização do Trabalho}
 
@@ -110,6 +133,6 @@ introdução, o texto foi organizado em capítulos. O Capítulo 2 apresenta as
 métricas de software bem como o processo de medição, descrito pela ISO 15939, 
 e as métricas de código-fonte. O Capítulo 3 
 apresenta conceitualmente o ambiente de \textit{data warehousing} (DWing). O 
-Capítulo 4 apresenta a implementação do ambiente de DWing construída neste 
+Capítulo 4 apresenta a implementação do ambiente de DWing construído neste 
 trabalho. Por fim, o capítulo 5 apresenta as considerações finais com uso do 
 ambiente de DWing na extração e visualização de métricas de código-fonte. 

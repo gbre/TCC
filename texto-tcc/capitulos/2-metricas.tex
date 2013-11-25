@@ -2,11 +2,11 @@
 
 \section{Processo de Medição de Software}
 
-Segundo \citeonline{Fenton98}, medição é o mapeamento de relações empíricas em relações formais. Isto é, quantificação em símbolos com objetivo de caracterizar uma entidade por meio de seus atributos. Contrapondo-se com uma  definição operacional, a \citeonline{ISO:15939} define medição como conjunto de operações que visam por meio de um objeto determinar um valor a uma medida ou métrica. \footnote{A definição formal da \citeonline{ISO:15939} não utiliza o termo métrica, sendo que este é utilizado por abordagens mais antigas como GQM em \citeonline{Basili96b}, que é uma outra abordagem para medição, contudo compreende-se que o termo medida tem valor semântico equivalente ao de métrica no contexto do deste trabalho}. Alguns modelos de referência, como \citeonline{cmmi2010}, e até a própria \citeonline{ISO:15939} definem medição como uma ferramenta primordial para gerenciar as atividades do desenvolvimento de software e para avaliar a qualidade dos produtos e a capacidade de processos organizacionais. 
+Segundo \citeonline{Fenton98}, medição é o mapeamento de relações empíricas em relações formais. Isto é, quantificação em símbolos com objetivo de caracterizar uma entidade por meio de seus atributos. Contrapondo-se com uma  definição operacional, a \citeonline{ISO:15939} define medição como conjunto de operações que visam por meio de um objeto determinar um valor a uma medida ou métrica \footnote{A definição formal da \citeonline{ISO:15939} não utiliza o termo métrica, sendo que este é utilizado por abordagens mais antigas como GQM em \citeonline{Basili96b}, que é uma outra abordagem para medição, contudo compreende-se que o termo medida tem valor semântico equivalente ao de métrica no contexto do deste trabalho}. Alguns modelos de referência, como \citeonline{cmmi2010}, e até a própria \citeonline{ISO:15939} definem medição como uma ferramenta primordial para gerenciar as atividades do desenvolvimento de software e para avaliar a qualidade dos produtos e a capacidade de processos organizacionais. 
 
 
 A \citeonline{ISO:15939} define um processo de medição com base em um modelo de
-informação, que é mostrado na Figura \ref{informação}, afim de obter produtos de informação para cada necessidade de informação. Para isto, cada necessidade de informação, que é uma situação que requer conhecimento com intuito de  gerenciar objetivos, metas, riscos e problemas é mapeada em uma construção  mensurável que tem em sua origem um conceito mensurável,como por exemplo,  tamanho, qualidade, custo afim de mapear um atributo, que é uma característica  que permite distinguir qualitivativamente e/ou quantitativamente uma entidade, que pode ser um processo, projeto ou produto de software. Por fim  cada construção mensurável é mapeada em um ou mais produtos de informação que  levam uma ou mais métricas ou medidas, que podem ser classificadas sob  critérios apresentados na seção \ref{Classificação das Métricas de Software}.
+informação, que é mostrado na Figura \ref{informação}, a fim de obter produtos de informação para cada necessidade de informação. Para isto, cada necessidade de informação, que é uma situação que requer conhecimento com intuito de  gerenciar objetivos, metas, riscos e problemas, é mapeada em uma construção  mensurável que tem em sua origem um conceito mensurável, como por exemplo,  tamanho, qualidade e custo a fim de mapear um atributo (característica  que permite distinguir qualitivativamente e/ou quantitativamente) uma entidade que pode ser um processo, projeto ou produto de software. Por fim  cada construção mensurável é mapeada em um ou mais produtos de informação que  levam uma ou mais métricas ou medidas, que podem ser classificadas sob  critérios apresentados na seção \ref{Classificação das Métricas de Software}.
 
 \begin{figure}[h!]
 \centering
@@ -49,7 +49,7 @@ Tabela \ref{construção-ágil}.
 \label{Classificação das Métricas de Software}
 
 As métricas de software possuem uma escala de medição, que é um conjunto 
-ordenado de valores, contínuos ou discretos, ou uma série de categorias as 
+ordenado de valores, contínuos ou discretos, ou uma série de categorias nas 
 quais entidade é mapeada \cite{ISO:15939}. As escalas podem ser:
 
 \begin{easylist}[itemize]
@@ -58,30 +58,30 @@ quais entidade é mapeada \cite{ISO:15939}. As escalas podem ser:
 comparações, sendo que a ordem não possui significado
 \cite{ISO:15939} \cite{Fenton98} \cite{Meirelles2013}.
 
-& Ordinal: A medição é baseada em ordenação, ou seja os valores possuem 
+& Ordinal: A medição é baseada em ordenação, ou seja, os valores possuem 
 ordem, mas a distância entre eles não possui significado. Por exemplo, nível 
 de experiência dos programadores \cite{ISO:15939} \cite{Fenton98} 
 \cite{Meirelles2013}. 
 
 & Intervalo: A medição é baseada em distâncias iguais definidas para as 
-menores unidade. Por exemplo, o aumentar de 1º C de um termômetro. Nesta 
+menores unidades. Por exemplo, o aumento de 1º C de um termômetro. Nesta 
 escala é possível realizar ordenação, soma e subtração. 
 \cite{ISO:15939} \cite{Fenton98} 
 
 & Racional: A medição é baseada em distâncias iguais definidas para as 
 menores unidades, e neste caso é possível a ausência por meio do zero 
-absoluto. Como por exemplo, a quantidade de linhas de código em uma classe. 
+absoluto. Por exemplo, a quantidade de linhas de código em uma classe. 
 Nesta escala, é possível realizar ordenação, soma, subtração, 
 multiplicação e divisão. \cite{ISO:15939} \cite{Fenton98} 
 
 \end{easylist}
 	
-As métricas podem ser classificadas quanto a objeto da métrica, que 
+As métricas podem ser classificadas quanto ao objeto da métrica, que 
 divide as métricas de software em: \textit{métricas de processo} e 
 \textit{métricas de produto} \cite{Mills:1999}. Ainda é possível, segundo a 
 \citeonline{ISO:15939}, dividir as métricas quanto ao método de medição, 
 podendo estas serem \textit{métricas objetivas}, que são baseadas em regras 
-númericas e podem ter a coleta manual ou automática ou \textit{métricas 
+númericas e podem ter a coleta manual ou automática, ou \textit{métricas 
 subjetivas}, que envolvem o julgamento humano para consolidação do resultado. 
 
 Segundo o modelo de qualidade da \citeonline{ISO25023}, que é mostrado na 
@@ -130,13 +130,13 @@ em três categorias:
 \label{Métricas de Código-Fonte}
 
 Segundo a \textit{International Working Conference on Source Code Analysis and 
-Manipulation} (SCAM), O código-fonte é qualquer especificação executável 
-de um sistema de software. Por conseguinte, se inclui desde código de máquina, 
+Manipulation} (SCAM), o código-fonte é qualquer especificação executável 
+de um sistema de software. Por conseguinte, se inclui desde código de máquina 
 até linguagens de alto nível ou representações gráficas executáveis. 
 \cite{harman2010source}. 
 
 
-Portanto as métricas de código-fonte quando obtidas por meio da análise estática de código-fonte, advém de especificações executáveis do software, isto é, trechos de código escritos em alguma linguagem de programação. Isto confere as métricas de código-fonte a classificação de métricas objetivas e características como validade, simplicidade, objetividade, fácil obtenção e robustez \cite{Mills:1999}. \citeonline{Meirelles2013} realizou um levantamento sistemático na literatura das métricas de código-fonte. Estas foram categorizadas, nas categorias apresentadas nas subseções a seguir. 
+Portanto, as métricas de código-fonte, quando obtidas por meio da análise estática de código-fonte, advém de especificações executáveis do software, isto é, trechos de código escritos em alguma linguagem de programação. Isto confere às métricas de código-fonte a classificação de métricas objetivas e características como validade, simplicidade, objetividade, fácil obtenção e robustez \cite{Mills:1999}. \citeonline{Meirelles2013} realizou um levantamento sistemático na literatura das métricas de código-fonte que foram categorizadas, nas categorias apresentadas nas subseções a seguir. 
 
 
 %--------------------------------------------
@@ -146,10 +146,10 @@ Portanto as métricas de código-fonte quando obtidas por meio da análise está
 
 O tamanho do código-fonte foi um dos primeiros conceitos mensuráveis do 
 software, dado que o software poderia ocupar espaço tanto em forma de cartões 
-perfurados quanto em forma de papel quando o código-fonte é impresso. 
+perfurados quanto em forma de papel quando o código-fonte era impresso. 
 A segunda lei de \citeonline{Lehman1980b} enuncia que a complexidade aumenta à 
 medida que o software é evoluído, a menos que seja um trabalho de manutenção. 
-Logo é perceptível que as métricas de complexidade estão diretamente ligadas as 
+Logo, é perceptível que as métricas de complexidade estão diretamente ligadas as 
 métricas de tamanho, sendo que a modificação em uma provavelmente impactará na 
 outra. A seguir são apresentadas as principais métricas de tamanho e 
 complexidade:
@@ -165,11 +165,11 @@ complexidade:
 	programação e que o estilo esteja normalizado \cite{Jones91}.
 	
 	\item[ACCM (\textit{Average Cyclomatic Complexity per Method})] \textbf{
-	Média da Complexidade Ciclomática por Método} mede a complexidade do 
+	Média da Complexidade Ciclomática por Método} mede a complexidade dos 
 	métodos ou funções de um programa. Essa métrica pode ser representada 
 	através de um grafo de fluxo de controle \cite{McCabe76}. O uso de 
 	estruturas de controle, tais como, \textit{if, else, while} aumentam a 
-	complexidade ciclomática de um de um método.
+	complexidade ciclomática de um método.
 
 \end{description}
 
@@ -180,18 +180,15 @@ complexidade:
 \label{métrica objetos}
 
 A evolução dos paradigmas de programação permitiu que as linguagens de 
-programação, assumissem diversas características entre si. O paradigma 
-funcional, por exemplo, enxerga o programa como uma sequência de funções que 
-podem ser executadas em modo funcional. Já o paradigma orientado a objetos visa 
-abstrair as unidades computacionais em Classes, que representam em grande 
-parte do desenvolvimento, unidades reais do negócio, partindo destas abstrai-se instâncias 
-computacionais, isto são, objetos propriamente ditos. A seguir são apresentadas 
+programação assumissem diversas características entre si. O paradigma 
+funcional, por exemplo, enxerga o programa como uma sequência de funções. 
+Já o paradigma da orientação à objetos visa abstrair as unidades computacionais em Classes, que representam em grande parte do desenvolvimento, unidades reais do negócio. Estas unidades geram instâncias computacionais, isto são, objetos propriamente ditos. A seguir são apresentadas 
 as principais métricas de orientação à objetos:
 
 \begin{description}
 
 	\item[ACC (\textit{Afferent Connections per Class})] 
-	\textbf{Conexões Aferentes por Classe} é número total de classes externas 
+	\textbf{Conexões Aferentes por Classe} é o número total de classes externas 
 	de um pacote que dependem de classes de dentro desse pacote. Quando 
 	calculada no nível da classe, essa medida também é conhecida como 
 	\textit{Fan-in} da classe, medindo o número de classes das quais a classe é 
@@ -207,8 +204,8 @@ as principais métricas de orientação à objetos:
 	
 	\item[LCOM4 (\textit{Lack of Cohesion in Methods})] \textbf{Falta de Coesão
 	entre Métodos}. Originalmente proposto por \citeonline{Chidamber94} 
-	como LCOM, contudo essa não teve uma grande aceitabilidade. Após críticas e 
-	sugestões a métrica revisada por \citeonline{LCOM4}, que propôs a LCOM4. 
+	como LCOM não teve uma grande aceitabilidade. Após críticas e 
+	sugestões a métrica foi revisada por \citeonline{LCOM4}, que propôs a LCOM4. 
 	Para calcular LCOM4 de um módulo, é necessário construir um gráfico 
 	não-orientado em que os nós são os métodos e atributos de uma classe. Para
 	cada método, deve haver uma aresta entre ele e um outro método ou variável 
@@ -222,7 +219,7 @@ as principais métricas de orientação à objetos:
 	implementadas. Essa métrica é usada para ajudar a identificar o 
 	potencial de reúso de uma classe. Em geral, as classes com um grande 
 	número de métodos são mais difíceis de serem reutilizadas, pois elas 
-	são propensas a serem menos coesa \cite{Lorenz94}.
+	são propensas a serem menos coesas \cite{Lorenz94}.
 	
 
 	%-----------------------------
@@ -232,11 +229,10 @@ as principais métricas de orientação à objetos:
 	sistema, ou seja, as classes de bibliotecas não são contabilizadas. 
 	Nos casos onde herança múltipla é permitida, considera-se o maior 
 	caminho da classe até uma das raízes da hierarquia. Quanto maior for o 
-	valor DIT, maior é o número de atributos e métodos herdados, e portanto 
-	maior é a complexidade \cite{Shih97}.
+	valor DIT, maior é o número de atributos e métodos herdados, e, portanto,maior é a complexidade \cite{Shih97}.
 	
 	\item[NOC (\textit{Number of Children})] \textbf{Número de Filhos} é o 
-	número subclasses ou classes filhas que herdam da classe analisada 
+	número de subclasses ou classes filhas que herdam da classe analisada 
 	\cite{Rosenberg97}. Deve se ter cautela ao modificar classes com muitos 
 	filhos, pois uma simples modificação de assinatura de um método, pode criar
 	uma mudança em muitas classes.
@@ -244,15 +240,12 @@ as principais métricas de orientação à objetos:
 
 \end{description}
 	
-\subsection{Intervalos da Métricas}
+\subsection{Intervalos das Métricas}
 \label{Intervalos das Métricas}
 
-No trabalho de \citeonline{Meirelles2013}, foram analisadas métricas do código-fonte de 
-38 projetos de software livre, em um total de 344.872 classes das aplicações 
-mais utlizadas de software livre, tais como, \textbf{Chrome, Firefox, OpenJDK, VLC} e entre outros. Após uma análise estatística com o 75º percentil dos valores obtidos para cada métrica de código-fonte, \citeonline{Meirelles2013} percebeu que há certos valores que são frequentemente encontrados quando se 
-analisa o código-fonte de aplicações de mesma linguagem de programação. De forma a agregar valores comuns, \citeonline{Meirelles2013} classificou as métricas de código-fonte nos seguintes intervalos: \textit{muito frequente, frequente, pouco frequente e não frequente}. 
+No trabalho de \citeonline{Meirelles2013}, foram analisadas métricas do código-fonte de 38 projetos de software livre, em um total de 344.872 classes das aplicações mais utlizadas de software livre, tais como, \textbf{Chrome, Firefox, OpenJDK, VLC} e entre outros. Após uma análise estatística com o 75º percentil dos valores obtidos para cada métrica de código-fonte, com exceção do LOC que foi considerado o 50º ou simplemente a mediana, \citeonline{Meirelles2013} percebeu que há certos valores que são frequentemente encontrados quando se analisa o código-fonte de aplicações de mesma linguagem de programação. De forma a agregar os valores comuns, \citeonline{Meirelles2013} classificou as métricas de código-fonte nos seguintes intervalos: \textit{muito frequente, frequente, pouco frequente e não frequente}. 
 
-Visando o melhor entendimento das métricas, renomeou-se os intervalos tal como a Tabela \ref{nomes}. Posteriormente, apresenta-se a Tabela \ref{metrics}, 
+Visando simplificar o entendimento das métricas de código-fonte, renomeou-se os intervalos tal como a Tabela \ref{nomes}. Posteriormente, apresenta-se a Tabela \ref{metrics}, 
 decorrente do estudo de \citeonline{Meirelles2013}, com os intervalos 
 encontrados para C++ e Java.
 
@@ -353,6 +346,5 @@ encontrados para C++ e Java.
 
 \FloatBarrier
 	
-Os intervalos, que foram apresentados na Tabela \ref{metrics} serão utilizados
-como indicadores de qualidade de código-fonte, de modo a simplificar a 
-interpretação da qualidade do código-fonte no componente de visualização de dados, do ambiente de \textit{Data Warehousing}, a ser apresentado a seguir.
+Os intervalos, que foram apresentados na Tabela \ref{metrics}, serão utilizados
+como indicadores de qualidade de código-fonte no componente de visualização de dados do ambiente de \textit{Data Warehousing} a ser apresentado a seguir.

@@ -40,7 +40,7 @@ Para selecionar as ferramentas, que implementarão cada um dos componentes do am
 
 \section{Ferramenta de Análise Estática de Código-Fonte}
 
-Além dos critérios gerais estabelecidos, para escolha da ferramenta de análise estática de código-fonte, que são as fontes externas de coleta, estabeleceram-se os critérios específicos para seleção de ferramentas de análise estática de código fonte (CAE) apresentados na Tabela \ref{specific}
+Além dos critérios gerais estabelecidos para escolha da ferramenta de análise estática de código-fonte, que é a fonte externa de coleta dos dados, estabeleceram-se os critérios específicos para seleção de ferramentas de análise estática de código fonte (CAE) apresentados na Tabela \ref{specific}.
 
 
 	\begin{table}[!ht]
@@ -175,11 +175,13 @@ CAE03     & \checkmark & \xmark     \\ \hline
 \FloatBarrier
 
 
-Dado a comparação, percebe-se que ambas as ferramentas cumprem o próposito geral de levantar as métricas de código-fonte, com a diferença que SonarQube possui um suporte a mais linguagens de programação quando comparado com o Analizo, contudo dado que o escopo da análise de \citeonline{Meirelles2013} se restringe a Java e C++, logo a falta de suporte à outras linguagens que o SonarQube suporta não é fator excludente da utilização do Analizo.
+Dado a comparação, percebe-se que ambas as ferramentas cumprem o próposito geral de levantar as métricas de código-fonte. Embora o SonarQube possua  suporte a mais linguagens de programação quando comparado com o Analizo, não se é fator excludente da utlização do Analizo, pois o escopo da análise de \citeonline{Meirelles2013} se restringe a Java e C++.
 
-Percebe-se, ainda devido aos critérios específicos de selação de ferramentas de análise estática, que o Analizo tem uma plataforma específica, sendo que o SonarQube é mutiplataforma. Contudo, entende-se que como há objetivo de construir um ambiente de \textit{Data Warehousing} utilizando ferramentas livres, logo poder-se-ia escolher também uma plataforma livre tal como o Ubuntu ou Debian.
 
-A escolha foi ponderada então pelo formato de saída do arquivo. \citeonline{fonseca2007alternativas} realizou um estudo experimental entre XML, JSON (Formatos de Saída do SonarQube) e YAML (Formato de Saída do Analizo), que é mostrado na Figura \ref{jsonvsyaml}.
+Devido aos critérios específicos de selação de ferramentas de análise estática, percebe-se que o Analizo tem uma plataforma específica, sendo que o SonarQube é mutiplataforma. Ainda que o critério não seja atendido pelo Analizo, há o objetivo de construir um ambiente de \textit{Data Warehousing} utilizando ferramentas livres, logo poder-se-ia escolher também um sistema operacional livre tal como o Ubuntu ou Debian.
+
+
+Dado o cenário apresentado, a escolha foi ponderada então pelo formato de saída do arquivo. \citeonline{fonseca2007alternativas} realizou um estudo experimental entre XML, JSON (Formatos de Saída do SonarQube) e YAML (Formato de Saída do Analizo), que é mostrado na Figura \ref{jsonvsyaml}.
 
 \begin{figure}[ht!]
 \centering
@@ -189,37 +191,86 @@ A escolha foi ponderada então pelo formato de saída do arquivo. \citeonline{fo
 \end{figure}
 \FloatBarrier
 
-Após a análise da Figura \ref{jsonvsyaml}, percebe-se que o YAML perde em desempenho para JSON e XML quando o número de elementos aumenta gradativamente. Em projetos de software, é natural que estes cresçam cada vez mais, tal como especifica a segunda lei de \citeonline{Lehman1980b}, logo o formato JSON ou XML é mais adequado, fazendo com que a ferramenta SonarQube seja mais indicada para o contexto deste trabalho.
+Após a análise da Figura \ref{jsonvsyaml}, percebe-se que o YAML perde em desempenho para JSON e XML quando o número de elementos aumenta gradativamente. Em projetos de software, é natural que estes cresçam cada vez mais, tal como especifica a segunda lei de \citeonline{Lehman1980b}. Logo, o formato JSON ou XML é mais adequado, fazendo com que a ferramenta SonarQube seja mais indicada para o contexto deste trabalho.
 
 Entre JSON e XML, \citeonline{fonseca2007alternativas} conclui que o transporte de dados é mais rápido utilizando JSON, pois se permite transportar
 um objeto serializado arbitrariamente complexo, e transformá-lo num objeto
-JavaScript sem grandes problemas, enquanto que o XML se deve construir um \textit{parser} para interpretar os dados. Por este motivo, foi escolhido para extração das métricas de código-fonte neste trabalho, o formato JSON provido pela ferramenta SonarQube. 
+JavaScript sem grandes problemas, enquanto que no XML se deve construir um \textit{parser} para interpretar os dados. Por este motivo, foi escolhido para extração das métricas de código-fonte neste trabalho o formato JSON provido pela ferramenta SonarQube. 
 
 
-\subsection{Acompanhamento das Métricas de Código-Fonte de um Software Livre}
+\subsection{Estudo de caso de Acompanhamento das Métricas de Código-Fonte de um Software Livre em ambiente de DWing}
 
-Com o objetivo de validar a implementação do ambiente de DWing para métricas de código-fonte, escolheu-se nesta etapa do trabalho de conclusão de curso, acompanhar a qualidade de um software livre conforme especificado pelo objetivo específico OE2.
+Com o objetivo de validar a implementação do ambiente de DWing para métricas de código-fonte, escolheu-se nesta etapa do trabalho de conclusão de curso acompanhar a qualidade de um software livre por meio de um estudo caso.
 
-Dado que os intervalos constituídos da análise de \citeonline{Meirelles2013}, apresentados na seção \ref{Intervalos das Métricas}, são para as linguagens de programação C++ e Java, há então a restritividade quanto ao acompanhamento de projetos feitos nessas linguagens.
+Dado que os intervalos constituídos da análise de \citeonline{Meirelles2013}, apresentados na seção \ref{Intervalos das Métricas}, são para as linguagens de programação C++ e Java, há a restrição quanto ao acompanhamento de projetos feitos nessas linguagens.
 
 Após uma leitura da documentação do SonarQube, descobriu-se que este mantém um repositório de análises de código-fonte de projetos de software livre, chamado Nemo~\footnote{Disponível em \url{http://nemo.sonarqube.org/}}. O Nemo disponibiliza projetos feitos nas linguagens Java, Javascript, Groovy e entre outros. Limitando-se apenas a linguagem Java, dado que não foi encontrado nenhum projeto C++ no repositório com grande frequência de atualizações, obteve-se cerca de 178 projetos.
 
 A fim de se detectar projetos que tinham a maior taxa de atualização no repositório de análises do Nemo, percebeu-se que o projeto \textbf{Apache Maven} era um dos que mais se mantinham atualizados. Feito em linguagem Java, este projeto disponibiliza uma nova análise sobre o código-fonte a cada semana. Diante disso, foi escolhido o Apache Maven como o software a ser monitorado no ambiente de DWing. 
 
 
-
-
 \section{Projeto do \textit{Data Warehouse}}
 
 O \textit{Data Warehouse} como elemento central do ambiente de \textit{Data Warehousing} deve ser o primeiro a ser projetado \cite{Kimball2002}. Isso ocorre pois o DW deve ser dirigido ao negócio. Logo a modificação do DW impacta principalmente na carga dos dados, na etapa de extração, transformação e carga, requerendo modificações conforme o DW venha a mudar.
 
-Seguindo a metolodogia proposta por \citeonline{Kimball2002}, apresentada na seção \ref{metodologia-dw}, entende-se que o processo de negócio deste trabalho de conclusão de curso, é avaliar a qualidade do código-fonte continuamente por meio das métricas de código-fonte. \citeonline{Kimball2002} enuncia que o segundo passo após a indentificação do processo de negócio, é a identificação da peridiociodade dos dados coletados pelo mesmo.
+Seguindo a metolodogia proposta por \citeonline{Kimball2002}, apresentada na seção \ref{metodologia-dw}, entende-se que o processo de negócio a ser avaliad é o monitoramento da qualidade do código-fonte expresso por meio das métricas de código-fonte. Este negócio possui algumas demandas, que foram mapeadas, como \begin{inparaenum}[i)] \item 
+\textbf{Comparação das métricas de código-fonte entre projetos de mesma linguagem de programação ao longo de um período de x meses}; \item \textbf{Acompanhamento dos indicadores de qualidade de um determinado projeto ao longo do tempo}.
+\end{inparaenum} 
+Embora \citeonline{Kimball2002} enuncie que todo o negócio deva ser mapeado dentro do desenvolvimento de um ambiente de \textit{Data Warehousing}, compreende-se, por analogia ao desenvolvimento de software, que o levantamento total de requisitos para implementação aumenta exponencialmente o custo da mudança \cite{beck1999}. Por este motivo, adicionalmente a metodologia do Kimball, utilizou-se o principio ágil de pequenos ciclos de entrega de software. Logo, as demandas do negócio ainda não foram totalmente mapeadas e estas assim o serão até a próxima etapa do trabalho.
 
 
-No processo de negócio de métricas de código-fonte, a periodicidade de coleta dos dados é variável, isto é, depende de projeto a projeto. Visando atender a maior parte dos casos possíveis, identificou-se a menor granuladidade para agregação: o dia. Isto ocorre, pois as ferramentas de integração contínua, que são muito utilizadas em ambientes ágeis \cite{beckarticle1999}, permitem a estabilização de um pacote de software por dia, logo a menor análise do código-fonte pode ser realizada sobre esse pacote estável diariamente. Contudo, há projetos que liberam versões estáveis com mais tempo, portanto se deve permitir agregações maiores tais como, mês, trimestre, semestre e ano. Para esta etapa do trabalho de conclusão de curso, optou-se pela implementação da agregação diária.
+\citeonline{Kimball2002} enuncia que o segundo passo após a indentificação do processo de negócio é a identificação da periodiciodade dos dados coletados pelo mesmo. No processo de negócio de métricas de código-fonte, a periodicidade de coleta dos dados é variável, isto é, depende de projeto a projeto. Visando atender a maior parte dos casos possíveis, identificou-se a menor granularidade para agregação: o dia. Isto ocorre, pois as ferramentas de integração contínua, que são muito utilizadas em ambientes ágeis \cite{beckarticle1999}, permitem a estabilização de um pacote de software por dia, logo a menor análise do código-fonte pode ser realizada sobre esse pacote estável diariamente. Contudo, há projetos que liberam versões estáveis com mais tempo, portanto se deve permitir agregações maiores tais como, mês, trimestre, semestre e ano. Para esta etapa do trabalho de conclusão de curso, optou-se pela implementação da agregação diária.
 
 
-Seguindo os passos subsequentes da metodologia proposta por \citeonline{Kimball2002}, foram identificados as dimensões e o fato por meio da modelagem multidimensional, tal como mostra a Figura \ref{esquema}, utilizado a ferramenta MySQL Workbench~\footnote{Disponível em \url{http://dev.mysql.com/downloads/tools/workbench/}} que é um software de código aberto com licença GPL 2.0.
+Seguindo os passos subsequentes da metodologia proposta por \citeonline{Kimball2002}, é realizada a identificação das entidades do negócio para por fim realizar modelagem dimensional do \textit{Data Warehouse}. 
+
+
+\subsection{Entidades do Negócio}
+
+Partindo da descrição das demandas que já foram mapeadas, identificou-se entidades do negócio tal como mostra a Tabela \ref{entidades}.
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{2cm}|p{2.5cm}|p{4cm}|p{2cm}|}
+\hline
+Entidade                   & Atributos                & Descrição do Atributo  & Aditividade                 \\ \hline
+
+
+\multirow{2}{*}{Projeto}   & identificador            & identificador único do Projeto                                                                                                                                                                                                        & não aditivo                 \\ \cline{2-4} 
+                           & nome                     & identificador textual do Projeto                                                                                                                                                                                                      & não aditivo                 \\ \hline
+\multirow{4}{*}{Métrica}   & identificador            & identificador único da Métrica                                                                                                                                                                                                        & não aditivo                 \\ \cline{2-4} 
+                           & nome                     & identificador textual da Métrica                                                                                                                                                                                                      & não aditivo                 \\ \cline{2-4} 
+                           & descrição                & descrição textual da métrica                                                                                                                                                                                                          & não aditivo                 \\ \cline{2-4} 
+                           & valor                    & trata-se da medida, isto é, o valor obtido para cada métrica                                                                                                                                                                          & aditivo em relação ao tempo \\ \hline
+\multirow{5}{*}{Intervalo} & identificador            & identificador único do intervalo                                                                                                                                                                                                      & não aditivo                 \\ \cline{2-4} 
+                           & máximo                   & valor discreto máximo encontrado por                                                                                                                                                                                                  & não aditivo                 \\ \cline{2-4} 
+                           & mínimo                   & valor discreto mínimo encontrado por                                                                                                                                                                                                  & não aditivo                 \\ \cline{2-4} 
+                           & indice de qualidade      & Índice de qualidade para um determinado intervalo, podendo ser Excelente, Bom, Regular ou Ruim conforme especificado na Tabela  \ref{metrics}                                                                   & não aditivo                 \\ \cline{2-4} 
+                           & linguagem de programação & A linguagem de programação é um atributo do intervalo, pois para cada linguagem de programação, há intervalos diferenciados. No escopo da análise, de \citeonline{Meirelles2013} há apenas C++ e Java & não aditivo                 \\ \hline
+
+\multirow{4}{*}{Tempo} & identificador            & identificador único do intervalo                                                                                                                                                                                                      & não aditivo                 \\ \cline{2-4} 
+                           & dia                   & valor discreto do dia de um mês (varia de 1 a 31)  & não aditivo                 \\ \cline{2-4} 
+
+                           
+                           & mês                   & valor discreto do mês em um ano (varia de 1 a 12)  & não aditivo                 \\ \cline{2-4} 
+
+                           & ano                   & valor discreto do dia de um ano (expresso em 4 dígitos)  & não aditivo                 \\ \cline{2-4} 
+
+                \hline         
+\end{tabular}
+\caption{Entidades do Negócio}
+\label{entidades}
+\end{table}
+\FloatBarrier
+
+
+
+
+
+\subsection{Projeto Lógico}
+
+A partir das entidades do negócio, foram identificados as dimensões e o fato por meio da modelagem dimensional, tal como mostra a Figura \ref{esquema}, utilizando a ferramenta MySQL Workbench~\footnote{Disponível em \url{http://dev.mysql.com/downloads/tools/workbench/}} que é um software de código aberto com licença GPL 2.0.
 
 
 \begin{figure}[ht!]
@@ -230,12 +281,14 @@ Seguindo os passos subsequentes da metodologia proposta por \citeonline{Kimball2
 \end{figure}
 \FloatBarrier
 
-O modelo multidimensional, que tem seu SQL resultante apresentado no Apêndice \ref{sql-datawarehouse}, foi implementado no MySQL Community Server ~\footnote{Disponível em \url{http://dev.mysql.com/downloads/mysql/}} que também possui uma licença de código aberto GPL 2.0
+A dimensão Tempo (representada na tabela Time) foi identificada a partir da periodicidade da coleta. A dimensão Projeto (Project) foi identificada ao se analisar a entidade projeto do negócio. As dimensões Métrica (Tabela Metric) e Intervalo (Range) também foram identificadas a partir das entidades de negócio. \citeonline{Meirelles2013} enuncia que: para cada métrica específica há um intervalo específico para uma determinada linguagem de programação. Em vista da restrição, utilizou-se a normalização resultando em um \textit{snowflake}.
 
-Quanto ao fato (Metric\_Fact) é possível dizer que o mesmo é semi-aditivo, pois as métricas de código-fonte não podem ser somadas a nenhuma dimensão. Este fato é calculado por meio do 75º percentil na etapa de transformação dos dados, tal como explicado na seção \ref{Intervalos das Métricas}.
+Quanto ao fato (Metric\_Fact), este foi identificado por ser semi-aditivo, pois pode ser agregado em relação a dimensão tempo, resultando assim em agregações maiores para um mesmo projeto (meses, trimestres, semestres, anos).
 
 
-\section{Ferramentas de Dwing}
+O modelo da Figura \ref{esquema} foi implementado no banco de dados MySQL Community ~\footnote{Disponível em \url{http://dev.mysql.com/downloads/mysql/}}por meio da tradução do projeto lógico em projeto físico, que o próprio MySQL Workbench realiza, caso o banco de dados destino seja o MySQL.
+
+\section{Ferramentas de DWing}
 
 Tendo em vista que o \textit{Data Warehouse} foi projetado em um modelo dimensional, é possível construir tanto o processo de \textit{Extraction-Transformation-Load} quanto as operações de consulta OLAP. Entre as alternativas de código aberto que suportam este ambiente como um todo, está o Pentaho BI Suite Community Edition. Este apresenta soluções que cobrem 
 as áreas de ETL, \textit{reporting}, OLAP e mineração de dados. Cada um dos componentes utilizados é apresentado e analisado nas seções subsequentes.
@@ -294,17 +347,18 @@ Quantidade de Casos Abertos no \textit{Issue Tracker} & 2875                    
 \end{table}
 \FloatBarrier	
 
-O Kettle possui dois tipos de componentes internos: \textit{Transformation} e \textit{Job}. O primeiro permite mover dados de uma origem até um destino, já a \textit{Transformation} permite executar tarefas, em nível mais alto, de fluxo de controle, tais como, mandar um email em caso de falha, baixar um arquivo, executar transformações  e entre outras atividades.
+O Kettle possui dois tipos de componentes internos: \textit{Job} e \textit{Transformation}. O primeiro permite executar tarefas, em nível mais alto, de fluxo de controle, tais como, mandar um email em caso de falha, baixar um arquivo, executar transformações  e entre outras atividades. Já a \textit{Transformation} permite tratamento aos dados incluindo desde entrada de dados por diversas fontes até a persistência em uma variedade de SGBDs.
 
-Para a implementação do ETL no Kettle, utilizou-se os arquivos resultantes da análise do SonarQube em JSON e conexão com o MySQL Server, onde foi implementado o Data Warehouse. As implementações detalhadas de \textit{Transformation} e \textit{Job} são apresentados no apêndice \ref{kettle-implementação}.
+
+Para a implementação do ETL no Kettle, utilizou-se os arquivos resultantes da análise do SonarQube em JSON e conexão com o MySQL Server, onde foi implementado o Data Warehouse. Algumas das implementações  de \textit{Transformation} e \textit{Job} são detalhadas no apêndice \ref{implementação}.
 
 
 \subsection{Implementação das Consultas OLAP e Visualização de Dados}
 
-Para a implementação das consultas OLAP e Visualização de dados, torna-se necessário a utilização do Pentaho BI Platform\footnote{Disponível em \url{http://community.pentaho.com/projects/bi_platform/}}, que é uma ferramenta provê a arquitetura e a infraestrutura para soluções de \textit{Business Inteligence}, \textit{Data Mining} e a camada de visualização de dados do \textit{Data Warehouse}.
+Para a implementação das consultas OLAP e Visualização de dados, torna-se necessário a utilização do Pentaho BI Platform\footnote{Disponível em \url{http://community.pentaho.com/projects/bi_platform/}}, que é uma ferramenta que provê a arquitetura e a infraestrutura para soluções de \textit{Business Inteligence}, \textit{Data Mining} e a camada de visualização de dados do \textit{Data Warehouse}.
 
 
-O Pentaho BiPlatform, cuja interface inicial apresentada na Figura \ref{BIplatform}, tem as principais características e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{biserver}. 
+O Pentaho BI Platform, cuja interface inicial é apresentada na Figura \ref{BIplatform}, tem as principais características e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{biserver}. 
 
 
 \begin{table}[!ht]
@@ -360,7 +414,7 @@ Quantidade de Casos Abertos no \textit{Issue Tracker} & 1489                    
 \FloatBarrier
  
 
-A ferramenta Pentaho BI Platform como a infraestrutura do ambiente de \textit{Data Warehousing}, possui arquitetura extensível por plugins diversos que realizam diversas operações, tais como, criação de relatórios, visualização dos dados em tabelas e gráficos e entre outros. Entre os plugins disponíveis, está o Saiku Analitics que oferece serviços de apoio a operações OLAP e à visualização de dados. As características gerais do Saiku Analitics, bem como a avaliação quanto aos critérios gerais de seleção de ferramentas, são apresentados na Tabela \ref{saiku}. 
+A ferramenta Pentaho BI Platform possui arquitetura extensível por plugins diversos que realizam diversas operações, tais como, criação de relatórios, visualização dos dados em tabelas e gráficos e entre outros. Entre os plugins disponíveis, está o Saiku Analytics que oferece serviços de apoio a operações OLAP e à visualização de dados. As características gerais do Saiku Analytics, bem como a avaliação quanto aos critérios gerais de seleção de ferramentas, são apresentados na Tabela \ref{saiku}. 
 
 \begin{table}[!ht]
 \begin{tabular}{|p{4.5cm}|p{5.0cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
@@ -403,9 +457,9 @@ Quantidade de Casos Abertos no \textit{Issue Tracker} & 227                     
 \FloatBarrier
 
 
-O Saiku Analytics, tem em sua arquitetura, um outro componente da arquitetura do Pentaho BI Suite, que é o Mondrian OLAP Server. Este permite ao Saiku, que sejam realizadas consultas \textit{ad hoc} com as dimensões do cubo, de um esquema dimensional, realizando \textit{drag and drop} das colunas das dimensões.
+O Saiku Analytics possui em sua arquitetura outro componente da arquitetura do Pentaho BI Suite, que é o Mondrian OLAP Server. Este permite ao Saiku, que sejam realizadas consultas \textit{ad hoc} com as dimensões do cubo, de um esquema dimensional, realizando \textit{drag and drop} das colunas das dimensões.
 
-Há também, a possibilidade, da realização de consultas por meio da escrita de \textit{queries} em linguagem MDX \textit{(MulitDimensional eXpressions)}. Esta foi proposta por \citeonline{spofford2006mdx} como uma forma de escrever consultas mais otimizadas para bases seguem o modelo dimensional, tal como mostra o trecho de Código-Fonte \ref{MDX}.
+Por meio do Saiku, permite-se a realização de consultas. Estas ocorrem por meio da escrita de \textit{queries} em linguagem MDX \textit{(MulitDimensional eXpressions)}. Esta foi proposta por \citeonline{spofford2006mdx} como uma forma de escrever consultas mais otimizadas para bases seguem o modelo dimensional, tal como mostra o exemplo do trecho de Código-Fonte \ref{MDX}.
 
 
 
@@ -426,25 +480,4 @@ WHERE ( [Loja].[Loja Sul])
 \FloatBarrier
 
 
-Após a carga das métricas de código-fonte do projeto Apache Maven no \textit{data warehouse} foi possível então realizar a implementação de algumas consultas OLAP, \textit{ad hoc}, para eventual visualização de dados em tabela e gráficos tal como mostra a Figura \ref{table} e a Figura \ref{chart}. 
-
-
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[keepaspectratio=false,scale=0.83]{figuras/indicadores.eps}
-\caption{Visualização de dados do Apache Maven em formato de tabela no Saiku Analytics}
-\label{table}
-\end{figure}
-\FloatBarrier
- 
-
-
-
-\begin{figure}[ht!]
-\includegraphics[keepaspectratio=false,scale=0.63]{figuras/indicadores_graficos.eps}
-\caption{Visualização de dados do Apache Maven em formato de gráfico de barras no Saiku Analytics}
-\label{chart}
-\end{figure}
-\FloatBarrier
  
