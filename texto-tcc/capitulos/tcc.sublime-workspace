@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"idn",
+				"idnom"
+			],
+			[
 				"cit",
 				"cite"
 			]
@@ -15,15 +19,23 @@
 			"file": "1-introducao.tex",
 			"settings":
 			{
-				"buffer_size": 6367,
+				"buffer_size": 7172,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/myReferences.bib",
+			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/resumo.tex",
 			"settings":
 			{
-				"buffer_size": 15854,
+				"buffer_size": 966,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/abstract.tex",
+			"settings":
+			{
+				"buffer_size": 971,
 				"line_ending": "Windows"
 			}
 		},
@@ -31,7 +43,7 @@
 			"file": "2-metricas.tex",
 			"settings":
 			{
-				"buffer_size": 17172,
+				"buffer_size": 17094,
 				"line_ending": "Windows"
 			}
 		},
@@ -39,7 +51,7 @@
 			"file": "3-dwing.tex",
 			"settings":
 			{
-				"buffer_size": 21608,
+				"buffer_size": 21606,
 				"line_ending": "Unix"
 			}
 		},
@@ -47,39 +59,15 @@
 			"file": "4-solucao.tex",
 			"settings":
 			{
-				"buffer_size": 23064,
+				"buffer_size": 28527,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/novosComandos.tex",
-			"settings":
-			{
-				"buffer_size": 2238,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/setup.tex",
-			"settings":
-			{
-				"buffer_size": 588,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.tex",
-			"settings":
-			{
-				"buffer_size": 898,
-				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "5-consideracoes.tex",
 			"settings":
 			{
-				"buffer_size": 2833,
+				"buffer_size": 3488,
 				"line_ending": "Unix"
 			}
 		},
@@ -87,7 +75,15 @@
 			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/apendices.tex",
 			"settings":
 			{
-				"buffer_size": 1709,
+				"buffer_size": 9285,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/abreviaturas.tex",
+			"settings":
+			{
+				"buffer_size": 1033,
 				"line_ending": "Windows"
 			}
 		},
@@ -111,7 +107,7 @@
 			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.properties",
 			"settings":
 			{
-				"buffer_size": 173,
+				"buffer_size": 142,
 				"line_ending": "Windows"
 			}
 		}
@@ -151,6 +147,22 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/tomcat/conf/context.xml",
+		"/C/xampp/tomcat/conf/web.xml",
+		"/C/xampp/tomcat/conf/server.xml",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/abreviaturas.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/capitulos/3-dwing.tex",
+		"/C/Users/Guilherme/Documents/GitHub/TCC1_Aline_Goncalves/editaveis/capitulo4.tex",
+		"/C/Users/Guilherme/Documents/GitHub/TCC1_Aline_Goncalves/editaveis/capitulo3.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/myReferences.bib",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/capitulos/2-metricas.tex",
+		"/C/Users/Guilherme/Documents/GitHub/TCC1_Aline_Goncalves/editaveis/capitulo2.tex",
+		"/C/Users/Guilherme/Documents/GitHub/TCC1_Aline_Goncalves/editaveis/introducao.tex",
+		"/C/Users/Guilherme/Documents/GitHub/TCC1_Aline_Goncalves/editaveis/introducao.log",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/setup.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/novosComandos.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.properties",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/metrics-07-09.js",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/metrics-03-11.js",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/2.txt",
@@ -158,10 +170,8 @@
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Eletrônica/sitegsm.txt",
 		"/C/Users/Guilherme/AppData/Local/Temp/Rar$DIa0.764/introducao.tex",
 		"/C/Users/Guilherme/Dropbox/biserver-ce/pentaho-solutions/system/saiku/ui/js/ace/keybinding-vim.js",
-		"/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/myReferences.bib",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/agradecimentos.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/schema.sql",
-		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/novosComandos.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/pacotes.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/smell.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/examplejson.js",
@@ -171,16 +181,13 @@
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/metrics-10-11.js",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/pentaho-files/Maven Metrics/metrics-03-11.js",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/pentaho-files/Maven Metrics/metrics-07-09.js",
-		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/setup.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/pentaho-files/Arquivos PDI/Date Transform.ktr",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/modelo/elementosdopostexto.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/modelo/textoepostexto.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/informacoes.tex",
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Eletrônica/GPS/GPS/OqueÉoQUE.txt",
-		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.properties",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/project.js",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/modelo/elementosdotexto.tex",
-		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.tex",
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/Makefile",
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/4-produtos.tex",
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/fixos/pacotes.tex",
@@ -201,7 +208,6 @@
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/1-introducao.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/capitulos/1-introducao.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/smell.log",
-		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/abreviaturas.tex",
 		"/C/Users/Guilherme/Documents/GitHub/SRA.wiki/l1w2nffg.0av.txt",
 		"/C/Users/Guilherme/Downloads/Ruby Programming Ebooks 2008/Ruby by Example - Concepts and Code, No Starch Press (2007).pdf.",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/simbolos.tex",
@@ -236,6 +242,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"multipart-config",
+			"multipart-confi",
+			"multipart-config",
+			"size",
+			"max",
+			"esquema",
+			"figura",
+			"afim",
+			"transformação",
+			"Transformação",
+			"transformação",
+			"third",
+			"Dados",
+			"métricas de código",
+			"meireles",
+			"além",
+			"snow",
+			"estudo de caso",
+			"apêncide",
+			"dimensional",
+			"33",
+			"java",
+			"\n\nIN",
+			"`\n",
 			"Código",
 			"visualização",
 			"footnote",
@@ -304,7 +334,7 @@
 	"groups":
 	[
 		{
-			"selected": 12,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -313,15 +343,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6367,
+						"buffer_size": 7172,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6367,
-								6367
+								5267,
+								5267
 							]
 						],
 						"settings":
@@ -331,33 +361,32 @@
 							"wrap_width": 80
 						},
 						"translation.x": 0.0,
-						"translation.y": 1755.0,
+						"translation.y": 2046.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/myReferences.bib",
+					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/resumo.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15854,
+						"buffer_size": 966,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								751,
-								575
+								70,
+								70
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"wrap_width": 80
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -367,89 +396,138 @@
 				},
 				{
 					"buffer": 2,
-					"file": "2-metricas.tex",
+					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/abstract.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17172,
+						"buffer_size": 971,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								13628,
-								13628
+								697,
+								697
 							]
 						],
 						"settings":
 						{
-							"rulers":
-							[
-								80
-							],
-							"spell_check": false,
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"translate_tabs_to_spaces": false,
 							"wrap_width": 80
 						},
 						"translation.x": 0.0,
-						"translation.y": 3529.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "3-dwing.tex",
+					"file": "2-metricas.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 21608,
+						"buffer_size": 17094,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19958,
-								19958
+								2083,
+								2083
 							]
 						],
 						"settings":
 						{
-							"rulers":
-							[
-								80
-							],
-							"spell_check": false,
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"tab_size": 4,
 							"translate_tabs_to_spaces": false,
-							"word_wrap": true,
 							"wrap_width": 80
 						},
 						"translation.x": 0.0,
-						"translation.y": 6375.0,
+						"translation.y": 416.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "4-solucao.tex",
+					"file": "3-dwing.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 23064,
+						"buffer_size": 21606,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								20070,
-								20070
+								5733,
+								5733
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"wrap_width": 80
+						},
+						"translation.x": 0.0,
+						"translation.y": 1853.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "4-solucao.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28527,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2716,
+								2716
+							]
+						],
+						"settings":
+						{
+							"rulers":
+							[
+								80
+							],
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"wrap_width": 80
+						},
+						"translation.x": 0.0,
+						"translation.y": 1044.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "5-consideracoes.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3488,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								632,
+								652
 							]
 						],
 						"settings":
@@ -460,62 +538,6 @@
 							],
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
 							"wrap_width": 80
-						},
-						"translation.x": 0.0,
-						"translation.y": 7120.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/novosComandos.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2238,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1583,
-								1583
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 626.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/setup.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 588,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								221,
-								221
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -525,19 +547,49 @@
 				},
 				{
 					"buffer": 7,
-					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.tex",
+					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/apendices.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 898,
+						"buffer_size": 9285,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								204,
-								168
+								8856,
+								8856
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 7,
+							"translate_tabs_to_spaces": true,
+							"wrap_width": 80
+						},
+						"translation.x": 0.0,
+						"translation.y": 3030.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/abreviaturas.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1033,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								930,
+								930
 							]
 						],
 						"settings":
@@ -551,67 +603,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "5-consideracoes.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2833,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								152,
-								152
-							]
-						],
-						"settings":
-						{
-							"rulers":
-							[
-								80
-							],
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"wrap_width": 80
-						},
-						"translation.x": 0.0,
-						"translation.y": 39.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 9,
-					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/apendices.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1709,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1628,
-								1590
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"wrap_width": 80
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
 					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/bibliografia.bib",
 					"semi_transient": false,
 					"settings":
@@ -623,8 +615,8 @@
 						"selection":
 						[
 							[
-								19774,
-								19774
+								16484,
+								16471
 							]
 						],
 						"settings":
@@ -634,13 +626,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7630.0,
+						"translation.y": 6481.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 10,
 					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/informacoes.tex",
 					"semi_transient": false,
 					"settings":
@@ -667,20 +659,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 11,
 					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.properties",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 173,
+						"buffer_size": 142,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								142,
+								142
 							]
 						],
 						"settings":
@@ -698,7 +690,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 21.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -734,7 +726,7 @@
 	"project": "tcc.sublime-project",
 	"replace":
 	{
-		"height": 38.0
+		"height": 52.0
 	},
 	"save_all_on_build": false,
 	"select_file":

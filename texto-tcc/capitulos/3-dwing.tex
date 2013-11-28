@@ -76,13 +76,13 @@ A necessidade de centralização e agregação dos dados em um \textit{data ware
 Dado esse cenário, \citeonline{Kimball2002} propôs que o \textit{data warehouse} deve ser projetado de acordo com as técnicas de modelagem dimensional, que visam exibir os dados em níveis adequados de detalhes e otimizar consultas complexas \cite{valeria2012}. No modelo dimensional, são aceitos que as tabelas possuam redundância e esparcidade de dados e estas podem ser classificadas em tabelas fatos e tabelas dimensões. Estas contém dados textuais, que pode conter vários atributos descritivos que expressam relações hierarquizáveis do negócio. Já uma tabela fato é uma tabela primária no modelo dimensional onde os valores númericos ou medidas do negócio são armazenados \cite{Kimball2002}. 
 
 
-Quando se juntam fatos e dimensões desnormalizadas, obtém-se o chamado esquema estrela, tal como se mostra na Figura \ref{estrela}. Quando em um modelo dimensional, se faz necessário uso da normalização, o modelo passa então a ser chamado por \textit{modelo snowflake}, cujo ganho de espaço é menor que 1\% do total necessário para armazenar o esquema do \textit{data warehouse} \apud{valeria2012}{Kimball2002}. Em ambos os casos, quando se relaciona três dimensões, obtém-se os cubos de dados \cite{Kimball2002}, tal como se mostra na figura \ref{cube}.
+Quando se juntam fatos e dimensões desnormalizadas, obtém-se o chamado esquema estrela, tal como se mostra na Figura \ref{estrela}. Quando em um modelo dimensional, se faz necessário uso da normalização, o modelo passa então a ser chamado por \textit{modelo snowflake}, cujo ganho de espaço é menor que 1\% do total necessário para armazenar o esquema do \textit{data warehouse} \apud{valeria2012}{Kimball2002}. Em ambos os casos, quando se relaciona três dimensões, obtém-se os cubos de dados \cite{Kimball2002}, tal como se mostra na Figura \ref{cube}.
 
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \centering
-\includegraphics[keepaspectratio=false,scale=0.85]{figuras/star_schema.eps}
-\caption{Exemplo de Esquema Estrela extraído de \citeonline{valeria2012}}
+\includegraphics[keepaspectratio=true,scale=0.2]{figuras/star_schema.eps}
+\caption{Exemplo de Esquema Estrela adaptado de \citeonline{valeria2012}}
 \label{estrela}
 \end{figure}
 \FloatBarrier

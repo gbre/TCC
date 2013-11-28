@@ -74,7 +74,7 @@ Característica
 &
 
 \begin{center}
-\includegraphics[keepaspectratio=false,scale=0.48]{figuras/analizo.eps} 
+\includegraphics[keepaspectratio=true,scale=0.48]{figuras/analizo.eps} 
 \end{center}
 
 
@@ -83,7 +83,7 @@ Característica
 
 
 \begin{center}
-\includegraphics[keepaspectratio=false,scale=0.48]{figuras/sonarqube.eps} 
+\includegraphics[keepaspectratio=true,scale=0.48]{figuras/sonarqube.eps} 
 \end{center}
 
 
@@ -109,7 +109,7 @@ Métricas de Código-Fonte fornecidas  & 9 métricas em âmbito de Projeto e 25 
 Formato de Saída das Métricas  & YAML & JSON, XML \\ \hline
 
 %--------------------------
-Plataforma  &Windows, Linux, Mac OS X e Servidores de Aplicação Java & Debian e Ubuntu                                                                                              \\ \hline
+Plataforma  & Debian e Ubuntu & Windows, Linux, Mac OS X e Servidores de Aplicação Java                                                                                              \\ \hline
 
 %--------------------------
 Integração com outras ferramentas & Mezuro, Kalibro & Jenkins, Hudson, Mantis, JIRA, Crowd e entre outros \\ \hline
@@ -234,28 +234,28 @@ Partindo da descrição das demandas que já foram mapeadas, identificou-se enti
 \centering
 \begin{tabular}{|p{2cm}|p{2.5cm}|p{4cm}|p{2cm}|}
 \hline
-Entidade                   & Atributos                & Descrição do Atributo  & Aditividade                 \\ \hline
+Entidade                   & Atributos                & Descrição do Atributo  & Aditividade.                 \\ \hline
 
 
-\multirow{2}{*}{Projeto}   & identificador            & identificador único do Projeto                                                                                                                                                                                                        & não aditivo                 \\ \cline{2-4} 
+\multirow{2}{*}{Projeto}   & identificador            & identificador único do Projeto.                                                                                                                                                                                                       & não aditivo                 \\ \cline{2-4} 
                            & nome                     & identificador textual do Projeto                                                                                                                                                                                                      & não aditivo                 \\ \hline
-\multirow{4}{*}{Métrica}   & identificador            & identificador único da Métrica                                                                                                                                                                                                        & não aditivo                 \\ \cline{2-4} 
-                           & nome                     & identificador textual da Métrica                                                                                                                                                                                                      & não aditivo                 \\ \cline{2-4} 
-                           & descrição                & descrição textual da métrica                                                                                                                                                                                                          & não aditivo                 \\ \cline{2-4} 
-                           & valor                    & trata-se da medida, isto é, o valor obtido para cada métrica                                                                                                                                                                          & aditivo em relação ao tempo \\ \hline
+\multirow{4}{*}{Métrica}   & identificador            & identificador único da Métrica.                                                                                                                                                                                                       & não aditivo                 \\ \cline{2-4} 
+                           & nome                     & identificador textual da Métrica.                                                                                                                                                                                                      & não aditivo                 \\ \cline{2-4} 
+                           & descrição                & descrição textual da métrica.                                                                                                                                                                                                          & não aditivo                 \\ \cline{2-4} 
+                           & valor                    & trata-se da medida, isto é, o valor obtido para cada métrica.                                                                                                                                                                          & aditivo em relação ao tempo \\ \hline
 \multirow{5}{*}{Intervalo} & identificador            & identificador único do intervalo                                                                                                                                                                                                      & não aditivo                 \\ \cline{2-4} 
-                           & máximo                   & valor discreto máximo encontrado por                                                                                                                                                                                                  & não aditivo                 \\ \cline{2-4} 
-                           & mínimo                   & valor discreto mínimo encontrado por                                                                                                                                                                                                  & não aditivo                 \\ \cline{2-4} 
-                           & indice de qualidade      & Índice de qualidade para um determinado intervalo, podendo ser Excelente, Bom, Regular ou Ruim conforme especificado na Tabela  \ref{metrics}                                                                   & não aditivo                 \\ \cline{2-4} 
-                           & linguagem de programação & A linguagem de programação é um atributo do intervalo, pois para cada linguagem de programação, há intervalos diferenciados. No escopo da análise, de \citeonline{Meirelles2013} há apenas C++ e Java & não aditivo                 \\ \hline
+                           & máximo                   & valor discreto máximo encontrado por \citeonline{Meirelles2013}.                                                                                                                                                                                                 & não aditivo                 \\ \cline{2-4} 
+                           & mínimo                   & valor discreto mínimo encontrado por \citeonline{Meirelles2013}.                                                                                                                                                                                                  & não aditivo                 \\ \cline{2-4} 
+                           & indice de qualidade      & Índice de qualidade para um determinado intervalo, podendo ser Excelente, Bom, Regular ou Ruim conforme especificado na Tabela  \ref{metrics}.                                                                   & não aditivo                 \\ \cline{2-4} 
+                           & linguagem de programação & A linguagem de programação é um atributo do intervalo, pois para cada linguagem de programação, há intervalos diferenciados. No escopo da análise, de \citeonline{Meirelles2013} há apenas C++ e Java. & não aditivo.                 \\ \hline
 
-\multirow{4}{*}{Tempo} & identificador            & identificador único do intervalo                                                                                                                                                                                                      & não aditivo                 \\ \cline{2-4} 
-                           & dia                   & valor discreto do dia de um mês (varia de 1 a 31)  & não aditivo                 \\ \cline{2-4} 
+\multirow{4}{*}{Tempo} & identificador            & identificador único do intervalo.                                                                                                                                                                                                      & não aditivo                 \\ \cline{2-4} 
+                           & dia                   & valor discreto do dia de um mês (varia de 1 a 31).  & não aditivo                 \\ \cline{2-4} 
 
                            
-                           & mês                   & valor discreto do mês em um ano (varia de 1 a 12)  & não aditivo                 \\ \cline{2-4} 
+                           & mês                   & valor discreto do mês em um ano (varia de 1 a 12).  & não aditivo                 \\ \cline{2-4} 
 
-                           & ano                   & valor discreto do dia de um ano (expresso em 4 dígitos)  & não aditivo                 \\ \cline{2-4} 
+                           & ano                   & valor discreto do dia de um ano (expresso em 4 dígitos).  & não aditivo                 \\ \cline{2-4} 
 
                 \hline         
 \end{tabular}
