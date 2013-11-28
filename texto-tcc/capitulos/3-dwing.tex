@@ -16,9 +16,8 @@ organizações de desenvolvimento de software são\begin{inparaenum}[i)]
 
 \begin{figure}[h!]
 \centering
-	\includegraphics[keepaspectratio=true,scale=1.1]{figuras/Dwing.eps}
-	\caption{Arquitetura de um ambiente de \textit{Data Warehousing} extraído de 
-	\citeonline{andre2000}}
+	\includegraphics[keepaspectratio=true,scale=0.20]{figuras/Dwing.eps}
+	\caption{Arquitetura de um ambiente de \textit{Data Warehousing}}
 	\label{dwing}
 \end{figure}
 \FloatBarrier
@@ -91,7 +90,7 @@ Quando se juntam fatos e dimensões desnormalizadas, obtém-se o chamado esquema
 \begin{figure}[h!]
 \centering
 \includegraphics[keepaspectratio=false,scale=0.85]{figuras/cube.eps}
-\caption{Exemplo de Cubo Multidimensional de dados extraído de \citeonline{valeria2012}}
+\caption{Exemplo de Cubo de Dados}
 \label{cube}
 \end{figure}
 \FloatBarrier
@@ -223,7 +222,7 @@ Produto C & 50  \\ \hline
 Produto D & 60  \\ \hline
 
 \end{tabular}
-\caption{Exemplo do Total de vendas da loja norte no mês de novembro}
+\caption{Exemplo do Total de vendas da Loja Norte no mês de novembro}
 \label{after-across}
 \end{table}
 \FloatBarrier
@@ -281,7 +280,7 @@ Produto                                          & \multicolumn{1}{|c|}{Loja} & 
 \multicolumn{1}{|l|}{}        & Loja Norte                 & 60      & 100      \\ \cline{2-4} 
 \multicolumn{1}{|l|}{}        & Loja Oeste                 & 70      & 25       \\ \hline
 \end{tabular}
-\caption{Exemplo de Vendas do Produto A na rede de lojas}
+\caption{Exemplo de Vendas do Produto A na rede de Lojas}
 \label{after-slice}
 \end{table}
 
@@ -313,7 +312,7 @@ Produto                                          & \multicolumn{1}{|c|}{Loja} & 
 \multicolumn{1}{|l|}{}                            & Produto C & 83       & 67        & 65       \\ \cline{2-5} 
 \multicolumn{1}{|l|}{}                            & Produto D & 64       & 60        & 23       \\ \hline
 \end{tabular}
-\caption{Exemplo de Vendas por loja para cada um dos produtos nos meses de novembro e dezembro}
+\caption{Exemplo de Vendas por Loja para cada um dos Produtos nos meses de Novembro e Dezembro}
 \label{after-pivoting}
 \end{table}
 
@@ -329,11 +328,11 @@ Dados transmitem importantes informações, logo cabe a quem deseja comunicá-lo
 \citeonline{few2009now} destaca que ainda que técnicas tradicionais de visualização de dados, tais como tabelas, histogramas, gráficos de pizza, podem descrever quase todos os tipos da relação quantitativa tais como, séries temporais, desvio, parte-todo, distribuição, etc; as representações tradicionais não são suficientes para transmitir ao receptor efetivamente a mensagem que dados transmitem. Além disso, \citeonline{few2009now} enuncia que as formas tradicionais de visualização isoladamente não agregam nenhuma flexibilização à visualização de dados.
 
 
-Uma das técnicas de visualização, que visam transmitir os dados efetivamente e que tem se destacado é o uso dos \textit{dashboards}, que são representações visuais das informaçoes mais importantes e necessárias, que podem ser monitoradas simultaneamente, para atingir um ou mais objetivos de negócio \cite{raquel2013}. \citeonline{raquel2013} também enuncia que cada componente do \textit{dashboard} deve ser pequeno, conciso, claro e intuitivo de modo que o todo deve caber inteiramente em uma tela de computador, tal como se mostra na Figura \ref{dashboard} e na Figura \ref{dashboard2}.
+Uma das técnicas de visualização, que visam transmitir os dados efetivamente e que tem se destacado é o uso dos \textit{dashboards}, que são representações visuais das informaçoes mais importantes e necessárias, que podem ser monitoradas simultaneamente, para atingir um ou mais objetivos de negócio \cite{raquel2013}. \citeonline{raquel2013} também enuncia que cada componente do \textit{dashboard} deve ser pequeno, conciso, claro e intuitivo de modo que o todo deve caber inteiramente em uma tela de computador, tal como se mostra na Figura \ref{dashboard}.
 
 \begin{figure}[ht!]
 \centering
-	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/dashboard.eps}
+	\includegraphics[bb=0 0 753 350, scale=0.8]{figuras/dashboard1.png}
 	\caption{Exemplo de Dashboard extraído de 
 	\citeonline{raquel2013}}
 	\label{dashboard}
@@ -341,14 +340,7 @@ Uma das técnicas de visualização, que visam transmitir os dados efetivamente 
 \FloatBarrier
 
 
-\begin{figure}[ht!]
-\centering
-	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/dashboard2.eps}
-	\caption{Outro exemplo de Dashboard extraído de 
-	\citeonline{raquel2013}}
-	\label{dashboard2}
-\end{figure}
-\FloatBarrier
+
 
 Em um próximo passo do trabalho, pretende-se implementar o \textit{Dashboard} para a visualização das métricas de código-fonte, dado que segundo \citeonline{raquel2013} um \textit{dashboard} tem como papel estrátegico a apresentação dos principais indicadores para tomada de decisão, logo comunicando os dados de maneira mais eficiente quando comparado com a exibição de tabelas e gráficos isolados.
 
