@@ -102,14 +102,14 @@ Licença  & GNU GPL3 & GNU LGPL3  \\ \hline
 
 %-----------------------------------
 
-Métricas de Código-Fonte fornecidas  & 9 métricas em âmbito de Projeto e 25  métricas em âmbito de Classe \cite{Meirelles2013} & 12 métricas em âmbito de Classe, 8 métricas em âmbito de projeto. \\ \hline
+Métricas de Código-Fonte fornecidas  & 25 métricas em âmbito de Projeto e 16  métricas em âmbito de Classe \cite{Meirelles2013} & 12 métricas em âmbito de Classe, 8 métricas em âmbito de projeto. \\ \hline
 
 
 %--------------------------
 Formato de Saída das Métricas  & YAML & JSON, XML \\ \hline
 
 %--------------------------
-Plataforma  & Debian e Ubuntu & Windows, Linux, Mac OS X e Servidores de Aplicação Java                                                                                              \\ \hline
+Plataforma  &   GNU Linux (homologado para distribuições baseadas em Debian). & Windows, Linux, Mac OS X e Servidores de Aplicação Java                                                                                              \\ \hline
 
 %--------------------------
 Integração com outras ferramentas & Mezuro, Kalibro & Jenkins, Hudson, Mantis, JIRA, Crowd e entre outros \\ \hline
@@ -175,10 +175,10 @@ CAE03     & \checkmark & \xmark     \\ \hline
 \FloatBarrier
 
 
-Dado a comparação, percebe-se que ambas as ferramentas cumprem o próposito geral de levantar as métricas de código-fonte. Embora o SonarQube possua  suporte a mais linguagens de programação quando comparado com o Analizo, não se é fator excludente da utlização do Analizo, pois o escopo da análise de \citeonline{Meirelles2013} se restringe a Java e C++.
+Dado a comparação, percebe-se que ambas as ferramentas cumprem o propósito geral de levantar as métricas de código-fonte. Embora o SonarQube possua  suporte a mais linguagens de programação quando comparado com o Analizo, não se é fator excludente da utilização do Analizo, pois o escopo da análise de \citeonline{Meirelles2013} se restringe a Java e C++.
 
 
-Devido aos critérios específicos de selação de ferramentas de análise estática, percebe-se que o Analizo tem uma plataforma específica, sendo que o SonarQube é mutiplataforma. Ainda que o critério não seja atendido pelo Analizo, há o objetivo de construir um ambiente de \textit{Data Warehousing} utilizando ferramentas livres, logo poder-se-ia escolher também um sistema operacional livre tal como o Ubuntu ou Debian.
+Devido aos critérios específicos de seleção de ferramentas de análise estática, percebe-se que o Analizo tem uma plataforma específica, sendo que o SonarQube é mutiplataforma. Ainda que o critério não seja atendido pelo Analizo, há o objetivo de construir um ambiente de \textit{Data Warehousing} utilizando ferramentas livres, logo poder-se-ia escolher também um sistema operacional livre tal como o Ubuntu ou Debian.
 
 
 Dado o cenário apresentado, a escolha foi ponderada então pelo formato de saída do arquivo. \citeonline{fonseca2007alternativas} realizou um estudo experimental entre XML, JSON (Formatos de Saída do SonarQube) e YAML (Formato de Saída do Analizo), que é mostrado na Figura \ref{jsonvsyaml}.
@@ -214,13 +214,13 @@ A fim de se detectar projetos que tinham a maior taxa de atualização no reposi
 
 O \textit{Data Warehouse} como elemento central do ambiente de \textit{Data Warehousing} deve ser o primeiro a ser projetado \cite{Kimball2002}. Isso ocorre pois o DW deve ser dirigido ao negócio. Logo a modificação do DW impacta principalmente na carga dos dados, na etapa de extração, transformação e carga, requerendo modificações conforme o DW venha a mudar.
 
-Seguindo a metolodogia proposta por \citeonline{Kimball2002}, apresentada na seção \ref{metodologia-dw}, entende-se que o processo de negócio a ser avaliad é o monitoramento da qualidade do código-fonte expresso por meio das métricas de código-fonte. Este negócio possui algumas demandas, que foram mapeadas, como \begin{inparaenum}[i)] \item 
+Seguindo a metolodogia proposta por \citeonline{Kimball2002}, apresentada na seção \ref{metodologia-dw}, entende-se que o processo de negócio a ser avaliado é o monitoramento da qualidade do código-fonte expresso por meio das métricas de código-fonte. Este negócio possui algumas demandas, que foram mapeadas, como \begin{inparaenum}[i)] \item 
 \textbf{Comparação das métricas de código-fonte entre projetos de mesma linguagem de programação ao longo de um período de x meses}; \item \textbf{Acompanhamento dos indicadores de qualidade de um determinado projeto ao longo do tempo}.
 \end{inparaenum} 
 Embora \citeonline{Kimball2002} enuncie que todo o negócio deva ser mapeado dentro do desenvolvimento de um ambiente de \textit{Data Warehousing}, compreende-se, por analogia ao desenvolvimento de software, que o levantamento total de requisitos para implementação aumenta exponencialmente o custo da mudança \cite{beck1999}. Por este motivo, adicionalmente a metodologia do Kimball, utilizou-se o principio ágil de pequenos ciclos de entrega de software. Logo, as demandas do negócio ainda não foram totalmente mapeadas e estas assim o serão até a próxima etapa do trabalho.
 
 
-\citeonline{Kimball2002} enuncia que o segundo passo após a indentificação do processo de negócio é a identificação da periodiciodade dos dados coletados pelo mesmo. No processo de negócio de métricas de código-fonte, a periodicidade de coleta dos dados é variável, isto é, depende de projeto a projeto. Visando atender a maior parte dos casos possíveis, identificou-se a menor granularidade para agregação: o dia. Isto ocorre, pois as ferramentas de integração contínua, que são muito utilizadas em ambientes ágeis \cite{beckarticle1999}, permitem a estabilização de um pacote de software por dia, logo a menor análise do código-fonte pode ser realizada sobre esse pacote estável diariamente. Contudo, há projetos que liberam versões estáveis com mais tempo, portanto se deve permitir agregações maiores tais como, mês, trimestre, semestre e ano. Para esta etapa do trabalho de conclusão de curso, optou-se pela implementação da agregação diária.
+\citeonline{Kimball2002} enuncia que o segundo passo após a identificação do processo de negócio é a identificação da periodicidade dos dados coletados pelo mesmo. No processo de negócio de métricas de código-fonte, a periodicidade de coleta dos dados é variável, isto é, depende de projeto a projeto. Visando atender a maior parte dos casos possíveis, identificou-se a menor granularidade para agregação: o dia. Isto ocorre, pois as ferramentas de integração contínua, que são muito utilizadas em ambientes ágeis \cite{beckarticle1999}, permitem a estabilização de um pacote de software por dia, logo a menor análise do código-fonte pode ser realizada sobre esse pacote estável diariamente. Contudo, há projetos que liberam versões estáveis com mais tempo, portanto se deve permitir agregações maiores tais como, mês, trimestre, semestre e ano. Para esta etapa do trabalho de conclusão de curso, optou-se pela implementação da agregação diária.
 
 
 Seguindo os passos subsequentes da metodologia proposta por \citeonline{Kimball2002}, é realizada a identificação das entidades do negócio para por fim realizar modelagem dimensional do \textit{Data Warehouse}. 
