@@ -75,7 +75,7 @@ A necessidade de centralização e agregação dos dados em um \textit{data ware
 Dado esse cenário, \citeonline{Kimball2002} propôs que o \textit{data warehouse} deve ser projetado de acordo com as técnicas de modelagem dimensional, que visam exibir os dados em níveis adequados de detalhes e otimizar consultas complexas \cite{valeria2012}. No modelo dimensional, são aceitos que as tabelas possuam redundância e esparcidade de dados e estas podem ser classificadas em tabelas fatos e tabelas dimensões. Estas contém dados textuais, que pode conter vários atributos descritivos que expressam relações hierarquizáveis do negócio. Já uma tabela fato é uma tabela primária no modelo dimensional onde os valores numéricos ou medidas do negócio são armazenados \cite{Kimball2002}. 
 
 
-Quando se juntam fatos e dimensões desnormalizadas, obtém-se o chamado esquema estrela, tal como se mostra na Figura \ref{estrela}. Quando em um modelo dimensional, se faz necessário uso da normalização, o modelo passa então a ser chamado por \textit{modelo snowflake}, cujo ganho de espaço é menor que 1\% do total necessário para armazenar o esquema do \textit{data warehouse} \apud{valeria2012}{Kimball2002}. Em ambos os casos, quando se relaciona três dimensões, obtém-se os cubos de dados \cite{Kimball2002}, tal como se mostra na Figura \ref{cube}.
+Quando se juntam fatos e dimensões, obtém-se o chamado esquema estrela, tal como se mostra na Figura \ref{estrela}. Quando em um modelo dimensional, se faz necessário uso da normalização, o modelo passa então a ser chamado por \textit{modelo snowflake}, cujo ganho de espaço é menor que 1\% do total necessário para armazenar o esquema do \textit{data warehouse} \apud{valeria2012}{Kimball2002}. Em ambos os casos, quando se relaciona três dimensões, obtém-se os cubos de dados \cite{Kimball2002}, tal como se mostra na Figura \ref{cube}.
 
 
 \begin{figure}[ht!]
@@ -330,9 +330,11 @@ Dados transmitem importantes informações, logo cabe a quem deseja comunicá-lo
 
 Uma das técnicas de visualização, que visam transmitir os dados efetivamente e que tem se destacado é o uso dos \textit{dashboards}, que são representações visuais das informações mais importantes e necessárias, que podem ser monitoradas simultaneamente, para atingir um ou mais objetivos de negócio \cite{raquel2013}. \citeonline{raquel2013} também enuncia que cada componente do \textit{dashboard} deve ser pequeno, conciso, claro e intuitivo de modo que o todo deve caber inteiramente em uma tela de computador, tal como se mostra na Figura \ref{dashboard}.
 
+
+
 \begin{figure}[ht!]
 \centering
-	\includegraphics[bb=0 0 753 350, scale=0.8]{figuras/dashboard1.png}
+	\includegraphics[keepaspectratio=true, scale=0.8]{figuras/dashboard1.eps}
 	\caption{Exemplo de Dashboard extraído de 
 	\citeonline{raquel2013}}
 	\label{dashboard}
@@ -342,7 +344,8 @@ Uma das técnicas de visualização, que visam transmitir os dados efetivamente 
 
 
 
-Em um próximo passo do trabalho, pretende-se implementar o \textit{Dashboard} para a visualização das métricas de código-fonte, dado que segundo \citeonline{raquel2013} um \textit{dashboard} tem como papel estratégico a apresentação dos principais indicadores para tomada de decisão, logo comunicando os dados de maneira mais eficiente quando comparado com a exibição de tabelas e gráficos isolados.
 
+
+Em um próximo passo do trabalho, pretende-se implementar o \textit{Dashboard} para a visualização das métricas de código-fonte, dado que segundo \citeonline{raquel2013} um \textit{dashboard} tem como papel estratégico a apresentação dos principais indicadores para tomada de decisão, logo comunicando os dados de maneira mais eficiente quando comparado com a exibição de tabelas e gráficos isolados.
 
 
