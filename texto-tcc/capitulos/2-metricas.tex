@@ -131,11 +131,7 @@ em três categorias:
 Segundo a \textit{International Working Conference on Source Code Analysis and 
 Manipulation} (SCAM), o código-fonte é qualquer especificação executável 
 de um sistema de software. Por conseguinte, se inclui desde código de máquina 
-até linguagens de alto nível ou representações gráficas executáveis
-\cite{harman2010source}. 
-
-
-Portanto, as métricas de código-fonte, quando obtidas por meio da análise estática de código-fonte, advém de especificações executáveis do software, isto é, trechos de código escritos em alguma linguagem de programação. Isto confere às métricas de código-fonte a classificação de métricas objetivas e características como validade, simplicidade, objetividade, fácil obtenção e robustez \cite{Mills:1999}. \citeonline{Meirelles2013} realizou um levantamento sistemático na literatura das métricas de código-fonte que foram categorizadas, nas categorias apresentadas nas subseções a seguir. 
+até linguagens de alto nível ou representações gráficas executáveis \cite{harman2010source}. Este fato significa que as métricas de código-fonte  são métricas objetivas e possuem características como validade, simplicidade, objetividade, fácil obtenção e robustez \cite{Mills:1999}. 
 
 
 %--------------------------------------------
@@ -187,14 +183,12 @@ as principais métricas de orientação à objetos:
 \begin{description}
 
 	\item[ACC (\textit{Afferent Connections per Class})] 
-	\textbf{Conexões Aferentes por Classe} é o número total de classes externas 
-	de um pacote que dependem de classes de dentro desse pacote. Quando 
+	\textbf{Conexões Aferentes por Classe} é o número total de classes externas de um pacote que dependem de classes de dentro desse pacote. Quando 
 	calculada no nível da classe, essa medida também é conhecida como 
-	\textit{Fan-in} da classe, medindo o número de classes das quais a classe é 
-	derivada e, assim, valores elevados indicam uso excessivo de herança 
+	\textit{Fan-in} da classe, medindo o número de classes das quais a classe é derivada e, assim, valores elevados indicam uso excessivo de herança 
 	múltipla \cite{McCabe94} \cite{Chidamber94}.
-	
-	
+
+
 	%-----------------------------
 	\item[RFC (\textit{Response For a Class})] \textbf{Respostas para uma 
 	Classe} é número de métodos dentre todos os métodos que podem ser invocados 
@@ -239,20 +233,20 @@ as principais métricas de orientação à objetos:
 
 \end{description}
 	
-\subsection{Intervalos das Métricas}
+\subsection{Intervalos de Qualidade para Métricas de Código-Fonte}
 \label{Intervalos das Métricas}
 
-No trabalho de \citeonline{Meirelles2013}, foram analisadas métricas do código-fonte de 38 projetos de software livre, em um total de 344.872 classes das aplicações mais utilizadas de software livre, tais como, \textbf{Chrome, Firefox, OpenJDK, VLC} e entre outros. Após uma análise estatística com o 75º percentil dos valores obtidos para cada métrica de código-fonte, com exceção do LOC que foi considerado o 50º ou simplesmente a mediana, \citeonline{Meirelles2013} percebeu que há certos valores que são frequentemente encontrados quando se analisa o código-fonte de aplicações de mesma linguagem de programação. De forma a agregar os valores comuns, \citeonline{Meirelles2013} classificou as métricas de código-fonte nos seguintes intervalos: \textit{muito frequente, frequente, pouco frequente e não frequente}. 
+No trabalho de \citeonline{Meirelles2013}, foi mostrado que para cada linguagem de programação, é possível observar valores diferenciados para uma mesma métrica, ou seja, impossibilitando assim a definição de apenas um valor absoluto de referência para uma determinada métrica de código-fonte.
 
-Visando simplificar o entendimento das métricas de código-fonte, renomeou-se os intervalos tal como a Tabela \ref{nomes}. Posteriormente, apresenta-se a Tabela \ref{metrics}, 
-decorrente do estudo de \citeonline{Meirelles2013}, com os intervalos 
-encontrados para C++ e Java.
+\citeonline{Meirelles2013} observou, por meio da análise de métricas do código-fonte, que ao se padronizar o estilo e a linguagem de programação, é possível observar certos conjuntos de valores para cada métrica. Estes conjuntos foram agregados e intervalos e estes foram classificados em \textit{muito frequente, frequente, pouco frequente e não frequente}.
+
+Dado que o trabalho de \citeonline{Meirelles2013}, analisou softwares livres com grande utilização, tais como \textbf{Tomcat, Firefox, OpenJDK, VLC} e entre outros, é possível utilizar os intervalos como uma evidência \textbf{empírica} como parâmetros de qualidade. Sendo assim, os intervalos de frequência obtidos por \citeonline{Meirelles2013} foram renomeados tais como a Tabela \ref{nomes}. 
 
 	\begin{table}[!ht]
 	\begin{center}
 	 \begin{tabular}{|l|l|}
 		\hline
-		Intervalo de Frequência & Indicador Qualitativo \\ \hline
+		Intervalo de Frequência & Intervalos Qualitativos \\ \hline
 		Muito Frequente & Excelente \\ \hline
 		Frequente       & Bom       \\ \hline
 		Pouco Frequente & Regular   \\ \hline
@@ -264,12 +258,15 @@ encontrados para C++ e Java.
 		\end{table}
 		
 \FloatBarrier
+
+Após a renomeação dos intervalos de frequência em intervalos qualitativos, 
+foram extraídos do estudo de \citeonline{Meirelles2013}, máximos e mínimos encontrados no 75º percentil para cada uma das métricas apresentadas anteriormente, considerando a linguagens de programação C++ e Java, tal como se mostra na Tabela \ref{metrics}.
 	
 	\begin{table}[!ht]
 	\begin{center}
 	\begin{tabular}{ |l|l|l|l| }
 		\hline
-		Métrica & Indicador & Java & C++ \\ \hline
+		Métrica & Intervalo Qualitativo & Java & C++ \\ \hline
 		%-------------------------------
 		\multirow{4}{*}{LOC} 
 		 & Excelente & [de 0 a 33] & [de 0 a 31] \\
@@ -344,6 +341,16 @@ encontrados para C++ e Java.
 	\end{table}
 
 \FloatBarrier
-	
+
 Os intervalos, que foram apresentados na Tabela \ref{metrics}, serão utilizados
 como indicadores de qualidade de código-fonte no componente de visualização de dados do ambiente de \textit{Data Warehousing} a ser apresentado a seguir.
+
+
+\section{\textit{Code Smells}} % (fold)
+\label{sec:code}
+
+
+
+
+
+% section code (end)

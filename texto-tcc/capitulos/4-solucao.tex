@@ -53,8 +53,6 @@ Além dos critérios gerais estabelecidos para escolha da ferramenta de análise
 		\\ \hline
 		CAE02 & A ferramenta deve possuir saída de dados em arquivo em alguns dos seguintes formatos: JSON, XML, TXT, CSV.      
 		\\ \hline
-		CAE03 & A ferramenta deve ser mutiplataforma.
-		\\ \hline
 		\end{tabular}
 		\caption{Critérios Específicos para Ferramenta de Análise Estática de Código-Fonte}
 		\label{specific}
@@ -167,7 +165,6 @@ CG03      & \checkmark & \checkmark \\ \hline
 CG04      & \checkmark & \checkmark \\ \hline
 CAE01     & \checkmark & \checkmark \\ \hline
 CAE02     & \checkmark & \checkmark \\ \hline
-CAE03     & \checkmark & \xmark     \\ \hline
 \end{tabular}
 \caption{Análise do SonarQube e do Analizo quanto aos critérios gerais e quanto aos critérios específicos de ferramentas de análise estática}
 \label{compare}
@@ -175,39 +172,12 @@ CAE03     & \checkmark & \xmark     \\ \hline
 \FloatBarrier
 
 
-Dado a comparação, percebe-se que ambas as ferramentas cumprem o propósito geral de levantar as métricas de código-fonte. Embora o SonarQube possua  suporte a mais linguagens de programação quando comparado com o Analizo, não se é fator excludente da utilização do Analizo, pois o escopo da análise de \citeonline{Meirelles2013} se restringe a Java e C++.
-
-
-Devido aos critérios específicos de seleção de ferramentas de análise estática, percebe-se que o Analizo tem uma plataforma específica, sendo que o SonarQube é mutiplataforma. Ainda que o critério não seja atendido pelo Analizo, há o objetivo de construir um ambiente de \textit{Data Warehousing} utilizando ferramentas livres, logo poder-se-ia escolher também um sistema operacional livre tal como o Ubuntu ou Debian.
-
-
-Dado o cenário apresentado, a escolha foi ponderada então pelo formato de saída do arquivo. \citeonline{fonseca2007alternativas} realizou um estudo experimental entre XML, JSON (Formatos de Saída do SonarQube) e YAML (Formato de Saída do Analizo), que é mostrado na Figura \ref{jsonvsyaml}.
-
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[bb=0 0 556 300, scale=1]{figuras/grafico.png}
-\caption{Comparação entre JSON, YAML e XML extraído de \citeonline{fonseca2007alternativas}}
-\label{jsonvsyaml}
-\end{center}
-\end{figure}
 \FloatBarrier
 
-Após a análise da Figura \ref{jsonvsyaml}, percebe-se que o YAML perde em desempenho para JSON e XML quando o número de elementos aumenta gradativamente. Em projetos de software, é natural que estes cresçam cada vez mais, tal como especifica a segunda lei de \citeonline{Lehman1980b}. Logo, o formato JSON ou XML é mais adequado, fazendo com que a ferramenta SonarQube seja mais indicada para o contexto deste trabalho.
-
-Entre JSON e XML, \citeonline{fonseca2007alternativas} conclui que o transporte de dados é mais rápido utilizando JSON, pois se permite transportar
-um objeto serializado arbitrariamente complexo, e transformá-lo num objeto
-JavaScript sem grandes problemas, enquanto que no XML se deve construir um \textit{parser} para interpretar os dados. Por este motivo, foi escolhido para extração das métricas de código-fonte neste trabalho o formato JSON provido pela ferramenta SonarQube. 
 
 
 \subsection{Estudo de caso de Acompanhamento das Métricas de Código-Fonte de um Software Livre em ambiente de DWing}
 
-Com o objetivo de validar a implementação do ambiente de DWing para métricas de código-fonte, escolheu-se nesta etapa do trabalho de conclusão de curso acompanhar a qualidade de um software livre por meio de um estudo caso.
-
-Dado que os intervalos constituídos da análise de \citeonline{Meirelles2013}, apresentados na seção \ref{Intervalos das Métricas}, são para as linguagens de programação C++ e Java, há a restrição quanto ao acompanhamento de projetos feitos nessas linguagens.
-
-Após uma leitura da documentação do SonarQube, descobriu-se que este mantém um repositório de análises de código-fonte de projetos de software livre, chamado Nemo~\footnote{Disponível em \url{http://nemo.sonarqube.org/}}. O Nemo disponibiliza projetos feitos nas linguagens Java, Javascript, Groovy e entre outros. Limitando-se apenas a linguagem Java, dado que não foi encontrado nenhum projeto C++ no repositório com grande frequência de atualizações, obteve-se cerca de 178 projetos.
-
-A fim de se detectar projetos que tinham a maior taxa de atualização no repositório de análises do Nemo, percebeu-se que o projeto \textbf{Apache Maven} era um dos que mais se mantinham atualizados. Feito em linguagem Java, este projeto disponibiliza uma nova análise sobre o código-fonte a cada semana. Diante disso, foi escolhido o Apache Maven como o software a ser monitorado no ambiente de DWing. 
 
 
 \section{Projeto do \textit{Data Warehouse}}

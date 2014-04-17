@@ -15,54 +15,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/3-proposta.tex",
-			"settings":
-			{
-				"buffer_size": 4602,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/fixos/setup.tex",
-			"settings":
-			{
-				"buffer_size": 3539,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/apendices.tex",
-			"settings":
-			{
-				"buffer_size": 9285,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/4-produtos.tex",
-			"settings":
-			{
-				"buffer_size": 101514,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/smell.tex",
-			"settings":
-			{
-				"buffer_size": 22579,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Guilherme/Downloads/main.c",
-			"settings":
-			{
-				"buffer_size": 1316,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -99,8 +51,13 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Guilherme/Downloads/pi2everaldo.txt",
+		"/C/Users/Guilherme/Downloads/main.c",
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/4-produtos.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/apendices.tex",
+		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/fixos/setup.tex",
+		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/3-proposta.tex",
+		"/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/smell.tex",
+		"/C/Users/Guilherme/Downloads/pi2everaldo.txt",
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/codigos/webGPS.ino",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/bibliografia.bib",
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/bibliografia.bib",
@@ -109,11 +66,9 @@
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/abstract.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/capitulos/2-metricas.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/capitulos/4-solucao.tex",
-		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/3-proposta.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/capitulos/3-dwing.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/fixos/pacotes.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/capitulos/5-consideracoes.tex",
-		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/apendices.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/abreviaturas.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/informacoes.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/Arquivos Transformações/aggregated.properties",
@@ -141,7 +96,6 @@
 		"/C/Users/Guilherme/Dropbox/biserver-ce/pentaho-solutions/system/saiku/ui/js/ace/keybinding-vim.js",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/agradecimentos.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/schema.sql",
-		"/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/smell.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/examplejson.js",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/metrics-27-10.js",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/metrics-20-10.js",
@@ -317,178 +271,8 @@
 	"groups":
 	[
 		{
-			"selected": 4,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/3-proposta.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4602,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2056,
-								2056
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1388.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/fixos/setup.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3539,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								875,
-								534
-							],
-							[
-								3452,
-								3452
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 109.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/apendices.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9285,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7308,
-								7181
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"tab_size": 7,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 245.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/4-produtos.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 101514,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6678,
-								6678
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 4919.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/C/Users/Guilherme/Dropbox/Unb/Experimental/ArtigoSofTex/smell.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 22579,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1280,
-								1280
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 279.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/C/Users/Guilherme/Downloads/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1316,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -526,6 +310,10 @@
 	"output.exec":
 	{
 		"height": 124.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
 	},
 	"project": "tcc.sublime-project",
 	"replace":
