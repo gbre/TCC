@@ -125,24 +125,14 @@ As principais diferenças das operações \textit{On-Line Analytical Processing}
 
 	\begin{table}[!ht]
 	\begin{center}
-	 \begin{tabular}{|p{5cm}|p{5cm}|}
-		\hline
-		OLAP & OLTP \\ \hline
-		Modelagem Dimensional (Tabelas Fato e Dimensão) & Modelagem Relacional com a utilização das formas normais (3N, 4N, 5N) \\ \hline
-		Dados armazenados em nível transacional e agregado    & Dados em nível em nível transacional        \\ \hline
-		Visa o diminuir o uso do JOIN & Faz uso constante de Join   \\ \hline
-		Análise de Dados & Atualização de dados
-		\\ \hline
-		Estrutura de tipicamente estática  & Estrutura tipicamente dinâmica      \\ \hline
-		Proveem informações atuais e do passado & Geralmente sem suporte a estado temporal dos dados
-		      \\ \hline
 
-		\end{tabular}
-		\caption{Diferenças entre OLAP e OLTP extraído de \citeonline{valeria2012}, \citeonline{andre2000} e \citeonline{hilmer2002}}
-		\label{olapxoltp}
-		\end{center}
-		\end{table}
-		\FloatBarrier
+	\input{tabelas/olapxoltp.ltx}
+	
+	\caption{Diferenças entre OLAP e OLTP extraído de \citeonline{valeria2012}, \citeonline{andre2000} e \citeonline{hilmer2002}}
+	\label{olapxoltp}
+	\end{center}
+	\end{table}
+	\FloatBarrier
 
 Segundo \citeonline{hilmer2002}, a consolidação é uma das mais importantes operações OLAP. Ela envolve a agregação de dados sobre uma ou mais hierarquias de dimensões. A generalização de uma consulta de consolidação pode ser representada formalmente através de: 
 
@@ -175,13 +165,7 @@ Considerando o exemplo do total de vendas no mês de novembro em uma rede de loj
 
 \begin{table}[!ht]
 \centering
-\begin{tabular}{|l|l|l|}
-\hline
-Mês & Loja & Total de Unidades Vendidas \\ \hline
-Novembro & Loja Sul & 200                        \\ \hline
-Novembro & Loja Norte & 300                        \\ \hline
-Novembro & Loja Oeste & 230                        \\ \hline
-\end{tabular}
+\input{tabelas/total-de-vendas.ltx}
 \caption{Exemplo do Total de Vendas de uma Rede de Lojas no mês de Novembro}
 \label{before}
 \end{table}
@@ -190,14 +174,7 @@ Novembro & Loja Oeste & 230                        \\ \hline
 
 \begin{table}[!ht]
 \centering
-\begin{tabular}{|l|l|l|l|l|l|}
-\hline
-\multirow{2}{*}{Mês} & \multirow{2}{*}{Loja} & \multicolumn{4}{c|}{Produto}                 \\ \cline{3-6} 
-                     &                       & Produto A & Produto B & Produto C & Produto D \\ \hline
-Novembro             & Loja Sul              & 10        & 70        & 50        & 70        \\ \hline
-Novembro             & Loja Norte            & 100       & 60        & 50        & 90        \\ \hline
-Novembro             & Loja Oeste            & 25        & 78        & 67        & 60        \\ \hline
-\end{tabular}
+\input{tabelas/dimensao.ltx}
 \caption{Exemplo do Total de Vendas de uma rede de lojas no mês de novembro com a dimensão Produto}
 \label{after}
 \end{table}

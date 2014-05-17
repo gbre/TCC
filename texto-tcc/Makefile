@@ -20,14 +20,21 @@ EDITAVEIS_SOURCES = informacoes.tex errata.tex dedicatoria.tex \
 					agradecimentos.tex epigrafe.tex \
 					resumo.tex abstract.tex \
 					abreviaturas.tex simbolos.tex \
-					apendices.tex anexos.tex
+					anexos.tex
 
 EDITAVEIS_FILES = $(addprefix $(EDITAVEIS_DIR)/, $(EDITAVEIS_SOURCES))
 
 CHAPTERS_DIR = capitulos
-CHAPTERS_SOURCES = 1-introducao.tex 2-metricas.tex 3-dwing.tex 4-solucao.tex 5-consideracoes.tex
+CHAPTERS_SOURCES = 1-introducao.tex 2-metricas.tex 3-dwing.tex 4-arquitetura.tex 5-estudo-de-caso.tex 6-conclusao.tex
 
 CHAPTERS_FILES = $(addprefix $(CHAPTERS_DIR)/, $(CHAPTERS_SOURCES))
+
+
+APENDICES_DIR = apendices
+
+APENDICES_SOURCES = apendices.tex
+
+APENDICES_FILES = $(addprefix $(APENDICES_DIR)/, $(APENDICES_SOURCES))
 
 MAIN_FILE = tcc.tex
 DVI_FILE  = $(addsuffix .dvi, $(basename $(MAIN_FILE)))
@@ -35,7 +42,7 @@ AUX_FILE  = $(addsuffix .aux, $(basename $(MAIN_FILE)))
 PS_FILE   = $(addsuffix .ps, $(basename $(MAIN_FILE)))
 PDF_FILE  = $(addsuffix .pdf, $(basename $(MAIN_FILE)))
 
-SOURCES = $(FIXOS_FILES) $(EDITAVEIS_FILES) $(CHAPTERS_FILES)
+SOURCES = $(FIXOS_FILES) $(EDITAVEIS_FILES) $(CHAPTERS_FILES) $(APENDICES_FILES)
 
 .PHONY: all clean dist-clean
 

@@ -1,4 +1,4 @@
-[{
+{
     "id": 115771,
     "key": "org.apache.maven:maven-compat:org.apache.maven.artifact.repository.layout.FlatRepositoryLayout",
     "name": "FlatRepositoryLayout",

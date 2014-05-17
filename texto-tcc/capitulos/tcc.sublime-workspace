@@ -15,6 +15,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "1-introducao.tex",
+			"settings":
+			{
+				"buffer_size": 5499,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -38,6 +46,7 @@
 		"height": 153.0,
 		"history":
 		[
+			"exit"
 		]
 	},
 	"distraction_free":
@@ -51,6 +60,30 @@
 	},
 	"file_history":
 	[
+		"/home/baufaker/.conkyrc",
+		"/home/baufaker/.config/sublime-text-3/Packages/LaTeXTools/README.markdown",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/Makefile",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/README.md",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/bibliografia.bib",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/dump-banco.sql",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.aux",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.bbl",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.blg",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.brf",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.dvi",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.idx",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.lof",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.log",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.lot",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.out.ps",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.tex",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/tcc.toc",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/examplejson.js",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/metrics-03-11.js",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/metrics-07-09.js",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/metrics-10-11.js",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/apendices/metrics-13-10.js",
+		"/home/baufaker/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/capitulos/1-introducao.tex",
 		"/C/Users/Guilherme/Downloads/main.c",
 		"/C/Users/Guilherme/Dropbox/Mobilidade PI2/Latex - PI2/capitulos/4-produtos.tex",
 		"/C/Users/Guilherme/Dropbox/Unb/TCC/TCC-Baufaker/texto-tcc/editaveis/apendices.tex",
@@ -145,7 +178,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -159,6 +192,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"batter",
+			"lua_load ",
+			"preview",
 			"backgourd",
 			"capacidade de condução",
 			"GPS",
@@ -271,8 +307,42 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "1-introducao.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5499,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2972,
+								2972
+							]
+						],
+						"settings":
+						{
+							"rulers":
+							[
+								100
+							],
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"wrap_width": 100
+						},
+						"translation.x": 0.0,
+						"translation.y": 714.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

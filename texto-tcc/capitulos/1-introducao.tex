@@ -1,53 +1,58 @@
 \chapter{Introdução}
 
-\section {Contexto}
 
+\section {Contexto}
 A qualidade do software depende da qualidade do código-fonte, pois um bom código-fonte é um bom indicador de qualidade interna do produto de software \cite{beck2003test} \cite{ISO25023}. Portanto, decisões errôneas de desenvolvedores podem gerar trechos de código não coesos, que venham a se desfazer com o tempo e que aumentam exponencialmente a chance de manutenções corretivas onerosas \cite{beck2007implementation} \cite{beck1999}.
 
 
-Entre as formas de analisar a qualidade do código-fonte está a análise estática de código-fonte, que é uma análise automatizada das estruturas internas do código, que permite obter métricas de código-fonte \cite{Emanuelsson2008} \cite{Wichmann95}  \cite{Nielson:1999} \cite{Sommerville10}. Alguns trabalhos como \citeonline{marinescu2004quantifying}, \citeonline{marinescu2005measurement}, \citeonline{moha2006automatic}, \citeonline{moha2008domain}, \citeonline{moha2010decor} e \citeonline{rao2007detecting}  têm mostrado que é possível a partir das métricas de código-fonte, obter indicadores dos \textit{code-smells} que são pedaços não concisos e que podem ser eliminados com a refatoração, técnica de modificação das estruturas internas do código-fonte sem modificar o comportamento externo observável proposta por \citeonline{fowler1999refactoring}.
-
-
-Embora a refatoração seja uma técnica bastante documentada e utilizada, a mesma deve ser planejada no processo de desenvolvimento de software, dado que há custos e riscos para a utilização desta no processo de desenvolvimento, pois podem ser introduzidos defeitos não desejados no produto de software \cite{yamashita2013assessing}. \citeonline{Chulani2003} enuncia ainda é crucial que informações sobre o desenvolvimento de software sejam coletados e compartilhados entre projetos e pessoas em uma visão organizacional unificada, para que determinada organização ou time possa compreender o processo de medição e monitoramento de projetos de software e, consequentemente, se tornar mais hábil e eficiente em realizar atividades técnicas relacionadas ao processo de desenvolvimento de software. 
+Entre as formas de analisar a qualidade do código-fonte está a análise estática de código-fonte, que é uma análise automatizada das estruturas internas do código, que permite obter métricas de código-fonte \cite{Emanuelsson2008} \cite{Wichmann95}  \cite{Nielson:1999} \cite{Sommerville10}. Alguns trabalhos como \citeonline{marinescu2004quantifying}, \citeonline{marinescu2005measurement}, \citeonline{moha2006automatic}, \citeonline{moha2008domain}, \citeonline{moha2010decor} e \citeonline{rao2007detecting} mostraram que é possível a partir da análise de métricas de código-fonte, obter indicadores de pedaços não coesos e com alto acoplamento. Estes, por sua vez, podem ser eliminados com a refatoração, que é a técnica de modificação das estruturas internas do código-fonte sem modificar o comportamento externo observável proposta por \citeonline{fowler1999refactoring}.
 
 
 \section{Problema}
 
-A decisão ou priorização da aplicação da refatoração em uma classe, módulo ou projeto não é binária e normalmente envolve uma série de fatores como custo, prazo, risco e escopo \cite{yamashita2013assessing}. Este problema é agravado quando a equipe de desenvolvimento não possui informação sobre a qualidade do código-fonte. Isto normalmente ocorre, pois a maioria das ferramentas de análise estática de código-fonte disponíveis, preocupa-se apenas em realizar as análises e emitir como resultados séries de dados sobre determinada unidade (classe, módulo ou projeto). Isto é, não há mecanismos para separação, agregação e sobretudo visualização das métricas de código-fonte. Além disso, a maioria delas também não se preocupam com a interpretação dos resultados, relegando esta ao entendimento dos desenvolvedores.
+
+Embora a refatoração seja uma prática bastante documentada e utilizada principalmente nos processos de desenvolvimento que utilizam métodos ágeis \cite{beck1999}, a decisão de aplicação, que seja em uma classe, módulo ou projeto, envolve a avaliação de fatores como  custo, prazo, risco e qualidade do código-fonte \cite{yamashita2013assessing}.  
+
+Este último fator, que pode ser determinante para decisão de refatorar, normalmente, é díficil de ser avaliado. Isso ocorre, pois as ferramentas de análise estática de código-fonte, normamelmente, não apresentam associação entre os resultados númericos e a forma de intrepretá-los, isto é, as métricas frequentemente mostram apenas valores númericos isolados \cite{Meirelles2013}. Além disso, os resultados obtidos das ferramentas, são apresentados em longos arquivos (planilhas, arquivos JSON, XML), ou seja, sem mecanismos de separação, agregação e principalmente visualização de dados que permita a fácil identificação de um ponto de melhoria no código-fonte.
 
 
 %-----------------------------------------------------------------------------%
 
+\section{Questão de Pesquisa}
+
+Tendo em vista que este problema afeta a avaliação de projetos de software, pois é crucialue informações sobre o desenvolvimento de software sejam coletados e compartilhados entre projetos e pessoas em uma visão organizacional unificada, para que determinada organização possa compreender o processo de medição e monitoramento de projetos de software e, consequentemente, se tornar mais hábil e eficiente em realizar atividades técnicas relacionadas ao processo de desenvolvimento de software \cite{Chulani2003}, foi elaborada a seguinte questão de pesquisa:
+
+\textit{\textbf{Como aumentar a
+visibilidade e facilitar intepretação das 
+métricas de código-fonte
+a fim de apoiar a decisão de refatoração
+de uma equipe de desenvolvimento?}}
+
+
 \section{Objetivos}
 
-Esta seção apresenta o objetivo geral e os objetivos específicos deste Trabalho de Conclusão de Curso.
+Colocando a resolução da questão de pesquisa como objetivo geral do trabalho, foram elaborados objetivos específicos utilizando o GQM \cite{Basili96b}. Nesta cada objetivo enumera uma série de questões que são respondidas utilizando métricas, tal como se mostra na Tabela 
 
-\subsection{Objetivo Geral}
+\todo[inline, color=yellow!50]{Mudar a Forma de Apresentação dos Objetivos Específicos}
 
-	  Tendo em vista, o problema da não visualização da informação de métricas de código-fonte acarreta dificuldades posteriores na tomada de decisão técnica, como por exemplo, a refatoração e que trabalhos como \citeonline{Palza2003}, \citeonline{Ruiz2005}, \citeonline{Castellanos2005}, \citeonline{Becker2006}, \citeonline{Folleco2007}, \citeonline{Silveira2010}, já mostraram anteriormente que ambientes de \textit{Data Warehousing}, que já são naturalmente orientados para o suporte à decisões \apud{chaudhuri1997}{andre2000}, ajudam equipes de desenvolvimento a tomar decisões sobre atividades técnicas no processo desenvolvimento tal como proposto por \citeonline{Chulani2003}.  
 
-	  Foi construído um ambiente de \textit{Data Warehousing}, em que as informações relacionadas ao código-fonte e \textit{code-smells} podem ser facilmente visualizadas para que os interessados possam tomar decisões relacionadas ao código-fonte, como por exemplo, a refatoração de uma classe ou módulo.
+\
+
+	  Tendo em vista, as questões objetivas 
+
+
+	  o problema da não visualização da informação de métricas de código-fonte acarreta dificuldades posteriores na de decisão técnica, de refatoração e que trabalhos como 
+
+
+	  \todo[inline, color=magenta!50]{Adicionar Link com a Hipotése, o Uso do Data Warehousing, Processo de Medição}
+
+	  \citeonline{Palza2003}, \citeonline{Ruiz2005}, \citeonline{Castellanos2005}, \citeonline{Becker2006}, \citeonline{Folleco2007}, \citeonline{Silveira2010}, já mostraram anteriormente que ambientes de \textit{Data Warehousing}, que já são naturalmente orientados para o suporte à decisões \apud{chaudhuri1997}{andre2000}, ajudam equipes de desenvolvimento a tomar decisões sobre atividades técnicas no processo desenvolvimento tal como proposto por \citeonline{Chulani2003}.  
+
+	  Foi construído um ambiente de \textit{Data Warehousing}, em que as informações relacionadas ao código-fonte e \textit{code-smells} podem ser facilmente visualizadas para que os interessados possam tomar decisões relacionadas ao código-fonte, como por exemplo, a refatoração de uma classe.
 
 %------------------------------------------------------------------------------%
 
-\subsection{Objetivos Específicos}
-
-Os objetivos específicos deste trabalho são:
-
-\newlist{objectives}{enumerate}{3}
-\setlist[objectives]{ label* = OE\arabic* -}
-
-\begin{objectives}
-
-	\item Prover mecanismos de visualização, separação, agregação de informações relativas ao cómdigo-fonte.
-
-	\item Facilitar a decisão, ou a priorização de decisões que envolva código-fonte.
-
-	\item Evidenciar pontos no código-fonte onde a qualidade pode ser melhorada.
-
-	\item Validar o desenvolvimento do ambiente com análises de software e indicar pontos de melhoria.
-
-    \end{objectives}
+\
 	
 
 
@@ -55,6 +60,5 @@ Os objetivos específicos deste trabalho são:
 
 O texto deste trabalho foi organizado em capítulos. Em que o Capítulo 2 apresenta as 
 métricas de software bem como o processo de medição, descrito pela ISO 15939, 
-e as métricas de código-fonte e os \textit{code-smells}, a técnica de refatoração bem como o mapeamento das métricas de código-fonte com cenários de refatoração. O Capítulo 3 apresenta conceitualmente o ambiente de \textit{data warehousing} (DWing). O Capítulo 4 apresenta a implementação do ambiente de DWing construído neste 
-trabalho. Por fim, o capítulo 5 apresenta as conclusões com uso do 
+e as métricas de código-fonte e os \textit{code-smells}, a técnica de refatoração bem como o mapeamento das métricas de código-fonte com cenários de refatoração. O Capítulo 3 apresenta conceitualmente o ambiente de \textit{data warehousing} (DWing). O Capítulo 4 apresenta a implementação do ambiente de DWing construído neste trabalho. Por fim, o capítulo 5 apresenta as conclusões com uso do 
 ambiente de DWing em métricas de código-fonte. 

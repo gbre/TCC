@@ -18,29 +18,17 @@ informação, que é mostrado na Figura \ref{informação}, a fim de obter produ
 
 O modelo de informação da \citeonline{ISO:15939} é utilizado para construir o 
 propósito geral da medições e a identificação de medidas ou métricas que 
-respondem as necessidades de informação. Em metodologias ágeis, como por exemplo, é possível construir um modelo de informação tal como na 
-Tabela \ref{construção-ágil}.
+respondem as necessidades de informação. Quando se trata da coletas de métricas de código-fonte, é possível construir um modelo de informação tal como na Tabela \ref{construção-código}.
 
 	\begin{table}[!ht]
 	\begin{center}
-	 \begin{tabular}{|l|l|}
-		\hline
-		Entidade  & Código Fonte 
-		\\ \hline
-		Conceito Mensurável       & Qualidade      
-		\\ \hline
-		Construção Mensurável       & Qualidade do Código-Fonte      
-		\\ \hline
-		Atributos a ser medidos & Classes, Métodos e Pacotes   
-		\\ \hline
-		Produto de Informação   & Indicadores de Qualidade do Código-Fonte      
-		\\ \hline
-		\end{tabular}
-		\caption{Modelo de Informação para metodologias ágeis com base na 
-		\citeonline{ISO:15939}}
-		\label{construção-ágil}
-		\end{center}
-		\end{table}		
+	
+	\input{tabelas/modelo-informacao.ltx} 
+	\caption{Modelo de Informação para métricas de código-fonte com base na 
+	\citeonline{ISO:15939}}
+	\label{construção-código}
+	\end{center}
+	\end{table}		
 
 %---------------------------------------------------------------------------------------------------------------------%
 
@@ -53,21 +41,20 @@ quais entidade é mapeada \cite{ISO:15939}. As escalas podem ser:
 
 \begin{easylist}[itemize]
 
-& Nominal: A medição é categórica. Nesta escala, só é possível realização de 
-comparações, sendo que a ordem não possui significado
+& \textbf{Nominal:} A medição é categórica. Nesta escala, só é possível realização de comparações, sendo que a ordem não possui significado
 \cite{ISO:15939} \cite{Fenton98} \cite{Meirelles2013}.
 
-& Ordinal: A medição é baseada em ordenação, ou seja, os valores possuem 
+& \textbf{Ordinal:} A medição é baseada em ordenação, ou seja, os valores possuem 
 ordem, mas a distância entre eles não possui significado. Por exemplo, nível 
 de experiência dos programadores \cite{ISO:15939} \cite{Fenton98} 
 \cite{Meirelles2013}. 
 
-& Intervalo: A medição é baseada em distâncias iguais definidas para as 
+& \textbf{Intervalo:} A medição é baseada em distâncias iguais definidas para as 
 menores unidades. Por exemplo, o aumento de 1º C de um termômetro. Nesta 
 escala é possível realizar ordenação, soma e subtração
 \cite{ISO:15939} \cite{Fenton98}. 
 
-& Racional: A medição é baseada em distâncias iguais definidas para as 
+& \textbf{Racional:} A medição é baseada em distâncias iguais definidas para as 
 menores unidades, e neste caso é possível a ausência por meio do zero 
 absoluto. Por exemplo, a quantidade de linhas de código em uma classe. 
 Nesta escala, é possível realizar ordenação, soma, subtração, 
@@ -96,16 +83,17 @@ em três categorias:
 \label{modelodequalidade}
 \end{figure}
 \FloatBarrier
+
+\begin{easylist}[itemize]
 	
-\begin{description}
 %-----------------------------
-		\item[Métricas Internas.] 
+		& \textbf{Métricas Internas:} 
 		São métricas que aferem a qualidade interna do software por meio da 
 		avaliação de estruturas internas que compõem o software em estágio de 
 		desenvolvimento. São conhecidas como métricas de código-fonte.
 
 %-----------------------------			
-		\item[Métricas Externas.]
+		& \textbf{Métricas Externas:}
 		São métricas que capturam o comportamento do software. Exemplos de 
 		atributos da qualidade externa: correção, usabilidade, eficiência e 
 		robustez. Qualidade externa mede o comportamento do software. Estas só 
@@ -114,13 +102,13 @@ em três categorias:
 		implantação.
 
 %-----------------------------			
-		\item[Métricas de Qualidade em Uso.]
-		 São métricas que aferem se o software atende as necessidades do cliente
-		 com eficiência, produtividade, segurança e satisfação em contextos 
-		 específicos de uso. Estas só podem ser coletadas em ambientes reais, 
-		 isto é, o ambiente de implantação.	
+		& \textbf{Métricas de Qualidade em Uso:}
+		São métricas que aferem se o software atende as necessidades do cliente
+		com eficiência, produtividade, segurança e satisfação em contextos 
+		específicos de uso. Estas só podem ser coletadas em ambientes reais, 
+		isto é, o ambiente de implantação.	
 			 
-\end{description}
+\end{easylist}
 		
 				
 
@@ -149,6 +137,8 @@ métricas de tamanho, sendo que a modificação em uma provavelmente impactará 
 outra. A seguir são apresentadas as principais métricas de tamanho e 
 complexidade:
 
+\todo[inline, color=green!50]{Adicionar NOPA, AMLOC, CBO, ANPM}
+\todo[inline, color=yellow!50]{Mudar a Forma de Apresentação das Métricas}
 
 \begin{description}
 
@@ -238,103 +228,31 @@ as principais métricas de orientação à objetos:
 
 No trabalho de \citeonline{Meirelles2013}, foi mostrado que para cada linguagem de programação, é possível observar valores diferenciados para uma mesma métrica, ou seja, impossibilitando assim a definição de apenas um valor absoluto de referência para uma determinada métrica de código-fonte.
 
-\citeonline{Meirelles2013} observou, por meio da análise de métricas do código-fonte, que ao se padronizar o estilo e a linguagem de programação, é possível observar certos conjuntos de valores para cada métrica. Estes conjuntos foram agregados e intervalos e estes foram classificados em \textit{muito frequente, frequente, pouco frequente e não frequente}.
+\citeonline{Meirelles2013} observou, por meio da análise de métricas do código-fonte, que ao se padronizar o estilo e a linguagem de programação, é possível observar certos conjuntos de valores para cada métrica. Estes conjuntos foram agregados em intervalos e estes foram classificados em \textit{muito frequente, frequente, pouco frequente e não frequente}.
 
-Dado que o trabalho de \citeonline{Meirelles2013}, analisou softwares livres com grande utilização, tais como \textbf{Tomcat, Firefox, OpenJDK, VLC} e entre outros, é possível utilizar os intervalos como uma evidência \textbf{empírica} como parâmetros de qualidade. Sendo assim, os intervalos de frequência obtidos por \citeonline{Meirelles2013} foram renomeados tais como a Tabela \ref{nomes}. 
+Dado que o trabalho de \citeonline{Meirelles2013}, analisou softwares livres com grande utilização, tais como \textbf{Tomcat, Firefox, OpenJDK, VLC} e entre outros, é possível utilizar os intervalos como uma evidência \textbf{empírica} de qualidade do código-fonte. Sendo assim, os intervalos de frequência obtidos por \citeonline{Meirelles2013} foram renomeados tais como a Tabela \ref{nomes}. 
 
 	\begin{table}[!ht]
 	\begin{center}
-	 \begin{tabular}{|l|l|}
-		\hline
-		Intervalo de Frequência & Intervalos Qualitativos \\ \hline
-		Muito Frequente & Excelente \\ \hline
-		Frequente       & Bom       \\ \hline
-		Pouco Frequente & Regular   \\ \hline
-		Não Frequente   & Ruim      \\ \hline
-		\end{tabular}
-		\caption{Nome dos Intervalos de Frequência}
-		\label{nomes}
-		\end{center}
-		\end{table}
+	\input{tabelas/intervalos.ltx}
+	\caption{Nome dos Intervalos de Frequência}
+	\label{nomes}
+	\end{center}
+	\end{table}
 		
 \FloatBarrier
 
 Após a renomeação dos intervalos de frequência em intervalos qualitativos, 
-foram extraídos do estudo de \citeonline{Meirelles2013}, máximos e mínimos encontrados no 75º percentil para cada uma das métricas apresentadas anteriormente, considerando a linguagens de programação C++ e Java, tal como se mostra na Tabela \ref{metrics}.
+foram extraídos do estudo de \citeonline{Meirelles2013}, 
+
+\todo[inline, color=red!30]{Descrever a Fórmula do Percentil!}
+\todo[inline, color=LimeGreen!30]{Mostrar as tabelas da onde eu tirei os dados}
+
+máximos e mínimos encontrados no percentis para cada uma das métricas apresentadas anteriormente, considerando a linguagens de programação C++ e Java, tal como se mostra na Tabela \ref{metrics}.
 	
 	\begin{table}[!ht]
 	\begin{center}
-	\begin{tabular}{ |l|l|l|l| }
-		\hline
-		Métrica & Intervalo Qualitativo & Java & C++ \\ \hline
-		%-------------------------------
-		\multirow{4}{*}{LOC} 
-		 & Excelente & [de 0 a 33] & [de 0 a 31] \\
-		 & Bom & [de 34 a 87] & [de 32 a 84] \\
-		 & Regular & [de 88 a 200] & [de 85 a 207] \\
-		 & Ruim & [acima de 200] & [acima de 207] \\ \hline
-		 %---------------------------------
-		 
-		 %-------------------------------
-		\multirow{4}{*}{ACCM} 
-		 & Excelente & [de 0 a 2,8] & [de 0 a 2,0] \\
-		 & Bom & [de 2,9 a 4,4] & [de 2,1 a 4,0] \\
-		 & Regular & [de 4,5 a 6,0] & [de 4,1 a 6,0] \\
-		 & Ruim & [acima de 6] & [acima de 6] \\ \hline
-		 %---------------------------------
-		 
-		 
-		%-------------------------------
-		\multirow{4}{*}{ACC} 
-		 & Excelente & [de 0 a 1] & [de 0 a 2,0] \\
-		 & Bom & [de 1,1 a 5] & [de 2,1 a 7,0] \\
-		 & Regular & [de 5,1 a 12] & [de 7,1 a 15] \\
-		 & Ruim & [acima de 12] & [acima de 15] \\ \hline
-		 %---------------------------------
-	
-		 
-		%-------------------------------
-		\multirow{4}{*}{RFC} 
-		 & Excelente & [de 0 a 9] & [de 0 a 29] \\
-		 & Bom & [de 10 a 26] & [de 30 a 64] \\
-		 & Regular & [de 27 a 59] & [de 65 a 102] \\
-		 & Ruim & [acima de 59] & [acima de 102] \\ \hline
-		 %---------------------------------
-		 
-		 %-------------------------------
-		\multirow{4}{*}{LCOM4} 
-		 & Excelente & [de 0 a 3] & [de 0 a 5] \\
-		 & Bom & [de 4 a 7] & [de 6 a 10] \\
-		 & Regular & [de 8 a 12] & [de 11 a 14] \\
-		 & Ruim & [acima de 12] & [acima de 14] \\ \hline
-		 %---------------------------------
-		 
-		 %-------------------------------
-		\multirow{4}{*}{NOM} 
-		 & Excelente & [de 0 a 8] & [de 0 a 10] \\
-		 & Bom & [de 9 a 17] & [de 11 a 17] \\
-		 & Regular & [de 18 a 27] & [de 18 a 26] \\
-		 & Ruim & [acima de 27] & [acima de 26] \\ \hline
-		 %---------------------------------
-		 
-		 %-------------------------------
-		\multirow{4}{*}{DIT} 
-		 & Excelente & [de 0 a 2] & [de 0 a 1] \\
-		 & Bom & [de 3 a 4] & [de 2 a 3] \\
-		 & Regular & [de 5 a 6] & [de 3 a 4] \\
-		 &
-		  Ruim & [acima de 6] & [acima de 4] \\ \hline
-		 %---------------------------------
-		
-		%-------------------------------
-		\multirow{4}{*}{NOC} 
-		 & Excelente & [de 0 a 1] & [0] \\
-		 & Bom & [de 1 a 2] & [1] \\
-		 & Regular & [de 2 a 3] & [de 1 a 2] \\
-		 & Ruim & [acima de 3] & [acima de 2] \\ \hline
-		 %---------------------------------
-		 
-	\end{tabular}
+	\input{tabelas/metricas.ltx}	
 	\caption{Intervalos das Métricas para Java e C++}
 	\label{metrics}
 	\end{center}
@@ -342,15 +260,10 @@ foram extraídos do estudo de \citeonline{Meirelles2013}, máximos e mínimos en
 
 \FloatBarrier
 
-Os intervalos, que foram apresentados na Tabela \ref{metrics}, serão utilizados
-como indicadores de qualidade de código-fonte no componente de visualização de dados do ambiente de \textit{Data Warehousing} a ser apresentado a seguir.
+\todo[inline, color=BurntOrange]{Adicionar os valores para as métricas AMLOC, ANPM, NOPA, CBO}
+
+\section{\textit{Código Limpo}} % (fold)
+\label{sec:clean-code}
 
 
-\section{\textit{Code Smells}} % (fold)
-\label{sec:code}
-
-
-
-
-
-% section code (end)
+\todo[inline, color=yellow!50]{Escrever com base no trabalho do Machini}
