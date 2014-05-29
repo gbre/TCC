@@ -687,11 +687,11 @@
     </attributes>
   </connection>
   <connection>
-    <name>ProjectInfo</name>
+    <name>Source Info</name>
     <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>project_info</database>
+    <database>source_info</database>
     <port>3306</port>
     <username>root</username>
     <password>Encrypted </password>
@@ -802,6 +802,16 @@
 <percentile>0.75</percentile>
 <interpolate>N</interpolate>
 </univariate_stats>
+       <univariate_stats><source_field_name>AMLOC</source_field_name>
+<N>N</N>
+<mean>N</mean>
+<stdDev>N</stdDev>
+<min>N</min>
+<max>N</max>
+<median>N</median>
+<percentile>0.5</percentile>
+<interpolate>N</interpolate>
+</univariate_stats>
        <univariate_stats><source_field_name>ACC</source_field_name>
 <N>N</N>
 <mean>N</mean>
@@ -812,7 +822,7 @@
 <percentile>0.75</percentile>
 <interpolate>N</interpolate>
 </univariate_stats>
-       <univariate_stats><source_field_name>RFC</source_field_name>
+       <univariate_stats><source_field_name>ANPM</source_field_name>
 <N>N</N>
 <mean>N</mean>
 <stdDev>N</stdDev>
@@ -822,17 +832,7 @@
 <percentile>0.75</percentile>
 <interpolate>N</interpolate>
 </univariate_stats>
-       <univariate_stats><source_field_name>LCOM4</source_field_name>
-<N>N</N>
-<mean>N</mean>
-<stdDev>N</stdDev>
-<min>N</min>
-<max>N</max>
-<median>N</median>
-<percentile>0.75</percentile>
-<interpolate>N</interpolate>
-</univariate_stats>
-       <univariate_stats><source_field_name>NOM</source_field_name>
+       <univariate_stats><source_field_name>CBO</source_field_name>
 <N>N</N>
 <mean>N</mean>
 <stdDev>N</stdDev>
@@ -852,6 +852,16 @@
 <percentile>0.9</percentile>
 <interpolate>N</interpolate>
 </univariate_stats>
+       <univariate_stats><source_field_name>LCOM4</source_field_name>
+<N>N</N>
+<mean>N</mean>
+<stdDev>N</stdDev>
+<min>N</min>
+<max>N</max>
+<median>N</median>
+<percentile>0.75</percentile>
+<interpolate>N</interpolate>
+</univariate_stats>
        <univariate_stats><source_field_name>NOC</source_field_name>
 <N>N</N>
 <mean>N</mean>
@@ -862,10 +872,40 @@
 <percentile>0.9</percentile>
 <interpolate>N</interpolate>
 </univariate_stats>
+       <univariate_stats><source_field_name>NOM</source_field_name>
+<N>N</N>
+<mean>N</mean>
+<stdDev>N</stdDev>
+<min>N</min>
+<max>N</max>
+<median>N</median>
+<percentile>0.75</percentile>
+<interpolate>N</interpolate>
+</univariate_stats>
+       <univariate_stats><source_field_name>NPA</source_field_name>
+<N>N</N>
+<mean>N</mean>
+<stdDev>N</stdDev>
+<min>N</min>
+<max>N</max>
+<median>N</median>
+<percentile>0.75</percentile>
+<interpolate>N</interpolate>
+</univariate_stats>
+       <univariate_stats><source_field_name>RFC</source_field_name>
+<N>N</N>
+<mean>N</mean>
+<stdDev>N</stdDev>
+<min>N</min>
+<max>N</max>
+<median>N</median>
+<percentile>0.75</percentile>
+<interpolate>N</interpolate>
+</univariate_stats>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>292</xloc>
-      <yloc>106</yloc>
+      <xloc>291</xloc>
+      <yloc>105</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -881,7 +921,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>LOC&#x28;75th percentile&#x29;</name>
+    <fields>      <field>        <name>LOC&#x28;50th percentile&#x29;</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -889,11 +929,23 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
+      </field>      <field>        <name>AMLOC&#x28;50th percentile&#x29;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>      <field>        <name>ACC&#x28;75th percentile&#x29;</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>RFC&#x28;75th percentile&#x29;</name>
+      </field>      <field>        <name>ANPM&#x28;75th percentile&#x29;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CBO&#x28;75th percentile&#x29;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>DIT&#x28;90th percentile&#x29;</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -901,39 +953,43 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
+      </field>      <field>        <name>NOC&#x28;90th percentile&#x29;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>      <field>        <name>NOM&#x28;75th percentile&#x29;</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>DIT&#x28;75th percentile&#x29;</name>
+      </field>      <field>        <name>NPA&#x28;75th percentile&#x29;</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>NOC&#x28;75th percentile&#x29;</name>
+      </field>      <field>        <name>RFC&#x28;75th percentile&#x29;</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>ACCM&#x28;75th percentile&#x29;</name>
-        <rename>ACCM&#x28;75th percentile&#x29;</rename>
+      <meta>        <name>LOC&#x28;50th percentile&#x29;</name>
+        <rename>LOC</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ACCM&#x28;75th percentile&#x29;</name>
+        <rename>ACCM</rename>
         <type>String</type>
         <length>-2</length>
         <precision>-2</precision>
-        <conversion_mask>0.00</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>LOC&#x28;75th percentile&#x29;</name>
-        <rename>LOC&#x28;75th percentile&#x29;</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
         <date_format_locale/>
@@ -944,24 +1000,9 @@
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
-      </meta>      <meta>        <name>DIT&#x28;75th percentile&#x29;</name>
-        <rename>DIT&#x28;75th percentile&#x29;</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>LCOM4&#x28;75th percentile&#x29;</name>
-        <rename>LCOM4&#x28;75th percentile&#x29;</rename>
-        <type>None</type>
+      </meta>      <meta>        <name>AMLOC&#x28;50th percentile&#x29;</name>
+        <rename>AMLOC</rename>
+        <type>String</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
@@ -975,8 +1016,8 @@
         <currency_symbol/>
         <storage_type/>
       </meta>      <meta>        <name>ACC&#x28;75th percentile&#x29;</name>
-        <rename>ACC&#x28;75th percentile&#x29;</rename>
-        <type>None</type>
+        <rename>ACC</rename>
+        <type>String</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
@@ -986,11 +1027,86 @@
         <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ANPM&#x28;75th percentile&#x29;</name>
+        <rename>ANPM</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>CBO&#x28;75th percentile&#x29;</name>
+        <rename>CBO</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>DIT&#x28;90th percentile&#x29;</name>
+        <rename>DIT</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>LCOM4&#x28;75th percentile&#x29;</name>
+        <rename>LCOM4</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>NOC&#x28;90th percentile&#x29;</name>
+        <rename>NOC</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
       </meta>      <meta>        <name>NOM&#x28;75th percentile&#x29;</name>
-        <rename>NOM&#x28;75th percentile&#x29;</rename>
+        <rename>NOM</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -1000,12 +1116,12 @@
         <date_format_timezone/>
         <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
-        <decimal_symbol>.</decimal_symbol>
+        <decimal_symbol/>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
-      </meta>      <meta>        <name>NOC&#x28;75th percentile&#x29;</name>
-        <rename>NOC&#x28;75th percentile&#x29;</rename>
+      </meta>      <meta>        <name>NPA&#x28;75th percentile&#x29;</name>
+        <rename>NPA</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -1015,12 +1131,12 @@
         <date_format_timezone/>
         <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
-        <decimal_symbol>.</decimal_symbol>
+        <decimal_symbol/>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
       </meta>      <meta>        <name>RFC&#x28;75th percentile&#x29;</name>
-        <rename>RFC&#x28;75th percentile&#x29;</rename>
+        <rename>RFC</rename>
         <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -1030,14 +1146,14 @@
         <date_format_timezone/>
         <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
-        <decimal_symbol>.</decimal_symbol>
+        <decimal_symbol/>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>444</xloc>
-      <yloc>104</yloc>
+      <xloc>436</xloc>
+      <yloc>108</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1071,34 +1187,8 @@
     </file>
     <fields>
       <field>
-        <name>name</name>
-        <path>&#x24;..module</path>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
         <name>LOC</name>
         <path>&#x24;...loc</path>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>NOM</name>
-        <path>&#x24;..nom</path>
         <type>Integer</type>
         <format/>
         <currency/>
@@ -1123,34 +1213,60 @@
         <repeat>N</repeat>
       </field>
       <field>
+        <name>AMLOC</name>
+        <path>&#x24;..amloc</path>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <length>2</length>
+        <precision>1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ACC</name>
+        <path>&#x24;..acc</path>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ANPM</name>
+        <path>&#x24;..anpm</path>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <length>2</length>
+        <precision>1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CBO</name>
+        <path>&#x24;..cbo</path>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
         <name>DIT</name>
         <path>&#x24;..dit</path>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>NOC</name>
-        <path>&#x24;..noc</path>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>RFC</name>
-        <path>&#x24;..rfc</path>
         <type>Integer</type>
         <format/>
         <currency/>
@@ -1175,8 +1291,47 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>ACC</name>
-        <path>&#x24;..acc</path>
+        <name>NOC</name>
+        <path>&#x24;..noc</path>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>NOM</name>
+        <path>&#x24;..nom</path>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>NPA</name>
+        <path>&#x24;..npa</path>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>RFC</name>
+        <path>&#x24;..rfc</path>
         <type>Integer</type>
         <format/>
         <currency/>
@@ -1202,7 +1357,7 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>133</xloc>
+      <xloc>132</xloc>
       <yloc>107</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1219,47 +1374,59 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>ProjectInfo</connection>
+    <connection>Source Info</connection>
     <execute_each_row>Y</execute_each_row>
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>USE project_info&#x3b;&#xa;&#xa;SET &#x40;idProject &#x3d; &#x28;SELECT max&#x28;idProject&#x29; from Project&#x29;&#x3b;&#xa;&#xa;SET &#x40;idVersion &#x3d; &#x28;SELECT max&#x28;idVersion&#x29; from Version&#x29;&#x3b;&#xa;&#xa;SET &#x40;Project_Language &#x3d; &#x28;SELECT project_language from Project&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta da Range LOC&#xa;&#xa;SET &#x40;idLOC &#x3d; &#x28;SELECT idMetricRange FROM project_info.Metric_Ranges where language_name &#x3d; &#x40;Project_Language and &#xa;metric_name&#x3d;&#x27;LOC&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min&#x29; &#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de LOC&#xa;&#xa;SET &#x40;qualityLOC &#x3d; &#x28;SELECT idQuality FROM project_info.Quality where quality_index&#x3d;&#xa;&#x28;SELECT quality_index FROM project_info.Metric_Ranges where idMetricRange&#x3d;&#x40;idLOC&#x29;&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Consulta Na Range ACC&#xa;&#xa;SET &#x40;idACC &#x3d; &#x28;SELECT idMetricRange FROM project_info.Metric_Ranges where language_name &#x3d; &#x40;Project_Language and &#xa;metric_name&#x3d;&#x27;ACC&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min&#x29; &#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de ACC&#xa;&#xa;SET &#x40;qualityACC &#x3d; &#x28;SELECT idQuality FROM project_info.Quality where quality_index&#x3d;&#xa;&#x28;SELECT quality_index FROM project_info.Metric_Ranges where idMetricRange&#x3d;&#x40;idACC&#x29;&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Consulta Na Range ACCM&#xa;&#xa;SET &#x40;idACCM &#x3d; &#x28;SELECT idMetricRange FROM project_info.Metric_Ranges where language_name &#x3d; &#x40;Project_Language and &#xa;metric_name&#x3d;&#x27;ACCM&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min&#x29; &#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de ACCM&#xa;&#xa;SET &#x40;qualityACCM &#x3d; &#x28;SELECT idQuality FROM project_info.Quality where quality_index&#x3d;&#xa;&#x28;SELECT quality_index FROM project_info.Metric_Ranges where idMetricRange&#x3d;&#x40;idACCM&#x29;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta Na Range RFC&#xa;&#xa;SET &#x40;idRFC &#x3d; &#x28;SELECT idMetricRange FROM project_info.Metric_Ranges where language_name &#x3d; &#x40;Project_Language and &#xa;metric_name&#x3d;&#x27;RFC&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min&#x29; &#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de RFC&#xa;&#xa;SET &#x40;qualityRFC &#x3d; &#x28;SELECT idQuality FROM project_info.Quality where quality_index&#x3d;&#xa;&#x28;SELECT quality_index FROM project_info.Metric_Ranges where idMetricRange&#x3d;&#x40;idRFC&#x29;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta Na Range LCOM4&#xa;&#xa;SET &#x40;idLCOM4 &#x3d; &#x28;SELECT idMetricRange FROM project_info.Metric_Ranges where language_name &#x3d; &#x40;Project_Language and &#xa;metric_name&#x3d;&#x27;LCOM4&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min&#x29; &#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de LCOM4&#xa;&#xa;SET &#x40;qualityLCOM4 &#x3d; &#x28;SELECT idQuality FROM project_info.Quality where quality_index&#x3d;&#xa;&#x28;SELECT quality_index FROM project_info.Metric_Ranges where idMetricRange&#x3d;&#x40;idLCOM4&#x29;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta Na Range NOM&#xa;&#xa;SET &#x40;idNOM &#x3d; &#x28;SELECT idMetricRange FROM project_info.Metric_Ranges where language_name &#x3d; &#x40;Project_Language and &#xa;metric_name&#x3d;&#x27;NOM&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min&#x29; &#x3b;&#xa;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de NOM&#xa;&#xa;SET &#x40;qualityNOM &#x3d; &#x28;SELECT idQuality FROM project_info.Quality where quality_index&#x3d;&#xa;&#x28;SELECT quality_index FROM project_info.Metric_Ranges where idMetricRange&#x3d;&#x40;idNOM&#x29;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta Na Range DIT&#xa;&#xa;SET &#x40;idDIT &#x3d; &#x28;SELECT idMetricRange FROM project_info.Metric_Ranges where language_name &#x3d; &#x40;Project_Language and &#xa;metric_name&#x3d;&#x27;DIT&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min&#x29; &#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de DIT&#xa;&#xa;SET &#x40;qualityDIT &#x3d; &#x28;SELECT idQuality FROM project_info.Quality where quality_index&#x3d;&#xa;&#x28;SELECT quality_index FROM project_info.Metric_Ranges where idMetricRange&#x3d;&#x40;idDIT&#x29;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta Na Range NOC&#xa;&#xa;SET &#x40;idNOC &#x3d; &#x28;SELECT idMetricRange FROM project_info.Metric_Ranges where language_name &#x3d; &#x40;Project_Language and &#xa;metric_name&#x3d;&#x27;NOC&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min&#x29; &#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de NOC&#xa;&#xa;SET &#x40;qualityNOC &#x3d; &#x28;SELECT idQuality FROM project_info.Quality where quality_index&#x3d;&#xa;&#x28;SELECT quality_index FROM project_info.Metric_Ranges where idMetricRange&#x3d;&#x40;idNOC&#x29;&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23;Inserindo o fato do LOC&#xa;&#xa;INSERT INTO &#x60;project_info&#x60;.&#x60;Quality_Project_Metric_Fact&#x60;&#xa;&#x28;&#x60;metric_value&#x60;,&#x60;Project_idproject&#x60;,&#x60;Metric_Ranges_idMetricRange&#x60;,&#x60;Version_idVersion&#x60;,&#x60;Quality_idQuality&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;idLOC, &#x40;idVersion, &#x40;qualityLOC&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23;Inserindo o fato do ACCM&#xa;&#xa;INSERT INTO &#x60;project_info&#x60;.&#x60;Quality_Project_Metric_Fact&#x60;&#xa;&#x28;&#x60;metric_value&#x60;,&#x60;Project_idproject&#x60;,&#x60;Metric_Ranges_idMetricRange&#x60;,&#x60;Version_idVersion&#x60;,&#x60;Quality_idQuality&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;idACCM, &#x40;idVersion,&#x40;qualityACCM&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23;Inserindo o fato do ACC&#xa;&#xa;INSERT INTO &#x60;project_info&#x60;.&#x60;Quality_Project_Metric_Fact&#x60;&#xa;&#x28;&#x60;metric_value&#x60;,&#x60;Project_idproject&#x60;,&#x60;Metric_Ranges_idMetricRange&#x60;,&#x60;Version_idVersion&#x60;,&#x60;Quality_idQuality&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;idACC, &#x40;idVersion, &#x40;qualityACC&#x29;&#x3b;&#xa;&#xa;&#xa;&#xa;&#x23;Inserindo o fato do RFC&#xa;&#xa;INSERT INTO &#x60;project_info&#x60;.&#x60;Quality_Project_Metric_Fact&#x60;&#xa;&#x28;&#x60;metric_value&#x60;,&#x60;Project_idproject&#x60;,&#x60;Metric_Ranges_idMetricRange&#x60;,&#x60;Version_idVersion&#x60;,&#x60;Quality_idQuality&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;idRFC, &#x40;idVersion, &#x40;qualityRFC&#x29;&#x3b;&#xa;&#xa;&#x23;Inserindo o fato do LCOM4&#xa;&#xa;INSERT INTO &#x60;project_info&#x60;.&#x60;Quality_Project_Metric_Fact&#x60;&#xa;&#x28;&#x60;metric_value&#x60;,&#x60;Project_idproject&#x60;,&#x60;Metric_Ranges_idMetricRange&#x60;,&#x60;Version_idVersion&#x60;,&#x60;Quality_idQuality&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;idLCOM4, &#x40;idVersion, &#x40;qualityLCOM4&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23;Inserindo o fato do NOM&#xa;&#xa;INSERT INTO &#x60;project_info&#x60;.&#x60;Quality_Project_Metric_Fact&#x60;&#xa;&#x28;&#x60;metric_value&#x60;,&#x60;Project_idproject&#x60;,&#x60;Metric_Ranges_idMetricRange&#x60;,&#x60;Version_idVersion&#x60;,&#x60;Quality_idQuality&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;idNOM, &#x40;idVersion, &#x40;qualityNOM&#x29;&#x3b;&#xa;&#xa;&#x23;Inserindo o fato do DIT&#xa;&#xa;INSERT INTO &#x60;project_info&#x60;.&#x60;Quality_Project_Metric_Fact&#x60;&#xa;&#x28;&#x60;metric_value&#x60;,&#x60;Project_idproject&#x60;,&#x60;Metric_Ranges_idMetricRange&#x60;,&#x60;Version_idVersion&#x60;,&#x60;Quality_idQuality&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;idDIT, &#x40;idVersion, &#x40;qualityDIT&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23;Inserindo o fato do NOC&#xa;&#xa;INSERT INTO &#x60;project_info&#x60;.&#x60;Quality_Project_Metric_Fact&#x60;&#xa;&#x28;&#x60;metric_value&#x60;,&#x60;Project_idproject&#x60;,&#x60;Metric_Ranges_idMetricRange&#x60;,&#x60;Version_idVersion&#x60;,&#x60;Quality_idQuality&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;idNOC, &#x40;idVersion, &#x40;qualityNOC&#x29;&#x3b;</sql>
+    <sql>USE source_info&#x3b;&#xa;&#xa;SET &#x40;idProject &#x3d; &#x28;SELECT max&#x28;idProject&#x29; from D_Project&#x29;&#x3b;&#xa;&#xa;SET &#x40;idRelease &#x3d; &#x28;SELECT max&#x28;idRelease&#x29; from D_Release&#x29;&#x3b;&#xa;&#xa;SET &#x40;Project_Language &#x3d; &#x28;SELECT project_language from D_Project&#x29;&#x3b;&#xa;&#xa;SET &#x40;Best_Configuration  &#x3d; &#x28;SELECT idConfiguration FROM D_Configuration where configuration_name like &#x27;&#x25;Melhor&#x25;&#x27; and&#xa;language_name LIKE CONCAT&#x28;&#x27;&#x25;&#x27;, &#x40;Project_Language, &#x27;&#x25;&#x27;&#x29;&#x29;&#x3b; &#xa;&#xa;&#xa;&#x23; Consulta da M&#xe9;trica LOC&#xa;SET &#x40;idLOC &#x3d; &#x28;SELECT idMetric FROM D_Metric where metric_abbreviation&#x3d;&#x27;LOC&#x27;&#x29;&#x3b; &#xa;&#xa;&#xa;&#x23; Consulta da M&#xe9;trica ACCM&#xa;SET &#x40;idACCM &#x3d; &#x28;SELECT idMetric FROM D_Metric where metric_abbreviation&#x3d;&#x27;ACCM&#x27;&#x29;&#x3b; &#xa;&#xa;&#x23; Consulta da M&#xe9;trica AMLOC&#xa;&#xa;SET &#x40;idAMLOC &#x3d; &#x28;SELECT idMetric FROM D_Metric where metric_abbreviation&#x3d;&#x27;AMLOC&#x27;&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Consulta da M&#xe9;trica ACC&#xa;&#xa;SET &#x40;idACC &#x3d; &#x28;SELECT idMetric FROM D_Metric where metric_abbreviation&#x3d;&#x27;ACC&#x27;&#x29;&#x3b; &#xa;&#xa;&#x23; Consulta da M&#xe9;trica ANPM&#xa;&#xa;SET &#x40;idANPM &#x3d; &#x28;SELECT idMetric FROM D_Metric where metric_abbreviation&#x3d;&#x27;ANPM&#x27;&#x29;&#x3b; &#xa;&#xa;&#xa;&#x23; Consulta da M&#xe9;trica CBO&#xa;&#xa;SET &#x40;idCBO &#x3d; &#x28;SELECT idMetric FROM D_Metric where metric_abbreviation&#x3d;&#x27;CBO&#x27;&#x29;&#x3b; &#xa;&#xa;&#x23; Consulta da M&#xe9;trica DIT&#xa;&#xa;SET &#x40;idDIT &#x3d; &#x28;SELECT idMetric FROM D_Metric where metric_abbreviation&#x3d;&#x27;DIT&#x27;&#x29;&#x3b; &#xa;&#xa;&#x23; Consulta da M&#xe9;trica LCOM4&#xa;&#xa;SET &#x40;idLCOM4 &#x3d; &#x28;SELECT idMetric FROM D_Metric where metric_abbreviation&#x3d;&#x27;LCOM4&#x27;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta da M&#xe9;trica NOC&#xa;&#xa;SET &#x40;idNOC &#x3d; &#x28;SELECT idMetric FROM D_Metric where metric_abbreviation&#x3d;&#x27;NOC&#x27;&#x29;&#x3b;  &#xa;&#xa;&#x23; Consulta da M&#xe9;trica NOM&#xa;&#xa;SET &#x40;idNOM &#x3d; &#x28;SELECT idMetric FROM D_Metric where metric_abbreviation&#x3d;&#x27;NOM&#x27;&#x29;&#x3b; &#xa;&#xa;&#x23; Consulta da M&#xe9;trica NPA&#xa;&#xa;SET &#x40;idNPA &#x3d; &#x28;SELECT idMetric FROM D_Metric where metric_abbreviation&#x3d;&#x27;NPA&#x27;&#x29;&#x3b; &#xa;&#xa;&#x23; Consulta da M&#xe9;trica RFC&#xa;&#xa;SET &#x40;idRFC &#x3d; &#x28;SELECT idMetric FROM D_Metric where metric_abbreviation&#x3d;&#x27;RFC&#x27;&#x29;&#x3b; &#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de LOC na Melhor Configura&#xe7;&#xe3;o&#xa;&#xa;SET &#x40;qualityBestLOC &#x3d; &#x28;SELECT idQuality FROM Meta_Metric_Ranges&#xa;INNER JOIN D_Quality&#xa;ON Meta_Metric_Ranges.quality_index&#x3d;D_Quality.quality_index where language_name &#x3d;  &#x40;Project_Language &#xa;and metric_name&#x3d;&#x27;LOC&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min and configuration_name like &#x27;&#x25;Melhor&#x25;&#x27;&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de ACCM na Melhor Configura&#xe7;&#xe3;o&#xa;&#xa;SET &#x40;qualityBestACCM &#x3d; &#x28;SELECT idQuality FROM Meta_Metric_Ranges&#xa;INNER JOIN D_Quality&#xa;ON Meta_Metric_Ranges.quality_index&#x3d;D_Quality.quality_index where language_name &#x3d;  &#x40;Project_Language &#xa;and metric_name&#x3d;&#x27;ACCM&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min and configuration_name like &#x27;&#x25;Melhor&#x25;&#x27;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de AMLOC na Melhor Configura&#xe7;&#xe3;o&#xa;&#xa;SET &#x40;qualityBestAMLOC &#x3d; &#x28;SELECT idQuality FROM Meta_Metric_Ranges&#xa;INNER JOIN D_Quality&#xa;ON Meta_Metric_Ranges.quality_index&#x3d;D_Quality.quality_index where language_name &#x3d;  &#x40;Project_Language &#xa;and metric_name&#x3d;&#x27;AMLOC&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min and configuration_name like &#x27;&#x25;Melhor&#x25;&#x27;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de ACC na Melhor Configura&#xe7;&#xe3;o&#xa;&#xa;SET &#x40;qualityBestACC &#x3d; &#x28;SELECT idQuality FROM Meta_Metric_Ranges&#xa;INNER JOIN D_Quality&#xa;ON Meta_Metric_Ranges.quality_index&#x3d;D_Quality.quality_index where language_name &#x3d;  &#x40;Project_Language &#xa;and metric_name&#x3d;&#x27;ACC&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min and configuration_name like &#x27;&#x25;Melhor&#x25;&#x27;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de ANPM na Melhor Configura&#xe7;&#xe3;o&#xa;&#xa;SET &#x40;qualityBestANPM &#x3d; &#x28;SELECT idQuality FROM Meta_Metric_Ranges&#xa;INNER JOIN D_Quality&#xa;ON Meta_Metric_Ranges.quality_index&#x3d;D_Quality.quality_index where language_name &#x3d;  &#x40;Project_Language &#xa;and metric_name&#x3d;&#x27;ANPM&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min and configuration_name like &#x27;&#x25;Melhor&#x25;&#x27;&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de CBO na Melhor Configura&#xe7;&#xe3;o&#xa;&#xa;SET &#x40;qualityBestCBO &#x3d; &#x28;SELECT idQuality FROM Meta_Metric_Ranges&#xa;INNER JOIN D_Quality&#xa;ON Meta_Metric_Ranges.quality_index&#x3d;D_Quality.quality_index where language_name &#x3d;  &#x40;Project_Language &#xa;and metric_name&#x3d;&#x27;CBO&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min and configuration_name like &#x27;&#x25;Melhor&#x25;&#x27;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de DIT na Melhor Configura&#xe7;&#xe3;o&#xa;&#xa;SET &#x40;qualityBestDIT &#x3d; &#x28;SELECT idQuality FROM Meta_Metric_Ranges&#xa;INNER JOIN D_Quality&#xa;ON Meta_Metric_Ranges.quality_index&#x3d;D_Quality.quality_index where language_name &#x3d;  &#x40;Project_Language &#xa;and metric_name&#x3d;&#x27;DIT&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min and configuration_name like &#x27;&#x25;Melhor&#x25;&#x27;&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de LCOM4 na Melhor Configura&#xe7;&#xe3;o&#xa;&#xa;SET &#x40;qualityBestLCOM4 &#x3d; &#x28;SELECT idQuality FROM Meta_Metric_Ranges&#xa;INNER JOIN D_Quality&#xa;ON Meta_Metric_Ranges.quality_index&#x3d;D_Quality.quality_index where language_name &#x3d;  &#x40;Project_Language &#xa;and metric_name&#x3d;&#x27;LCOM4&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min and configuration_name like &#x27;&#x25;Melhor&#x25;&#x27;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de NOC na Melhor Configura&#xe7;&#xe3;o&#xa;&#xa;SET &#x40;qualityBestNOC &#x3d; &#x28;SELECT idQuality FROM Meta_Metric_Ranges&#xa;INNER JOIN D_Quality&#xa;ON Meta_Metric_Ranges.quality_index&#x3d;D_Quality.quality_index where language_name &#x3d;  &#x40;Project_Language &#xa;and metric_name&#x3d;&#x27;NOC&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min and configuration_name like &#x27;&#x25;Melhor&#x25;&#x27;&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de NOM na Melhor Configura&#xe7;&#xe3;o&#xa;&#xa;SET &#x40;qualityBestNOM &#x3d; &#x28;SELECT idQuality FROM Meta_Metric_Ranges&#xa;INNER JOIN D_Quality&#xa;ON Meta_Metric_Ranges.quality_index&#x3d;D_Quality.quality_index where language_name &#x3d;  &#x40;Project_Language &#xa;and metric_name&#x3d;&#x27;NOM&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min and configuration_name like &#x27;&#x25;Melhor&#x25;&#x27;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de NPA na Melhor Configura&#xe7;&#xe3;o&#xa;&#xa;SET &#x40;qualityBestNPA &#x3d; &#x28;SELECT idQuality FROM Meta_Metric_Ranges&#xa;INNER JOIN D_Quality&#xa;ON Meta_Metric_Ranges.quality_index&#x3d;D_Quality.quality_index where language_name &#x3d;  &#x40;Project_Language &#xa;and metric_name&#x3d;&#x27;NPA&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min and configuration_name like &#x27;&#x25;Melhor&#x25;&#x27;&#x29;&#x3b;&#xa;&#xa;&#x23; Consulta de Indicador de Qualidade de RFC na Melhor Configura&#xe7;&#xe3;o&#xa;&#xa;SET &#x40;qualityBestRFC &#x3d; &#x28;SELECT idQuality FROM Meta_Metric_Ranges&#xa;INNER JOIN D_Quality&#xa;ON Meta_Metric_Ranges.quality_index&#x3d;D_Quality.quality_index where language_name &#x3d;  &#x40;Project_Language &#xa;and metric_name&#x3d;&#x27;RFC&#x27; and &#x3f; &#x3c;&#x3d; max AND &#x3f; &#x3e;&#x3d; min and configuration_name like &#x27;&#x25;Melhor&#x25;&#x27;&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Inserindo o Fato do LOC na melhor Configura&#xe7;&#xe3;o&#x3b;&#xa;&#xa;INSERT INTO &#x60;source_info&#x60;.&#x60;F_Project_Metric&#x60;&#xa;&#x28;&#x60;percentil_value&#x60;, &#x60;Project_idproject&#x60;, &#x60;Quality_idQuality&#x60;,&#xa;&#x60;Metric_idMetric&#x60;, &#x60;Configuration_idConfiguration&#x60;, &#x60;D_Release_idRelease&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;qualityBestLOC, &#x40;idLOC, &#x40;Best_Configuration, &#x40;idRelease&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Inserindo o Fato do ACCM na melhor Configura&#xe7;&#xe3;o&#x3b;&#xa;&#xa;INSERT INTO &#x60;source_info&#x60;.&#x60;F_Project_Metric&#x60;&#xa;&#x28;&#x60;percentil_value&#x60;, &#x60;Project_idproject&#x60;, &#x60;Quality_idQuality&#x60;,&#xa;&#x60;Metric_idMetric&#x60;, &#x60;Configuration_idConfiguration&#x60;, &#x60;D_Release_idRelease&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;qualityBestACCM, &#x40;idACCM, &#x40;Best_Configuration, &#x40;idRelease&#x29;&#x3b;&#xa;&#xa;&#x23; Inserindo o Fato do AMLOC na melhor Configura&#xe7;&#xe3;o&#x3b;&#xa;&#xa;INSERT INTO &#x60;source_info&#x60;.&#x60;F_Project_Metric&#x60;&#xa;&#x28;&#x60;percentil_value&#x60;, &#x60;Project_idproject&#x60;, &#x60;Quality_idQuality&#x60;,&#xa;&#x60;Metric_idMetric&#x60;, &#x60;Configuration_idConfiguration&#x60;, &#x60;D_Release_idRelease&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;qualityBestAMLOC, &#x40;idAMLOC, &#x40;Best_Configuration, &#x40;idRelease&#x29;&#x3b;&#xa;&#xa;&#x23; Inserindo o Fato do ACC na melhor Configura&#xe7;&#xe3;o&#x3b;&#xa;&#xa;INSERT INTO &#x60;source_info&#x60;.&#x60;F_Project_Metric&#x60;&#xa;&#x28;&#x60;percentil_value&#x60;, &#x60;Project_idproject&#x60;, &#x60;Quality_idQuality&#x60;,&#xa;&#x60;Metric_idMetric&#x60;, &#x60;Configuration_idConfiguration&#x60;, &#x60;D_Release_idRelease&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;qualityBestACC, &#x40;idACC, &#x40;Best_Configuration, &#x40;idRelease&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Inserindo o Fato do ANPM na melhor Configura&#xe7;&#xe3;o&#x3b;&#xa;&#xa;INSERT INTO &#x60;source_info&#x60;.&#x60;F_Project_Metric&#x60;&#xa;&#x28;&#x60;percentil_value&#x60;, &#x60;Project_idproject&#x60;, &#x60;Quality_idQuality&#x60;,&#xa;&#x60;Metric_idMetric&#x60;, &#x60;Configuration_idConfiguration&#x60;, &#x60;D_Release_idRelease&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;qualityBestANPM, &#x40;idANPM, &#x40;Best_Configuration, &#x40;idRelease&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Inserindo o Fato do CBO na melhor Configura&#xe7;&#xe3;o&#x3b;&#xa;&#xa;INSERT INTO &#x60;source_info&#x60;.&#x60;F_Project_Metric&#x60;&#xa;&#x28;&#x60;percentil_value&#x60;, &#x60;Project_idproject&#x60;, &#x60;Quality_idQuality&#x60;,&#xa;&#x60;Metric_idMetric&#x60;, &#x60;Configuration_idConfiguration&#x60;, &#x60;D_Release_idRelease&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;qualityBestCBO, &#x40;idCBO, &#x40;Best_Configuration, &#x40;idRelease&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Inserindo o Fato do DIT na melhor Configura&#xe7;&#xe3;o&#x3b;&#xa;&#xa;INSERT INTO &#x60;source_info&#x60;.&#x60;F_Project_Metric&#x60;&#xa;&#x28;&#x60;percentil_value&#x60;, &#x60;Project_idproject&#x60;, &#x60;Quality_idQuality&#x60;,&#xa;&#x60;Metric_idMetric&#x60;, &#x60;Configuration_idConfiguration&#x60;, &#x60;D_Release_idRelease&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;qualityBestDIT, &#x40;idDIT, &#x40;Best_Configuration, &#x40;idRelease&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Inserindo o Fato do LCOM4 na melhor Configura&#xe7;&#xe3;o&#x3b;&#xa;&#xa;INSERT INTO &#x60;source_info&#x60;.&#x60;F_Project_Metric&#x60;&#xa;&#x28;&#x60;percentil_value&#x60;, &#x60;Project_idproject&#x60;, &#x60;Quality_idQuality&#x60;,&#xa;&#x60;Metric_idMetric&#x60;, &#x60;Configuration_idConfiguration&#x60;, &#x60;D_Release_idRelease&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;qualityBestLCOM4, &#x40;idLCOM4, &#x40;Best_Configuration, &#x40;idRelease&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Inserindo o Fato do NOC na melhor Configura&#xe7;&#xe3;o&#x3b;&#xa;&#xa;INSERT INTO &#x60;source_info&#x60;.&#x60;F_Project_Metric&#x60;&#xa;&#x28;&#x60;percentil_value&#x60;, &#x60;Project_idproject&#x60;, &#x60;Quality_idQuality&#x60;,&#xa;&#x60;Metric_idMetric&#x60;, &#x60;Configuration_idConfiguration&#x60;, &#x60;D_Release_idRelease&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;qualityBestNOC, &#x40;idNOC, &#x40;Best_Configuration, &#x40;idRelease&#x29;&#x3b;&#xa;&#xa;&#x23; Inserindo o Fato do NOM na melhor Configura&#xe7;&#xe3;o&#x3b;&#xa;&#xa;INSERT INTO &#x60;source_info&#x60;.&#x60;F_Project_Metric&#x60;&#xa;&#x28;&#x60;percentil_value&#x60;, &#x60;Project_idproject&#x60;, &#x60;Quality_idQuality&#x60;,&#xa;&#x60;Metric_idMetric&#x60;, &#x60;Configuration_idConfiguration&#x60;, &#x60;D_Release_idRelease&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;qualityBestNOM, &#x40;idNOM, &#x40;Best_Configuration, &#x40;idRelease&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Inserindo o Fato do NPA na melhor Configura&#xe7;&#xe3;o&#x3b;&#xa;&#xa;INSERT INTO &#x60;source_info&#x60;.&#x60;F_Project_Metric&#x60;&#xa;&#x28;&#x60;percentil_value&#x60;, &#x60;Project_idproject&#x60;, &#x60;Quality_idQuality&#x60;,&#xa;&#x60;Metric_idMetric&#x60;, &#x60;Configuration_idConfiguration&#x60;, &#x60;D_Release_idRelease&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;qualityBestNPA, &#x40;idNPA, &#x40;Best_Configuration, &#x40;idRelease&#x29;&#x3b;&#xa;&#xa;&#xa;&#x23; Inserindo o Fato do RFC na melhor Configura&#xe7;&#xe3;o&#x3b;&#xa;&#xa;INSERT INTO &#x60;source_info&#x60;.&#x60;F_Project_Metric&#x60;&#xa;&#x28;&#x60;percentil_value&#x60;, &#x60;Project_idproject&#x60;, &#x60;Quality_idQuality&#x60;,&#xa;&#x60;Metric_idMetric&#x60;, &#x60;Configuration_idConfiguration&#x60;, &#x60;D_Release_idRelease&#x60;&#x29;&#xa;VALUES&#xa;&#x28;&#x3f;,&#x40;idProject, &#x40;qualityBestRFC, &#x40;idRFC, &#x40;Best_Configuration, &#x40;idRelease&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field/>
     <arguments>
-       <argument><name>LOC&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>LOC&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>ACC&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>ACC&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>ACCM&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>ACCM&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>RFC&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>RFC&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>LCOM4&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>LCOM4&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>NOM&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>NOM&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>DIT&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>DIT&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>NOC&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>NOC&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>LOC&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>ACC&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>ACCM&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>RFC&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>LCOM4&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>NOM&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>DIT&#x28;75th percentile&#x29;</name></argument>
-       <argument><name>NOC&#x28;75th percentile&#x29;</name></argument>
+       <argument><name>LOC</name></argument>
+       <argument><name>LOC</name></argument>
+       <argument><name>ACCM</name></argument>
+       <argument><name>ACCM</name></argument>
+       <argument><name>AMLOC</name></argument>
+       <argument><name>AMLOC</name></argument>
+       <argument><name>ACC</name></argument>
+       <argument><name>ACC</name></argument>
+       <argument><name>ANPM</name></argument>
+       <argument><name>ANPM</name></argument>
+       <argument><name>CBO</name></argument>
+       <argument><name>CBO</name></argument>
+       <argument><name>DIT</name></argument>
+       <argument><name>DIT</name></argument>
+       <argument><name>LCOM4</name></argument>
+       <argument><name>LCOM4</name></argument>
+       <argument><name>NOC</name></argument>
+       <argument><name>NOC</name></argument>
+       <argument><name>NOM</name></argument>
+       <argument><name>NOM</name></argument>
+       <argument><name>NPA</name></argument>
+       <argument><name>NPA</name></argument>
+       <argument><name>RFC</name></argument>
+       <argument><name>RFC</name></argument>
+       <argument><name>LOC</name></argument>
+       <argument><name>ACCM</name></argument>
+       <argument><name>AMLOC</name></argument>
+       <argument><name>ACC</name></argument>
+       <argument><name>ANPM</name></argument>
+       <argument><name>CBO</name></argument>
+       <argument><name>DIT</name></argument>
+       <argument><name>LCOM4</name></argument>
+       <argument><name>NOC</name></argument>
+       <argument><name>NOM</name></argument>
+       <argument><name>NPA</name></argument>
+       <argument><name>RFC</name></argument>
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>580</xloc>
-      <yloc>104</yloc>
+      <xloc>564</xloc>
+      <yloc>110</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

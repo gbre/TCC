@@ -101,33 +101,6 @@
     </attributes>
   </connection>
   <connection>
-    <name>Project Info2</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>project_info</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
     <name>Release Info</name>
     <server>localhost</server>
     <type>MYSQL</type>
@@ -154,9 +127,36 @@
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>Source Info</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>source_info</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
   <order>
   <hop> <from>Obtendo dados do Projeto</from><to>Inserindo na Dim Projeto</to><enabled>Y</enabled> </hop>
-  <hop> <from>Obtendo dados do Projeto</from><to>Inserindo na Dim Version</to><enabled>Y</enabled> </hop>
+  <hop> <from>Obtendo dados do Projeto</from><to>Inserindo na Dim Release</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Inserindo na Dim Projeto</name>
@@ -170,8 +170,8 @@
            <schema_name/>
            </partitioning>
       <schema/>
-      <table>Project</table>
-      <connection>Project Info2</connection>
+      <table>D_Project</table>
+      <connection>Source Info</connection>
       <commit>100</commit>
       <cache_size>9999</cache_size>
       <replace>N</replace>
@@ -183,13 +183,21 @@
           <lookup>project_name</lookup>
         </key>
         <key>
+          <name>sigl</name>
+          <lookup>project_abbreviation</lookup>
+        </key>
+        <key>
+          <name>owner</name>
+          <lookup>organization_owner</lookup>
+        </key>
+        <key>
           <name>language_name</name>
           <lookup>project_language</lookup>
         </key>
         <return>
           <name>idproject</name>
-          <creation_method>tablemax</creation_method>
-          <use_autoinc>N</use_autoinc>
+          <creation_method>autoinc</creation_method>
+          <use_autoinc>Y</use_autoinc>
         </return>
       </fields>
       <sequence/>
@@ -203,7 +211,7 @@
     </step>
 
   <step>
-    <name>Inserindo na Dim Version</name>
+    <name>Inserindo na Dim Release</name>
     <type>CombinationLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -214,8 +222,8 @@
            <schema_name/>
            </partitioning>
       <schema/>
-      <table>Version</table>
-      <connection>Project Info2</connection>
+      <table>D_Release</table>
+      <connection>Source Info</connection>
       <commit>100</commit>
       <cache_size>9999</cache_size>
       <replace>N</replace>
@@ -224,10 +232,10 @@
       <fields>
         <key>
           <name>release</name>
-          <lookup>numberVersion</lookup>
+          <lookup>release_name</lookup>
         </key>
         <return>
-          <name>idVersion</name>
+          <name>idRelease</name>
           <creation_method>tablemax</creation_method>
           <use_autoinc>N</use_autoinc>
         </return>
@@ -236,8 +244,8 @@
       <last_update_field/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>368</xloc>
-      <yloc>122</yloc>
+      <xloc>364</xloc>
+      <yloc>115</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -309,6 +317,32 @@
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
+      <field>
+        <name>sigl</name>
+        <path>&#x24;..sigl</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>owner</name>
+        <path>&#x24;..owner</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
     </fields>
     <limit>0</limit>
     <IsInFields>N</IsInFields>
@@ -324,7 +358,7 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>115</xloc>
+      <xloc>117</xloc>
       <yloc>33</yloc>
       <draw>Y</draw>
       </GUI>

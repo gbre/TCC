@@ -5,22 +5,22 @@
 A qualidade do software depende da qualidade do código-fonte, pois um bom código-fonte é um bom indicador de qualidade interna do produto de software \cite{beck2003test} \cite{ISO25023}. Portanto, decisões errôneas de desenvolvedores podem gerar trechos de código não coesos, que venham a se desfazer com o tempo e que aumentam exponencialmente a chance de manutenções corretivas onerosas \cite{beck2007implementation} \cite{beck1999}.
 
 
-Entre as formas de analisar a qualidade do código-fonte está a análise estática de código-fonte, que é uma análise automatizada das estruturas internas do código, que permite obter métricas de código-fonte \cite{Emanuelsson2008} \cite{Wichmann95}  \cite{Nielson:1999} \cite{Sommerville10}. Alguns trabalhos como \citeonline{marinescu2004quantifying}, \citeonline{marinescu2005measurement}, \citeonline{moha2006automatic}, \citeonline{moha2008domain}, \citeonline{moha2010decor} e \citeonline{rao2007detecting} mostraram que é possível a partir da análise de métricas de código-fonte, obter indicadores de pedaços não coesos e com alto acoplamento. Estes, por sua vez, podem ser eliminados com a refatoração, que é a técnica de modificação das estruturas internas do código-fonte sem modificar o comportamento externo observável proposta por \citeonline{fowler1999refactoring}.
+Entre as formas de analisar a qualidade do código-fonte está a análise estática de código-fonte, que é uma análise automatizada das estruturas internas do código, que permite obter métricas de código-fonte \cite{Emanuelsson2008} \cite{Wichmann95}  \cite{Nielson:1999} \cite{Sommerville10}. Alguns trabalhos como \citeonline{marinescu2004quantifying}, \citeonline{marinescu2005measurement}, \citeonline{moha2006automatic}, \citeonline{moha2008domain}, \citeonline{moha2010decor} e \citeonline{rao2007detecting} mostraram que é possível a partir da análise de métricas de código-fonte, obter indicadores de pedaços não coesos e com alto acoplamento. Estes pedaçoes são passíveis de eliminação com a refatoração, que é a técnica de modificação das estruturas internas do código-fonte sem modificação o comportamento externo observável \cite{fowler1999refactoring}.
 
 
 \section{Problema}
 
 
-Embora a refatoração seja uma prática bastante documentada e utilizada principalmente nos processos de desenvolvimento que utilizam métodos ágeis \cite{beck1999}, a decisão de aplicação, que seja em uma classe, módulo ou projeto, envolve a avaliação de fatores como  custo, prazo, risco e qualidade do código-fonte \cite{yamashita2013assessing}.  
+Embora a refatoração seja uma prática bastante documentada e utilizada principalmente nos processos de desenvolvimento que utilizam métodos ágeis \cite{beck1999}, a decisão de aplicação, quer seja em uma classe, módulo ou projeto, envolve a avaliação de fatores como custo, prazo, risco e qualidade do código-fonte \cite{yamashita2013assessing}.  
 
-Este último fator, que pode ser determinante para decisão de refatorar, normalmente, é díficil de ser avaliado. Isso ocorre, pois as ferramentas de análise estática de código-fonte, normamelmente, não apresentam associação entre os resultados númericos e a forma de intrepretá-los, isto é, as métricas frequentemente mostram apenas valores númericos isolados \cite{Meirelles2013}. Além disso, os resultados obtidos das ferramentas, são apresentados em longos arquivos (planilhas, arquivos JSON, XML), ou seja, sem mecanismos de separação, agregação e principalmente visualização de dados que permita a fácil identificação de um ponto de melhoria no código-fonte.
+Este último fator, que pode ser determinante para decisão de refatorar, normalmente, é díficil de ser avaliado. Isso ocorre, pois as ferramentas de análise estática de código-fonte, normamelmente, não apresentam associação entre os resultados númericos e a forma de intrepretá-los, isto é, as métricas frequentemente mostram apenas valores númericos isolados \cite{Meirelles2013}. Além disso, os resultados obtidos a partir de ferramentas de análise estática de código-fonte são apresentados em longos arquivos (planilhas, arquivos JSON, XML), ou seja, sem mecanismos de separação, agregação e formas de visualização de dados que permitam a fácil identificação de um ponto de melhoria no código-fonte.
 
 
 %-----------------------------------------------------------------------------%
 
 \section{Questão de Pesquisa}
 
-Tendo em vista que este problema afeta a avaliação de projetos de software, pois é crucialue informações sobre o desenvolvimento de software sejam coletados e compartilhados entre projetos e pessoas em uma visão organizacional unificada, para que determinada organização possa compreender o processo de medição e monitoramento de projetos de software e, consequentemente, se tornar mais hábil e eficiente em realizar atividades técnicas relacionadas ao processo de desenvolvimento de software \cite{Chulani2003}, foi elaborada a seguinte questão de pesquisa:
+Tendo em vista que este problema afeta a avaliação de projetos de software, pois é crucial que informações sobre o desenvolvimento de software sejam coletados e compartilhados entre projetos e pessoas em uma visão organizacional unificada, para que determinada organização possa compreender o processo de medição e monitoramento de projetos de software e, consequentemente, se tornar mais hábil e eficiente em realizar atividades técnicas relacionadas ao processo de desenvolvimento de software \cite{Chulani2003}, foi elaborada a seguinte questão de pesquisa:
 
 \textit{\textbf{Como aumentar a
 visibilidade e facilitar intepretação das 
@@ -31,34 +31,38 @@ de uma equipe de desenvolvimento?}}
 
 \section{Objetivos}
 
-Colocando a resolução da questão de pesquisa como objetivo geral do trabalho, foram elaborados objetivos específicos utilizando o GQM \cite{Basili96b}. Nesta cada objetivo enumera uma série de questões que são respondidas utilizando métricas, tal como se mostra na Tabela 
+Colocando a resolução da questão de pesquisa como objetivo geral do trabalho, foram elaborados objetivos específicos utilizando o GQM \cite{Basili96b}. Nesta abordagem cada objetivo específico foi derivado em uma série de questões específicas que são respondidas com métricas específicas, tal como se mostra na Tabela \ref{tbl:obj}. 
 
-\todo[inline, color=yellow!50]{Mudar a Forma de Apresentação dos Objetivos Específicos}
+\begin{table}
+\centering
+\input{tabelas/objetivos.ltx}
+\caption{Objetivos Específicos do Trabalho}
+\label{tbl:obj} 
+\end{table}
 
+\section{Hipótese}
 
-\
+Visando atingir os objetivos específicos estabelecidos na Tabela \ref{tbl:obj}, realizou-se uma revisão bibliográfica da literatura em busca de ambientes de informação que visassem à automação de processos e exposição de informações em âmbito gerencial.
+Alguns trabalhos como \citeonline{Palza2003}, \citeonline{Ruiz2005}, \citeonline{Castellanos2005}, \citeonline{Becker2006}, \citeonline{Folleco2007}, \citeonline{Silveira2010}, mostraram que ambientes de \textit{Data Warehousing}, são boas soluções para adoção de um programa de métricas em processos de desenvolvimento de software.
 
-	  Tendo em vista, as questões objetivas 
+Em conformidade com o referencial teórico enunciado anteriormente, foi hipotetizado a hipótese H1:
 
+\textbf{H1: A construção de um ambiente de \textit{Data Warehousing} traz automação necessário ao processo de medição de métricas de código-fonte, possibilidade de criar um campo de conhecimento semântico para facilitar a interpretação de métricas de código-fonte, trazer visibilidade necessária às métricas de código-fonte e inferir outras informações advindas destas.} 
 
-	  o problema da não visualização da informação de métricas de código-fonte acarreta dificuldades posteriores na de decisão técnica, de refatoração e que trabalhos como 
+Tendo em vista a adoção da hipotése, adicionou-se o objetivo OE6:
 
+\begin{table}
+\centering
+\input{tabelas/objetivo6.ltx}
+\caption{Objetivos Específico OE6}
+\label{tbl:obj} 
+\end{table}
 
-	  \todo[inline, color=magenta!50]{Adicionar Link com a Hipotése, o Uso do Data Warehousing, Processo de Medição}
-
-	  \citeonline{Palza2003}, \citeonline{Ruiz2005}, \citeonline{Castellanos2005}, \citeonline{Becker2006}, \citeonline{Folleco2007}, \citeonline{Silveira2010}, já mostraram anteriormente que ambientes de \textit{Data Warehousing}, que já são naturalmente orientados para o suporte à decisões \apud{chaudhuri1997}{andre2000}, ajudam equipes de desenvolvimento a tomar decisões sobre atividades técnicas no processo desenvolvimento tal como proposto por \citeonline{Chulani2003}.  
-
-	  Foi construído um ambiente de \textit{Data Warehousing}, em que as informações relacionadas ao código-fonte e \textit{code-smells} podem ser facilmente visualizadas para que os interessados possam tomar decisões relacionadas ao código-fonte, como por exemplo, a refatoração de uma classe.
 
 %------------------------------------------------------------------------------%
 
-\
-	
-
-
 \section{Organização do Trabalho}
 
-O texto deste trabalho foi organizado em capítulos. Em que o Capítulo 2 apresenta as 
-métricas de software bem como o processo de medição, descrito pela ISO 15939, 
-e as métricas de código-fonte e os \textit{code-smells}, a técnica de refatoração bem como o mapeamento das métricas de código-fonte com cenários de refatoração. O Capítulo 3 apresenta conceitualmente o ambiente de \textit{data warehousing} (DWing). O Capítulo 4 apresenta a implementação do ambiente de DWing construído neste trabalho. Por fim, o capítulo 5 apresenta as conclusões com uso do 
-ambiente de DWing em métricas de código-fonte. 
+Após a leitura da introdução, encontrar-se-á adiante o Capítulo 2 que apresenta as 
+métricas de software, processo de medição da ISO 15939, 
+as métricas de código-fonte, código-limpo e os cenários de limpeza de código-fonte; O Capítulo 3 que apresenta conceitualmente o ambiente de \textit{Data Warehousing}. O Capítulo 4 que apresenta a projeto  a implementação do ambiente de \textit{Data Warehousing} para métricas de código-fonte e cenérios de código limpo construído neste trabalho. O capítulo 5 apresenta o projeto de estudo de caso do uso como forma de validar a utilização do ambiente. Por fim, o capítulo 6 descreve os resultados obtidos com aplicação do ambiente em forma de estudo de caso, onde foi acompanhado as 24 releases do software SICG (Sistema Integrado de Controle e Gestão) do Instituto de Patrimônio Histórico e Artístico Nacional (IPHAN). Adicionalmente no capítulo 6, são discutidos as conclusões, limitações do trabalho e trabalhos futuros.   

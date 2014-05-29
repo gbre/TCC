@@ -1,17 +1,18 @@
-\chapter{\textit{Data Warehousing} (DWing)} 
+\chapter{\textit{Data Warehousing}} 
 
 Os principais fatores para a adoção de um programa de métricas em 
-organizações de desenvolvimento de software são\begin{inparaenum}[i)]
-\item a regularidade da coleta de dados;
-\item a utilização de uma metodologia eficiente e transparente nessa coleta; 
-\item o uso de ferramentas (não-intrusivas) para automatizar a coleta; 
-\item o uso de mecanismos de comunicação de resultados adequados para todos os envolvidos; 
-\item o uso de sofisticadas técnicas de análise de dados;
+organizações de desenvolvimento de software são
+regularidade da coleta de dados;
+a utilização de uma metodologia eficiente e transparente nessa coleta; 
+o uso de ferramentas (não-intrusivas) para automatizar a coleta; 
+o uso de mecanismos de comunicação de resultados adequados para todos os envolvidos; 
+o uso de sofisticadas técnicas de análise de dados;
 \apud{Gopal2005}{Silveira2010}.
-\end{inparaenum} 
 
 
-\textit{Data Warehousing} (DWing) é uma coleção de tecnologias de suporte à decisão disposta a capacitar os reponsáveis por tomar decisões a fazê-las de forma mais rápida \apud{chaudhuri1997}{andre2000}. Em outras palavras, trata-se de um processo para montar e gerenciar dados vindos de várias fontes, com o objetivo de prover uma visão analítica de parte ou do todo do negócio \cite{gardner1998}. Desta forma, é possível em um ambiente de \textit{data warehousing} que as métricas de código-fonte sejam coletadas de fontes diversas em uma periodicidade definida, de forma automatizada, não intrusiva ao trabalho da equipe de desenvolvimento e que estas possam mostrar a qualidade total do código-fonte produzido pela equipe durante um determinado período de tempo (dias, meses, anos). 
+
+\textit{Data Warehousing} é uma coleção de tecnologias de suporte à decisão disposta a capacitar os reponsáveis por tomar decisões a fazê-las de forma mais rápida \apud{chaudhuri1997}{andre2000}. Em outras palavras, trata-se de um processo para montar e gerenciar dados vindos de várias fontes, com o objetivo de prover uma visão analítica de parte ou do todo do negócio \cite{gardner1998}. Desta forma, é possível em um ambiente de \textit{data warehousing} que as métricas de código-fonte sejam coletadas de fontes diversas em uma periodicidade definida, de forma automatizada, não intrusiva ao trabalho da equipe de desenvolvimento e que estas possam mostrar trazer a visibilidade da qualidade do código-fonte produzido pela equipe de desenvolvimento durante um determinado período de tempo (dias, meses, anos). 
+
 
 
 \begin{figure}[h!]
@@ -24,18 +25,7 @@ organizações de desenvolvimento de software são\begin{inparaenum}[i)]
 
 
 
-A Figura \ref{dwing} descreve uma arquitetura geral de um ambiente de DWing, de tal forma que,
-
-\begin{inparaenum}[i)]
-	\item As setas 1 e 2 representam o processo de \textit{Extraction-Transformation-Load};
-	
-	\item A seta 3 representa as consultas \textit{On-Line Analytical Processing (OLAP)};
-	
-	\item por fim a seta 4 representa a visualização dos dados;
-
-\end{inparaenum}
- 
- 	Cada um dos componentes da Figura \ref{dwing} é descrito nas seções subsequentes.
+A Figura \ref{dwing} descreve uma arquitetura geral de um ambiente de \textit{Data Warehousing}, de tal forma que setas 1 e 2 representam o processo de \textit{Extraction-Transformation-Load}; A seta 3 representa as consultas \textit{On-Line Analytical Processing (OLAP)}; Por fim a seta 4 representa a visualização dos dados; Cada um dos componentes da Figura \ref{dwing} é descrito nas seções subsequentes.
 
 
 
@@ -44,7 +34,7 @@ A Figura \ref{dwing} descreve uma arquitetura geral de um ambiente de DWing, de 
 As etapas de extração, transformação, carga e atualização do \textit{data
 warehouse} formam o back-end e caracterizam o processo chamado Extraction-
 Transform-Load (ETL). Esse processo pode ser dividido em três etapas distintas
-que somadas podem consumir até 85\% de todo o esforço em um DWing
+que somadas podem consumir até 85\% de todo o esforço em um ambinetee de \textit{Data Warehousing}
 \cite{Kimball2002}.
 
 
@@ -52,7 +42,7 @@ que somadas podem consumir até 85\% de todo o esforço em um DWing
 
 \begin{easylist}[itemize]
 
-& Extração: No ambiente de \textit{data warehousing}, os dados, que provêm de fontes distintas, tais como planilhas, bases relacionais em diferentes tipos de
+& Extração: No ambiente de \textit{Data Warehousing}, os dados, que provêm de fontes distintas, tais como planilhas, bases relacionais em diferentes tipos de
 banco de dados (MySQL, Oracle, PostgreSQL e etc) ou mesmo de web services, são inicialmente extraídos de fontes externas de dados para um ambiente de 
 \textit{staging} que \citeonline{Kimball2002} considera com uma área de armazenamento intermediária entre fontes e o \textit{data warehouse}. Normalmente, é de natureza temporária e o seu conteúdo é apagado após a carga dos dados no \textit{data Warehouse}. 
 
@@ -61,13 +51,13 @@ os dados passam por processos de transformações diversas. Estas podem envolver
 desde uma simples transformação de ponto para vírgula até a realização de cálculos, como por exemplo, cálculos estatísticos. 
 
 
-& Carga: Após as devidas transformações dos dados, os dados são carregados, em formato pré-definido pelo projeto do \textit{data warehouse},  em definitivo no afim de serem utilizados pelas consultas OLAP. 
+& Carga: Após as devidas transformações dos dados, os dados são carregados, em formato pré-definido pelo projeto do \textit{data warehouse}, em definitivo no a fim de serem utilizados pelas consultas OLAP. 
 
 \end{easylist}
  
 \section{\textit{Data Warehouse}} 
 
-\textit{Data Warehouse} (DW) é um conjunto de dados integrados, consolidados,históricos, segmentados por assunto, não-voláteis, variáveis em relação ao tempo, e de apoio às decisões gerenciais \cite{Inmon1992}, ou seja, trata-se de um repositório central e consolidado que se soma ao conjunto de tecnologias que compõem um ambiente maior, que é o DWing \cite{Kimball2002}. 
+\textit{Data Warehouse} é um conjunto de dados integrados, consolidados,históricos, segmentados por assunto, não-voláteis, variáveis em relação ao tempo, e de apoio às decisões gerenciais \cite{Inmon1992}, ou seja, trata-se de um repositório central e consolidado que se soma ao conjunto de tecnologias que compõem um ambiente maior, que é o \textit{Data Warehousing} \cite{Kimball2002}. 
 
 
 A necessidade de centralização e agregação dos dados em um \textit{data warehouse} mostrou que a modelagem relacional com a utilização das técnicas de normalização, que visam a eliminação da redundância de dados, não é eficiente quando se realiza consultas mais complexas que fazem uso frequente da operação JOIN entre várias tabelas, pois oneram recursos hardware com grandes quantidades de acesso físico a dados. \cite{Kimball2002}
@@ -99,20 +89,36 @@ Quando se juntam fatos e dimensões, obtém-se o chamado esquema estrela, tal co
 No esquema da Figura \ref{estrela}, percebe-se que uma tabela fato expressa um relacionamento muitos para muitos com as tabelas dimensões, mostrando assim que a navegabilidade dos dados quantitativos e qualitativos é mais intuitiva quando comparada com o modelo relacional normalizado \cite{Kimball2002}. Além disso, verifica-se que a tabela fato possui uma dimensão temporal associada, isto é, há fatos que ocorrem diariamente, como por exemplo, a venda de produtos em um supermercado. Contudo, é possível que as vendas sejam vistas por visões mensais, trimestrais, semestrais ou anuais. Logo, a granularidade dos fatos deve ser considerada na hora de projetar um \textit{data warehouse}. Além disto, deve-se ainda considerar as características do fato, pois quando os registros de uma tabela fato podem ser somados a qualquer dimensão, é dito que o fato é aditivo. Quando é possível apenas somar em relação a algumas dimensões, é dito que o fato é semiaditivo. Já quando o fato é usado apenas para registro e não pode ser somado em relação a nenhuma dimensão, é dito que o fato é não aditivo \cite{Inmon1992}.
 
 \subsection{Metodologia do Projeto do \textit{Data Warehouse}}
-\label{metodologia-dw}
-\citeonline{Kimball2002} enuncia que o ambiente de DWing nasce na necessidade do negócio e logo o projeto de um \textit{data warehouse} deve seguir os seguintes passos: 
+\label{sec:metodologia-dw}
 
-\begin{inparaenum}[1)]
-	\item Selecionar o Processo de Negócio com requisito fundamental do 
-	projeto DW;
-	
-	\item Verificar a periodicidade de coleta dos dados do processo de negócio (diários, semanais, mensais, trimestrais, semestrais ou anuais);
-	
-	\item Identificar as dimensões;
-	
-	\item Identificar os fatos;
 
-\end{inparaenum} 
+A Figura \ref{fig:metodologia-dw} mostra os passos necessários para o projeto de um \textit{Data Warehouse}
+
+
+\todo[inline, color=SeaGreen!80]{Adicionar os trabalhos de Marcos Sampaio} 
+
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.19]{figuras/dw-kimball.eps}
+\caption{Metodologia de Projeto de \textit{Data Warehouse} proposta por \citeonline{Kimball2002}}
+\label{fig:metodologia-dw}
+\end{figure}
+\FloatBarrier
+
+
+% \begin{inparaenum}[1)]
+% 	\item Selecionar o Processo de Negócio com requisito fundamental do 
+% 	projeto DW;
+	
+% 	\item Verificar a periodicidade de coleta dos dados do processo de negócio (diários, semanais, mensais, trimestrais, semestrais ou anuais);
+	
+% 	\item Identificar as dimensões;
+	
+% 	\item Identificar os fatos;
+
+% \end{inparaenum} 
 
 
 \section{\textit{On-Line Analytical Processing} (OLAP)}
@@ -188,17 +194,7 @@ análise \cite{andre2000}. O Drill Across pode ser aplicado à Tabela \ref{befor
 
 \begin{table}[!ht]
 \centering
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{Loja Norte} \\ \hline
-\cline{1-2}
-Produto         & Novembro       \\ \hline
-Produto A & 100 \\ \hline
-Produto B & 60  \\ \hline
-Produto C & 50  \\ \hline
-Produto D & 60  \\ \hline
-
-\end{tabular}
+\input{tabelas/tabela-novembro.ltx}
 \caption{Exemplo do Total de vendas da Loja Norte no mês de novembro}
 \label{after-across}
 \end{table}
@@ -215,34 +211,7 @@ Entre as operações de análise seletiva estão:
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-Produto                                          & \multicolumn{1}{|c|}{Loja} & Outubro & Novembro & Dezembro \\ \hline
-
-%-------------------------------
-\multicolumn{1}{|c|}{\multirow{3}{*}{Produto A}} & Loja Sul                   & 50      & 10       & 20       \\ \cline{2-5} 
-& Loja Norte                 & 60      & 100      & 24       \\ \cline{2-5} 
-& Loja Oeste                 & 70      & 25       & 53       \\ \hline
-
-%-------------------------------------
-\multirow{3}{*}{Produto B}                       & Loja Sul                   & 32      & 70       & 20       \\ \cline{2-5} 
-& Loja Norte                 & 42      & 60       & 43       \\ \cline{2-5}
-
-& Loja Oeste                 & 56      & 78       & 56       \\ \hline
-
-
-%--------------------------
-\multirow{3}{*}{Produto C}                       & Loja Sul                   & 34      & 50       & 23       \\ \cline{2-5} 
-& Loja Norte                 & 45      & 50       & 74       \\ \cline{2-5} 
-& Loja Oeste                 & 83      & 67       & 65       \\ \hline
-
-
-%------------------------------------
-\multirow{3}{*}{Produto D}                       & Loja Sul                   & 56      & 70       & 35       \\ \cline{2-5} 
-& Loja Norte                 & 12      & 90       & 34       \\ \cline{2-5} 
-& Loja Oeste                 & 64      & 60       & 23       \\ \hline
-
-\end{tabular}
+\input{tabelas/before-slice.ltx}
 \caption{Exemplo de Vendas por produto de uma rede de lojas nos meses de novembro e dezembro}
 \label{before-slice}
 \end{table}
@@ -250,21 +219,14 @@ Produto                                          & \multicolumn{1}{|c|}{Loja} & 
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{|c|l|l|l|}
-\hline
-\multicolumn{1}{|l|}{Produto} & \multicolumn{1}{|c|}{Loja} & Outubro & Novembro \\ \hline
-\multirow{3}{*}{Produto A}    & Loja Sul                   & 50      & 10       \\ \cline{2-4} 
-\multicolumn{1}{|l|}{}        & Loja Norte                 & 60      & 100      \\ \cline{2-4} 
-\multicolumn{1}{|l|}{}        & Loja Oeste                 & 70      & 25       \\ \hline
-\end{tabular}
-\caption{Exemplo de Vendas do Produto A na rede de Lojas}
+\input{tabelas/after-slice.ltx}
 \label{after-slice}
 \end{table}
 
 
 \begin{easylist}[itemize]
 
-& \textit{Pivoting:} Trata-se de uma operação de rotação de 90º em um cubo multidimensional, isto é, muda-se a orientação das tabelas dimensionais a fim de restringir a visualização das dimensões em uma tabela. \cite{andre2000}. A operação de Pivoting pode ser exemplificada ao partir da Tabela \ref{before-slice} para Tabela \ref{after-pivoting}.
+& \textit{Pivoting:} Trata-se de uma operação de rotação de 90º em um cubo multidimensional, isto é, muda-se a orientação das tabelas dimensionais a fim de restringir a visualização das dimensões em uma tabela \cite{andre2000}. A operação de Pivoting pode ser exemplificada ao partir da Tabela \ref{before-slice} para Tabela \ref{after-pivoting}.
 
 
 \end{easylist}
@@ -273,22 +235,7 @@ Produto                                          & \multicolumn{1}{|c|}{Loja} & 
 
 \begin{table}[!ht]
 \centering
-\begin{tabular}{|c|l|l|l|l|}
-\hline
-\multicolumn{1}{|l|}{Loja}                        & Produto   & Outubro  & Novembro  & Dezembro \\ \hline
-\multirow{4}{*}{Loja Sul}                         & Produto A & 50       & 10        & 20       \\ \cline{2-5} 
-\multicolumn{1}{|l|}{}                            & Produto B & 32       & 70        & 20       \\ \cline{2-5} 
-\multicolumn{1}{|l|}{}                            & Produto C & 34       & 50        & 23       \\ \cline{2-5} 
-\multicolumn{1}{|l|}{}                            & Produto D & 56       & 70        & 35       \\ \hline
-\multirow{4}{*}{Loja Norte}                       & Produto A & 60       & 100       & 24       \\ \cline{2-5} 
-                                                  & Produto B & 42       & 60        & 43       \\ \cline{2-5} 
-                                                  & Produto C & 45       & 50        & 74       \\ \cline{2-5} 
-                                                  & Produto D & 12       & 90        & 34       \\ \hline
-\multicolumn{1}{|l|}{\multirow{4}{*}{Loja Oeste}} & Produto A & 70       & 25        & 53       \\ \cline{2-5} 
-\multicolumn{1}{|l|}{}                            & Produto B & 56       & 78        & 56       \\ \cline{2-5} 
-\multicolumn{1}{|l|}{}                            & Produto C & 83       & 67        & 65       \\ \cline{2-5} 
-\multicolumn{1}{|l|}{}                            & Produto D & 64       & 60        & 23       \\ \hline
-\end{tabular}
+\input{tabelas/after-pivoting.ltx}
 \caption{Exemplo de Vendas por Loja para cada um dos Produtos nos meses de Novembro e Dezembro}
 \label{after-pivoting}
 \end{table}
@@ -297,6 +244,4 @@ Produto                                          & \multicolumn{1}{|c|}{Loja} & 
 
 \section {Visualização de Dados}
 
-Dados transmitem importantes informações, logo cabe a quem deseja comunicá-los, escolher a forma mais efetiva de fazê-lo \cite{raquel2013}. Segundo \citeonline{raquel2013}, tabelas e gráficos são as formas mais comuns de transmitir as informações quantitativas, sendo que\begin{inparaenum}[i)]
-\item tabelas são utilizadas para consulta de valores individuais que podem ser comparados envolvendo, em certos casos, mais de uma unidade de medida;
-\item gráficos são indicados para exibição de informação quantitativa nos quais os valores indicam pontos de interesse e estes podem ser comparados por sua similaridades e dissimilaridades\end{inparaenum}. 
+Dados transmitem importantes informações, logo cabe a quem deseja comunicá-los, escolher a forma mais efetiva de fazê-lo \cite{raquel2013}. Segundo \citeonline{raquel2013}, tabelas e gráficos são as formas mais comuns de transmitir as informações quantitativas, em que tabelas são utilizadas para consulta de valores individuais que podem ser comparados envolvendo, em certos casos, mais de uma unidade de medida; Já os gráficos são indicados para exibição de informação quantitativa nos quais os valores indicam pontos de interesse e estes podem ser comparados por sua similaridades e dissimilaridades.
