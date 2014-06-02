@@ -60,19 +60,47 @@ Tendo as características gerais de cada ferramenta levantadas, foram comparadas
 \end{table}
 \FloatBarrier
 
-Em fase inicial do trabalho, fora feita a análise entre o Analizo e o SonarQube, que resultou na decisão de utilizar o SonarQube. Contudo, desde a versão 4.1, o SonarQube retirou as métricas: \textbf{LCOM4, RFC, DIT, NOC}~\footnote{CoreMetrics do SonarQube: \url{https://github.com/SonarSource/sonarqube/blob/master/sonar-plugin-api/src/main/java/org/sonar/api/measures/CoreMetrics.java}}. Dado que este fato, impacta sobre o principal objetivo do trabalho, migrou-se para a ferramenta Analizo. Esta, ao contrário do SonarQube, evoluiu e desde a versão 1.18 o ganhou a possibilidade de emitir saídas das métricas em CSV que detalham nome da classe e respectivas métricas, atendendo assim ao critério CAE02. Adicionalmente, o Analizo permitiu ao trabalho incorporar a análise das métricas \textbf{ANPM, AMLOC, CBO, NPA}, que como foig observado na Seção \ref{sec:clean-code}, são cruciais na detecção de cenários de limpeza de código-fonte.
+Em fase inicial do trabalho, fora feita a análise entre o Analizo e o SonarQube, que resultou na decisão de utilizar o SonarQube. Contudo, desde a versão 4.1, o SonarQube retirou as métricas: \textbf{LCOM4, RFC, DIT, NOC}~\footnote{CoreMetrics do SonarQube: \url{https://github.com/SonarSource/sonarqube/blob/master/sonar-plugin-api/src/main/java/org/sonar/api/measures/CoreMetrics.java}}. Dado que este fato, impacta sobre o principal objetivo do trabalho, migrou-se para a ferramenta Analizo. Esta evoluiu e ganhou a possibilidade de emitir saídas das métricas em CSV que detalham nome da classe e as respectivas métricas, atendendo assim ao critério CAE02. Adicionalmente, o Analizo permitiu ao trabalho incorporar a análise das métricas \textbf{ANPM, AMLOC, CBO, NPA}, que como foi observado na Seção \ref{sec:clean-code}, são cruciais na detecção de cenários de limpeza de código-fonte.
 
 \section{Projeto do \textit{Data Warehouse}}
 
 O \textit{Data Warehouse} como elemento central do ambiente de \textit{Data Warehousing} deve ser o primeiro a ser projetado \cite{Kimball2002}. Isso ocorre pois o DW deve ser dirigido ao negócio. Logo a modificação do DW impacta principalmente na carga dos dados, na etapa de extração, transformação e carga, requerendo modificações conforme o DW venha a mudar.
 
-Seguindo a metolodogia proposta por \citeonline{Kimball2002}, apresentada na Seção \ref{sec:metodologia-dw}, entende-se que o processo de negócio a ser avaliado é o monitoramento da qualidade do código-fonte expresso por meio das métricas de código-fonte. 
+Seguindo a metolodogia proposta por \citeonline{Kimball2002}, apresentada na Seção \ref{sec:metodologia-dw}, identificou-se dois processos de negócio. Para o primeiro processo de negócio: coleta dos percentis da métricas de código-fonte e intervalos qualitativos conforme as configurações especificadas como especificado na Seção \ref{sec:Intervalos das Métricas}, foram identificados requisitos de negócio, como se mostra na Tabela \ref{requisitos}.
+
+\begin{table}[!ht]
+\centering
+\input{tabelas/requisitos.ltx}
+\caption{Requisitos de Negócio da Coleta de Percentis e Intervalos Qualitativos de Métricas de Código-Fonte}
+\label{requisitos}
+\end{table}
+\FloatBarrier
+
+Considerando então que cada requisito de negócio é utilizado em cada uma das métricas da Tabela \ref{tab:good-metrics}, obtém um total de 96 requisitos de negócio para o primeiro processo de negócio. Dando prosseguimento na metodologia proposta de \citeonline{Kimball2002}, identificou-se a periodicidade como releases do software, isto é, cada software pode ter tempos diferenciados de release. Em alguns casos, estas podem ser semestrais ou mensais, contudo em outros casos, é possível obter releases diárias, como resultado da integração de um determinada massa de código em um sistema de integração continua \cite{beckarticle1999}. 
+
+Aplicando o terceiro passo e quarto passo da metodologia de \citeonline{Kimball2002}, identificou-se os fatos e as dimensões a partir da Tabela \ref{requisitos}, onde os termos em negritos foram candidatos a dimensão ou a fato. A partir da análise 
+
+
+ obtendo assim a Figura \ref{dimensoes}, onde o amarelo é o fato, vermelho são as dimensões e azul os atributos de dimensões  
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.13]{figuras/dimensoes.eps}
+\caption{Dimensões e Fatos da Coleta de Percentis e Intervalos Qualitativos de Métricas de Código-Fonte}
+\label{dimensoes}
+\end{figure}
+\FloatBarrier
+
+
+O segundo processo de negócio, é a avaliação, em nível de classe, da aplicação de cenários de limpeza de código-fonte, conforme a Seção \ref{sec:clean-code}.
+
+
+
+
 
 
 \todo[inline, color=yellow!50]{Atualizar a seção com as informações de hierarquia, entidades de negócio, granularidade, dimesões e fatos}
-
-\todo[inline, color=yellow!50]{Colocar os Requisitos}
-
 
 
 \section{Ferramentas de \textit{Data Warehousing}}
@@ -84,7 +112,7 @@ as áreas de ETL, \textit{reporting}, OLAP e mineração de dados. Cada um dos c
 
 \subsection{Implementação da Extração, Transformação e Carga dos Dados}
 \label{implementação-ETL}
-O Pentaho Data Integration Community Edition ou Kettle\footnote{Disponível em \url{http://kettle.pentaho.com/}}, como é conhecido pela comunidade que o desenvolve, é feito na linguagem Java e implementa o processo de ETL (Extração, Transformação e Carga de Dados). A interface do Kettle é mostrada na Figura \ref{pdi} e as principais características do Kettle e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{kettle}.
+O Pentaho Data Integration Community Edition ou Kettle\footnote{Disponível em \url{http://kettle.pentaho.com/}} é feito na linguagem Java e implementa o processo de ETL (Extração, Transformação e Carga de Dados). A interface do Kettle é mostrada na Figura \ref{pdi} e as principais características do Kettle e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{kettle}.
 
 \begin{figure}[ht!]
 \centering
@@ -105,7 +133,7 @@ O Pentaho Data Integration Community Edition ou Kettle\footnote{Disponível em \
 O Kettle possui dois tipos de componentes internos: \textit{Job} e \textit{Transformation}. O primeiro permite executar tarefas, em nível mais alto, de fluxo de controle, tais como, mandar um email em caso de falha, baixar um arquivo, executar transformações  e entre outras atividades. Já a \textit{Transformation} permite tratamento aos dados incluindo desde entrada de dados por diversas fontes até a persistência em uma variedade de SGBDs.
 
 
-Para a implementação do ETL no Kettle, utilizou-se os arquivos CSV resultantes da análise de métricas de código-fonte do Analizo. Embora, o Kettle tivesse componentes de interpretação dos elementos de CSV, o presente trabalho, decidiu-se por converter CSV obtido do Analizo em arquivos JSON, visto que componente de CSV do Kettle, converte-o para XML, sendo que este é mais lento e menos versátil quando comparado ao JSON, tal como se mostra no trabalho de \citeonline{fonseca2007alternativas}. Visando realizar a conversão, foi escrito um pequeno \textit{parser} na linguagem \textit{Ruby}, tal como se vê no Código-fonte \ref{Ruby}.
+Para a implementação do ETL no Kettle, utilizou-se dos arquivos CSV resultantes da análise de métricas de código-fonte do Analizo. Embora, o Kettle tivesse componentes de interpretação dos elementos de CSV, no presente trabalho, decidiu-se por converter CSV obtido do Analizo em arquivos JSON, visto que componente de CSV do Kettle, converte-o para XML, sendo que este é mais lento e menos versátil quando comparado ao JSON, tal como se mostra no trabalho de \citeonline{fonseca2007alternativas}. Visando realizar a conversão, foi escrito um pequeno \textit{parser} na linguagem \textit{Ruby}, tal como se vê no Código-Fonte \ref{Ruby}.
 
 \begin{center}
 \begin{minipage}{0.5\textwidth}
@@ -113,7 +141,7 @@ Para a implementação do ETL no Kettle, utilizou-se os arquivos CSV resultantes
 \end{minipage}
 \end{center}
 
-Todas as implementações de \textit{Transformation} e \textit{Job} que foram elaboradas no decorrer do trabalho foram descritas em  detalhes no apêndice \ref{implementação}.
+Todas as implementações de \textit{Transformation} e \textit{Job} que foram elaboradas no decorrer do trabalho foram descritas em detalhes no apêndice \ref{implementação}.
 
 
 \subsection{Implementação das Consultas OLAP e Visualização de Dados}
@@ -187,7 +215,7 @@ Na Figura \ref{pentaho-tools}, é apresentado como cada uma das ferramentas apre
 A arquitetura descrita na Figura \ref{pentaho-tools} foi implementada em uma máquina virtual com as seguintes configurações
 
 \begin{easylist}
-& Processador: Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz
+& Processador: Intel(R) Xeon(R) CPU E5-2620 @ 2.00GHz
 & RAM: 8GB
 & Distribuição: Debian Whezzy
 \end{easylist}

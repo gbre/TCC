@@ -276,16 +276,14 @@ Considerando que o trabalho de \citeonline{Meirelles2013}, analisou softwares li
 		
 \FloatBarrier
 
-Após a renomeação dos intervalos de frequência em intervalos qualitativos, observou-se que alguns softwares apresentam menores valores para métricas que outros. Na tentativa considerar dois cenários, um "otimista" e outro "pessimista" analisou-se os valores obtidos por \citeonline{Meirelles2013} para cada uma das métricas, apresentadas na Seção \ref{sec:source-code}, nas linguagem de programação Java.
-
-Para a configuração otimista, foi considerado os valores do \textbf{Open JDK8} como referência para a linguagem Java, já para a configuração pessimista, foi considerado os valores do \textbf{Tomcat} como referência.
+Após a renomeação dos intervalos de frequência em intervalos qualitativos, observou-se que alguns softwares apresentam menores valores para métricas que outros. Na tentativa considerar dois cenários, considerou-se dois software como referência para cada uma das métricas na linguagem de programação Java. Em um primeiro cenário, foi analisado o software que contia os menores valores percentis para as métricas. Já em um segundo cenário, foi considerado os valores percentis mais altos. Para o primeiro cenário foi considerado os valores do \textbf{Open JDK8}, já para o segundo foi considerado os valores do \textbf{Tomcat} como referência.
 
 
 	
 	\begin{table}[!ht]
 	\begin{center}
 	\input{tabelas/metricas.ltx}	
-	\caption{Configurações otimista e pessimista de Intervalos das Métricas para Java}
+	\caption{Configurações para os Intervalos das Métricas para Java}
 	\label{tab:good-metrics}
 	\end{center}
 	\end{table}
@@ -309,15 +307,16 @@ Segundo \citeonline{Martin2008}, o código deve ser uma composição de instruç
 
 Os trabalhos de \citeonline{marinescu2004quantifying}, \citeonline{marinescu2005measurement}, \citeonline{moha2006automatic}, \citeonline{moha2008domain}, \citeonline{moha2010decor} e \citeonline{rao2007detecting} mostraram que é possível detectar pedaços de código-fonte que podem ser melhorados com a utilização de métricas de código-fonte. Embasado em alguns detes trabalhos, \citeonline{Machini2010} construíu um mapeamento entre as métricas de código-fonte, e as técnicas e práticas propostas por \citeonline{Martin2008} e \citeonline{beck2007implementation}. 
 
-Neste mapeamento, cada conjunto de coorelação métricas constitui um cenário de limpeza, onde é mostrado a correlação de um "conceito de limpeza", apresentados na Tabela \ref{tab:conceitos}, com métricas de código-fonte, apresentadas na Seção \ref{sec:source-code}. No trabalho de \citeonline{Machini2010}, a detecção é feita a partir de valores altos para as métricas de código-fonte.  A fim de medir efetivamente, a aplicação destes, considerou-se os valores altos como os valores obtidos pelo intervalo "Ruim" para a configuração otimista tal como mostrado na Tabela \ref{tab:good-metrics}.  
+Neste mapeamento, cada conjunto de coorelação métricas constitui um cenário de limpeza, onde é mostrado a correlação de um "conceito de limpeza", apresentados na Tabela \ref{tab:conceitos}, com métricas de código-fonte, apresentadas na Seção \ref{sec:source-code}. No trabalho de \citeonline{Machini2010}, a detecção é feita a partir de valores altos para as métricas de código-fonte.  A fim de medir efetivamente, a aplicação destes, considerou-se os valores altos como os valores obtidos pelos intervalos Regular e Ruim para a configuração \textbf{OpenJDK} tal como mostrado na Tabela \ref{tab:good-metrics}.  
 
-Considerando inicialmente os cenários \textbf{Classe Pouco Coesa} e \textbf{Interface dos Métodos} extraídos de \citeonline{Machini2010}, foram elaborados mais alguns cenários tal como se mostra na Tabela \ref{tab:cenario-coesao}.
+Considerando inicialmente os cenários \textbf{Classe Pouco Coesa} e \textbf{Interface dos Métodos} extraídos de \citeonline{Machini2010}, foram elaborados mais alguns cenários tal como se mostra na Tabela \ref{tab:cenarios}. Além disso, realizou-se um mapeamento inicial de padrões de projeto de \citeonline{gamma1994design} que poderiam resolver os problemas detectados pelos cenários de limpeza. 
 
 \begin{sidewaystable}
 \begin{table}[H]
-\input{tabelas/cenario-coesao.ltx}
-\caption{Cenário de Classe Pouco Coesa extraído de \citeonline{Machini2010}}
-\label{tab:cenario-coesao}
+\centering
+\input{tabelas/cenarios.ltx}
+\caption{Cenários de Limpeza}
+\label{tab:cenarios}
 \end{table}
 \FloatBarrier
 \end{sidewaystable}

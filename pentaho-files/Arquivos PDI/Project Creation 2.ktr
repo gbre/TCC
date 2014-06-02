@@ -157,6 +157,7 @@
   <order>
   <hop> <from>Obtendo dados do Projeto</from><to>Inserindo na Dim Projeto</to><enabled>Y</enabled> </hop>
   <hop> <from>Obtendo dados do Projeto</from><to>Inserindo na Dim Release</to><enabled>Y</enabled> </hop>
+  <hop> <from>Obtendo dados do Projeto</from><to>Inserindo na Dim Tempo</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Inserindo na Dim Projeto</name>
@@ -231,8 +232,12 @@
       <crcfield>hashcode</crcfield>
       <fields>
         <key>
-          <name>release</name>
+          <name>release_name</name>
           <lookup>release_name</lookup>
+        </key>
+        <key>
+          <name>release_number</name>
+          <lookup>release_number</lookup>
         </key>
         <return>
           <name>idRelease</name>
@@ -245,7 +250,51 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>364</xloc>
-      <yloc>115</yloc>
+      <yloc>114</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Inserindo na Dim Tempo</name>
+    <type>CombinationLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <schema/>
+      <table>D_Time</table>
+      <connection>Source Info</connection>
+      <commit>100</commit>
+      <cache_size>9999</cache_size>
+      <replace>N</replace>
+      <crc>N</crc>
+      <crcfield>hashcode</crcfield>
+      <fields>
+        <key>
+          <name>month</name>
+          <lookup>Month</lookup>
+        </key>
+        <key>
+          <name>year</name>
+          <lookup>Year</lookup>
+        </key>
+        <return>
+          <name>idTime</name>
+          <creation_method>tablemax</creation_method>
+          <use_autoinc>N</use_autoinc>
+        </return>
+      </fields>
+      <sequence/>
+      <last_update_field/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>361</xloc>
+      <yloc>209</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -271,7 +320,7 @@
     <ignoreMissingPath>N</ignoreMissingPath>
     <rownum_field/>
     <file>
-      <name>&#x2f;home&#x2f;baufaker&#x2f;Dropbox&#x2f;Unb&#x2f;TCC&#x2f;IPHAN&#x2f;Resultados&#x2f;JSON&#x2f;24.js</name>
+      <name>&#x2f;home&#x2f;baufaker&#x2f;Dropbox&#x2f;Unb&#x2f;TCC&#x2f;IPHAN&#x2f;Resultados&#x2f;JSON&#x2f;2.js</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -305,9 +354,22 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>release</name>
-        <path>&#x24;..release</path>
+        <name>release_name</name>
+        <path>&#x24;..release_name</path>
         <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>release_number</name>
+        <path>&#x24;..release_number</path>
+        <type>Integer</type>
         <format/>
         <currency/>
         <decimal/>
@@ -343,6 +405,32 @@
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
+      <field>
+        <name>month</name>
+        <path>&#x24;..month</path>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>year</name>
+        <path>&#x24;..year</path>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
     </fields>
     <limit>0</limit>
     <IsInFields>N</IsInFields>
@@ -358,7 +446,7 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>117</xloc>
+      <xloc>114</xloc>
       <yloc>33</yloc>
       <draw>Y</draw>
       </GUI>

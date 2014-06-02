@@ -4,6 +4,7 @@
     <description/>
     <extended_description/>
     <job_version/>
+    <job_status>0</job_status>
   <directory>&#x2f;</directory>
   <created_user>-</created_user>
   <created_date>2014&#x2f;05&#x2f;05 12&#x3a;06&#x3a;57.762</created_date>
@@ -125,7 +126,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>&#x2f;home&#x2f;baufaker&#x2f;Dropbox&#x2f;Unb&#x2f;TCC&#x2f;TCC-Baufaker&#x2f;pentaho-files&#x2f;Arquivos PDI&#x2f;Project Creation 2.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;Project Creation 2.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
