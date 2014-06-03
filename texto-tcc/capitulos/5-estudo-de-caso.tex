@@ -1,12 +1,71 @@
 \chapter{Estudo de Caso}
 \label{estudo de caso}
 
-\section{Protocolo do Estudo de Caso}
-Visando a validação experimental do ambiente de \textit{Data Warehousing} para Métricas de Código-Fonte e Cenários de Limpeza de Código proposto no Capítulo \ref{chap:arquitetura}, aplicou-se o ambiente em um estudo de caso. 
 
-Segundo \citeonline{brereton2008using}, para elaboração de estudos de caso em engenharia de software é necessário, como passo fundamental, descrever o protocolo do estudo de caso. Este consiste em um relatório simplificado das principais variáveis e passos, tais como o meio e modo de coleta de dados, indetificação das fontes de dados e formas de análise de resultados \cite{wohlin2012experimentation}. 
+\citeonline{wohlin2012experimentation} enuncia que é necessário que uma metodologia de estudo de caso, definida formalmente em engenharia de software, deve conter os passos da Figura \ref{fig:metodologia-estudo}.
 
-O protocolo de estudo de caso deste trabalho, que foi baseado em \citeonline{brereton2008using} e \citeonline{wohlin2012experimentation} é apresentado na Tabela X.
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.16]{figuras/metodologia-estudo-caso.eps}
+\caption{Metodologia de Estudo de Caso proposta por \citeonline{wohlin2012experimentation}}
+\label{fig:metodologia-estudo}
+\end{figure}
+\FloatBarrier
+
+\section{Planejamento do Estudo de Caso}
+
+Para o planejamento do estudo de caso em engenharia de software é essencial, segundo \citeonline{brereton2008using},descrever o protocolo do estudo de caso. Este consiste em um relatório simplificado das principais variáveis, dados e passos, tais como o meio e modo de coleta de dados, indetificação das fontes de dados e formas de análise de dados \cite{wohlin2012experimentation}. 
 
 
-\todo[inline, color=yellow!50]{Colocar a tabela com o protocolo de estudo de caso com a descrição do IPHAN, do Software e das métricas a serem coletadas}
+O protocolo de estudo de caso deste trabalho, que foi baseado em \citeonline{brereton2008using} e \citeonline{wohlin2012experimentation} foi dividido em seções, conforme se vê a seguir.
+
+
+\section{Trabalhos Relacionados ao Estudo de Caso}
+
+Assim como os trabalhos de \citeonline{Palza2003}, \citeonline{Ruiz2005}, \citeonline{Castellanos2005}, \citeonline{Becker2006}, \citeonline{Folleco2007}, \citeonline{Silveira2010}, buscou-se alcançar uma validação empírica da utilização ambiente de \textit{Data Warehousing} proposto no Capítulo \ref{chap:arquitetura}.
+
+
+\subsection{Objetivos do Estudo de Caso}
+
+O objetivo geral do estudo de caso foi avaliar um software durante o seu desenvolvimento no ambiente de \textit{Data Warehousing}. Em consônância ao objetivo geral do estudo de caso e aos objetivos específicos deste trabalho, foram definidos objetivos específicos do estudo de caso, tal como se mostra na Tabela \ref{tab:objetivos-estudo-de-caso}.
+
+\begin{table}[H]
+\begin{center}
+\input{tabelas/objetivos-estudo.ltx}
+\caption{Objetivos Específicos de Estudo de Caso}
+\label{tab:objetivos-estudo-de-caso}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsection{Critérios de Seleção de Objeto do Estudo de Caso} 
+
+Para selecionar o software que seria parte do objeto do estudo de caso considerou-se os 
+critérios estábelecidos na Tabela \ref{tab:critérios-estudo-de-caso}. 
+
+
+\begin{table}[H]
+\begin{center}
+\input{tabelas/criterios-estudo.ltx}
+\caption{Critérios de Seleção de Objeto do Estudo de Caso}
+\label{tab:critérios-estudo-de-caso}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsection{Dados, Fonte dos Dados e Forma de Análise dos Dados}
+
+Os principais dados quantitativos e qualitativos foram identificados na Tabela \ref{tab:dados-estudos}.
+
+\begin{table}[H]
+\begin{center}
+\input{tabelas/dados-estudo.ltx}
+\caption{Dados do Estudo de Caso}
+\label{tab:dados-estudos}
+\end{center}
+\end{table}
+\FloatBarrier
+
+
+
+\section{Execução do Estudo de Caso e Análise dos Dados}

@@ -66,31 +66,29 @@ Em fase inicial do trabalho, fora feita a análise entre o Analizo e o SonarQube
 
 O \textit{Data Warehouse} como elemento central do ambiente de \textit{Data Warehousing} deve ser o primeiro a ser projetado \cite{Kimball2002}. Isso ocorre pois o DW deve ser dirigido ao negócio. Logo a modificação do DW impacta principalmente na carga dos dados, na etapa de extração, transformação e carga, requerendo modificações conforme o DW venha a mudar.
 
-Seguindo a metolodogia proposta por \citeonline{Kimball2002}, apresentada na Seção \ref{sec:metodologia-dw}, identificou-se dois processos de negócio. Para o primeiro processo de negócio: coleta dos percentis da métricas de código-fonte e intervalos qualitativos conforme as configurações especificadas como especificado na Seção \ref{sec:Intervalos das Métricas}, foram identificados requisitos de negócio, como se mostra na Tabela \ref{requisitos}.
+Seguindo a metolodogia proposta por \citeonline{Kimball2002}, apresentada na Seção \ref{sec:metodologia-dw}, identificou-se dois processos de negócio. Para o primeiro processo de negócio: coleta dos percentis da métricas de código-fonte e intervalos qualitativos conforme as configurações especificadas como especificado na Seção \ref{sec:Intervalos das Métricas}, foram identificados requisitos de negócio, como se mostra na Tabela \ref{tab:requisitos}.
 
 \begin{table}[!ht]
 \centering
 \input{tabelas/requisitos.ltx}
 \caption{Requisitos de Negócio da Coleta de Percentis e Intervalos Qualitativos de Métricas de Código-Fonte}
-\label{requisitos}
+\label{tab:requisitos}
 \end{table}
 \FloatBarrier
 
 Considerando então que cada requisito de negócio é utilizado em cada uma das métricas da Tabela \ref{tab:good-metrics}, obtém um total de 96 requisitos de negócio para o primeiro processo de negócio. Dando prosseguimento na metodologia proposta de \citeonline{Kimball2002}, identificou-se a periodicidade como releases do software, isto é, cada software pode ter tempos diferenciados de release. Em alguns casos, estas podem ser semestrais ou mensais, contudo em outros casos, é possível obter releases diárias, como resultado da integração de um determinada massa de código em um sistema de integração continua \cite{beckarticle1999}. 
 
-Aplicando o terceiro passo e quarto passo da metodologia de \citeonline{Kimball2002}, identificou-se os fatos e as dimensões a partir da Tabela \ref{requisitos}, onde os termos em negritos foram candidatos a dimensão ou a fato. A partir da análise 
-
-
- obtendo assim a Figura \ref{dimensoes}, onde o amarelo é o fato, vermelho são as dimensões e azul os atributos de dimensões  
-
+Aplicando o terceiro passo e quarto passo da metodologia de \citeonline{Kimball2002}, identificou-se os fatos e as dimensões a partir da Tabela \ref{requisitos}, onde os termos em negritos foram candidatos a dimensão ou a fato. Após a identificação do fato, criou-se o diagrama de árvore tal como se vê na Figura \ref{dimensoes}, seguindo a metodologia proposta por \citeonline{Golfarelli1998}.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[keepaspectratio=true,scale=0.13]{figuras/dimensoes.eps}
-\caption{Dimensões e Fatos da Coleta de Percentis e Intervalos Qualitativos de Métricas de Código-Fonte}
+\includegraphics[keepaspectratio=true,scale=0.2]{figuras/dimensoes.eps}
+\caption{Projeto Conceitual de DW para Métricas de Código-Fonte}
 \label{dimensoes}
 \end{figure}
 \FloatBarrier
+
+Após a realização do projeto conceitual, este foi traduzido em projeto lógico, que pode ser visto no Apêndice \ref{project-dw} utilizando a ferramenta MySQL Workbench e implementado em uma instância do MySQL.
 
 
 O segundo processo de negócio, é a avaliação, em nível de classe, da aplicação de cenários de limpeza de código-fonte, conforme a Seção \ref{sec:clean-code}.
