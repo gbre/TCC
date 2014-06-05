@@ -176,6 +176,7 @@ DROP TABLE IF EXISTS `Temporary_F_Rate_Scenario`;
 CREATE Temporary TABLE `Temporary_F_Rate_Scenario` (
   `idRateScenario` int(11) NOT NULL AUTO_INCREMENT,
   `RateScenario` double DEFAULT NULL,
+  `Quantiy_Scenarios` double DEFAULT NULL,
   `numberOfClasses` int(11) DEFAULT NULL,
   `D_Project_idProject` int(11) NOT NULL,
   `D_Release_idRelease` int(11) NOT NULL,
@@ -183,14 +184,14 @@ CREATE Temporary TABLE `Temporary_F_Rate_Scenario` (
 ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `source_info`.`Temporary_F_Rate_Scenario`
-(`RateScenario`, `numberOfClasses`,
+(`RateScenario`,`Quantiy_Scenarios`, `numberOfClasses`,
 `D_Project_idProject`, `D_Release_idRelease`)
 VALUES
-(@rate,?,@idProject, @idRelease);
+(@rate,@total_scenarios,?,@idProject, @idRelease);
 
 REPLACE INTO `source_info`.`F_Rate_Scenario`
-SET `RateScenario` = @rate, `numberOfClasses`= ?, `D_Release_idRelease` = @idRelease,
-`D_Project_idProject`=@idProject;
+SET `RateScenario` = @rate, `numberOfClasses`= ?, `Quantiy_Scenarios` = @total_scenarios, 
+`D_Release_idRelease` = @idRelease, `D_Project_idProject`=@idProject;
 
 
 

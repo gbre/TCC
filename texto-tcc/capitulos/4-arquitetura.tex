@@ -66,39 +66,82 @@ Em fase inicial do trabalho, fora feita a análise entre o Analizo e o SonarQube
 
 O \textit{Data Warehouse} como elemento central do ambiente de \textit{Data Warehousing} deve ser o primeiro a ser projetado \cite{Kimball2002}. Isso ocorre pois o DW deve ser dirigido ao negócio. Logo a modificação do DW impacta principalmente na carga dos dados, na etapa de extração, transformação e carga, requerendo modificações conforme o DW venha a mudar.
 
-Seguindo a metolodogia proposta por \citeonline{Kimball2002}, apresentada na Seção \ref{sec:metodologia-dw}, identificou-se dois processos de negócio. Para o primeiro processo de negócio: coleta dos percentis da métricas de código-fonte e intervalos qualitativos conforme as configurações especificadas como especificado na Seção \ref{sec:Intervalos das Métricas}, foram identificados requisitos de negócio, como se mostra na Tabela \ref{tab:requisitos}.
+Seguindo a metolodogia de \citeonline{Kimball2002} para o projeto de \textit{data warehouse}, apresentada na Seção \ref{sec:metodologia-dw}, foram identificados os processos de negócio e seus respectivos requisitos como se mostra nas Tabelas \ref{tab:requisitos-pecentis} e \ref{tab:requisitos-cenarios} 
 
-\begin{table}[!ht]
+
+\begin{table}[H]
 \centering
-\input{tabelas/requisitos.ltx}
-\caption{Requisitos de Negócio da Coleta de Percentis e Intervalos Qualitativos de Métricas de Código-Fonte}
-\label{tab:requisitos}
+\input{tabelas/requisitos-percentis.ltx}
+\caption{Requisitos de Negócio da Avaliação dos Cenários de Limpeza de Código-Fonte conforme as configurações especificadas na Tabela \ref{tab:good-metrics}}
+\label{tab:requisitos-pecentis}
 \end{table}
 \FloatBarrier
 
-Considerando então que cada requisito de negócio é utilizado em cada uma das métricas da Tabela \ref{tab:good-metrics}, obtém um total de 96 requisitos de negócio para o primeiro processo de negócio. Dando prosseguimento na metodologia proposta de \citeonline{Kimball2002}, identificou-se a periodicidade como releases do software, isto é, cada software pode ter tempos diferenciados de release. Em alguns casos, estas podem ser semestrais ou mensais, contudo em outros casos, é possível obter releases diárias, como resultado da integração de um determinada massa de código em um sistema de integração continua \cite{beckarticle1999}. 
 
-Aplicando o terceiro passo e quarto passo da metodologia de \citeonline{Kimball2002}, identificou-se os fatos e as dimensões a partir da Tabela \ref{requisitos}, onde os termos em negritos foram candidatos a dimensão ou a fato. Após a identificação do fato, criou-se o diagrama de árvore tal como se vê na Figura \ref{dimensoes}, seguindo a metodologia proposta por \citeonline{Golfarelli1998}.
+\begin{table}[H]
+\centering
+\input{tabelas/requisitos-cenarios.ltx}
+\caption{Requisitos de Negócio da Avaliação de Cenários de Limpeza de Código-Fonte conforme a Tabela \ref{tab:cenarios}}
+\label{tab:requisitos-cenarios}
+\end{table}
+\FloatBarrier
+
+
+Aplicando o segundo passo da metodologia de \citeonline{Kimball2002}, identificou-se a periodicidade como as releases do software, isto é, cada software pode ter tempos diferenciados de lançamento de uma nova versão. Em alguns casos, estas podem ser semestrais ou mensais, contudo em outros casos, é possível obter releases diárias, como resultado da integração de um determinada massa de código em um sistema de integração continua \cite{beckarticle1999}. 
+
+Para aplicação do terceiro e quarto passo da metodologia de \citeonline{Kimball2002}, os fatos e as dimensões foram identificados a partir dos termos em negritos dos requisitos de negócio. Após a identificação dos fatos, estes foram classificados quanto à aditividade e relacionados com as respectivas dimensões conforme se mostra na Tabela \ref{tab:dimensoes-fato}
+
+
+\begin{table}[H]
+\centering
+\input{tabelas/dimensoes-fato.ltx}
+\caption{Fatos e Dimensões do \textit{Projeto de Data Warehouse}}
+\label{tab:dimensoes-fato}
+\end{table}
+\FloatBarrier
+
+Tendo os fatos identificados, foram criados os diagramas de árvore, tal como se vê nas Figuras \ref{fig:percentil-arvore}, \ref{fig:cenario-arvore} e \ref{fig:taxa-arvore},  propostos por \citeonline{Golfarelli1998}.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[keepaspectratio=true,scale=0.2]{figuras/dimensoes.eps}
-\caption{Projeto Conceitual de DW para Métricas de Código-Fonte}
-\label{dimensoes}
+\includegraphics[keepaspectratio=true,scale=0.16]{figuras/percentil-arvore.eps}
+\caption{Diagrama de Árvore para Valor Percentil das Métricas de Código-Fonte}
+\label{fig:percentil-arvore}
 \end{figure}
 \FloatBarrier
 
-Após a realização do projeto conceitual, este foi traduzido em projeto lógico, que pode ser visto no Apêndice \ref{project-dw} utilizando a ferramenta MySQL Workbench e implementado em uma instância do MySQL.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.20]{figuras/cenario-arvore.eps}
+\caption{Diagrama de Árvore para Avaliação de Cenários de Limpeza de Código-Fonte}
+\label{fig:cenario-arvore}
+\end{figure}
+\FloatBarrier
 
 
-O segundo processo de negócio, é a avaliação, em nível de classe, da aplicação de cenários de limpeza de código-fonte, conforme a Seção \ref{sec:clean-code}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.20]{figuras/taxa-arvore.eps}
+\caption{Diagrama de Árvore para avaliação da Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte}
+\label{fig:taxa-arvore}
+\end{figure}
+\FloatBarrier
+
+
+Após a construção dos diagramas de árvore, o projeto físico do \textit{Data Warehouse} foi construído utilizando a ferramenta MySQL Workbench. Como é possivel observar na Figura \ref{fig:project-dw}, cada digrama de árvore foi traduzido para uma tabela fato (tabelas verdes) com as respectivas dimensões (tabelas azuis). 
 
 
 
 
-
-
-\todo[inline, color=yellow!50]{Atualizar a seção com as informações de hierarquia, entidades de negócio, granularidade, dimesões e fatos}
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.46]{figuras/modelo-dw1.eps}
+\caption{Projeto Físico do \textit{Data Warehouse}}
+\label{fig:project-dw}
+\end{figure}
+\FloatBarrier
 
 
 \section{Ferramentas de \textit{Data Warehousing}}

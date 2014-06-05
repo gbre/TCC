@@ -27,7 +27,7 @@ Assim como os trabalhos de \citeonline{Palza2003}, \citeonline{Ruiz2005}, \citeo
 
 \subsection{Objetivos do Estudo de Caso}
 
-O objetivo geral do estudo de caso foi avaliar um software durante o seu desenvolvimento no ambiente de \textit{Data Warehousing}. Em consônância ao objetivo geral do estudo de caso e aos objetivos específicos deste trabalho, foram definidos objetivos específicos do estudo de caso, tal como se mostra na Tabela \ref{tab:objetivos-estudo-de-caso}.
+O objetivo geral do estudo de caso foi avaliar um software durante o seu desenvolvimento no ambiente de \textit{Data Warehousing}. Em consonância ao objetivo geral do estudo de caso e aos objetivos específicos deste trabalho, foram definidos objetivos específicos do estudo de caso, tal como se mostra na Tabela \ref{tab:objetivos-estudo-de-caso}.
 
 \begin{table}[H]
 \begin{center}
@@ -38,7 +38,7 @@ O objetivo geral do estudo de caso foi avaliar um software durante o seu desenvo
 \end{table}
 \FloatBarrier
 
-\subsection{Critérios de Seleção de Objeto do Estudo de Caso} 
+\subsection{Seleção de Objeto do Estudo de Caso} 
 
 Para selecionar o software que seria parte do objeto do estudo de caso considerou-se os 
 critérios estábelecidos na Tabela \ref{tab:critérios-estudo-de-caso}. 
@@ -52,6 +52,40 @@ critérios estábelecidos na Tabela \ref{tab:critérios-estudo-de-caso}.
 \end{center}
 \end{table}
 \FloatBarrier
+
+\subsection{Objeto de Estudo}
+
+O IPHAN é responsável pela gestão de diversos processos de preservação do patrimônio cultural, como por exemplo,ações para sua identificação, proteção, gestão e fomento. Decorrente
+de suas atribuições, o órgão produz uma grande quantidade de informações fragmentadas em termos territoriais e temáticos. Nos últimos quatro anos, o IPHAN elaborou uma metodologia
+para definir os processos de cadastro, inventário e gestão do patrimônio cultural material. Essa metodologia tem por objetivo geral abordar o Patrimônio Cultural de forma integrada, sistêmica
+e estratégica, conforme detalhado a seguir:
+
+\begin{itemize}
+\item Integrada: cobrindo todas as categoriais do patrimônio material;
+\item Sistêmica: estabelecendo moldes a serem utlizados nas diversas etapas de ações de preservação, possibilitando o "diálogo" e troca de informações entre áreas e etapas de trabalho;
+\item Estratégica: considerando o mapeamento, a organização e a disponibilização de informações sobre o patrimônio como base para a construção de políticas públicas integradas - com outros parceiros - e de planos de preservação e desenvolvimento das regiões onde se inserem os bens.
+\end{itemize}
+
+Em termos específicos, a metodologia buscou, em primeiro lugar, mapear os procedimentos necessários para a execução das ações de cadastramento, proteção, normatização e fiscalização de bens culturais de natureza material, indicando adicionalmente os dados a serem coletados. Este mapeamento contou com a participação de representantes das Superintendências e Escritórios Técnicos, que, por meio de Grupos de Trabalho, analisaram, de forma crítica, as metodologias até então existentes.
+
+A revisão dos processos levou à formulação da nova metodologia que, por sua vez, permitiu a otimização das atividades de cadastramento de sítios históricos e de bens tombados isoladamente e gerou a normalização das ações de fiscalização. O resultado desse trabalho produziu um conjunto de fichas e procedimentos específicos com demandas para cadastramento de dados textuais, geográficos e imagens.
+
+Há um entendimento no IPHAN de que é necessária a formação de uma rede de proteção fomentada pelo SNPC que consolide o grande volume de informações atualmente produzido por suas unidades administrativas, composto de 27 Superintendências, 30 escritórios técnicos, 4 Unidades Especiais e 2 Parques Históricos Nacionais. Entretanto, na conjuntura atual, a natureza das informações, em grande maioria armazenadas em planilhas e em banco de dados isolados, difculta o processo de consolidação das informações, fato que frusta os esforços para a construção da rede de proteção baseada nos recursos e tecnologias atualmente adotados, pois demandaria o aporte considerável de recursos financeiros e humanos sem ganhos no processo. O órgão se manteria refém da demora na produção de informações decorrentedo intervalo entre ação e recepção das respostas, ou seja, entre a percepção do problema e sua solução.
+
+Apesar do fato de os processos de cadastramento, normatização de sítios urbanos tombados e fiscalização de bens imóveis de metodologia já fazerem parte da realidade das Superintendências e Escritórios Técnicos, o processo manual de suporte e gestão dos dados torna a execução precária e morosa.
+
+Tendo em vista a dificuldade que o processo manual acarreta, o IPHAN decidiu contratar uma empresa de software para desenvolver uma solução que pudesse automatizar o processo de trabalho decorrente da metodologia de inventário, cadastramento, normatização, fiscalização, planejamento e análise e gestão do patrimônio material. Esta solução de software foi concebida sobre a denominação de Sistema Integrado de Conhecimento e Gestão (SICG) que foi constuído em Java (atende-se ao critério CEC1), durante 24 releases mensais (atende-se ao critério CEC2), utilizando \textit{frameworks} como VRaptor, Hibernate formado por 7 módulos:
+
+\begin{itemize}
+\item Módulo de Conhecimento;
+\item Módulo de Análise e Gestão;
+\item Módulo de Cadastro;
+\item Módulo de Administração de Usuários;
+\item Módulo de Fiscalização;
+\item Módulo de Cadastro Auxiliares;
+\item Módulo de Relatórios Adicionais.
+\end{itemize}
+
 
 \subsection{Dados, Fonte dos Dados e Forma de Análise dos Dados}
 
@@ -69,3 +103,7 @@ Os principais dados quantitativos e qualitativos foram identificados na Tabela \
 
 
 \section{Execução do Estudo de Caso e Análise dos Dados}
+
+
+
+\todo[inline, color=Cerulean!50]{Verificar quais e quantos gráficos colocar nesta seção, pois em teoria são 3 gráficos e 2 tabelas para métrica. O que resulta no mínimo em 160 graficos adicionados ao trabalho (5 * 12 métricas * 2 configurações)}
