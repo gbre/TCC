@@ -89,20 +89,20 @@ Seguindo a metolodogia de \citeonline{Kimball2002} para o projeto de \textit{dat
 
 Aplicando o segundo passo da metodologia de \citeonline{Kimball2002}, identificou-se a periodicidade como as releases do software, isto é, cada software pode ter tempos diferenciados de lançamento de uma nova versão. Em alguns casos, estas podem ser semestrais ou mensais, contudo em outros casos, é possível obter releases diárias, como resultado da integração de um determinada massa de código em um sistema de integração continua \cite{beckarticle1999}. 
 
-Para aplicação do terceiro e quarto passo da metodologia de \citeonline{Kimball2002}, os fatos e as dimensões foram identificados a partir dos termos em negritos dos requisitos de negócio. Após a identificação dos fatos, estes foram classificados quanto à aditividade e relacionados com as respectivas dimensões conforme se mostra na Tabela \ref{tab:dimensoes-fato}
+Para aplicação do terceiro e quarto passo da metodologia de \citeonline{Kimball2002}, os fatos e as dimensões foram identificados a partir dos termos em negritos dos requisitos de negócio. Após a identificação dos fatos, estes foram classificados quanto à aditividade~\footnote{\citeonline{Kimball2002} enuncia que fatos que correspondem a porcentagens e taxas são considerados não aditivos e deve-se conter, na mesma tabela, além do fato, o numerador e denominador. Este ocorre com a Taxa de Aproveitamento de Oportunidades de Melhoria de Código-Fonte} e relacionados com as respectivas dimensões conforme se mostra na Tabela \ref{tab:dimensoes-fato}
 
 
-\begin{table}[H]
+\begin{table}[h]
 \centering
 \input{tabelas/dimensoes-fato.ltx}
-\caption{Fatos e Dimensões do \textit{Projeto de Data Warehouse}}
+\caption{Fatos e Dimensões do \textit{Projeto de Data Warehouse} }
 \label{tab:dimensoes-fato}
 \end{table}
 \FloatBarrier
 
-Tendo os fatos identificados, foram criados os diagramas de árvore, tal como se vê nas Figuras \ref{fig:percentil-arvore}, \ref{fig:cenario-arvore} e \ref{fig:taxa-arvore},  propostos por \citeonline{Golfarelli1998}.
+Tendo os fatos identificados, foram criados os diagramas de árvore, tal como proposto por \citeonline{Golfarelli1998}, tal como se vê nas Figuras \ref{fig:percentil-arvore}, \ref{fig:cenario-arvore} e \ref{fig:taxa-arvore}.
 
-\begin{figure}[ht!]
+\begin{figure}[h]
 \centering
 \includegraphics[keepaspectratio=true,scale=0.16]{figuras/percentil-arvore.eps}
 \caption{Diagrama de Árvore para Valor Percentil das Métricas de Código-Fonte}
@@ -111,14 +111,13 @@ Tendo os fatos identificados, foram criados os diagramas de árvore, tal como se
 \FloatBarrier
 
 
-\begin{figure}[ht!]
+\begin{figure}[h]
 \centering
 \includegraphics[keepaspectratio=true,scale=0.20]{figuras/cenario-arvore.eps}
 \caption{Diagrama de Árvore para Avaliação de Cenários de Limpeza de Código-Fonte}
 \label{fig:cenario-arvore}
 \end{figure}
 \FloatBarrier
-
 
 
 \begin{figure}[ht!]
@@ -130,14 +129,12 @@ Tendo os fatos identificados, foram criados os diagramas de árvore, tal como se
 \FloatBarrier
 
 
-Após a construção dos diagramas de árvore, o projeto físico do \textit{Data Warehouse} foi construído utilizando a ferramenta MySQL Workbench. Como é possivel observar na Figura \ref{fig:project-dw}, cada digrama de árvore foi traduzido para uma tabela fato (tabelas verdes) com as respectivas dimensões (tabelas azuis). 
-
-
+Após a construção dos diagramas de árvore, o projeto físico do \textit{Data Warehouse} foi construído utilizando a ferramenta MySQL Workbench. Como é possivel observar na Figura \ref{fig:project-dw}, cada digrama de árvore foi traduzido para uma tabela fato (tabelas verdes) com as respectivas dimensões (tabelas azuis)
 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[keepaspectratio=true,scale=0.46]{figuras/modelo-dw1.eps}
+\includegraphics[keepaspectratio=true,scale=0.49]{figuras/modelo-dw.eps}
 \caption{Projeto Físico do \textit{Data Warehouse}}
 \label{fig:project-dw}
 \end{figure}
@@ -153,7 +150,7 @@ as áreas de ETL, \textit{reporting}, OLAP e mineração de dados. Cada um dos c
 
 \subsection{Implementação da Extração, Transformação e Carga dos Dados}
 \label{implementação-ETL}
-O Pentaho Data Integration Community Edition ou Kettle\footnote{Disponível em \url{http://kettle.pentaho.com/}} é feito na linguagem Java e implementa o processo de ETL (Extração, Transformação e Carga de Dados). A interface do Kettle é mostrada na Figura \ref{pdi} e as principais características do Kettle e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{kettle}.
+O Pentaho Data Integration Community Edition ou Kettle \footnote{Disponível em \url{http://kettle.pentaho.com/}} é feito na linguagem Java e implementa o processo de ETL (Extração, Transformação e Carga de Dados). A interface do Kettle é mostrada na Figura \ref{pdi} e as principais características do Kettle e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{kettle}.
 
 \begin{figure}[ht!]
 \centering

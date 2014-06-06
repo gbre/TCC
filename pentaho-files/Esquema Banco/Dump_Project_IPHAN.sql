@@ -1175,6 +1175,7 @@ INSERT INTO `D_Release` (`idRelease`, `release_name`, `release_number`) VALUES
 CREATE TABLE IF NOT EXISTS `D_Scenario_Clean_Code` (
   `idScenario` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
+  `recomendations` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`idScenario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1182,13 +1183,12 @@ CREATE TABLE IF NOT EXISTS `D_Scenario_Clean_Code` (
 -- Fazendo dump de dados para tabela `D_Scenario_Clean_Code`
 --
 
-INSERT INTO `D_Scenario_Clean_Code` (`idScenario`, `name`) VALUES
-(1, 'Classe Pouco Coesa'),
-(2, 'Interface dos Métodos'),
-(3, 'Classes com muitos filhos'),
-(4, 'Classe com métodos grandes e/ou muitos condic'),
-(5, 'Classe com muita Exposição '),
-(6, 'Complexidade Estrutural');
+INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES (1, 'Classe Pouco Coesa', 'Reduzir a Subdivisão da Classe');
+INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES (2, 'Interface dos Métodos', 'Minimizar o número de parâmetros');
+INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES (3, 'Classes com muitos filhos', 'Trocar Herança por Agregação');
+INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES (4, 'Classe com métodos grandes e/ou muitos condicionais', 'Quebrar os Métodos');
+INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES (5, 'Classe com muita Exposição ', 'Reduzir o número de pârametros públicos');
+INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES (6, 'Complexidade Estrutural', 'Reduzir a quantidade de responsabilidades da Classe');
 
 -- --------------------------------------------------------
 

@@ -163,6 +163,7 @@
 \backcite {Kimball2002}{{49}{4.3}{table.4.21}}
 \backcite {beckarticle1999}{{49}{4.3}{table.4.21}}
 \backcite {Kimball2002}{{49}{4.3}{table.4.21}}
+\backcite {Kimball2002}{{49}{6}{Hfootnote.7}}
 \backcite {Golfarelli1998}{{50}{4.3}{table.4.22}}
 \backcite {fonseca2007alternativas}{{55}{4.4.1}{table.4.23}}
 \backcite {spofford2006mdx}{{58}{4.4.2}{table.4.25}}
@@ -172,9 +173,9 @@
 \backcite {wohlin2012experimentation}{{60}{5.1}{section.5.1}}
 \backcite {brereton2008using}{{60}{5.1}{section.5.1}}
 \backcite {wohlin2012experimentation}{{60}{5.1}{section.5.1}}
-\backcite {Palza2003}{{60}{5.2}{section.5.2}}
-\backcite {Ruiz2005}{{60}{5.2}{section.5.2}}
-\backcite {Castellanos2005}{{60}{5.2}{section.5.2}}
-\backcite {Becker2006}{{60}{5.2}{section.5.2}}
-\backcite {Folleco2007}{{60}{5.2}{section.5.2}}
-\backcite {Silveira2010}{{60}{5.2}{section.5.2}}
+\backcite {Palza2003}{{60}{5.1.1}{subsection.5.1.1}}
+\backcite {Ruiz2005}{{60}{5.1.1}{subsection.5.1.1}}
+\backcite {Castellanos2005}{{60}{5.1.1}{subsection.5.1.1}}
+\backcite {Becker2006}{{60}{5.1.1}{subsection.5.1.1}}
+\backcite {Folleco2007}{{60}{5.1.1}{subsection.5.1.1}}
+\backcite {Silveira2010}{{60}{5.1.1}{subsection.5.1.1}}

@@ -20,7 +20,7 @@ Para o planejamento do estudo de caso em engenharia de software é essencial, se
 O protocolo de estudo de caso deste trabalho, que foi baseado em \citeonline{brereton2008using} e \citeonline{wohlin2012experimentation} foi dividido em seções, conforme se vê a seguir.
 
 
-\section{Trabalhos Relacionados ao Estudo de Caso}
+\subsection{Trabalhos Relacionados ao Estudo de Caso}
 
 Assim como os trabalhos de \citeonline{Palza2003}, \citeonline{Ruiz2005}, \citeonline{Castellanos2005}, \citeonline{Becker2006}, \citeonline{Folleco2007}, \citeonline{Silveira2010}, buscou-se alcançar uma validação empírica da utilização ambiente de \textit{Data Warehousing} proposto no Capítulo \ref{chap:arquitetura}.
 
@@ -55,6 +55,8 @@ critérios estábelecidos na Tabela \ref{tab:critérios-estudo-de-caso}.
 
 \subsection{Objeto de Estudo}
 
+\subsubsection{Visão Geral}
+
 O IPHAN é responsável pela gestão de diversos processos de preservação do patrimônio cultural, como por exemplo,ações para sua identificação, proteção, gestão e fomento. Decorrente
 de suas atribuições, o órgão produz uma grande quantidade de informações fragmentadas em termos territoriais e temáticos. Nos últimos quatro anos, o IPHAN elaborou uma metodologia
 para definir os processos de cadastro, inventário e gestão do patrimônio cultural material. Essa metodologia tem por objetivo geral abordar o Patrimônio Cultural de forma integrada, sistêmica
@@ -74,6 +76,9 @@ Há um entendimento no IPHAN de que é necessária a formação de uma rede de p
 
 Apesar do fato de os processos de cadastramento, normatização de sítios urbanos tombados e fiscalização de bens imóveis de metodologia já fazerem parte da realidade das Superintendências e Escritórios Técnicos, o processo manual de suporte e gestão dos dados torna a execução precária e morosa.
 
+
+
+\subsubsection{O Software Analisado}
 Tendo em vista a dificuldade que o processo manual acarreta, o IPHAN decidiu contratar uma empresa de software para desenvolver uma solução que pudesse automatizar o processo de trabalho decorrente da metodologia de inventário, cadastramento, normatização, fiscalização, planejamento e análise e gestão do patrimônio material. Esta solução de software foi concebida sobre a denominação de Sistema Integrado de Conhecimento e Gestão (SICG) que foi constuído em Java (atende-se ao critério CEC1), durante 24 releases mensais (atende-se ao critério CEC2), utilizando \textit{frameworks} como VRaptor, Hibernate formado por 7 módulos:
 
 \begin{itemize}
@@ -100,10 +105,32 @@ Os principais dados quantitativos e qualitativos foram identificados na Tabela \
 \end{table}
 \FloatBarrier
 
+\subsection{Validade do Estudo de Caso}
 
+\subsection{Limitação do Estudo de Caso}
 
 \section{Execução do Estudo de Caso e Análise dos Dados}
 
 
+Para cada uma das releases do SICG, coletou-se o código-fonte, conforme a disponibidilidade, em um servidor FTP cedido pelo IPHAN. Em alguns casos, o próprio IPHAN não possuía o código-fonte de uma determinada release tal como se mostra na Figura \ref{fig:repositorio-IPHAN}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.5]{figuras/repositorio-iphan.eps}
+\caption{Informações do Repositório de Código-Fonte}
+\label{fig:repositorio-IPHAN}
+\end{figure}
+\FloatBarrier
+
+
+Após o código-fonte de cada versão ser coletado, foi feita uma análise da estrutura de diretórios, a fim de obter uma padronização na análise das métricas de código-fonte. Em casos que foram marcados com amarelos conforme a figura \ref{fig:repositorio-IPHAN}, a estrutura de diretórios não estava condizente com a adotada, sendo necessário a correção para que as ańálises de código-fonte pudessem ser executadas corretamente para que os dados das métricas de código-fonte pudessem posteriormente ser caregados no ambiente de \textit{Data Warehousing} proposto no Capítulo \ref{chap:arquitetura}. Dessa forma, foi possível obter para cada release: Valor Percentil das Métricas de Código-Fonte para cada uma das, Quantidade de Cenários de Limpeza presentes em uma determinada Classe do Projeto e o cálculo da Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte. 
+
+
+\subsection{Análise dos Valores Percentis para Métricas de Código-Fonte do SICG}
+
+
+\subsection{Análise dos Cenários de Limpeza identificados no SICG}
+
+\subsection{Análise da Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte}
 
 \todo[inline, color=Cerulean!50]{Verificar quais e quantos gráficos colocar nesta seção, pois em teoria são 3 gráficos e 2 tabelas para métrica. O que resulta no mínimo em 160 graficos adicionados ao trabalho (5 * 12 métricas * 2 configurações)}
