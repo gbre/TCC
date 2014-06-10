@@ -27,19 +27,19 @@ Quanto ao objetivo \textbf{OE6}, foram contabilizadas, ao longo do trabalho, as 
 
 Ao se observar os dados obtidos na Tabela \ref{tab:resultados-OLAP} e a própria execução do estudo de caso da Seção \ref{sec:execution-case-study}, concluiu-se que o ambiente de \textit{Data Warehousing} conseguiu responder às necessidades estabelecidas por cada um dos requisitos de negócio dos procesos de negócio. 
 
-Por meio da utilização do plugin Saiku no ambiente de \textit{Data Warehousing}, é possível cada uma dessas consultas seja exibida em 8 gráficos diferentes ou em Tabelas. Cada uma das consultas pode ainda conter várias outras consultas OLAP que também responderiam a outras necessidades, contudo este trabalho ateve-se a contabilizar apenas as que respondiam aos requisitos de negócio.
+Por meio da utilização do plugin Saiku no ambiente de \textit{Data Warehousing}, é possível cada uma dessas consultas seja exibida em 8 gráficos diferentes ou em Tabelas. Cada uma das consultas pode ainda conter várias outras consultas OLAP que também responderiam a outras necessidades, contudo este trabalho se ateve a contabilizar apenas as que respondiam aos requisitos de negócio.
 
 Por fim, acredita-se que ao satisfazer tanto a cada um dos objetivos específicos, quanto a objetivo geral do trabalho, contribuiu-se na avaliação da utilização de ambientes de \textit{Data Warehousing} em processos de medição de métricas de código-fonte. 
 
 \section{Limitações}
 
-Como limitações do trabalho, cabe destacar que o ambiente de \textit{Data Warehousing}, especificado neste trabalho, é dependente da ferramenta de análise estática de código-fonte.
+Como limitações do trabalho, cabe destacar que o ambiente de \textit{Data Warehousing}, especificado neste trabalho, é dependente da ferramenta de análise estática de código-fonte. Isto é, como o Analizo, que foi a ferramenta escolhida, limita-se as linguagens de programação C, C++ e Java.
+
+Como apresentado anteriormente, na Seção \ref{sec:validade-estudo}, a utilização de um estudo de caso por si só não é suficiente para generalizar os resultados dele obtidos \cite{yin2011applications}. Por esse motivo, a utilização do estudo de caso é uma limitação do trabalho.
+
+Quanto aos metadados do Projeto de \textit{Data Warehouse}, apresentados \ref{sec:project-dw}, verfica-se que para mapear corretamente um determinado cenário de código-fonte com um intervalo de uma métrica, escolheu-se colocar duas chaves estrangeiras da Tabela~"Meta\_Metric\_Ranges"~na Tabela~"Meta\_Metric\_Ranges\_Meta\_Scenario". Este fato implica uma limitação do modelo em que não é possível associar mais dois intervalos de  duas métricas de código-fonte a um cenário de limpeza de código-fonte.  
 
 
 \section{Trabalhos Futuros}
 
-
-\todo[inline, color=yellow!50]{Limitações: Ambiente dependente da ferramenta de análise estática, Abordagens para as métricas, Utilização do Mezuro ou BiggData}
-
-
-\todo[inline, color=Cerulean!50]{Sugestões do Professor Paulo - Trabalho Futuro: Melhor Verificar a correlação entre os padrões de projeto e os cenários de limpeza. Verifica a adoção das práticas de refatoração e revisão de código conjuntamente com a detecção de cenários}
+Quanto aos trabalhos futuros, foi possível identificar duas possibilidades imediatas. A primeira possibilidade é uma melhor avaliação de como os padrões de projeto propostos inicialmente na Tabela \ref{tab:cenarios} se correlacionam com as avaliações das métricas de código-fonte e a detecção dos cenários de limpeza de código-fonte. A segunda possibilidade é investigação, com mecanismos estatísticos, com apoio de estudo de múltiplos casos, como que a Taxa de Aproveitamento de Oportunidades de Melhoria de código-fonte pode se compartar a depender como se utilização as boas práticas de código-fonte, como as citadas na Tabela \ref{tab:conceitos}.

@@ -80,7 +80,7 @@ Apesar do fato de os processos de cadastramento, normatização de sítios urban
 
 
 \subsubsection{O Software Analisado}
-Tendo em vista a dificuldade que o processo manual acarreta, o IPHAN decidiu contratar uma empresa de software para desenvolver uma solução que pudesse automatizar o processo de trabalho decorrente da metodologia de inventário, cadastramento, normatização, fiscalização, planejamento e análise e gestão do patrimônio material. Esta solução de software foi concebida sobre a denominação de Sistema Integrado de Conhecimento e Gestão (SICG) que foi construído em Java (atende-se ao critério CEC1), durante 24 releases mensais (atende-se ao critério CEC2), utilizando \textit{frameworks} como VRaptor, Hibernate formado por 7 módulos:
+Tendo em vista a dificuldade que o processo manual acarreta, o IPHAN decidiu contratar uma empresa de software para desenvolver uma solução que pudesse automatizar o processo de trabalho decorrente da metodologia de inventário, cadastramento, normatização, fiscalização, planejamento e análise e gestão do patrimônio material. Esta solução de software foi concebida sobre a denominação de Sistema Integrado de Conhecimento e Gestão (SICG) que foi construído em Java (atende-se ao critério CEC1), durante 24 \textit{releases} mensais (atende-se ao critério CEC2), utilizando \textit{frameworks} como VRaptor, Hibernate formado por 7 módulos:
 
 \begin{itemize}
 \item Módulo de Conhecimento;
@@ -108,6 +108,7 @@ Após a identificação dos objetivos do estudo de caso, foram identificados os 
 \FloatBarrier
 
 \subsection{Validade do Estudo de Caso}
+\label{sec:validade-estudo}
 
 \citeonline{yin2011applications} destaca que há quatro ameaças a realização de estudos de caso: Validade de Construção, Validade Interna, Validade Externa e de Confiabilidade.
 
@@ -117,12 +118,12 @@ A validade interna é garantida quando as conclusões apresentadas pelo estudo d
 
 Quanto a validade externa destaca-se que a utilização de um estudo de caso não é suficiente para generalizar os resultados dele obtidos, sendo necessário a utilização de estudo em múltiplos casos, a fim de comprovar a genericidade dos resultados \cite{yin2011applications}. Embora, como citado anteriormente, alguns trabalhos já trabalharam com a utilização de métricas e ambientes de \textit{Data Warehousing}, não há como correlacionar os resultados obtidos devido a grande diferenças de contexto e aplicação do ambiente.
 
-Com relação a confiabilidade, \citeonline{yin2011applications} enuncia que para se garanti-lá em um estudo de caso, é necessário que este tenha repetibilidade caso seja usada a mesma fonte dos dados. Neste trabalho, com a documentação da implementação do ambiente de \textit{Data Warehousing}, presente no Capítulo \ref{chap:arquitetura}, conjuntamente com o protocolo de estudo de caso, apresentado a partir da Seção {sec:planning-case}, garantem a repetibilidade do estudo de caso.
+Com relação a confiabilidade, \citeonline{yin2011applications} enuncia que para se garanti-lá em um estudo de caso, é necessário que este tenha repetibilidade caso seja usada a mesma fonte dos dados. Neste trabalho, com a documentação da implementação do ambiente de \textit{Data Warehousing}, presente no Capítulo \ref{chap:arquitetura},conjuntamente com o protocolo de estudo de caso, apresentado a partir da Seção {sec:planning-case}, garantem a repetibilidade do estudo de caso.
 
 \section{Execução do Estudo de Caso e Análise dos Dados}
 \label{sec:execution-case-study}
 
-Para cada uma das releases do SICG, coletou-se o código-fonte, conforme a disponibidilidade, em um servidor FTP cedido pelo IPHAN. Em alguns casos, o próprio IPHAN não possuía o código-fonte de uma determinada release tal como se mostra na Figura \ref{fig:repositorio-IPHAN}.
+Para cada uma das \textit{releases} do SICG, coletou-se o código-fonte, conforme a disponibidilidade, em um servidor FTP cedido pelo IPHAN. Em alguns casos, o próprio IPHAN não possuía o código-fonte de uma determinada \textit{release} tal como se mostra na Figura \ref{fig:repositorio-IPHAN}.
 
 \begin{figure}[ht!]
 \centering
@@ -133,7 +134,7 @@ Para cada uma das releases do SICG, coletou-se o código-fonte, conforme a dispo
 \FloatBarrier
 
 
-Após o código-fonte de cada versão ser coletado, foi feita uma análise da estrutura de diretórios, a fim de obter uma padronização na análise das métricas de código-fonte. Em casos que foram marcados com amarelos conforme a Figura \ref{fig:repositorio-IPHAN}, a estrutura de diretórios não estava condizente com a adotada pelo projeto, sendo necessário a correção para que as análises de código-fonte pudessem ser executadas corretamente. Posteriormente, os dados obtidos da análise estática do código-fonte foram carregados no ambiente de \textit{Data Warehousing} proposto no Capítulo \ref{chap:arquitetura}. Dessa forma, foi possível obter para cada release que estava com código-fonte presente: Valor Percentil para cada uma das Métricas de Código-Fonte, Quantidade de Cenários de Limpeza presentes em uma determinada Classe do Projeto e o cálculo da Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte. 
+Após o código-fonte de cada versão ser coletado, foi feita uma análise da estrutura de diretórios, a fim de obter uma padronização na análise das métricas de código-fonte. Em casos que foram marcados com amarelos conforme a Figura \ref{fig:repositorio-IPHAN}, a estrutura de diretórios não estava condizente com a adotada pelo projeto, sendo necessário a correção para que as análises de código-fonte pudessem ser executadas corretamente. Posteriormente, os dados obtidos da análise estática do código-fonte foram carregados no ambiente de \textit{Data Warehousing} proposto no Capítulo \ref{chap:arquitetura}. Dessa forma, foi possível obter para cada \textit{release} que estava com código-fonte presente: Valor Percentil para cada uma das Métricas de Código-Fonte, Quantidade de Cenários de Limpeza presentes em uma determinada Classe do Projeto e o cálculo da Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte. 
 
 
 \subsection{Análise dos Valores Percentis para Métricas de Código-Fonte do SICG}
@@ -169,18 +170,20 @@ Em contraponto a métrica \textbf{LCOM4}, observa-se que a métrica \textbf{NOM}
 Observando os valores percentis obtidos para métrica \textbf{CBO}, verifica-se, que para ambas as configurações, o intervalo qualitativo~"Ruim". Embora o valor percentil alto possar ser um indicativo de que o projeto tem um alto fator de acoplamento entre os objetos, verifica-se que o projeto tem um alto grau de utilização de \textit{frameworks} como Hibernate, VRaptor que é um framework construído sobre o framework Spring. Este fato, mostra portanto que para a métrica \textbf{CBO} é possível considerar o percentil 90 ou avaliar outras configurações que sejam mais adequadas as características do Projeto, pois OpenJDK e Tomcat parecem não ser bom parâmetros de avaliação.  
 
 
-Visando avaliar também a quantidade de consultas OLAP realizadas no ambiente para atender a esse requisito de negócio, foram contabilizadas 2 consultas OLAP de \textit{Drill Down} sobre as dimensões do Projeto, que são as respectivas Figuras \ref{fig:total-openJDK8} e \ref{fig:total-tomcat}. Com intuito de analisar cada uma das métricas, foram contabilizadas também as operações de análise seletiva: \textit{Slice and Dice} e \textit{Pivoting}. Para cada métrica foram necessários 2 \textit{Slice and Dice}, um para selecionar a configuração e outro para selecionar a métrica desejada e 1 \textit{Pivoting} para se gerar o gráfico em que nas linhas ficavam as \textit{releases} do software.  
+Visando avaliar também a quantidade de consultas OLAP realizadas no ambiente para atender a esse requisito de negócio, foram contabilizadas 2 consultas OLAP de \textit{Drill Down} sobre as dimensões do Projeto, que são as respectivas Figuras \ref{fig:total-openJDK8} e \ref{fig:total-tomcat}. 
+
+Com intuito de analisar cada uma das métricas, como se mostra nos gráficos e tabelas do Apêndice \ref{graphs}, foram contabilizadas também as operações de análise seletiva: \textit{Slice and Dice} e \textit{Pivoting}. Para cada métrica foram necessários 2 \textit{Slice and Dice}, um para selecionar a configuração e outro para selecionar a métrica desejada e 1 \textit{Pivoting} para se gerar o gráfico em que nas linhas ficavam as \textit{releases} do software.  
  
 
 \subsection{Análise dos Cenários de Limpeza identificados no SICG}
 
-Para analisar os cenários de limpeza de código-fonte, foram extraídas as métricas de código-fonte de cada classe e analisadas conforme a Tabela \ref{tab:cenarios}. Para cada release, foram identificados cenários de limpeza de código-fonte conforme a Figura \ref{fig:cenarios-release}.
+Para analisar os cenários de limpeza de código-fonte, foram extraídas as métricas de código-fonte de cada classe e analisadas conforme a Tabela \ref{tab:cenarios}. Para cada \textit{release}, foram identificados cenários de limpeza de código-fonte conforme a Figura \ref{fig:cenarios-release}.
 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[keepaspectratio=true,scale=0.47]{figuras/total-cenario-tipo.eps}
-\caption{Cenários de Limpeza de Código-Fonte identificados por Tipo do Cenário e Release}
+\caption{Total de Cenários de Limpeza de Código-Fonte identificados por cenário e \textit{Release}}
 \label{fig:cenarios-release}
 \end{figure}
 \FloatBarrier
@@ -196,7 +199,9 @@ Realizando uma consuta OLAP de \textit{Drill-Up}, obtém-se uma consolidação d
 \end{figure}
 \FloatBarrier
 
-Conforme é possível observar nas Figuras \ref{fig:cenarios-release} e \ref{fig:cenarios-total}, foram detectados mais cenários de limpeza de código-fonte dos tipos \textbf{Complexidade Estrutural}, \textbf{Classe Pouco Coesa} e \textbf{Interface dos Métodos} respectivamente. Os três Cenários de Limpeza com menor número de incidências foram \textbf{Classe com Muita Exposição}, \textbf{Classe com Muitos Filhos} e \textbf{Classe com Métodos Muito Grande e/ou com muitos condicionais}. 
+Conforme é possível observar nas Figuras \ref{fig:cenarios-release} e \ref{fig:cenarios-total}, foram detectados mais cenários de limpeza de código-fonte dos tipos \textbf{Complexidade Estrutural}, \textbf{Classe Pouco Coesa} e \textbf{Interface dos Métodos} respectivamente. Os três Cenários de Limpeza com menor número de incidências foram \textbf{Classe com Muita Exposição}, \textbf{Classe com Muitos Filhos} e \textbf{Classe com Métodos Muito Grande e/ou com muitos condicionais}.
+
+No Apêndice \ref{scenarios}, foram detalhadas, para cada um dos cenários de limpeza de código-fonte, para cada uma das \textit{releases}, as classes que contêm os de cenários de limpeza de código de código-fonte. Para realizar esta consulta em cada um dos cenários, foram realizadas uma consulta OLAP de \textit{Drill-Down} e outra de \textit{Slice and Dice}.
 
 Em uma escala de priorização, de qual cenário de limpeza de código-fonte deve ser tratado primeiro, recomenda-se, para o projeto analisado, tratar o cenário de \textbf{Complexidade Estrutural}, pois este sozinho chega a responder entre 55\% a 68\% da quantidade total de cenários identificados. 
 
@@ -233,7 +238,7 @@ onde $ Ce $ é o total de cenário de limpeza e $ Cl $ é a quantidade classes.
  Embora se pudesse realizar o cálculo acima, utilizando a consulta que realiza o \textit{Drill-Up} nas dimensões, Figura \ref{fig:cenarios-total}, preferiu consolidar o fato do número de cenários de limpeza em uma determinada release em uma outra tabela fato. Como explicado na Seção \ref{sec:project-dw}, \citeonline{Kimball2002} recomenda 
  que as taxas, que são fatos não aditivos,  devem está na mesma tabela que o numerador e denominador.
 
- Dessa forma, ao se realizar uma consulta OLAP de \textit{Drill Down} nas Dimensões associadas, obteve-se a Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte por cada release do software conforme se mostra nas Figuras \ref{fig:taxa-cenarios} e \ref{fig:grafico-taxa} e o crescimento do projeto conforma a Figura \ref{fig:crescimento-projeto} 
+ Dessa forma, ao se realizar uma consulta OLAP de \textit{Drill Down} nas Dimensões associadas, obteve-se a Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte por cada release do software conforme se mostra nas Figuras \ref{fig:taxa-cenarios} e \ref{fig:grafico-taxa} e o crescimento do projeto conforma a Figura \ref{fig:crescimento-projeto}. 
 
 
 \begin{figure}[H]
@@ -264,5 +269,5 @@ onde $ Ce $ é o total de cenário de limpeza e $ Cl $ é a quantidade classes.
 
 
 
-Utilizando as Figuras \ref{fig:taxa-cenarios} e \ref{fig:grafico-taxa}, observa-se que o projeto cresceu de 67, na primeira release, classes para 914 classes ao final da última release e o número total de cenários de limpeza de código-fonte indentificados cresceu de 27 para 397. Realizando o cálculo da Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte, observou-se que há uma tendência de que a tava se mantenha entre 0,4 a 0,5. Este fato pode indicar duas hipóteses: a primeira de que o projeto cresceu em uma taxa muito maior que a quantidade de cenários de limpeza, indicando assim uma estabilidade na complexidade do projeto ou que não foram promovidas atividades de melhoria de código-fonte ao longo das 24 releases.  
+Utilizando as Figuras \ref{fig:taxa-cenarios} e \ref{fig:grafico-taxa}, observa-se que o projeto cresceu de 67, na primeira release, classes para 914 classes ao final da última release e o número total de cenários de limpeza de código-fonte identificados cresceu de 27 para 397. Ao se realizar cálculo da Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte, observou-se que há uma tendência de que a tava se mantenha entre 0,4 a 0,5. Este fato pode indicar duas hipóteses: a primeira de que o projeto cresceu em uma taxa muito maior que a quantidade de cenários de limpeza, indicando assim uma estabilidade na complexidade do projeto ou que não foram promovidas atividades de melhoria de código-fonte ao longo das 24 releases.  
 
