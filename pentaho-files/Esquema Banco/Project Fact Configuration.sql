@@ -1,4 +1,4 @@
-USE source_info;
+SE source_info;
 
 SET @idProject = (SELECT max(idProject) from D_Project);
 
@@ -469,5 +469,3 @@ INSERT INTO `F_Project_Metric`
 `D_Configuration_idConfiguration`, `D_Release_idRelease`,`D_Time_idTime`)
 VALUES
 (?, @idProject, @idRFC, @qualityWorstRFC, @Worst_Configuration, @idRelease, @idTime);
-
-

@@ -63,16 +63,17 @@ Tendo as características gerais de cada ferramenta levantadas, foram comparadas
 Em fase inicial do trabalho, fora feita a análise entre o Analizo e o SonarQube, que resultou na decisão de utilizar o SonarQube. Contudo, desde a versão 4.1, o SonarQube retirou as métricas: \textbf{LCOM4, RFC, DIT, NOC}~\footnote{CoreMetrics do SonarQube: \url{https://github.com/SonarSource/sonarqube/blob/master/sonar-plugin-api/src/main/java/org/sonar/api/measures/CoreMetrics.java}}. Dado que este fato, impacta sobre o principal objetivo do trabalho, migrou-se para a ferramenta Analizo. Esta evoluiu e ganhou a possibilidade de emitir saídas das métricas em CSV que detalham nome da classe e as respectivas métricas, atendendo assim ao critério CAE02. Adicionalmente, o Analizo permitiu ao trabalho incorporar a análise das métricas \textbf{ANPM, AMLOC, CBO, NPA}, que como foi observado na Seção \ref{sec:clean-code}, são cruciais na detecção de cenários de limpeza de código-fonte.
 
 \section{Projeto do \textit{Data Warehouse}}
+\label{sec:project-dw}
 
 O \textit{Data Warehouse} como elemento central do ambiente de \textit{Data Warehousing} deve ser o primeiro a ser projetado \cite{Kimball2002}. Isso ocorre pois o DW deve ser dirigido ao negócio. Logo a modificação do DW impacta principalmente na carga dos dados, na etapa de extração, transformação e carga, requerendo modificações conforme o DW venha a mudar.
 
-Seguindo a metolodogia de \citeonline{Kimball2002} para o projeto de \textit{data warehouse}, apresentada na Seção \ref{sec:metodologia-dw}, foram identificados os processos de negócio e seus respectivos requisitos como se mostra nas Tabelas \ref{tab:requisitos-pecentis} e \ref{tab:requisitos-cenarios} 
+Seguindo a metolodogia de \citeonline{Kimball2002} para o projeto de \textit{data warehouse}, apresentada na Seção \ref{sec:metodologia-dw}, foram identificados os processos de negócio e seus respectivos requisitos como se mostra nas Tabelas \ref{tab:requisitos-pecentis} e \ref{tab:requisitos-cenarios}. 
 
 
 \begin{table}[H]
 \centering
 \input{tabelas/requisitos-percentis.ltx}
-\caption{Requisitos de Negócio da Avaliação dos Cenários de Limpeza de Código-Fonte conforme as configurações especificadas na Tabela \ref{tab:good-metrics}}
+\caption{Requisitos de Negócio da Avaliação dos Valores Percentis das Métricas de Código-Fonte conforme as configurações especificadas na Tabela \ref{tab:good-metrics}}
 \label{tab:requisitos-pecentis}
 \end{table}
 \FloatBarrier
@@ -81,7 +82,7 @@ Seguindo a metolodogia de \citeonline{Kimball2002} para o projeto de \textit{dat
 \begin{table}[H]
 \centering
 \input{tabelas/requisitos-cenarios.ltx}
-\caption{Requisitos de Negócio da Avaliação de Cenários de Limpeza de Código-Fonte conforme a Tabela \ref{tab:cenarios}}
+\caption{Requisitos de Negócio da Avaliação de Cenários de Limpeza de Código-Fonte e Avaliação de Taxa de Aproveitamento de Oportunidades de Melhoria de Código-Fonte conforme a Tabela \ref{tab:cenarios}}
 \label{tab:requisitos-cenarios}
 \end{table}
 \FloatBarrier
@@ -140,6 +141,26 @@ Após a construção dos diagramas de árvore, o projeto físico do \textit{Data
 \end{figure}
 \FloatBarrier
 
+Visando facilitar o processo de \textit{Extraction-Transformation and Load}, decidiu-se criar uma área de metadados mostrada na Figura \ref{fig:metadados} com intuito de representar os dados sobre os dados dos processos de negócio.
+
+Esta decisão de projeto foi motivada pela recomendação de que os metadados são todas as informações que constituem informações para os dados que farão parte do \textit{Data Warehouse}, sendo que não há uma única forma de fazê-lo para atender as necessidades técnicas e administrativas. Além disso, a principal vantagem de utilização é facilitar a transformação de dados, no processo de ETL \cite{Kimball2002}.
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[keepaspectratio=false,scale=0.5]{figuras/metadados.eps}
+\caption{Metadados do \textit{Data Warehouse}}
+\label{fig:metadados}
+\end{figure}
+\FloatBarrier
+
+
+Na Tabela~"Meta\_Metric\_Ranges"~contém cada uma das configurações de intervalos qualitativos para cada umas das métricas de código-fonte conforme descrito na Tabela \ref{tab:good-metrics}. Já na Tabela~"Meta\_Scenario"~estão contidos os cenários de limpeza de código-fonte, bem como as recomendações de limpeza para cada um dos cenários conforme descrito na Tabela \ref{tab:cenarios}. 
+
+
+Para atender o requisito de projeto, observou-se que cada cenário de limpeza identificado é composto por até dois intervalos qualitativos de métricas de código-fonte. Por este motivo, decidiu-se por criar a Tabela~"Meta\_Metric\_Ranges\_Meta\_Scenario"~como as associações entre os cenários de limpeza de código-fonte e os intervalos qualitativos de métricas de código-fonte, como duas chaves estrangeiras da Tabela~"Meta\_Metric\_Ranges". 
+
+
 
 \section{Ferramentas de \textit{Data Warehousing}}
 
@@ -171,16 +192,7 @@ O Pentaho Data Integration Community Edition ou Kettle \footnote{Disponível em 
 O Kettle possui dois tipos de componentes internos: \textit{Job} e \textit{Transformation}. O primeiro permite executar tarefas, em nível mais alto, de fluxo de controle, tais como, mandar um email em caso de falha, baixar um arquivo, executar transformações  e entre outras atividades. Já a \textit{Transformation} permite tratamento aos dados incluindo desde entrada de dados por diversas fontes até a persistência em uma variedade de SGBDs.
 
 
-Para a implementação do ETL no Kettle, utilizou-se dos arquivos CSV resultantes da análise de métricas de código-fonte do Analizo. Embora, o Kettle tivesse componentes de interpretação dos elementos de CSV, no presente trabalho, decidiu-se por converter CSV obtido do Analizo em arquivos JSON, visto que componente de CSV do Kettle, converte-o para XML, sendo que este é mais lento e menos versátil quando comparado ao JSON, tal como se mostra no trabalho de \citeonline{fonseca2007alternativas}. Visando realizar a conversão, foi escrito um pequeno \textit{parser} na linguagem \textit{Ruby}, tal como se vê no Código-Fonte \ref{Ruby}.
-
-\begin{center}
-\begin{minipage}{0.5\textwidth}
-\lstinputlisting[caption=\textit{Parser} de CSV para JSON, language=Ruby, label=Ruby]{codigos/parser.rb}
-\end{minipage}
-\end{center}
-
-Todas as implementações de \textit{Transformation} e \textit{Job} que foram elaboradas no decorrer do trabalho foram descritas em detalhes no apêndice \ref{implementação}.
-
+A descrição completa da implementação do processo de \textit{Extraction-Transformation-Load} na ferramenta Kettle foi descrita no Apêndice \ref{sec:implementação-etl}.
 
 \subsection{Implementação das Consultas OLAP e Visualização de Dados}
 

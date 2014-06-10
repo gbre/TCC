@@ -1,11 +1,43 @@
 \chapter{Conclusão}
 
 
-\section{Resultados da Implementação do Ambiente de \textit{Data Warehousing}}
+Ao longo deste trabalho de conclusão de conclusão, foram investigados mecanismos para avaliar as métricas de código-fonte, facilitar sua interpretação, aumentar a visibilidade destas com intuito de apoiar decisões técnicas, como por exemplo, a refatoração de código. A fim de se alcançar este objetivo, foi hipotetizado que a utilização de um ambiente de \textit{Data Warehousing} iria trazer a automação ao processo de medição de medição de métricas de código-fonte, com a possibilidade de criar um campo de conhecimento semântico para facilitar a interpretação de métricas de código-fonte e trazer visibilidade necessária às métricas de código-fonte.
 
-\todo[inline, color=red!50]{Discutir o nível de visibilidade das métricas de código-fonte, os benefícios da abordagem de DWing para Métricas}
 
-\section{Limitações e Trabalhos Futuros}
+A fim de se validar a hipótese, avaliou-se em forma de estudo de caso, o Sistema Integrado de Conhecimento e Gestão (SICG) do Instituto do Patrimônio Artístico Nacional (IPHAN) ao longo do seu ciclo de desenvolvimento no ambiente de \textit{Data Warehousing}. Com a execução do estudo de caso, foi possível observar que a evolução do conjunto de métricas de código-fonte neste projeto, cumprindo assim o objetivo específico \textbf{OE1}.
+
+O ambiente de \textit{Data Warehousing} permitiu a automação de todo o processo de medição das métricas de código-fonte, pois foram automatizados a coleta, transformação dos dados e avaliação das métricas quanto aos intervalos qualitativos, cumprindo assim o objetivo específico \textbf{OE2}.
+
+Foi possível observar, que ao se construir as configurações~"OpenJDK Metrics"~e~"Tomcat Metrics" que a interpretação das métricas de código-fonte pode ser flexibilixada com adoção de padrões convinientes ao software avaliando, cumprindo assim com o objetivo específico \textbf{OE3}.
+
+Quanto a avaliação de indicadores de código-limpo e acompanhamento da taxa de oportunidades de melhoria de código-fonte, observa-se que se contribuiu com dois indicadores de saúde de bom código-fonte. Isto é, o acompanhamento detes pode permitir a equipe de desenvolvimento ou até a mesmo a gestores de projeto, tomar decisões técnicas mais eficientes quanto a decisões que impactam diretamente no código-fonte. Estes dois indicadores não só cumprem com objetivos específicos \textbf{OE4} e \textbf{OE5}, mas contribuem também para se alcançar o \textbf{objetivo geral} do trabalho, pois estes são indicadores que podem apoiar uma decisão técnica de refatoração.
+
+Quanto ao objetivo \textbf{OE6}, foram contabilizadas, ao longo do trabalho, as consutas OLAP necessárias para responder aos requisitos de negócio para cada um dos processos que foram avaliados conforme a Tabela \ref{tab:resultados-OLAP}.
+
+ 
+\begin{table}[H]
+\begin{center}
+\input{tabelas/resultados-olap.ltx}
+\caption{Total de Consultas OLAP realizadas}
+\label{tab:resultados-OLAP}
+\end{center}
+\end{table}
+\FloatBarrier
+
+
+Ao se observar os dados obtidos na Tabela \ref{tab:resultados-OLAP} e a própria execução do estudo de caso da Seção \ref{sec:execution-case-study}, concluiu-se que o ambiente de \textit{Data Warehousing} conseguiu responder às necessidades estabelecidas por cada um dos requisitos de negócio dos procesos de negócio. 
+
+Por meio da utilização do plugin Saiku no ambiente de \textit{Data Warehousing}, é possível cada uma dessas consultas seja exibida em 8 gráficos diferentes ou em Tabelas. Cada uma das consultas pode ainda conter várias outras consultas OLAP que também responderiam a outras necessidades, contudo este trabalho ateve-se a contabilizar apenas as que respondiam aos requisitos de negócio.
+
+Por fim, acredita-se que ao satisfazer tanto a cada um dos objetivos específicos, quanto a objetivo geral do trabalho, contribuiu-se na avaliação da utilização de ambientes de \textit{Data Warehousing} em processos de medição de métricas de código-fonte. 
+
+\section{Limitações}
+
+Como limitações do trabalho, cabe destacar que o ambiente de \textit{Data Warehousing}, especificado neste trabalho, é dependente da ferramenta de análise estática de código-fonte.
+
+
+\section{Trabalhos Futuros}
+
 
 \todo[inline, color=yellow!50]{Limitações: Ambiente dependente da ferramenta de análise estática, Abordagens para as métricas, Utilização do Mezuro ou BiggData}
 

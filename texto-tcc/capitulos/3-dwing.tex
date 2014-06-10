@@ -34,7 +34,7 @@ A Figura \ref{dwing} descreve uma arquitetura geral de um ambiente de \textit{Da
 As etapas de extração, transformação, carga e atualização do \textit{data
 warehouse} formam o back-end e caracterizam o processo chamado Extraction-
 Transform-Load (ETL). Esse processo pode ser dividido em três etapas distintas
-que somadas podem consumir até 85\% de todo o esforço em um ambinetee de \textit{Data Warehousing}
+que somadas podem consumir até 85\% de todo o esforço em um ambiente de \textit{Data Warehousing}
 \cite{Kimball2002}.
 
 
@@ -106,7 +106,7 @@ A Figura \ref{fig:metodologia-dw} mostra os passos necessários, utilizando da m
 
 O primeiro passo de selecionar o processo de negócio é crucial na identificação de requisitos e regras de negócio, pois dele advém tais como cálculos específicos que podem vir a ser entradas para o processo de Extracion-Transformation-Load. No segundo passo, a identificação da periodicidade de coleta dos dados é essencial para coleta correta e agregação dos dados em níveis ou hierarquias. O terceiro e quarto passos resultam por fim no modelo dimensional que foi apresentado na seção \ref{sec:data-warehouse}. 
 
-Tendo os fatos e dimensões identificados pela de \citeonline{Kimball2002}, é possível construir um diagrama dimensional de árvore tal como exemplo da Figura \ref{fig:tree}. Este diagrama foi proposto por \citeonline{Golfarelli1998} com intuito de conceber conceituais de \textbf{Data Warehouse}, onde as dimensões são as raízes das árvores, se forem atributos não numéricos. As hierarquias são os “galhos” das árvores cujas raízes são dimensões, e cujos relacionamentos entre os nós são 1:N. Os atributos do fato, também são raízes das árvores, contudo estes são atributos númericos caracterizados pela ausência de hierarquias.
+Tendo os fatos e dimensões identificados pela de \citeonline{Kimball2002}, é possível construir um diagrama dimensional de árvore tal como exemplo da Figura \ref{fig:tree}. Este diagrama foi proposto por \citeonline{Golfarelli1998} com intuito de conceber projetos conceituais de \textit{Data Warehouse}, onde as dimensões são as raízes das árvores, se forem atributos não numéricos; as hierarquias são os “galhos” das árvores cujas raízes são dimensões e cujos relacionamentos entre os nós são 1:N; os atributos do fato, também são raízes das árvores, contudo estes são atributos numéricos caracterizados pela ausência de hierarquias.
 
 
 \begin{figure}[ht!]

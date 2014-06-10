@@ -129,10 +129,10 @@
   </connection>
   <order>
   <hop> <from>Obtendo M&#xe9;tricas</from><to>Inserindo nas Dim Classe</to><enabled>Y</enabled> </hop>
-  <hop> <from>Inserindo nas Dim Classe</from><to>Execute SQL script</to><enabled>Y</enabled> </hop>
+  <hop> <from>Inserindo nas Dim Classe</from><to>Inserindo os Fatos na F_Scenario_Code e F_Scenario_Rate</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Execute SQL script</name>
+    <name>Inserindo os Fatos na F_Scenario_Code e F_Scenario_Rate</name>
     <type>ExecSQL</type>
     <description/>
     <distribute>Y</distribute>
@@ -183,8 +183,8 @@
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>419</xloc>
-      <yloc>40</yloc>
+      <xloc>538</xloc>
+      <yloc>41</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

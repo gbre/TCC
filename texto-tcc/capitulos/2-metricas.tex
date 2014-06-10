@@ -2,7 +2,7 @@
 
 \section{Processo de Medição de Software}
 
-Segundo \citeonline{Fenton98}, medição é o mapeamento de relações empíricas em relações formais. Isto é, quantificação em símbolos com objetivo de caracterizar uma entidade por meio de seus atributos. Contrapondo-se com uma  definição operacional, a \citeonline{ISO:15939} define medição como conjunto de operações que visam por meio de um objeto determinar um valor a uma medida ou métrica \footnote{A definição formal da \citeonline{ISO:15939} não utiliza o termo métrica. Tendo em vista que o termo métrica é mais difundido em processos de medição e análise, tais os que se baseiam diretamente ou indiretamente no \textit{Goal-Question-Metric} de \citeonline{Basili96b}, resolveu-se adotar o termo métrica com mesmo valor semântico ao termo medida da \citeonline{ISO:15939}, que é o valor operacional propriamente dito}. Alguns modelos de referência, como \citeonline{cmmi2010}, e até a própria \citeonline{ISO:15939} definem medição como uma ferramenta primordial para gerenciar as atividades do desenvolvimento de software e para avaliar a qualidade dos produtos e a capacidade de processos organizacionais. 
+Segundo \citeonline{Fenton98}, medição é o mapeamento de relações empíricas em relações formais. Isto é, quantificação em símbolos com objetivo de caracterizar uma entidade por meio de seus atributos. Contrapondo-se com uma  definição operacional, a \citeonline{ISO:15939} define medição como conjunto de operações que visam por meio de um objeto determinar um valor a uma medida ou métrica \footnote{A definição formal da \citeonline{ISO:15939} não utiliza o termo métrica. Tendo em vista que o termo métrica é mais difundido em processos de medição e análise, tais como os que se baseiam diretamente ou indiretamente no \textit{Goal-Question-Metric} de \citeonline{Basili96b}, resolveu-se adotar o termo métrica com mesmo valor semântico ao termo medida da \citeonline{ISO:15939}, que é o valor operacional propriamente dito}. Alguns modelos de referência, como \citeonline{cmmi2010}, e até a própria \citeonline{ISO:15939} definem medição como uma ferramenta primordial para gerenciar as atividades do desenvolvimento de software e para avaliar a qualidade dos produtos e a capacidade de processos organizacionais. 
 
 
 A \citeonline{ISO:15939} define um processo de medição com base em um modelo de
@@ -160,7 +160,7 @@ algumas métricas de tamanho e complexidade:
 
 A evolução dos paradigmas de programação permitiu que as linguagens de 
 programação assumissem diversas características entre si. O
-paradigma da orientação à objetos permitiu aos programadores abstrair computação ao negócio, isso significou evolução no desenvolvimento quando comparado ao paradigma procedural e permanência na academia quanto na indústria de desenvolvimento de sotware \cite{Li1993}.
+paradigma da orientação à objetos permitiu aos programadores abstrair computação ao negócio, isso significou evolução no desenvolvimento quando comparado ao paradigma procedural e permanência na academia quanto na indústria de desenvolvimento de software \cite{Li1993}.
 
 Dado a grande utilização do paradigma no desenvolvimento de software, foram selecionadas algumas das principais métricas de orientação à objetos:
 
@@ -188,7 +188,7 @@ Dado a grande utilização do paradigma no desenvolvimento de software, foram se
 	sistema, ou seja, as classes de bibliotecas não são contabilizadas. 
 	Nos casos onde herança múltipla é permitida, considera-se o maior 
 	caminho da classe até uma das raízes da hierarquia. Quanto maior for o 
-	valor DIT, maior é o número de atributos e métodos herdados, e, portanto,maior é a complexidade \cite{Shih97}.
+	valor DIT, maior é o número de atributos e métodos herdados, e, portanto, maior é a complexidade \cite{Shih97}.
 
 
 
@@ -304,9 +304,9 @@ Segundo \citeonline{Martin2008}, o código deve ser uma composição de instruç
 \end{table}
 \FloatBarrier
 
-Os trabalhos de \citeonline{marinescu2004quantifying}, \citeonline{marinescu2005measurement}, \citeonline{moha2006automatic}, \citeonline{moha2008domain}, \citeonline{moha2010decor} e \citeonline{rao2007detecting} mostraram que é possível detectar pedaços de código-fonte que podem ser melhorados com a utilização de métricas de código-fonte. Embasado em alguns detes trabalhos, \citeonline{Machini2010} construíu um mapeamento entre as métricas de código-fonte, e as técnicas e práticas propostas por \citeonline{Martin2008} e \citeonline{beck2007implementation}. 
+Os trabalhos de \citeonline{marinescu2004quantifying}, \citeonline{marinescu2005measurement}, \citeonline{moha2006automatic}, \citeonline{moha2008domain}, \citeonline{moha2010decor} e \citeonline{rao2007detecting} mostraram que é possível detectar pedaços de código-fonte que podem ser melhorados com a utilização de métricas de código-fonte. Embasado em alguns destes trabalhos, \citeonline{Machini2010} construíu um mapeamento entre as métricas de código-fonte, e as técnicas e práticas propostas por \citeonline{Martin2008} e \citeonline{beck2007implementation}. 
 
-Neste mapeamento, cada conjunto de coorelação métricas constitui um cenário de limpeza, onde é mostrado a correlação de um "conceito de limpeza", apresentados na Tabela \ref{tab:conceitos}, com métricas de código-fonte, apresentadas na Seção \ref{sec:source-code}. No trabalho de \citeonline{Machini2010}, a detecção é feita a partir de valores altos para as métricas de código-fonte.  A fim de medir efetivamente, a aplicação destes, considerou-se os valores altos como os valores obtidos pelos intervalos Regular e Ruim para a configuração \textbf{OpenJDK} tal como mostrado na Tabela \ref{tab:good-metrics}.  
+Neste mapeamento, cada conjunto correlacionado de métricas constitui um cenário de limpeza, onde é mostrado a correlação de um "conceito de limpeza", apresentados na Tabela \ref{tab:conceitos}, com métricas de código-fonte, apresentadas na Seção \ref{sec:source-code}. No trabalho de \citeonline{Machini2010}, a detecção é feita a partir de valores altos para as métricas de código-fonte.  A fim de medir efetivamente, a aplicação destes, considerou-se os valores altos como os valores obtidos pelos intervalos Regular e Ruim para a configuração \textbf{OpenJDK} tal como mostrado na Tabela \ref{tab:good-metrics}.  
 
 Considerando inicialmente os cenários \textbf{Classe Pouco Coesa} e \textbf{Interface dos Métodos} extraídos de \citeonline{Machini2010}, foram elaborados mais alguns cenários tal como se mostra na Tabela \ref{tab:cenarios}. Além disso, realizou-se um mapeamento inicial de padrões de projeto de \citeonline{gamma1994design} que poderiam resolver os problemas detectados pelos cenários de limpeza. 
 

@@ -769,7 +769,7 @@
   <order>
   <hop> <from>Obtendo M&#xe9;tricas</from><to>Calculando os Percentis</to><enabled>Y</enabled> </hop>
   <hop> <from>Calculando os Percentis</from><to>Convertendo Valores</to><enabled>Y</enabled> </hop>
-  <hop> <from>Convertendo Valores</from><to>SQL Queries</to><enabled>Y</enabled> </hop>
+  <hop> <from>Convertendo Valores</from><to>Inserindo os Fatos na F_Project_Metric</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Calculando os Percentis</name>
@@ -1364,7 +1364,7 @@
     </step>
 
   <step>
-    <name>SQL Queries</name>
+    <name>Inserindo os Fatos na F_Project_Metric</name>
     <type>ExecSQL</type>
     <description/>
     <distribute>Y</distribute>
@@ -1461,8 +1461,8 @@
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>566</xloc>
-      <yloc>110</yloc>
+      <xloc>617</xloc>
+      <yloc>107</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
