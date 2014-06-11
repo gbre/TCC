@@ -12,7 +12,7 @@ Para a implementação do ambiente de \textit{Data Warehousing} para métricas d
 \end{figure}
 \FloatBarrier
 
-Para selecionar as ferramentas, que implementarão cada um dos componentes, estabeleceram-se critérios gerais de seleção tal como pode ser visto na Tabela \ref{seleção}.
+Para selecionar as ferramentas, que implementariam cada um dos componentes, estabeleceram-se critérios gerais de seleção tal como pode ser visto na Tabela \ref{seleção}.
 
 
 	\begin{table}[!ht]
@@ -26,7 +26,7 @@ Para selecionar as ferramentas, que implementarão cada um dos componentes, esta
 
 \section{Ferramenta de Análise Estática de Código-Fonte}
 
-Além dos critérios gerais estabelecidos para escolha da ferramenta de análise estática de código-fonte, que é a fonte externa de coleta dos dados, estabeleceram-se os critérios específicos para seleção de ferramentas de análise estática de código fonte (CAE) apresentados na Tabela \ref{specific}.
+Além dos critérios gerais estabelecidos, para a escolha da ferramenta de análise estática de código-fonte, que é a fonte externa de coleta dos dados, estabeleceram-se os critérios específicos para seleção de ferramentas de análise estática de código fonte (CAE) apresentados na Tabela \ref{specific}.
 
 
 	\begin{table}[!ht]
@@ -37,7 +37,7 @@ Além dos critérios gerais estabelecidos para escolha da ferramenta de análise
 	\end{center}
 	\end{table}	
 
-Após a realização de uma busca por ferramentas de análise estática de código-fonte, foram pre-selecionados o SonarQube~\footnote{Disponível em \url{http://www.sonarqube.org/}} e Analizo~\footnote{Disponível em \url{http:/http://analizo.org/}} cujas principais características de ambas são apresentadas na Tabela \ref{dados-ferramentas-estatica}.
+Após a realização de uma busca por ferramentas de análise estática de código-fonte, foram selecionados o SonarQube~\footnote{Disponível em \url{http://www.sonarqube.org/}} e o Analizo~\footnote{Disponível em \url{http:/http://analizo.org/}} cujas principais características de ambas são apresentadas na Tabela \ref{dados-ferramentas-estatica}.
 
 \begin{savenotes}
 \begin{table}[!ht]
@@ -49,7 +49,7 @@ Após a realização de uma busca por ferramentas de análise estática de códi
 \FloatBarrier
 \end{savenotes}
 
-Tendo as características gerais de cada ferramenta levantadas, foram comparadas (SonarQube e Analizo) quanto aos critérios gerais e aos critérios específicos para ferramentas de análise estática, tal como se mostra na Tabela \ref{compare}.
+Após levantar as características gerais de cada ferramenta, foram comparadas (SonarQube e Analizo) quanto aos critérios gerais e aos critérios específicos para ferramentas de análise estática, tal como se mostra na Tabela \ref{compare}.
 
 
 \begin{table}[!ht]
@@ -60,12 +60,12 @@ Tendo as características gerais de cada ferramenta levantadas, foram comparadas
 \end{table}
 \FloatBarrier
 
-Em fase inicial do trabalho, fora feita a análise entre o Analizo e o SonarQube, que resultou na decisão de utilizar o SonarQube. Contudo, desde a versão 4.1, o SonarQube retirou as métricas: \textbf{LCOM4, RFC, DIT, NOC}~\footnote{CoreMetrics do SonarQube: \url{https://github.com/SonarSource/sonarqube/blob/master/sonar-plugin-api/src/main/java/org/sonar/api/measures/CoreMetrics.java}}. Dado que este fato, impacta sobre o principal objetivo do trabalho, migrou-se para a ferramenta Analizo. Esta evoluiu e ganhou a possibilidade de emitir saídas das métricas em CSV que detalham nome da classe e as respectivas métricas, atendendo assim ao critério CAE02. Adicionalmente, o Analizo permitiu ao trabalho incorporar a análise das métricas \textbf{ANPM, AMLOC, CBO, NPA}, que como foi observado na Seção \ref{sec:clean-code}, são cruciais na detecção de cenários de limpeza de código-fonte.
+Em uma fase inicial do trabalho, fora feita a análise entre o Analizo e o SonarQube, que resultou na decisão inicial de se utilizar o SonarQube. Contudo, desde a versão 4.1, o SonarQube retirou as métricas: \textbf{LCOM4, RFC, DIT, NOC}~\footnote{CoreMetrics do SonarQube: \url{https://github.com/SonarSource/sonarqube/blob/master/sonar-plugin-api/src/main/java/org/sonar/api/measures/CoreMetrics.java}}. Dado que este fato, impacta sobre o principal objetivo do trabalho, migrou-se para a ferramenta Analizo. Esta evoluiu e ganhou a possibilidade de emitir saídas das métricas em CSV que detalham nome da classe e as respectivas métricas, atendendo assim ao critério CAE02. Adicionalmente, o Analizo permitiu ao trabalho incorporar a análise das métricas \textbf{ANPM, AMLOC, CBO, NPA}, que como fora observado na Seção \ref{sec:clean-code}, são cruciais na detecção de cenários de limpeza de código-fonte.
 
 \section{Projeto do \textit{Data Warehouse}}
 \label{sec:project-dw}
 
-O \textit{Data Warehouse} como elemento central do ambiente de \textit{Data Warehousing} deve ser o primeiro a ser projetado \cite{Kimball2002}. Isso ocorre pois o DW deve ser dirigido ao negócio. Logo a modificação do DW impacta principalmente na carga dos dados, na etapa de extração, transformação e carga, requerendo modificações conforme o DW venha a mudar.
+O \textit{Data Warehouse} como elemento central do ambiente de \textit{Data Warehousing} deve ser o primeiro a ser projetado \cite{Kimball2002}. Isso ocorre, pois o DW deve ser dirigido ao negócio. Logo, a modificação do DW impacta principalmente na carga dos dados, na etapa de extração, transformação e carga, requerendo modificações conforme o DW venha a mudar.
 
 Seguindo a metolodogia de \citeonline{Kimball2002} para o projeto de \textit{data warehouse}, apresentada na Seção \ref{sec:metodologia-dw}, foram identificados os processos de negócio e seus respectivos requisitos como se mostra nas Tabelas \ref{tab:requisitos-pecentis} e \ref{tab:requisitos-cenarios}. 
 
@@ -130,7 +130,7 @@ Tendo os fatos identificados, foram criados os diagramas de árvore, tal como pr
 \FloatBarrier
 
 
-Após a construção dos diagramas de árvore, o projeto físico do \textit{Data Warehouse} foi construído utilizando a ferramenta MySQL Workbench. Como é possivel observar na Figura \ref{fig:project-dw}, cada digrama de árvore foi traduzido para uma tabela fato (tabelas verdes) com as respectivas dimensões (tabelas azuis)
+Após a construção dos diagramas de árvore, o projeto físico do \textit{Data Warehouse} foi construído utilizando a ferramenta MySQL Workbench. Como é possivel observar na Figura \ref{fig:project-dw}, cada digrama de árvore foi traduzido para cada tabela fato (tabelas verdes) com as respectivas tabelas dimensões (tabelas azuis)
 
 
 \begin{figure}[ht!]
@@ -158,20 +158,20 @@ Esta decisão de projeto foi motivada pela recomendação de que os metadados s�
 Na Tabela~"Meta\_Metric\_Ranges"~contém cada uma das configurações de intervalos qualitativos para cada umas das métricas de código-fonte conforme descrito na Tabela \ref{tab:good-metrics}. Já na Tabela~"Meta\_Scenario"~estão contidos os cenários de limpeza de código-fonte, bem como as recomendações de limpeza para cada um dos cenários conforme descrito na Tabela \ref{tab:cenarios}. 
 
 
-Para atender o requisito de projeto, observou-se que cada cenário de limpeza identificado é composto por até dois intervalos qualitativos de métricas de código-fonte. Por este motivo, decidiu-se por criar a Tabela~"Meta\_Metric\_Ranges\_Meta\_Scenario"~como as associações entre os cenários de limpeza de código-fonte e os intervalos qualitativos de métricas de código-fonte, como duas chaves estrangeiras da Tabela~"Meta\_Metric\_Ranges". 
+Para atender o requisito de projeto, observou-se que cada cenário de limpeza identificado é composto por até dois intervalos qualitativos de métricas de código-fonte. Por este motivo, decidiu-se por criar a Tabela~"Meta\_Metric\_Ranges\_Meta\_Scenario"~, com duas chaves estrangeiras da Tabela~"Meta\_Metric\_Ranges", representando as associações entre os cenários de limpeza de código-fonte e os intervalos qualitativos de métricas de código-fonte.
 
 
 
 \section{Ferramentas de \textit{Data Warehousing}}
 
-Tendo em vista que o \textit{Data Warehouse} foi projetado em um modelo dimensional, é possível construir tanto o processo de \textit{Extraction-Transformation-Load} quanto as operações de consulta OLAP. Entre as alternativas de código aberto que suportam este ambiente como um todo, está o Pentaho BI Suite Community Edition. Este apresenta soluções que cobrem 
-as áreas de ETL, \textit{reporting}, OLAP e mineração de dados. Cada um dos componentes utilizados é apresentado e analisado nas seções subsequentes.
+Tendo em vista que o \textit{Data Warehouse} foi projetado em um modelo dimensional, é possível construir tanto o processo de \textit{Extraction-Transformation-Load} quanto as operações de consulta OLAP. Entre as alternativas de código aberto que suportam este ambiente como um todo, está o Pentaho \textit{Business Analytics Community Edition}. Esta solução de software livre apresenta soluções que cobrem 
+as áreas de ETL, \textit{reporting}, OLAP e mineração de dados. Cada um dos componentes que foi utilizado é apresentado e analisado nas seções subsequentes.
  
 
 
 \subsection{Implementação da Extração, Transformação e Carga dos Dados}
 \label{implementação-ETL}
-O Pentaho Data Integration Community Edition ou Kettle \footnote{Disponível em \url{http://kettle.pentaho.com/}} é feito na linguagem Java e implementa o processo de ETL (Extração, Transformação e Carga de Dados). A interface do Kettle é mostrada na Figura \ref{pdi} e as principais características do Kettle e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{kettle}.
+O Pentaho \textit{Data Integration Community Edition} ou Kettle \footnote{Disponível em \url{http://kettle.pentaho.com/}} é feito na linguagem Java e implementa o processo de ETL (Extração, Transformação e Carga de Dados). A interface do Kettle é mostrada na Figura \ref{pdi} e as principais características do Kettle bem como a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{kettle}.
 
 \begin{figure}[ht!]
 \centering
@@ -251,7 +251,7 @@ WHERE ( [Loja].[Loja Sul])
 \newpage
 \section{Resumo Ferramental do Ambiente de \textit{Data Warehousing}}
 
-Na Figura \ref{pentaho-tools}, é apresentado como cada uma das ferramentas apresentadas na seções anteriores está disposta na arquitetura do ambiente de \textit{Data Warehousing} para Métricas de Código-Fonte.
+Na Figura \ref{pentaho-tools}, é apresentado o modo como cada uma das ferramentas apresentadas na seções anteriores está disposta na arquitetura do ambiente de \textit{Data Warehousing} para Métricas de Código-Fonte.
 
 \begin{figure}[ht!]
 \begin{center}
@@ -262,7 +262,7 @@ Na Figura \ref{pentaho-tools}, é apresentado como cada uma das ferramentas apre
 \end{figure}
 \FloatBarrier
 
-A arquitetura descrita na Figura \ref{pentaho-tools} foi implementada em uma máquina virtual com as seguintes configurações
+A arquitetura descrita na Figura \ref{pentaho-tools} foi implementada em uma máquina virtual com as seguintes configurações:
 
 \begin{easylist}
 & Processador: Intel(R) Xeon(R) CPU E5-2620 @ 2.00GHz

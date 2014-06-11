@@ -69,6 +69,32 @@ Por fim, foram identificados os Cenários de Limpeza de Código-Fonte com auxíl
 \lstinputlisting[caption=\textit{Script} SQL de Identificação de Cenários de Limpeza de Código-Fonte e Cálculo da Taxa de Aproveitamento de Oportunidades de Melhoria de Código-Fonte, language=SQL, label=sql-etl-class]{codigos/class-fact.sql}
 
 
+\section{Implementação do \textit{Job}}
+
+Como explicado anteriormente, o Kettle utiliza o  \textit{Job} para executar tarefas, em nível mais alto, de fluxo de controle, tais como, mandar um email em caso de falha, baixar um arquivo, executar transformações  e entre outras atividades. Dessa forma os principais componentes internos do \textit{Job}, que foram utilizados no trabalho, são mostrados na Figura \ref{fig:components-job}. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[keepaspectratio=false,scale=0.60]{figuras/componentes-job.eps}
+\caption{Componentes do Kettle que foram utilizadas nos \textit{Jobs}}
+\label{fig:components-job}
+\end{figure}
+\FloatBarrier
+
+O componente \textit{Start} é utilizado para marcar o início da execução de um determinado \textit{Job}. Nele, é possível programar a execução repetida de um determinado \textit{job}, como por exemplo, a cada hora, dia ou mês; Já o componente \textit{Transformation} serve para executar uma determinada Transformação, que fora especificada anteriormente.
+
+Após se contruir o arquivo \textit{Job} do presente trabalho, obteve-se a Figura \ref{fig:job}. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[keepaspectratio=false,scale=0.60]{figuras/job.eps}
+\caption{\textit{Job} deste Trabalho}
+\label{fig:job}
+\end{figure}
+\FloatBarrier
+
+No \textit{Job}, a transformação~"Dados do Projeto"~corresponde a execução da Figura \ref{fig:first-transformation}. Já a transoformação~"Análise dos Valores Percentis"~corresponde a Figura \ref{fig:second-transformation} e por fim, a transformação~"Análise dos Cenários de Limpeza de Código-Fonte" corresponde a Figura \ref{fig:third-transformation}.
+
 \chapter{Gráficos e Tabelas dos Percentis de Métricas de Código-Fonte}
 
 Neste apêndice, serão apresentados os gráficos e tabelas, obtidos com o plugin Saiku no ambiente de \textit{Data Warehousing}, dos Percentis obtidos para cada uma das métricas de código-fonte no Sistema Integrado de Conhecimento e Gestão (SICG) do Instituto do Patrimônio Arstítico Nacional (IPHAN).

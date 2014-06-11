@@ -14,7 +14,7 @@
 
 \section{Planejamento do Estudo de Caso}
 \label{sec:planning-case}
-Para o planejamento do estudo de caso em engenharia de software é essencial, segundo \citeonline{brereton2008using},descrever o protocolo do estudo de caso. Este consiste em um relatório simplificado das principais variáveis, dados e passos, tais como o meio e modo de coleta de dados, indetificação das fontes de dados e formas de análise de dados \cite{wohlin2012experimentation}. 
+Para o planejamento do estudo de caso em engenharia de software é essencial, segundo \citeonline{brereton2008using}, que se descreva o protocolo do estudo de caso. Este consiste em um relatório simplificado das principais variáveis, dados e passos, tais como o meio e modo de coleta de dados, identificação das fontes de dados e formas de análise de dados \cite{wohlin2012experimentation}. 
 
 
 O protocolo de estudo de caso deste trabalho, que foi baseado em \citeonline{brereton2008using} e \citeonline{wohlin2012experimentation} foi dividido em seções, conforme se vê a seguir.
@@ -27,7 +27,7 @@ Assim como os trabalhos de \citeonline{Palza2003}, \citeonline{Ruiz2005}, \citeo
 
 \subsection{Objetivos do Estudo de Caso}
 
-O objetivo geral do estudo de caso foi avaliar um software durante o seu desenvolvimento no ambiente de \textit{Data Warehousing}. Em consonância ao objetivo geral do estudo de caso e aos objetivos específicos deste trabalho, foram definidos objetivos específicos do estudo de caso, tal como se mostra na Tabela \ref{tab:objetivos-estudo-de-caso}.
+O objetivo geral do estudo de caso foi avaliar um software durante o seu desenvolvimento no ambiente de \textit{Data Warehousing} proposto no Capítulo \ref{chap:arquitetura}. Em consonância ao objetivo geral do estudo de caso e aos objetivos específicos deste trabalho, foram definidos objetivos específicos do estudo de caso, tal como se mostra na Tabela \ref{tab:objetivos-estudo-de-caso}.
 
 \begin{table}[H]
 \begin{center}
@@ -40,8 +40,7 @@ O objetivo geral do estudo de caso foi avaliar um software durante o seu desenvo
 
 \subsection{Seleção de Objeto do Estudo de Caso} 
 
-Para selecionar o software que seria parte do objeto do estudo de caso, foi considerado os 
-critérios estabelecidos na Tabela \ref{tab:critérios-estudo-de-caso}. 
+Para selecionar o software que seria parte da avaliação do ambiente de \textit{Data Warehousing} que é o objeto do estudo de caso, foi considerado os critérios estabelecidos na Tabela \ref{tab:critérios-estudo-de-caso}. 
 
 
 \begin{table}[H]
@@ -57,7 +56,7 @@ critérios estabelecidos na Tabela \ref{tab:critérios-estudo-de-caso}.
 
 \subsubsection{Visão Geral}
 
-O IPHAN é responsável pela gestão de diversos processos de preservação do patrimônio cultural, como por exemplo,ações para sua identificação, proteção, gestão e fomento. Decorrente
+O IPHAN é autarquia federal responsável pela gestão de diversos processos de preservação do patrimônio cultural, como por exemplo,ações para sua identificação, proteção, gestão e fomento. Decorrente
 de suas atribuições, o órgão produz uma grande quantidade de informações fragmentadas em termos territoriais e temáticos. Nos últimos quatro anos, o IPHAN elaborou uma metodologia
 para definir os processos de cadastro, inventário e gestão do patrimônio cultural material. Essa metodologia tem por objetivo geral abordar o Patrimônio Cultural de forma integrada, sistêmica
 e estratégica, conforme detalhado a seguir:
@@ -77,9 +76,8 @@ que impede a construção da rede de proteção baseada nos recursos e tecnologi
 
 Apesar do fato de os processos de cadastramento, normatização de sítios urbanos tombados e fiscalização de bens imóveis de metodologia já fazerem parte da realidade das Superintendências e Escritórios Técnicos, o processo manual de suporte e gestão dos dados torna a execução precária e morosa.
 
-
-
 \subsubsection{O Software Analisado}
+
 Tendo em vista a dificuldade que o processo manual acarreta, o IPHAN decidiu contratar uma empresa de software para desenvolver uma solução que pudesse automatizar o processo de trabalho decorrente da metodologia de inventário, cadastramento, normatização, fiscalização, planejamento e análise e gestão do patrimônio material. Esta solução de software foi concebida sobre a denominação de Sistema Integrado de Conhecimento e Gestão (SICG) que foi construído em Java (atende-se ao critério CEC1), durante 24 \textit{releases} mensais (atende-se ao critério CEC2), utilizando \textit{frameworks} como VRaptor, Hibernate formado por 7 módulos:
 
 \begin{itemize}
@@ -95,7 +93,7 @@ Tendo em vista a dificuldade que o processo manual acarreta, o IPHAN decidiu con
 
 \subsection{Dados, Fonte dos Dados e Forma de Análise dos Dados}
 
-Após a identificação dos objetivos do estudo de caso, foram identificados os principais dados qualitativos e quantitativos na Tabela \ref{tab:dados-estudos}. Estes são as respostas que espera obter com o monitoramento e avaliação de métricas de código-fonte em um ambiente de \textit{Data Warehousing}.
+Após a identificação dos objetivos do estudo de caso, foram identificados os principais dados qualitativos e quantitativos na Tabela \ref{tab:dados-estudos}. Estes são as respostas que espera obter com o monitoramento e avaliação de métricas de código-fonte e cenários de limpeza de código-fonte em um ambiente de \textit{Data Warehousing}.
 
 
 \begin{table}[H]
@@ -116,9 +114,9 @@ A validade de construção está presente na fase de coleta de dados onde deve s
 
 A validade interna é garantida quando as conclusões apresentadas pelo estudo de caso correspondem a alguma realidade conhecida pelos próprios envolvidos no projeto \cite{yin2011applications}. Neste trabalho, a validade interna pôde ser garantida com a triangulação de vários indicadores de qualidade de código-fonte, isto é, a correlação entre diversos métodos de análise que podem levar a mesma conclusão. 
 
-Quanto a validade externa destaca-se que a utilização de um estudo de caso não é suficiente para generalizar os resultados dele obtidos, sendo necessário a utilização de estudo em múltiplos casos, a fim de comprovar a genericidade dos resultados \cite{yin2011applications}. Embora, como citado anteriormente, alguns trabalhos já trabalharam com a utilização de métricas e ambientes de \textit{Data Warehousing}, não há como correlacionar os resultados obtidos devido a grande diferenças de contexto e aplicação do ambiente.
+Quanto a validade externa destaca-se que a utilização de um estudo de caso não é suficiente para generalizar os resultados dele obtidos, sendo necessário a utilização de estudo em múltiplos casos, a fim de comprovar a genericidade dos resultados \cite{yin2011applications}. Embora, como citado anteriormente, alguns trabalhos já trabalharam com a utilização de métricas e ambientes de \textit{Data Warehousing}, não há como correlacionar os resultados obtidos devido a grande diferenças de contexto e aplicação do ambiente, logo a validade externa não é garantida neste trabalho.
 
-Com relação a confiabilidade, \citeonline{yin2011applications} enuncia que para se garanti-lá em um estudo de caso, é necessário que este tenha repetibilidade caso seja usada a mesma fonte dos dados. Neste trabalho, com a documentação da implementação do ambiente de \textit{Data Warehousing}, presente no Capítulo \ref{chap:arquitetura},conjuntamente com o protocolo de estudo de caso, apresentado a partir da Seção {sec:planning-case}, garantem a repetibilidade do estudo de caso.
+Com relação a confiabilidade, \citeonline{yin2011applications} enuncia que para se garantí-la em um estudo de caso, é necessário que este tenha repetibilidade caso seja usada a mesma fonte dos dados. Neste trabalho, com a documentação da implementação do ambiente de \textit{Data Warehousing}, presente no Capítulo \ref{chap:arquitetura},conjuntamente com o protocolo de estudo de caso, apresentado a partir da Seção \ref{sec:planning-case}, garante-se a repetibilidade do estudo de caso e por conseguinte a confiabilidade.
 
 \section{Execução do Estudo de Caso e Análise dos Dados}
 \label{sec:execution-case-study}
@@ -235,10 +233,9 @@ T_r =   \frac{{\sum_{i=1}^{n}{Ce_i}}}{\sum_{i=1}^{n}{Cl_i}}
 
 onde $ Ce $ é o total de cenário de limpeza e $ Cl $ é a quantidade classes.
 
- Embora se pudesse realizar o cálculo acima, utilizando a consulta que realiza o \textit{Drill-Up} nas dimensões, Figura \ref{fig:cenarios-total}, preferiu consolidar o fato do número de cenários de limpeza em uma determinada release em uma outra tabela fato. Como explicado na Seção \ref{sec:project-dw}, \citeonline{Kimball2002} recomenda 
- que as taxas, que são fatos não aditivos,  devem está na mesma tabela que o numerador e denominador.
+ Embora se pudesse realizar o cálculo acima, utilizando a consulta que realiza o \textit{Drill-Up} nas dimensões, Figura \ref{fig:cenarios-total}, preferiu consolidar o fato do número de cenários de limpeza em uma determinada release em uma outra tabela fato. Como explicado na Seção \ref{sec:project-dw}, \citeonline{Kimball2002} recomenda que as taxas, que são fatos não aditivos, e que devem está na mesma tabela que o numerador e denominador.
 
- Dessa forma, ao se realizar uma consulta OLAP de \textit{Drill Down} nas Dimensões associadas, obteve-se a Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte por cada release do software conforme se mostra nas Figuras \ref{fig:taxa-cenarios} e \ref{fig:grafico-taxa} e o crescimento do projeto conforma a Figura \ref{fig:crescimento-projeto}. 
+ Dessa forma, ao se realizar uma consulta OLAP de \textit{Drill Down} nas dimensões associadas, obteve-se a Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte por cada release do software conforme se mostra nas Figuras \ref{fig:taxa-cenarios} e \ref{fig:grafico-taxa} e o crescimento do projeto conforma a Figura \ref{fig:crescimento-projeto}. 
 
 
 \begin{figure}[H]
@@ -267,7 +264,5 @@ onde $ Ce $ é o total de cenário de limpeza e $ Cl $ é a quantidade classes.
 \FloatBarrier
 
 
-
-
-Utilizando as Figuras \ref{fig:taxa-cenarios} e \ref{fig:grafico-taxa}, observa-se que o projeto cresceu de 67, na primeira release, classes para 914 classes ao final da última release e o número total de cenários de limpeza de código-fonte identificados cresceu de 27 para 397. Ao se realizar cálculo da Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte, observou-se que há uma tendência de que a tava se mantenha entre 0,4 a 0,5. Este fato pode indicar duas hipóteses: a primeira de que o projeto cresceu em uma taxa muito maior que a quantidade de cenários de limpeza, indicando assim uma estabilidade na complexidade do projeto ou que não foram promovidas atividades de melhoria de código-fonte ao longo das 24 releases.  
+Utilizando as Figuras \ref{fig:taxa-cenarios} e \ref{fig:grafico-taxa}, observa-se que o projeto cresceu de 67, na primeira release, para 914 classes ao final da última release e o número total de cenários de limpeza de código-fonte identificados cresceu de 27 para 397. Ao se realizar cálculo da Taxa de Aproveitamento de Oportunidade de Melhoria de Código-Fonte, observou-se que há uma tendência de que a tava se mantenha entre 0,4 a 0,5. Este fato pode indicar duas hipóteses: a primeira de que o projeto cresceu em uma taxa muito maior que a quantidade de cenários de limpeza, indicando assim uma estabilidade na complexidade do projeto ou que não foram promovidas atividades de melhoria de código-fonte ao longo das 24 releases.  
 

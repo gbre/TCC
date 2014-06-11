@@ -2,11 +2,11 @@
 
 \section{Processo de Medição de Software}
 
-Segundo \citeonline{Fenton98}, medição é o mapeamento de relações empíricas em relações formais. Isto é, quantificação em símbolos com objetivo de caracterizar uma entidade por meio de seus atributos. Contrapondo-se com uma  definição operacional, a \citeonline{ISO:15939} define medição como conjunto de operações que visam por meio de um objeto determinar um valor a uma medida ou métrica \footnote{A definição formal da \citeonline{ISO:15939} não utiliza o termo métrica. Tendo em vista que o termo métrica é mais difundido em processos de medição e análise, tais como os que se baseiam diretamente ou indiretamente no \textit{Goal-Question-Metric} de \citeonline{Basili96b}, resolveu-se adotar o termo métrica com mesmo valor semântico ao termo medida da \citeonline{ISO:15939}, que é o valor operacional propriamente dito}. Alguns modelos de referência, como \citeonline{cmmi2010}, e até a própria \citeonline{ISO:15939} definem medição como uma ferramenta primordial para gerenciar as atividades do desenvolvimento de software e para avaliar a qualidade dos produtos e a capacidade de processos organizacionais. 
+Segundo \citeonline{Fenton98}, medição é o mapeamento de relações empíricas em relações formais. Isto é, quantificação em símbolos com objetivo de caracterizar uma entidade por meio de seus atributos. Contrapondo-se com uma definição operacional, a \citeonline{ISO:15939} define medição como conjunto de operações que visam por meio de um objeto determinar um valor a uma medida ou métrica \footnote{A definição formal da \citeonline{ISO:15939} não utiliza o termo métrica. Tendo em vista que o termo métrica é mais difundido em processos de medição e análise, tais como os que se baseiam diretamente ou indiretamente no \textit{Goal-Question-Metric} de \citeonline{Basili96b}, resolveu-se adotar o termo métrica com mesmo valor semântico ao termo medida da \citeonline{ISO:15939}, que é o valor operacional propriamente dito}. Alguns modelos de referência, como \citeonline{cmmi2010}, e até a própria \citeonline{ISO:15939} definem medição como uma ferramenta primordial para gerenciar as atividades do desenvolvimento de software e para avaliar a qualidade dos produtos e a capacidade de processos organizacionais. 
 
 
 A \citeonline{ISO:15939} define um processo de medição com base em um modelo de
-informação, que é mostrado na Figura \ref{informação}, a fim de obter produtos de informação para cada necessidade de informação. Para isto, cada necessidade de informação, que é uma situação que requer conhecimento com intuito de  gerenciar objetivos, metas, riscos e problemas, é mapeada em uma construção  mensurável que tem em sua origem um conceito mensurável, como por exemplo,  tamanho, qualidade e custo a fim de mapear um atributo (característica  que permite distinguir qualitativamente e/ou quantitativamente) uma entidade que pode ser um processo, projeto ou produto de software. Por fim  cada construção mensurável é mapeada em um ou mais produtos de informação que  levam uma ou mais métricas ou medidas, que podem ser classificadas sob  critérios apresentados na Seção \ref{Classificação das Métricas de Software}.
+informação, que é mostrado na Figura \ref{informação}, com intuito de obter produtos de informação para cada necessidade de informação. Para isto, cada necessidade de informação, que é uma situação que requer conhecimento de objetivos, metas, riscos e problemas, é mapeada em uma construção  mensurável que tem em sua origem um conceito mensurável, como por exemplo, tamanho, qualidade e custo. A partir do conceito mensurável, é possível se mapear um atributo, que é uma característica que permite distinguir qualitativamente e/ou quantitativamente uma entidade que pode ser um processo, projeto ou produto de software. Por fim, cada construção mensurável é mapeada em um ou mais produtos de informação que levam uma ou mais métricas, que podem ser classificadas sob  critérios apresentados na Seção \ref{Classificação das Métricas de Software}.
 
 \begin{figure}[h!]
 \centering
@@ -66,7 +66,7 @@ As métricas podem ser classificadas quanto ao objeto da métrica, que
 divide as métricas de software em: \textit{métricas de processo} e 
 \textit{métricas de produto} \cite{Mills:1999}. Ainda é possível, segundo a 
 \citeonline{ISO:15939}, dividir as métricas quanto ao método de medição, 
-podendo estas serem \textit{métricas objetivas}, que são baseadas em regras 
+sendo que estas podem ser \textit{métricas objetivas}, que são baseadas em regras 
 númericas e podem ter a coleta manual ou automática, ou \textit{métricas 
 subjetivas}, que envolvem o julgamento humano para consolidação do resultado. 
 
@@ -94,11 +94,8 @@ em três categorias:
 
 %-----------------------------			
 		& \textbf{Métricas Externas:}
-		São métricas que capturam o comportamento do software. Exemplos de 
-		atributos da qualidade externa: correção, usabilidade, eficiência e 
-		robustez. Qualidade externa mede o comportamento do software. Estas só 
-		podem ser aferidas por atividades de teste do desenvolvimento do 
-		software em condições similares as que serão encontradas em ambientes de
+		São métricas que capturam o comportamento do software e só podem ser 
+		aferidas por atividades de teste do desenvolvimento do software em condições similares as que serão encontradas em ambientes de
 		implantação.
 
 %-----------------------------			
@@ -106,7 +103,7 @@ em três categorias:
 		São métricas que aferem se o software atende as necessidades do cliente
 		com eficiência, produtividade, segurança e satisfação em contextos 
 		específicos de uso. Estas só podem ser coletadas em ambientes reais, 
-		isto é, o ambiente de implantação.	
+		isto é, o ambiente de produção.	
 			 
 \end{easylist}
 		
@@ -119,7 +116,7 @@ em três categorias:
 Segundo a \textit{International Working Conference on Source Code Analysis and 
 Manipulation} (SCAM), o código-fonte é qualquer especificação executável 
 de um sistema de software. Por conseguinte, se inclui desde código de máquina 
-até linguagens de alto nível ou representações gráficas executáveis \cite{harman2010source}. Este fato significa que as métricas de código-fonte  são métricas objetivas e possuem características como validade, simplicidade, objetividade, fácil obtenção e robustez \cite{Mills:1999}. 
+até linguagens de alto nível ou representações gráficas executáveis \cite{harman2010source}. Este fato implica às métricas de código-fonte as categorias de métricas objetivas e características como validade, simplicidade, objetividade, fácil obtenção e robustez \cite{Mills:1999}. 
 
 
 %--------------------------------------------
@@ -150,7 +147,7 @@ algumas métricas de tamanho e complexidade:
 	estruturas de controle, tais como, \textit{if, else, while} aumentam a 
 	complexidade ciclomática de um método.
 
-	& \textbf{AMLOC} (\textit{Average Method Lines of Code} - Média do número de linhas de código por método)Essa medida indica se o código está bem distribuído entre os métodos. Quanto maior, mais pesados são os métodos. É preferível ter muitas operações pequenas e de fácil entendimento que poucas operações grandes e complexas \cite{Meirelles2013}.
+	& \textbf{AMLOC} (\textit{Average Method Lines of Code} - Média do número de linhas de código por método)  indica se o código está bem distribuído entre os métodos. Quanto maior, mais pesados são os métodos. É preferível ter muitas operações pequenas e de fácil entendimento que poucas operações grandes e complexas \cite{Meirelles2013}.
 
 \end{easylist}
 
@@ -160,9 +157,9 @@ algumas métricas de tamanho e complexidade:
 
 A evolução dos paradigmas de programação permitiu que as linguagens de 
 programação assumissem diversas características entre si. O
-paradigma da orientação à objetos permitiu aos programadores abstrair computação ao negócio, isso significou evolução no desenvolvimento quando comparado ao paradigma procedural e permanência na academia quanto na indústria de desenvolvimento de software \cite{Li1993}.
+paradigma da orientação à objetos permitiu aos programadores abstrair computação ao negócio, isso significou evolução no desenvolvimento quando comparado ao paradigma procedural, fato que implicou a paradigma de orientação à objetos uma longa permanência na academia quanto na indústria de desenvolvimento de software \cite{Li1993}.
 
-Dado a grande utilização do paradigma no desenvolvimento de software, foram selecionadas algumas das principais métricas de orientação à objetos:
+Dado a grande utilização do paradigma de orientação à objetos no desenvolvimento de software, foram selecionadas algumas das principais métricas de orientação à objetos:
 
 
 \begin{easylist}
@@ -174,11 +171,11 @@ Dado a grande utilização do paradigma no desenvolvimento de software, foram se
 	múltipla \cite{McCabe94} \cite{Chidamber94}.
 
 	%--------------------------
-	& \textbf{ANPM} (\textit{Average Number of Parameters per Method} - Média do Número de Parâmetros por Método) alcula a média de parâmetros dos métodos da classe. Seu valor mínimo é zero e não existe um limite máximo para o seu resultado, mas um número alto de parâmetros pode indicar que um método pode ter mais uma responsabilidade \cite{Basili1987}
+	& \textbf{ANPM} (\textit{Average Number of Parameters per Method} - Média do Número de Parâmetros por Método) calcula a média de parâmetros dos métodos da classe. Seu valor mínimo é zero e não existe um limite máximo para o seu resultado, mas um número alto de parâmetros pode indicar que um método pode ter mais uma responsabilidade \cite{Basili1987}.
 
 
 	%--------------------------
-	& \textbf{CBO} (\textit{Coupling Between Objects} - Acoplamento entre Objetos) é o número total de classes dentro de um pacote que dependem de classes externas ao pacote. Quando calculada no nível da classe, essa medida também é conhecida como Fan-out da classe \cite{Chidamber94}
+	& \textbf{CBO} (\textit{Coupling Between Objects} - Acoplamento entre Objetos) é o número total de classes dentro de um pacote que dependem de classes externas ao pacote. Quando calculada no nível da classe, essa medida também é conhecida como Fan-out da classe \cite{Chidamber94}.
 
 
 	%-----------------------------
@@ -196,7 +193,7 @@ Dado a grande utilização do paradigma no desenvolvimento de software, foram se
 	& \textbf{LCOM4} (\textit{Lack of Cohesion in Methods} - Falta de Coesão
 	entre Métodos). Originalmente proposto por \citeonline{Chidamber94} 
 	como LCOM não teve uma grande aceitabilidade. Após críticas e 
-	sugestões a métrica foi revisada por \citeonline{LCOM4}, que propôs a LCOM4. Para calcular LCOM4 de um módulo, é necessário construir um gráfico 
+	sugestões a métrica foi revisada por \citeonline{LCOM4}. Para calcular LCOM4 de um módulo, é necessário construir um gráfico 
 	não-orientado em que os nós são os métodos e atributos de uma classe. Para
 	cada método, deve haver uma aresta entre ele e um outro método ou variável 
 	que ele usa. O valor da LCOM4 é o número de componentes fracamente 
@@ -214,14 +211,14 @@ Dado a grande utilização do paradigma no desenvolvimento de software, foram se
 	%-----------------------------
 	& \textbf{NOM} (\textit{Number of Methods} - Número de Métodos) é usado 
 	para medir o tamanho das classes em termos das suas operações 
-	implementadas. Essa métrica é usada para ajudar a identificar o 
+	implementadas. Esta métrica pode identificar o 
 	potencial de reúso de uma classe. Em geral, as classes com um grande 
 	número de métodos são mais difíceis de serem reutilizadas, pois elas 
 	são propensas a serem menos coesas \cite{Lorenz94}.
 	
 
 	%-----------------------------
-	& \textbf{NPA} (\textit{Number of Public Attributes} - Número de Atributos Públicos) mede o encapsulamento. Os atributos de uma classe devem servir apenas às funcionalidades da própria classe. Portanto, boas práticas de programação recomendam que os atributos de uma classe devem ser manipulados através dos métodos de acesso \cite{beck1997smalltalk}
+	& \textbf{NPA} (\textit{Number of Public Attributes} - Número de Atributos Públicos) mede o encapsulamento. Os atributos de uma classe devem servir apenas às funcionalidades da própria classe. Portanto, as boas práticas de programação recomendam que os atributos de uma classe devem ser manipulados por meio dos métodos de acesso \cite{beck1997smalltalk}.
 
 
 
@@ -240,12 +237,11 @@ Dado a grande utilização do paradigma no desenvolvimento de software, foram se
 \subsection{Configurações de Qualidade para Métricas de Código-Fonte}
 \label{sec:Intervalos das Métricas}
 
-No trabalho de \citeonline{Meirelles2013}, analizou-se a distribuição estátistica de métricas de código-fonte em 38  projetos de software livre com mais de 100.000 downloads, como por exemplo, Tomcat, OpenJDK, Eclipse, Google Chrome, VLC e entre outros. Para tal \citeonline{Meirelles2013}, utilizou-se da técnica de estátistica descritiva: percentil. Esta é medida que divide a amostra ordenada (por ordem crescente dos dados) em 100 partes, cada uma com uma percentagem de dados aproximadamente igual. 
+No trabalho de \citeonline{Meirelles2013}, analizou-se a distribuição estatística de métricas de código-fonte em 38 projetos de software livre com mais de 100.000 downloads, como por exemplo, Tomcat, OpenJDK, Eclipse, Google Chrome, VLC e entre outros. Para tal \citeonline{Meirelles2013}, utilizou-se da técnica de estatística descritiva: percentil. Esta é medida que divide a amostra ordenada (por ordem crescente dos dados) em 100 partes, cada uma com uma percentagem de dados aproximadamente igual. 
 
 Define-se percentil k, Q, para k = 1, 2, ..., 99, como sendo o valor tal que k\% dos elementos da amostra são menores ou iguais a Qk e os restantes (100-k)\% elementos da amostra são maiores ou iguais a Qk. O 25º percentil  recebe o nome de primeiro quartil, O 50º percentil de mediana ou segundo quartil e o 75º percentil recebe o nome de terceiro quartil.
 
-Após realizar aplicação da técnica estatística na série de dados das métricas de código-fonte, obteve-se tabelas como a Tabela \ref{tab:percentil}.
-
+Após realizar aplicação da técnica estatística na série de dados das métricas de código-fonte obtidos da análise estática de codigo-fonte dos projetos de software livre, obteve-se tabelas como a Tabela \ref{tab:percentil}.
 
 
 	\begin{table}[!ht]
@@ -261,10 +257,10 @@ Após realizar aplicação da técnica estatística na série de dados das métr
 
 
 
-\citeonline{Meirelles2013} observou a partir dos resultados obtidos para cada métrica de código-fonte, como os mostrados na Tabela \ref{tab:percentil}, para uma determinada linguagem de programação, é possível definir uma referência, a partir de um determinado percentil, e observar o conjunto de valores que são frequentemente observados. Por exemplo, na Tabela \ref{tab:percentil}, considerando \textbf{Open JDK8} como uma referência e que as informações para esta métrica são representativas apenas a partir do 75º percentil, é possível observar o intervalo de 0 a 8, como  \textbf{muito frequente}, o intervalo de 9 a 17 como \textbf{frequente}, 17 a 27 como \textbf{pouco frequente} e acima de 27 como \textbf{não frequente} \cite{Meirelles2013}.  
+\citeonline{Meirelles2013} observou a partir dos resultados obtidos para cada métrica de código-fonte, como os mostrados na Tabela \ref{tab:percentil}, que para uma determinada linguagem de programação, é possível definir uma referência, a partir de um determinado percentil, e observar o conjunto de valores que são frequentemente observados. Por exemplo, na Tabela \ref{tab:percentil}, considerando \textbf{Open JDK8} como uma referência e que as informações para esta métrica são representativas apenas a partir do 75º percentil, é possível observar o intervalo de 0 a 8, como \textbf{muito frequente}, o intervalo de 9 a 17 como \textbf{frequente}, 17 a 27 como \textbf{pouco frequente} e acima de 27 como \textbf{não frequente} \cite{Meirelles2013}.  
 
 
-Considerando que o trabalho de \citeonline{Meirelles2013}, analisou softwares livres com grande utilização que são mostrados na Tabela \ref{tab:percentil}, é possível utilizar os intervalos de frequência obtidos como uma evidência \textbf{empírica} de qualidade do código-fonte. Sendo assim, os intervalos de frequência obtidos por \citeonline{Meirelles2013} foram renomeados tais como a Tabela \ref{nomes}, a fim de facilitar a interpretação de métricas de código-fonte, atigindo o objetivo específico OE2. 
+Considerando que o trabalho de \citeonline{Meirelles2013}, analisou softwares livres com grande utilização, que são mostrados na Tabela \ref{tab:percentil}, é possível utilizar os intervalos de frequência obtidos como uma evidência \textbf{empírica} de qualidade do código-fonte. Sendo assim, os intervalos de frequência obtidos por \citeonline{Meirelles2013} foram renomeados tais como a Tabela \ref{nomes}, a fim de facilitar a interpretação de métricas de código-fonte (objetivo específico OE2). 
 
 	\begin{table}[!ht]
 	\begin{center}
@@ -276,7 +272,7 @@ Considerando que o trabalho de \citeonline{Meirelles2013}, analisou softwares li
 		
 \FloatBarrier
 
-Após a renomeação dos intervalos de frequência em intervalos qualitativos, observou-se que alguns softwares apresentam menores valores para métricas que outros. Na tentativa considerar dois cenários, considerou-se dois software como referência para cada uma das métricas na linguagem de programação Java. Em um primeiro cenário, foi analisado o software que contia os menores valores percentis para as métricas. Já em um segundo cenário, foi considerado os valores percentis mais altos. Para o primeiro cenário foi considerado os valores do \textbf{Open JDK8}, já para o segundo foi considerado os valores do \textbf{Tomcat} como referência.
+Após a renomeação dos intervalos de frequência em intervalos qualitativos, observou-se que alguns softwares apresentam menores valores para métricas que outros. Na tentativa considerar dois cenários, considerou-se dois softwares como referências para cada uma das métricas na linguagem de programação Java. Em um primeiro cenário, foi analisado o software que contia os menores valores percentis para as métricas. Já em um segundo cenário, foi considerado os valores percentis mais altos. Para o primeiro cenário foi considerado os valores do \textbf{Open JDK8}, já para o segundo foi considerado os valores do \textbf{Tomcat} como referência.
 
 
 	
@@ -292,7 +288,7 @@ Após a renomeação dos intervalos de frequência em intervalos qualitativos, o
 \subsection{Código Limpo} 
 \label{sec:clean-code}
 
-Segundo \citeonline{Martin2008}, o código deve ser uma composição de instruções e abstrações que possam ser facilmente entendidas, uma vez que gasta-se a maior parte do tempo lendo-o para incluir funcionalidades e corrigir falhas. Dessa forma, ao longo dos anos foram desenvolvidas práticas e técnicas a fim de se gerar o "código limpo" que tem facilidade de entendimento e manutenbilidade. Na Tabela \ref{tab:conceitos} são apresentados alguns conceitos de limpeza de código propostos por \citeonline{Martin2008} e \citeonline{beck2007implementation} compilados por \citeonline{Machini2010}.
+Segundo \citeonline{Martin2008}, o código deve ser uma composição de instruções e abstrações que possam ser facilmente entendidas, uma vez que gasta-se a maior parte do tempo lendo-o para incluir funcionalidades e corrigir falhas. Dessa forma, ao longo dos anos foram desenvolvidas práticas e técnicas a fim de se gerar o "código limpo" o qual se tem facilidade de entendimento e manutenbilidade. Na Tabela \ref{tab:conceitos} são apresentados alguns conceitos de limpeza de código propostos por \citeonline{Martin2008} e \citeonline{beck2007implementation} compilados por \citeonline{Machini2010}.
 
 
 
@@ -304,11 +300,11 @@ Segundo \citeonline{Martin2008}, o código deve ser uma composição de instruç
 \end{table}
 \FloatBarrier
 
-Os trabalhos de \citeonline{marinescu2004quantifying}, \citeonline{marinescu2005measurement}, \citeonline{moha2006automatic}, \citeonline{moha2008domain}, \citeonline{moha2010decor} e \citeonline{rao2007detecting} mostraram que é possível detectar pedaços de código-fonte que podem ser melhorados com a utilização de métricas de código-fonte. Embasado em alguns destes trabalhos, \citeonline{Machini2010} construíu um mapeamento entre as métricas de código-fonte, e as técnicas e práticas propostas por \citeonline{Martin2008} e \citeonline{beck2007implementation}. 
+Os trabalhos de \citeonline{marinescu2004quantifying}, \citeonline{marinescu2005measurement}, \citeonline{moha2006automatic}, \citeonline{moha2008domain}, \citeonline{moha2010decor} e \citeonline{rao2007detecting} mostraram que é possível detectar pedaços de código-fonte que podem ser melhorados com a utilização de métricas de código-fonte. Embasado em alguns destes trabalhos, \citeonline{Machini2010} construíu um mapeamento entre as métricas de código-fonte e as técnicas e práticas propostas por \citeonline{Martin2008} e \citeonline{beck2007implementation}. 
 
-Neste mapeamento, cada conjunto correlacionado de métricas constitui um cenário de limpeza, onde é mostrado a correlação de um "conceito de limpeza", apresentados na Tabela \ref{tab:conceitos}, com métricas de código-fonte, apresentadas na Seção \ref{sec:source-code}. No trabalho de \citeonline{Machini2010}, a detecção é feita a partir de valores altos para as métricas de código-fonte.  A fim de medir efetivamente, a aplicação destes, considerou-se os valores altos como os valores obtidos pelos intervalos Regular e Ruim para a configuração \textbf{OpenJDK} tal como mostrado na Tabela \ref{tab:good-metrics}.  
+Neste mapeamento, cada conjunto correlacionado de métricas constitui um cenário de limpeza, onde é mostrado a correlação de um "conceito de limpeza", apresentado na Tabela \ref{tab:conceitos}, com métricas de código-fonte, apresentadas na Seção \ref{sec:source-code}. No trabalho de \citeonline{Machini2010}, a detecção é feita a partir de valores altos para as métricas de código-fonte. A fim de medir efetivamente, a aplicação destes, considerou-se os valores altos como os valores obtidos pelos intervalos Regular e Ruim para a configuração \textbf{Open JDK8} tal como mostrado na Tabela \ref{tab:good-metrics}.  
 
-Considerando inicialmente os cenários \textbf{Classe Pouco Coesa} e \textbf{Interface dos Métodos} extraídos de \citeonline{Machini2010}, foram elaborados mais alguns cenários tal como se mostra na Tabela \ref{tab:cenarios}. Além disso, realizou-se um mapeamento inicial de padrões de projeto de \citeonline{gamma1994design} que poderiam resolver os problemas detectados pelos cenários de limpeza. 
+Considerando inicialmente os cenários \textbf{Classe Pouco Coesa} e \textbf{Interface dos Métodos} extraídos de \citeonline{Machini2010}, foram elaborados mais alguns cenários tal como se mostra na Tabela \ref{tab:cenarios}. Além disso, realizou-se um mapeamento inicial e não formal de padrões de projeto de \citeonline{gamma1994design} que poderiam resolver os problemas detectados pelos cenários de limpeza. 
 
 \begin{sidewaystable}
 \begin{table}[H]
