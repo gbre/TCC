@@ -60,7 +60,7 @@ Após levantar as características gerais de cada ferramenta, foram comparadas (
 \end{table}
 \FloatBarrier
 
-Em uma fase inicial do trabalho, fora feita a análise entre o Analizo e o SonarQube, que resultou na decisão inicial de se utilizar o SonarQube. Contudo, desde a versão 4.1, o SonarQube retirou as métricas: \textbf{LCOM4, RFC, DIT, NOC}~\footnote{CoreMetrics do SonarQube: \url{https://github.com/SonarSource/sonarqube/blob/master/sonar-plugin-api/src/main/java/org/sonar/api/measures/CoreMetrics.java}}. Dado que este fato, impacta sobre o principal objetivo do trabalho, migrou-se para a ferramenta Analizo. Esta evoluiu e ganhou a possibilidade de emitir saídas das métricas em CSV que detalham nome da classe e as respectivas métricas, atendendo assim ao critério CAE02. Adicionalmente, o Analizo permitiu ao trabalho incorporar a análise das métricas \textbf{ANPM, AMLOC, CBO, NPA}, que como fora observado na Seção \ref{sec:clean-code}, são cruciais na detecção de cenários de limpeza de código-fonte.
+Em uma fase inicial do trabalho, fora feita a análise entre o Analizo e o SonarQube, que resultou na decisão inicial de se utilizar o SonarQube. Contudo, desde a versão 4.1, o SonarQube retirou as métricas: \textbf{LCOM4, RFC, DIT, NOC}~\footnote{CoreMetrics do SonarQube: \url{https://github.com/SonarSource/sonarqube/blob/master/sonar-plugin-api/src/main/java/org/sonar/api/measures/CoreMetrics.java}}. Dado que este fato, impacta o principal objetivo do trabalho, foi tomada a decisão de migrar para a ferramenta Analizo. Esta evoluiu e ganhou a possibilidade de emitir saídas das métricas em CSV que detalham nome da classe e as respectivas métricas, atendendo assim ao critério CAE02. Adicionalmente, o Analizo permitiu ao trabalho incorporar a análise das métricas \textbf{ANPM, AMLOC, CBO, NPA}, que como fora observado na Seção \ref{sec:clean-code}, são cruciais na detecção de cenários de limpeza de código-fonte.
 
 \section{Projeto do \textit{Data Warehouse}}
 \label{sec:project-dw}
@@ -90,7 +90,10 @@ Seguindo a metolodogia de \citeonline{Kimball2002} para o projeto de \textit{dat
 
 Aplicando o segundo passo da metodologia de \citeonline{Kimball2002}, identificou-se a periodicidade como as \textit{releases} do software, isto é, cada software pode ter tempos diferenciados de lançamento de uma nova versão. Em alguns casos, estas podem ser semestrais ou mensais, contudo em outros casos, é possível obter \textit{releases} diárias, como resultado da integração de um determinada massa de código em um sistema de integração continua \cite{beckarticle1999}. 
 
-Para aplicação do terceiro e quarto passo da metodologia de \citeonline{Kimball2002}, os fatos e as dimensões foram identificados a partir dos termos em negritos dos requisitos de negócio. Após a identificação dos fatos, estes foram classificados quanto à aditividade~\footnote{\citeonline{Kimball2002} enuncia que fatos que correspondem a porcentagens e taxas são considerados não aditivos e deve-se conter, na mesma tabela, além do fato, o numerador e denominador. Este ocorre com a Taxa de Aproveitamento de Oportunidades de Melhoria de Código-Fonte} e relacionados com as respectivas dimensões conforme se mostra na Tabela \ref{tab:dimensoes-fato}
+Para aplicação do terceiro e quarto passo da metodologia de \citeonline{Kimball2002}, os fatos e as dimensões foram identificados a partir dos termos em negritos dos requisitos de negócio. Após a identificação dos fatos, estes foram classificados quanto à aditividade~
+\footnote{\citeonline{Kimball2002} enuncia que fatos que correspondem a porcentagens e taxas são considerados não aditivos e deve-se conter, na mesma tabela, além do fato, o numerador e denominador. Este ocorre com a Taxa de Aproveitamento de Oportunidades de Melhoria de Código-Fonte} e relacionados com as respectivas dimensões conforme se mostra na Tabela \ref{tab:dimensoes-fato}
+
+\textcolor{red}{\todo[inline, color=yellow!20]{Baufaker, como eu alterei o valor do percentil para a medida, verifique e atualize  a escrita do parágrafo anterior, uma vez que você referenciou exatamente os campos que estavam em negrito.}}
 
 
 \begin{table}[h]
@@ -130,7 +133,7 @@ Tendo os fatos identificados, foram criados os diagramas de árvore, tal como pr
 \FloatBarrier
 
 
-Após a construção dos diagramas de árvore, o projeto físico do \textit{Data Warehouse} foi construído utilizando a ferramenta MySQL Workbench. Como é possivel observar na Figura \ref{fig:project-dw}, cada digrama de árvore foi traduzido para cada tabela fato (tabelas verdes) com as respectivas tabelas dimensões (tabelas azuis)
+Após a construção dos diagramas de árvore, o projeto físico do \textit{Data Warehouse} foi construído utilizando a ferramenta MySQL Workbench. Como é possivel observar na Figura \ref{fig:project-dw}, cada digrama de árvore foi traduzido para cada tabela fato (tabelas com destaque verde) com as respectivas tabelas dimensões (tabelas com destaque azul)
 
 
 \begin{figure}[ht!]
@@ -155,7 +158,7 @@ Esta decisão de projeto foi motivada pela recomendação de que os metadados s�
 \FloatBarrier
 
 
-Na Tabela~"Meta\_Metric\_Ranges"~contém cada uma das configurações de intervalos qualitativos para cada umas das métricas de código-fonte conforme descrito na Tabela \ref{tab:good-metrics}. Já na Tabela~"Meta\_Scenario"~estão contidos os cenários de limpeza de código-fonte, bem como as recomendações de limpeza para cada um dos cenários conforme descrito na Tabela \ref{tab:cenarios}. 
+A Tabela~"Meta\_Metric\_Ranges"~contém cada uma das configurações de intervalos qualitativos para cada uma das métricas de código-fonte conforme descrito na Tabela \ref{tab:good-metrics}. Já na Tabela~"Meta\_Scenario"~estão contidos os cenários de limpeza de código-fonte, bem como as recomendações de limpeza para cada um dos cenários conforme descrito na Tabela \ref{tab:cenarios}. 
 
 
 Para atender o requisito de projeto, observou-se que cada cenário de limpeza identificado é composto por até dois intervalos qualitativos de métricas de código-fonte. Por este motivo, decidiu-se por criar a Tabela~"Meta\_Metric\_Ranges\_Meta\_Scenario"~, com duas chaves estrangeiras da Tabela~"Meta\_Metric\_Ranges", representando as associações entre os cenários de limpeza de código-fonte e os intervalos qualitativos de métricas de código-fonte.
@@ -230,7 +233,7 @@ A ferramenta Pentaho BI Platform possui arquitetura extensível por plugins dive
 \end{table}
 \FloatBarrier
 
-Na arquitetura do Saiku Analytics, está incorporado outro software livre chamado de Mondrian OLAP. Por meio dele, é possível realizar  consultas. Estas ocorrem por meio da escrita de \textit{queries} em linguagem MDX \textit{(MulitDimensional eXpressions)}que foi proposta por \citeonline{spofford2006mdx} como uma forma de escrever consultas mais otimizadas para bases seguem o modelo dimensional, tal como mostra o exemplo do trecho de Código-Fonte \ref{MDX}.
+Na arquitetura do Saiku Analytics, está incorporado outro software livre chamado de Mondrian OLAP. Por meio dele, é possível realizar  consultas. Estas ocorrem por meio da escrita de \textit{queries} em linguagem MDX \textit{(MulitDimensional eXpressions)}, que foi proposta por \citeonline{spofford2006mdx} como uma forma de escrever consultas mais otimizadas para bases que seguem o modelo dimensional, tal como mostra o exemplo do trecho de Código-Fonte \ref{MDX}.
 
 
 \begin{center}
@@ -249,7 +252,7 @@ WHERE ( [Loja].[Loja Sul])
 \FloatBarrier
 
 \newpage
-\section{Resumo Ferramental do Ambiente de \textit{Data Warehousing}}
+\section{Resumo das Ferramentas utilizadas do Ambiente de \textit{Data Warehousing}}
 
 Na Figura \ref{pentaho-tools}, é apresentado o modo como cada uma das ferramentas apresentadas na seções anteriores está disposta na arquitetura do ambiente de \textit{Data Warehousing} para Métricas de Código-Fonte.
 
