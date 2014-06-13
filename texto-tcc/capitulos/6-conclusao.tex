@@ -1,12 +1,12 @@
 \chapter{Conclusão}
 
 
-Ao longo deste trabalho de conclusão de conclusão, foram investigados mecanismos para avaliar as métricas de código-fonte, facilitar sua interpretação, aumentar a visibilidade destas com intuito de apoiar decisões técnicas, como por exemplo, a refatoração de código. A fim de se alcançar este objetivo, foi hipotetizado que a utilização de um ambiente de \textit{Data Warehousing} iria trazer a automação ao processo de medição de medição de métricas de código-fonte, com a possibilidade de criar um campo de conhecimento semântico para facilitar a interpretação de métricas de código-fonte e trazer visibilidade necessária às métricas de código-fonte.
+Ao longo deste trabalho de conclusão de curso, foram investigados mecanismos para avaliar as métricas de código-fonte, facilitar sua interpretação, aumentar a visibilidade destas com intuito de apoiar decisões técnicas, como por exemplo, a refatoração de código. A fim de se alcançar este objetivo, foi formulada uma hipótese de que a utilização de um ambiente de \textit{Data Warehousing} iria trazer a automação ao processo de medição de medição de métricas de código-fonte, com a possibilidade de criar um campo de conhecimento semântico para facilitar a interpretação de métricas de código-fonte e trazer visibilidade necessária às métricas de código-fonte.
 
 
 A fim de se validar a hipótese, avaliou-se em forma de estudo de caso, o Sistema Integrado de Conhecimento e Gestão (SICG) do Instituto do Patrimônio Artístico Nacional (IPHAN) ao longo do seu ciclo de desenvolvimento no ambiente de \textit{Data Warehousing}. Com a execução do estudo de caso, foi possível observar que a evolução do conjunto de métricas de código-fonte neste projeto, cumprindo assim o objetivo específico \textbf{OE1}.
 
-Quanto ao objetivo específico \textbf{OE2}, verificou-se que o ambiente de \textit{Data Warehousing} permitiu a automação de todo o processo de medição das métricas de código-fonte, pois foram automatizados desde a coleta, transformação dos dados, avaliação das métricas quanto aos intervalos qualitativos, avaliação dos cenários de limpeza de código-fonte e cálculo da taxa de aproveitamento de oportunidades de melhoria de código-fonte. Na Tabela \ref{tab:time}, foram descritos os tempos de execução de cada passo automatizado para a primeira release analisada e a última release analisada.
+Quanto ao objetivo específico \textbf{OE2}, verificou-se que o ambiente de \textit{Data Warehousing} permitiu a automação de todo o processo de medição das métricas de código-fonte, pois, foram automatizados desde a coleta, transformação dos dados, avaliação das métricas quanto aos intervalos qualitativos, avaliação dos cenários de limpeza de código-fonte e cálculo da taxa de aproveitamento de oportunidades de melhoria de código-fonte. Na Tabela \ref{tab:time}, foram descritos os tempos de execução de cada passo automatizado para a primeira release analisada e a última release analisada.
 
 \begin{table}[!ht]
 \centering
@@ -16,11 +16,13 @@ Quanto ao objetivo específico \textbf{OE2}, verificou-se que o ambiente de \tex
 \end{table}
 \FloatBarrier
 
-Considerando os tempos descritos na Tabela \ref{tab:time}, observa-se que o maior tempo encontra-se na fase de análise estática do código-fonte, pois ao se somar os tempos dos passos que envolvem o processo de ETL, este resultam em tempos menores que 5 minutos para última release. Observa-se, portanto, que além de cumprir o objetivo específico \textbf{OE2}, com relação a automação dos processos descritos, conseguiu-se em realizar a análise em tempo bastante significativos quando comparados com as coletas e execução dos mesmos processos de forma manual.  
+Considerando os tempos descritos na Tabela \ref{tab:time}, observa-se que o maior tempo encontra-se na fase de análise estática do código-fonte, pois ao se somar os tempos dos passos que envolvem o processo de ETL, este resultam em tempos menores que 5 minutos para última release. Observa-se, portanto, que além de cumprir o objetivo específico \textbf{OE2}, com relação a automação dos processos descritos, conseguiu-se realizar a análise em tempo significativos quando comparados com as coletas e execução dos mesmos processos de forma manual.
 
-Foi possível observar, que ao se construir as configurações~"OpenJDK Metrics"~e~"Tomcat Metrics" que a interpretação das métricas de código-fonte pode ser flexibilixada com adoção de padrões convinientes ao software avaliando, cumprindo assim com o objetivo específico \textbf{OE3}.
+\textcolor{red}{\todo[inline, color=yellow!20]{Aqui seria importante ter o tempo que o IPHAN levava para realizar essa atividade, além da amostragem (qtde) de classes que eram analisadas...}}
 
-Quanto a avaliação de indicadores de código-limpo e acompanhamento da taxa de oportunidades de melhoria de código-fonte, observa-se que se contribuiu com dois indicadores de saúde de bom código-fonte. Isto é, o acompanhamento detes pode permitir a equipe de desenvolvimento ou até a mesmo a gestores de projeto, tomar decisões técnicas mais eficientes quanto a decisões que impactam diretamente no código-fonte. Estes dois indicadores não só cumprem com objetivos específicos \textbf{OE4} e \textbf{OE5}, mas contribuem também para se alcançar o \textbf{objetivo geral} do trabalho, pois estes são indicadores que podem apoiar uma decisão técnica de refatoração.
+Foi possível observar, ao se construir as configurações~"OpenJDK Metrics"~e~"Tomcat Metrics" que a interpretação das métricas de código-fonte pode ser flexibilixada com adoção de padrões convenientes ao software avaliando, cumprindo assim com o objetivo específico \textbf{OE3}. \textcolor{red}{Também não entendi esse parágrafo. Favor reescrever}
+
+Quanto a avaliação de indicadores de código-limpo e acompanhamento da taxa de oportunidades de melhoria de código-fonte, observa-se que se contribuiu com dois indicadores de saúde de bom código-fonte. Isto é, o acompanhamento detes pode permitir a equipe de desenvolvimento ou até a mesmo a gestores de projeto, tomarem decisões técnicas mais eficientes no que diz respeito ao código-fonte de um projeto. Estes dois indicadores não só cumprem com objetivos específicos \textbf{OE4} e \textbf{OE5}, mas contribuem também para se alcançar o \textbf{objetivo geral} do trabalho, pois estes são indicadores que podem apoiar uma decisão técnica de refatoração.
 
 Quanto ao objetivo \textbf{OE6}, foram contabilizadas, ao longo do trabalho, as consutas OLAP necessárias para responder aos requisitos de negócio para cada um dos processos que foram avaliados conforme a Tabela \ref{tab:resultados-OLAP}.
 
@@ -35,11 +37,11 @@ Quanto ao objetivo \textbf{OE6}, foram contabilizadas, ao longo do trabalho, as 
 \FloatBarrier
 
 
-Ao se observar os dados obtidos na Tabela \ref{tab:resultados-OLAP} e a própria execução do estudo de caso da Seção \ref{sec:execution-case-study}, concluiu-se que o ambiente de \textit{Data Warehousing} conseguiu responder às necessidades estabelecidas por cada um dos requisitos de negócio dos procesos de negócio. 
+Ao se observar os dados obtidos na Tabela \ref{tab:resultados-OLAP} e a própria execução do estudo de caso da Seção \ref{sec:execution-case-study}, concluiu-se que o ambiente de \textit{Data Warehousing} conseguiu responder às necessidades estabelecidas para cada um dos requisitos de negócio identificados. 
 
-Por meio da utilização do plugin Saiku no ambiente de \textit{Data Warehousing}, é possível cada uma dessas consultas seja exibida em 8 gráficos diferentes ou em Tabelas. Cada uma das consultas pode ainda conter várias outras consultas OLAP que também responderiam a outras necessidades, contudo este trabalho se ateve a contabilizar apenas as que respondiam aos requisitos de negócio.
+Por meio da utilização do plugin Saiku no ambiente de \textit{Data Warehousing}, é possível que cada uma dessas consultas seja exibida em 8 gráficos diferentes ou em Tabelas. Cada uma das consultas pode ainda conter várias outras consultas OLAP que também responderiam a outras necessidades. Contudo, este trabalho se ateve a contabilizar apenas as que respondiam aos requisitos de negócio levantados.
 
-Por fim, acredita-se que ao satisfazer tanto a cada um dos objetivos específicos, quanto a objetivo geral do trabalho, contribuiu-se na avaliação da utilização de ambientes de \textit{Data Warehousing} em processos de medição de métricas de código-fonte. 
+Por fim, acredita-se que, ao satisfazer tanto a cada um dos objetivos específicos, quanto a objetivo geral do trabalho, contribuiu-se na avaliação da utilização de ambientes de \textit{Data Warehousing} em processos de medição e análise de métricas de código-fonte. 
 
 \section{Limitações}
 
@@ -52,4 +54,4 @@ Quanto aos metadados do Projeto de \textit{Data Warehouse}, apresentados \ref{se
 
 \section{Trabalhos Futuros}
 
-Quanto aos trabalhos futuros, foi possível identificar duas possibilidades imediatas. A primeira possibilidade é uma melhor avaliação de como os padrões de projeto propostos inicialmente na Tabela \ref{tab:cenarios} se correlacionam com as avaliações das métricas de código-fonte e a detecção dos cenários de limpeza de código-fonte. A segunda possibilidade é investigação, com mecanismos estatísticos, com apoio de estudo de múltiplos casos, como que a Taxa de Aproveitamento de Oportunidades de Melhoria de código-fonte pode se compartar a depender como se utilização as boas práticas de código-fonte, como as citadas na Tabela \ref{tab:conceitos}.
+Quanto aos trabalhos futuros, foi possível identificar duas possibilidades imediatas. A primeira possibilidade é uma melhor avaliação de como os padrões de projeto propostos inicialmente na Tabela \ref{tab:cenarios} se correlacionam com as avaliações das métricas de código-fonte e a detecção dos cenários de limpeza de código-fonte. A segunda possibilidade é a investigação, com mecanismos estatísticos, com apoio de estudo de múltiplos casos, de como que a Taxa de Aproveitamento de Oportunidades de Melhoria de código-fonte pode se compartar a depender como se utilização as boas práticas de código-fonte, como as citadas na Tabela \ref{tab:conceitos}.
