@@ -23,6 +23,8 @@ A Figura \ref{dwing} descreve uma arquitetura geral de um ambiente de \textit{Da
 \end{figure}
 \FloatBarrier
 
+\textcolor{red}{\todo[inline, color=yellow!20]{Baufaker, colocar o ícone do analizo, no lugar do mongoDB.}}
+
 
 \section{\textit{Extraction-Transformation-Load} (ETL)}
 
@@ -95,9 +97,11 @@ A Figura \ref{fig:metodologia-dw} mostra os passos necessários, utilizando da m
 \end{figure}
 \FloatBarrier
 
-O primeiro passo de selecionar o processo de negócio é crucial na identificação de requisitos e regras de negócio, pois dele advém tais como cálculos específicos que podem ser entradas para o processo de \textit{Extracion-Transformation-Load}. No segundo passo, a identificação da periodicidade de coleta dos dados é essencial para coleta correta e agregação dos dados em níveis ou hierarquias. O terceiro e quarto passos resultam por fim no modelo dimensional que foi apresentado na seção \ref{sec:data-warehouse}. 
+O primeiro passo de selecionar o processo de negócio é crucial na identificação de requisitos e regras de negócio, pois dele advém informações tais como cálculos específicos que podem ser entradas para o processo de \textit{Extracion-Transformation-Load}. No segundo passo, a identificação da periodicidade de coleta dos dados é essencial para que esta seja realizada de maneira correta, além de viabilizar a agregação dos dados em níveis ou hierarquias. O terceiro e quarto passos resultam por fim no modelo dimensional que é apresentado na seção \ref{sec:data-warehouse}. 
 
-Tendo os fatos e dimensões identificados pela de \citeonline{Kimball2002}, é possível construir um diagrama dimensional de árvore tal como exemplo da Figura \ref{fig:tree}. Este diagrama foi proposto por \citeonline{Golfarelli1998} com intuito de conceber projetos conceituais de \textit{Data Warehouse}.  
+Tendo os fatos e dimensões identificados pela \textcolor{red}{Faltou uma palavra aqui...} de \citeonline{Kimball2002}, é possível construir um diagrama dimensional de árvore tal como exemplo da Figura \ref{fig:tree}. Este diagrama foi proposto por \citeonline{Golfarelli1998} com intuito de conceber projetos conceituais de \textit{Data Warehouse}.  
+
+\textcolor{red}{\todo[inline, color=yellow!20]{Faltou aqui um parágrafo para introduzir o diagrama de árvore}}
 
 No diagrama de árvore, as dimensões são as raízes das árvores, se forem atributos não numéricos; as hierarquias são os “galhos” das árvores cujas raízes são dimensões e cujos relacionamentos entre os nós são 1:N; os atributos do fato, também são raízes das árvores, contudo estes são atributos numéricos caracterizados pela ausência de hierarquias.
 
@@ -113,7 +117,7 @@ No diagrama de árvore, as dimensões são as raízes das árvores, se forem atr
 
 \section{\textit{On-Line Analytical Processing} (OLAP)}
 
-O termo OLAP, inicialmente proposto por \citeonline{Codd1993}, é utilizado para caracterizar as operações de consulta e análise em um \textit{data warehouse} projetado sobre um modelo dimensional \cite{Kimball2002}. Isto permite consultas mais flexíveis quando comparadas com as consultas \textit{Online Transaction Processing} (OTLP) que são executadas em bancos de dados relacionais normalizados até a terceira forma normal em diante, em que se visa a eliminação da redundância de dados.
+O termo OLAP, inicialmente proposto por \citeonline{Codd1993}, é utilizado para caracterizar as operações de consulta e análise em um \textit{data warehouse} projetado sobre um modelo dimensional \cite{Kimball2002}. Isto permite consultas mais flexíveis quando comparadas com as consultas \textit{Online Transaction Processing} (OTLP) que são executadas em bancos de dados relacionais, frequentemente normalizados até a quinta forma normal, em que se visa a eliminação da redundância de dados.
 
 As principais diferenças das operações \textit{On-Line Analytical Processing} (OLAP) para as operações 
 \textit{Online Transaction Processing} (OTLP) são apresentados na Tabela 
