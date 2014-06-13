@@ -6,7 +6,17 @@ Ao longo deste trabalho de conclusão de conclusão, foram investigados mecanism
 
 A fim de se validar a hipótese, avaliou-se em forma de estudo de caso, o Sistema Integrado de Conhecimento e Gestão (SICG) do Instituto do Patrimônio Artístico Nacional (IPHAN) ao longo do seu ciclo de desenvolvimento no ambiente de \textit{Data Warehousing}. Com a execução do estudo de caso, foi possível observar que a evolução do conjunto de métricas de código-fonte neste projeto, cumprindo assim o objetivo específico \textbf{OE1}.
 
-O ambiente de \textit{Data Warehousing} permitiu a automação de todo o processo de medição das métricas de código-fonte, pois foram automatizados a coleta, transformação dos dados e avaliação das métricas quanto aos intervalos qualitativos, cumprindo assim o objetivo específico \textbf{OE2}.
+Quanto ao objetivo específico \textbf{OE2}, verificou-se que o ambiente de \textit{Data Warehousing} permitiu a automação de todo o processo de medição das métricas de código-fonte, pois foram automatizados desde a coleta, transformação dos dados, avaliação das métricas quanto aos intervalos qualitativos, avaliação dos cenários de limpeza de código-fonte e cálculo da taxa de aproveitamento de oportunidades de melhoria de código-fonte. Na Tabela \ref{tab:time}, foram descritos os tempos de execução de cada passo automatizado para a primeira release analisada e a última release analisada.
+
+\begin{table}[!ht]
+\centering
+\input{tabelas/tempo-execucao.ltx}
+\caption{Tempo de Execução de cada passo automatizado no processo de medição de métricas de código-fonte}
+\label{tab:time}
+\end{table}
+\FloatBarrier
+
+Considerando os tempos descritos na Tabela \ref{tab:time}, observa-se que o maior tempo encontra-se na fase de análise estática do código-fonte, pois ao se somar os tempos dos passos que envolvem o processo de ETL, este resultam em tempos menores que 5 minutos para última release. Observa-se, portanto, que além de cumprir o objetivo específico \textbf{OE2}, com relação a automação dos processos descritos, conseguiu-se em realizar a análise em tempo bastante significativos quando comparados com as coletas e execução dos mesmos processos de forma manual.  
 
 Foi possível observar, que ao se construir as configurações~"OpenJDK Metrics"~e~"Tomcat Metrics" que a interpretação das métricas de código-fonte pode ser flexibilixada com adoção de padrões convinientes ao software avaliando, cumprindo assim com o objetivo específico \textbf{OE3}.
 
