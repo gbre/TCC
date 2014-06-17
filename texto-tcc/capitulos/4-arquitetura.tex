@@ -2,7 +2,7 @@
 \label{chap:arquitetura}
 
 \section{Arquitetura do Ambiente \textit{Data Warehousing} para Métricas de Código-Fonte}
-Para a implementação do ambiente de \textit{Data Warehousing} para métricas de código-fonte, foi definida a arquitetura tal como se mostra Figura \ref{arquitetura}.
+Para a implementação do ambiente de \textit{Data Warehousing} para métricas de código-fonte, foi definida a arquitetura tal como mostra a Figura \ref{arquitetura}.
 
 \begin{figure}[ht!]
 \centering
@@ -60,7 +60,7 @@ Após levantar as características gerais de cada ferramenta, foram comparadas (
 \end{table}
 \FloatBarrier
 
-Em uma fase inicial do trabalho, fora feita a análise entre o Analizo e o SonarQube, que resultou na decisão inicial de se utilizar o SonarQube. Contudo, desde a versão 4.1, o SonarQube retirou as métricas: \textbf{LCOM4, RFC, DIT, NOC e NOM}~\footnote{CoreMetrics do SonarQube: \url{https://github.com/SonarSource/sonarqube/blob/master/sonar-plugin-api/src/main/java/org/sonar/api/measures/CoreMetrics.java}}. Dado que este fato, impacta o principal objetivo do trabalho, foi tomada a decisão de migrar para a ferramenta Analizo. Esta evoluiu e ganhou a possibilidade de emitir saídas das métricas em CSV que detalham nome da classe e as respectivas métricas, atendendo assim ao critério CAE02. Adicionalmente, o Analizo permitiu ao trabalho incorporar a análise das métricas \textbf{ANPM, AMLOC, CBO, NPA}, que como fora observado na Seção \ref{sec:clean-code}, são cruciais na detecção de cenários de limpeza de código-fonte.
+Em uma fase inicial do trabalho, foi feita a análise entre o Analizo e o SonarQube, que resultou na decisão inicial de se utilizar o SonarQube. Contudo, desde a versão 4.1, o SonarQube retirou as métricas: \textbf{LCOM4, RFC, DIT, NOC e NOM}~\footnote{CoreMetrics do SonarQube: \url{https://github.com/SonarSource/sonarqube/blob/master/sonar-plugin-api/src/main/java/org/sonar/api/measures/CoreMetrics.java}}. Dado que este fato impacta o principal objetivo do trabalho, foi tomada a decisão de migrar para a ferramenta Analizo. Esta evoluiu e ganhou a possibilidade de emitir saídas das métricas em CSV que detalham nome da classe e as respectivas métricas, atendendo assim ao critério CAE02. Adicionalmente, o Analizo permitiu ao trabalho incorporar a análise das métricas \textbf{ANPM, AMLOC, CBO, NPA}, que como foi observado na Seção \ref{sec:clean-code}, são cruciais na detecção de cenários de limpeza de código-fonte.
 
 \section{Projeto do \textit{Data Warehouse}}
 \label{sec:project-dw}
@@ -88,10 +88,10 @@ Seguindo a metolodogia de \citeonline{Kimball2002} para o projeto de \textit{dat
 \FloatBarrier
 
 
-Aplicando o segundo passo da metodologia de \citeonline{Kimball2002}, identificou-se a periodicidade como as \textit{releases} do software, isto é, cada software pode ter tempos diferenciados de lançamento de uma nova versão. Em alguns casos, estas podem ser semestrais ou mensais, contudo em outros casos, é possível obter \textit{releases} diárias, como resultado da integração de um determinada massa de código em um sistema de integração continua \cite{beckarticle1999}. 
+Aplicando o segundo passo da metodologia de \citeonline{Kimball2002}, identificou-se a periodicidade como as \textit{releases} do software, isto é, cada software pode ter tempos diferenciados de lançamento de uma nova versão. Em alguns casos, estas podem ser semestrais ou mensais, contudo em outros casos, é possível obter \textit{releases} diárias, como resultado da integração de um determinada massa de código em um sistema de integração contínua \cite{beckarticle1999}. 
 
-Para aplicação do terceiro e quarto passo da metodologia de \citeonline{Kimball2002}, os fatos e as dimensões foram identificados a partir dos termos em negritos dos requisitos de negócio. Após a identificação dos fatos, estes foram classificados quanto à aditividade~
-\footnote{\citeonline{Kimball2002} enuncia que fatos que correspondem a porcentagens e taxas são considerados não aditivos e deve-se conter, na mesma tabela, além do fato, o numerador e denominador. Este ocorre com a Taxa de Aproveitamento de Oportunidades de Melhoria de Código-Fonte} e relacionados com as respectivas dimensões conforme se mostra na Tabela \ref{tab:dimensoes-fato}.
+Para aplicação do terceiro e quarto passo da metodologia de \citeonline{Kimball2002}, os fatos e as dimensões foram identificados a partir dos termos em negritos dos requisitos de negócio. Após a identificação dos fatos, estes foram classificados quanto a aditividade~
+\footnote{\citeonline{Kimball2002} enuncia que fatos que correspondem a porcentagens e taxas são considerados não aditivos e devem estar contidos, na mesma tabela, além do fato, o numerador e denominador. Este ocorre com a Taxa de Aproveitamento de Oportunidades de Melhoria de Código-Fonte} e relacionados com as respectivas dimensões conforme se mostra na Tabela \ref{tab:dimensoes-fato}.
 
 
 \begin{table}[h]
@@ -172,7 +172,7 @@ as áreas de ETL, \textit{reporting}, OLAP e mineração de dados. Cada um dos c
 
 \subsection{Implementação da Extração, Transformação e Carga dos Dados}
 \label{implementação-ETL}
-O Pentaho \textit{Data Integration Community Edition} ou Kettle \footnote{Disponível em \url{http://kettle.pentaho.com/}} é feito na linguagem Java e implementa o processo de ETL (Extração, Transformação e Carga de Dados). A interface do Kettle é mostrada na Figura \ref{pdi} e as principais características do Kettle bem como a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{kettle}.
+O Pentaho \textit{Data Integration Community Edition} ou Kettle \footnote{Disponível em \url{http://kettle.pentaho.com/}} é feito na linguagem Java e implementa o processo de ETL (Extração, Transformação e Carga de Dados). A interface do Kettle é mostrada na Figura \ref{pdi} e as principais características do Kettle \todo[inline, color=SeaGreen!50]{confuso}bem como a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{kettle}.
 
 \begin{figure}[ht!]
 \centering
@@ -190,7 +190,7 @@ O Pentaho \textit{Data Integration Community Edition} ou Kettle \footnote{Dispon
 \end{table}
 \FloatBarrier	
 
-O Kettle possui dois tipos de componentes internos: \textit{Job} e \textit{Transformation}. O primeiro permite executar tarefas, em nível mais alto, de fluxo de controle, tais como, mandar um email em caso de falha, baixar um arquivo, executar transformações  e entre outras atividades. Já a \textit{Transformation} permite tratamento aos dados incluindo desde entrada de dados por diversas fontes até a persistência em uma variedade de SGBDs.
+O Kettle possui dois tipos de componentes internos: \textit{Job} e \textit{Transformation}. O primeiro permite executar tarefas, em nível mais alto, de fluxo de controle, tais como, mandar um email em caso de falha, baixar um arquivo, executar transformações, entre outras atividades. Já a \textit{Transformation} permite tratamento aos dados incluindo desde entrada de dados por diversas fontes até a persistência em uma variedade de SGBDs.
 
 
 A descrição completa da implementação do processo de \textit{Extraction-Transformation-Load} na ferramenta Kettle foi descrita no Apêndice \ref{sec:implementação-etl}.
@@ -200,7 +200,7 @@ A descrição completa da implementação do processo de \textit{Extraction-Tran
 Para a implementação das consultas OLAP e Visualização de dados, torna-se necessário a utilização do Pentaho BI Platform\footnote{Disponível em \url{http://community.pentaho.com/projects/bi_platform/}}, que é uma ferramenta que provê a arquitetura e a infraestrutura para soluções de \textit{Business Inteligence}, \textit{Data Mining} e a camada de visualização de dados do \textit{Data Warehouse}.
 
 
-O Pentaho BI Platform, cuja interface inicial é apresentada na Figura \ref{BIplatform}, tem as principais características e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{biserver}. 
+O Pentaho BI Platform, cuja interface inicial é apresentada na Figura \ref{BIplatform}, tem\todo[inline, color=SeaGreen!50]{confuso} as principais características e a análise quanto aos critérios gerais de seleção de ferramentas são apresentadas na Tabela \ref{biserver}. 
 
 
 \begin{table}[!ht]
@@ -222,7 +222,7 @@ O Pentaho BI Platform, cuja interface inicial é apresentada na Figura \ref{BIpl
 \FloatBarrier
  
 
-A ferramenta Pentaho BI Platform possui arquitetura extensível por plugins diversos que realizam diversas operações, tais como, criação de relatórios, visualização dos dados em tabelas e gráficos e entre outros. Entre os plugins disponíveis, está o Saiku Analytics que oferece serviços de apoio a operações OLAP e à visualização de dados. As características gerais do Saiku Analytics, bem como a avaliação quanto aos critérios gerais de seleção de ferramentas, são apresentados na Tabela \ref{saiku}. 
+A ferramenta Pentaho BI Platform possui arquitetura extensível por plugins diversos que realizam diversas operações, tais como, criação de relatórios, visualização dos dados em tabelas e gráficos, entre outros. Entre os plugins disponíveis, está o Saiku Analytics que oferece serviços de apoio a operações OLAP e à visualização de dados. As características gerais do Saiku Analytics, bem como a avaliação quanto aos critérios gerais de seleção de ferramentas, são apresentados na Tabela \ref{saiku}. 
 
 \begin{table}[!ht]
 \input{tabelas/saiku.ltx}
