@@ -93,13 +93,26 @@ Tendo em vista a dificuldade que o processo manual acarreta, o IPHAN decidiu con
 
 \subsection{Dados, Fonte dos Dados e Forma de Análise dos Dados}
 
-Após a identificação dos objetivos do estudo de caso, foram identificados os principais dados qualitativos e quantitativos na Tabela \ref{tab:dados-estudos}. Estes são as respostas que espera obter com o monitoramento e avaliação de métricas de código-fonte e cenários de limpeza de código-fonte em um ambiente de \textit{Data Warehousing}.
+Após a identificação dos objetivos do estudo de caso, foram identificados as fontes de onde os dados serão retirados:
 
+\begin{easylist}
+
+& Resutados da Análise Estática do Código-Fonte do SICG pelo Analizo
+
+& Uso do Ambiente de \textit{Data Warehousing}
+
+& Entrevistas não estruturadas com o Gestor de Contrato do SICG
+
+& Relatório de Auditoria sobre o Código-Fonte do SICG que foi realizado por uma empresa de TI.
+
+\end{easylist}
+
+Com a identificação das fontes de dados de dados, pôde-se identificar os principais dados qualitativos e quantitativos na Tabela \ref{tab:dados-estudos}. Estes são as respostas que espera obter com o monitoramento e avaliação de métricas de código-fonte e cenários de limpeza de código-fonte em um ambiente de \textit{Data Warehousing}.
 
 \begin{table}[H]
 \begin{center}
 \input{tabelas/dados-estudo.ltx}
-\caption{Dados do Estudo de Caso}
+\caption{Dados a serem analisados no Estudo de Caso}
 \label{tab:dados-estudos}
 \end{center}
 \end{table}
@@ -112,7 +125,7 @@ Após a identificação dos objetivos do estudo de caso, foram identificados os 
 
 A validade de construção está presente na fase de coleta de dados onde deve ser evidenciado as múltiplas fontes de evidência e a coleta de um conjunto de métricas para que se possa saber exatamente o que medir e quais dados são relevantes para o estudo, de forma a responder as questões de pesquisa \cite{yin2011applications}. Neste trabalho, buscou-se garantir a validade de construção ao se definir objetivos com evidências diferentes. Estas por sua vez estão diretamente relacionadas com os objetivos do estudo de caso e os objetivos do trabalho conforme mostrado na Tabela \ref{tab:objetivos-estudo-de-caso}.
 
-A validade interna é garantida quando as conclusões apresentadas pelo estudo de caso correspondem a alguma realidade conhecida pelos próprios envolvidos no projeto \cite{yin2011applications}. Neste trabalho, procurou-se atender a validade interna com a triangulação de vários indicadores de qualidade de código-fonte, isto é, a correlação entre diversos métodos de análise que podem levar conclusões equivalentes. 
+A validade interna é garantida quando as conclusões apresentadas pelo estudo de caso correspondem a alguma realidade conhecida pelos próprios envolvidos no projeto \cite{yin2011applications}. Para se atender a validade interna, foi realizada a triangulação entre várias fontes de dados: os dados analisados pelo ambiente de \textit{data warehousing}, entrevistas não estruturadas e relatório de auditoria de código-fonte. 
 
 Quanto a validade externa destaca-se que a utilização de um estudo de caso não é suficiente para generalizar os resultados dele obtidos, sendo necessário a utilização de estudo em múltiplos casos, a fim de comprovar a genericidade dos resultados \cite{yin2011applications}. Embora, como citado anteriormente, alguns trabalhos já trabalharam com a utilização de métricas e ambientes de \textit{Data Warehousing}, não há como correlacionar os resultados obtidos devido a grande diferenças de contexto e aplicação do ambiente, logo a validade externa não é garantida neste trabalho.
 
@@ -136,6 +149,7 @@ Após o código-fonte de cada versão ser coletado, foi feita uma análise da es
 
 
 \subsection{Análise dos Valores Percentis para Métricas de Código-Fonte do SICG}
+\label{sec:metrics-analisys}
 
 Após extrair as métricas do código-fonte, obteve-se valores percentis para as configurações~"OpenJDK8 Metrics"~e~"Tomcat Metrics"~, que foram definidas na Tabela \ref{tab:good-metrics}, conforme mostra as Figuras \ref{fig:total-openJDK8} e \ref{fig:total-tomcat}   
 respectivamente.
