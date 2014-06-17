@@ -74,7 +74,7 @@ A revisão dos processos levou à formulação da nova metodologia que, por sua 
 Há um entendimento no IPHAN de que é necessária a formação de uma rede de proteção fomentada pelo SNPC que consolide o grande volume de informações atualmente produzido por suas unidades administrativas, composto de 27 Superintendências, 30 escritórios técnicos, 4 Unidades Especiais e 2 Parques Históricos Nacionais. Entretanto, na conjuntura atual, a natureza das informações, em grande maioria armazenadas em planilhas e em banco de dados isolados, dificulta o processo de consolidação das informações, fato 
 que impede a construção da rede de proteção baseada nos recursos e tecnologias atualmente adotados, pois demandaria o aporte considerável de recursos financeiros e humanos sem ganhos no processo. O órgão se manteria refém da demora na produção de informações decorrente do intervalo entre ação e recepção das respostas, ou seja, entre a percepção do problema e sua solução.
 
-Apesar do fato de os processos de cadastro, normatização de sítios urbanos tombados e fiscalização de bens imóveis de metodologia\todo[inline, color=SeaGreen!50]{bens imóveis de metodologia, não entendi} já fazerem parte da realidade das Superintendências e Escritórios Técnicos, o processo manual de suporte e gestão dos dados torna a execução precária e morosa.
+Apesar do fato de os processos da metodologia de cadastro, normatização de sítios urbanos tombados e fiscalização de bens imóveis já fazerem parte da realidade das Superintendências e Escritórios Técnicos, o processo manual de suporte e gestão dos dados torna a execução precária e morosa.
 
 \subsubsection{O Software Analisado}
 
@@ -127,9 +127,9 @@ A validade de construção está presente na fase de coleta de dados onde deve s
 
 A validade interna é garantida quando as conclusões apresentadas pelo estudo de caso correspondem a alguma realidade conhecida pelos próprios envolvidos no projeto \cite{yin2011applications}. Para se atender a validade interna, foi realizada a triangulação entre várias fontes de dados: os dados analisados pelo ambiente de \textit{data warehousing}, entrevistas não estruturadas e relatório de auditoria de código-fonte. 
 
-Quanto a validade externa, destaca-se que a utilização de um estudo de caso não é suficiente para generalizar os resultados dele obtidos, sendo necessário a utilização de estudo em múltiplos casos, a fim de comprovar a \todo[inline, color=SeaGreen!50]{Tem certeza que é esse o termo? Não é generalidade?}genericidade dos resultados \cite{yin2011applications}. Embora, como citado anteriormente, alguns trabalhos já trabalharam\todo[inline, color=SeaGreen!50]{muita repetição de trabalho} com a utilização de métricas e ambientes de \textit{Data Warehousing}, não há como correlacionar os resultados obtidos devido a grandes diferenças de contexto e aplicação do ambiente, logo a validade externa não é garantida neste trabalho.
+Quanto a validade externa, destaca-se que a utilização de um estudo de caso não é suficiente para generalizar os resultados dele obtidos, sendo necessário a utilização de estudo em múltiplos casos, a fim de comprovar resultados genéricos \cite{yin2011applications}. Embora, como citado anteriormente, alguns trabalhos já tenham mostrado a utilização de métricas e ambientes de \textit{Data Warehousing}, não há como correlacionar os resultados obtidos devido a grandes diferenças de contexto e aplicação do ambiente, logo a validade externa não é garantida neste trabalho.
 
-Com relação a confiabilidade, \citeonline{yin2011applications} enuncia que para garantí-la em um estudo de caso, é necessário que este tenha \todo[inline, color=SeaGreen!50]{não é repetitividade?}repetibilidade caso seja usada a mesma fonte dos dados. Neste trabalho, com a documentação da implementação do ambiente de \textit{Data Warehousing}, presente no Capítulo \ref{chap:arquitetura}, conjuntamente com o protocolo de estudo de caso, apresentado a partir da Seção \ref{sec:planning-case}, garante-se a \todo[inline, color=SeaGreen!50]{mesma coisa}repetibilidade do estudo de caso e por conseguinte a confiabilidade.
+Com relação a confiabilidade, \citeonline{yin2011applications} enuncia que para garantí-la em um estudo de caso, é necessário que seja reproduzido caso seja usada a mesma fonte dos dados. Neste trabalho, com a documentação da implementação do ambiente de \textit{Data Warehousing}, presente no Capítulo \ref{chap:arquitetura}, conjuntamente com o protocolo de estudo de caso, apresentado a partir da Seção \ref{sec:planning-case}, garante-se a repetição do estudo de caso e por conseguinte a confiabilidade.
 
 \section{Execução do Estudo de Caso e Análise dos Dados}
 \label{sec:execution-case-study}
@@ -170,7 +170,7 @@ respectivamente.
 \end{sidewaysfigure}
 \FloatBarrier
 
-As métricas \textbf{ACCM, AMLOC, ANPM, DIT, LOC} e \textbf{NPA} permaneceram no intervalo qualitativo~"Excelente"~tanto para a configuração~"OpenJDK8 Metrics"~quanto para a configuração~"Tomcat Metrics", mostrando assim que o software\todo[inline, color=SeaGreen!50]{há algo faltando} quando comparado com estes softwares de referência, pode-se inferir um bom nível qualidade de código-fonte quanto a estas métricas.
+As métricas \textbf{ACCM, AMLOC, ANPM, DIT, LOC} e \textbf{NPA} permaneceram no intervalo qualitativo~"Excelente"~tanto para a configuração~"OpenJDK8 Metrics"~quanto para a configuração~"Tomcat Metrics", mostrando assim que, a partir da comparação do SICG com estes software de referência, pode-se inferir um bom nível de qualidade de código-fonte quanto a estas métricas.
 
 Emboras as métricas \textbf{RFC, ACC e NOC} não alcançaram os valores mais recomendados pelas configurações~"OpenJDK8 Metrics"~e~"Tomcat Metrics", acredita-se que estas estão ainda em patamares considerado aceitáveis segundo as configurações avaliadas. 
 
@@ -184,7 +184,7 @@ Observando os valores percentis obtidos para métrica \textbf{CBO}, verifica-se,
 
 Visando avaliar também a quantidade de consultas OLAP realizadas no ambiente para atender a esse requisito de negócio, foram contabilizadas 2 consultas OLAP de \textit{Drill Down} sobre as dimensões do Projeto, que são as respectivas Figuras \ref{fig:total-openJDK8} e \ref{fig:total-tomcat}. 
 
-Com intuito de analisar cada uma das métricas, como se mostra nos gráficos e tabelas do Apêndice \ref{graphs}, foram contabilizadas também as operações de análise seletiva: \textit{Slice and Dice} e \textit{Pivoting}. Para cada métrica foram necessários 2 operações\textit{Slice and Dice}; uma para selecionar a configuração e outra para selecionar a métrica desejada e 1 \textit{Pivoting} para se gerar o gráfico\todo[inline, color=SeaGreen!50]{confuso} em que nas linhas ficavam as \textit{releases} do software.  
+Com intuito de analisar cada uma das métricas, como se mostra nos gráficos e tabelas do Apêndice \ref{graphs}, foram contabilizadas também as operações de análise seletiva: \textit{Slice and Dice} e \textit{Pivoting}. Para cada métrica foram necessários 2 operações \textit{Slice and Dice}; uma para selecionar a configuração e outra para selecionar a métrica desejada e 1 de \textit{Pivoting} para se gerar o gráfico no qual as colunas representam as \textit{releases} do software.  
  
 
 \subsection{Análise dos Cenários de Limpeza identificados no SICG}
@@ -213,7 +213,7 @@ Realizando uma consulta OLAP de \textit{Drill-Up}, obtém-se uma consolidação 
 
 Conforme é possível observar nas Figuras \ref{fig:cenarios-release} e \ref{fig:cenarios-total}, foram detectados mais cenários de limpeza de código-fonte dos tipos \textbf{Complexidade Estrutural}, \textbf{Classe Pouco Coesa} e \textbf{Interface dos Métodos} respectivamente. Os três Cenários de Limpeza com menor número de incidências foram \textbf{Classe com Muita Exposição}, \textbf{Classe com Muitos Filhos} e \textbf{Classe com Métodos Muito Grande e/ou com muitos condicionais}.
 
-No Apêndice \ref{scenarios}, foram detalhadas, para cada um dos cenários de limpeza de código-fonte, para cada uma das \textit{releases}, as classes que contêm os \todo[inline, color=SeaGreen!50]{sem o de?}de cenários de limpeza de código de código-fonte. Para realizar esta consulta em cada um dos cenários, foram realizadas uma consulta OLAP de \textit{Drill-Down} e outra de \textit{Slice and Dice}.
+No Apêndice \ref{scenarios}, foram detalhadas, para cada um dos cenários de limpeza de código-fonte, para cada uma das \textit{releases}, as classes que contêm os cenários de limpeza de código de código-fonte. Para realizar esta consulta em cada um dos cenários, foram realizadas uma consulta OLAP de \textit{Drill-Down} e outra de \textit{Slice and Dice}.
 
 Em uma escala de priorização, de qual cenário de limpeza de código-fonte deve ser tratado primeiro, recomenda-se, para o projeto analisado, tratar o cenário de \textbf{Complexidade Estrutural}, pois este sozinho chega a responder entre 55\% a 68\% da quantidade total de cenários identificados. 
 
