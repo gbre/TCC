@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 03/06/2014 às 06:41
+-- Tempo de geração: 24/06/2014 às 18:44
 -- Versão do servidor: 5.6.16
 -- Versão do PHP: 5.5.9
 
@@ -19,8 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `source_info`
 --
-DROP SCHEMA IF EXISTS `source_info`;
-CREATE DATABASE `source_info` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS `source_info` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `source_info`;
 
 -- --------------------------------------------------------
@@ -29,6 +28,7 @@ USE `source_info`;
 -- Estrutura para tabela `D_Class`
 --
 
+DROP TABLE IF EXISTS `D_Class`;
 CREATE TABLE IF NOT EXISTS `D_Class` (
   `idClass` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) DEFAULT NULL,
@@ -1035,6 +1035,7 @@ INSERT INTO `D_Class` (`idClass`, `name`, `hashcode`) VALUES
 -- Estrutura para tabela `D_Configuration`
 --
 
+DROP TABLE IF EXISTS `D_Configuration`;
 CREATE TABLE IF NOT EXISTS `D_Configuration` (
   `idConfiguration` int(11) NOT NULL,
   `configuration_name` varchar(45) DEFAULT NULL,
@@ -1058,6 +1059,7 @@ INSERT INTO `D_Configuration` (`idConfiguration`, `configuration_name`, `softwar
 -- Estrutura para tabela `D_Metric`
 --
 
+DROP TABLE IF EXISTS `D_Metric`;
 CREATE TABLE IF NOT EXISTS `D_Metric` (
   `idMetric` int(11) NOT NULL,
   `metric_abbreviation` varchar(45) DEFAULT NULL,
@@ -1090,6 +1092,7 @@ INSERT INTO `D_Metric` (`idMetric`, `metric_abbreviation`, `metric_name`, `metri
 -- Estrutura para tabela `D_Project`
 --
 
+DROP TABLE IF EXISTS `D_Project`;
 CREATE TABLE IF NOT EXISTS `D_Project` (
   `idProject` int(11) NOT NULL AUTO_INCREMENT,
   `project_abbreviation` varchar(45) DEFAULT NULL,
@@ -1112,6 +1115,7 @@ INSERT INTO `D_Project` (`idProject`, `project_abbreviation`, `project_name`, `p
 -- Estrutura para tabela `D_Quality`
 --
 
+DROP TABLE IF EXISTS `D_Quality`;
 CREATE TABLE IF NOT EXISTS `D_Quality` (
   `idQuality` int(11) NOT NULL,
   `quality_index` varchar(45) DEFAULT NULL,
@@ -1134,6 +1138,7 @@ INSERT INTO `D_Quality` (`idQuality`, `quality_index`) VALUES
 -- Estrutura para tabela `D_Release`
 --
 
+DROP TABLE IF EXISTS `D_Release`;
 CREATE TABLE IF NOT EXISTS `D_Release` (
   `idRelease` int(11) NOT NULL,
   `release_name` varchar(45) DEFAULT NULL,
@@ -1172,6 +1177,7 @@ INSERT INTO `D_Release` (`idRelease`, `release_name`, `release_number`) VALUES
 -- Estrutura para tabela `D_Scenario_Clean_Code`
 --
 
+DROP TABLE IF EXISTS `D_Scenario_Clean_Code`;
 CREATE TABLE IF NOT EXISTS `D_Scenario_Clean_Code` (
   `idScenario` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
@@ -1183,12 +1189,13 @@ CREATE TABLE IF NOT EXISTS `D_Scenario_Clean_Code` (
 -- Fazendo dump de dados para tabela `D_Scenario_Clean_Code`
 --
 
-INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES (1, 'Classe Pouco Coesa', 'Reduzir a Subdivisão da Classe');
-INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES (2, 'Interface dos Métodos', 'Minimizar o número de parâmetros');
-INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES (3, 'Classes com muitos filhos', 'Trocar Herança por Agregação');
-INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES (4, 'Classe com métodos grandes e/ou muitos condicionais', 'Quebrar os Métodos');
-INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES (5, 'Classe com muita Exposição ', 'Reduzir o número de pârametros públicos');
-INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES (6, 'Complexidade Estrutural', 'Reduzir a quantidade de responsabilidades da Classe');
+INSERT INTO `D_Scenario_Clean_Code` (`idScenario`, `name`, `recomendations`) VALUES
+(1, 'Classe Pouco Coesa', 'Reduzir a Subdivisão da Classe'),
+(2, 'Interface dos Métodos', 'Minimizar o número de parâmetros'),
+(3, 'Classes com muitos filhos', 'Trocar Herança por Agregação'),
+(4, 'Classe com métodos grandes e/ou muitos condic', 'Quebrar os Métodos'),
+(5, 'Classe com muita Exposição ', 'Reduzir o número de pârametros públicos'),
+(6, 'Complexidade Estrutural', 'Reduzir a quantidade de responsabilidades da Classe');
 
 -- --------------------------------------------------------
 
@@ -1196,6 +1203,7 @@ INSERT INTO `source_info`.`D_Scenario_Clean_Code` (`idScenario`, `name`, `recome
 -- Estrutura para tabela `D_Time`
 --
 
+DROP TABLE IF EXISTS `D_Time`;
 CREATE TABLE IF NOT EXISTS `D_Time` (
   `idTime` int(11) NOT NULL,
   `Month` decimal(10,0) DEFAULT NULL,
@@ -1234,6 +1242,7 @@ INSERT INTO `D_Time` (`idTime`, `Month`, `Year`) VALUES
 -- Estrutura para tabela `F_Project_Metric`
 --
 
+DROP TABLE IF EXISTS `F_Project_Metric`;
 CREATE TABLE IF NOT EXISTS `F_Project_Metric` (
   `idQuality` int(11) NOT NULL AUTO_INCREMENT,
   `percentil_value` double DEFAULT NULL,
@@ -1720,6 +1729,7 @@ INSERT INTO `F_Project_Metric` (`idQuality`, `percentil_value`, `D_Project_idPro
 -- Estrutura para tabela `F_Rate_Scenario`
 --
 
+DROP TABLE IF EXISTS `F_Rate_Scenario`;
 CREATE TABLE IF NOT EXISTS `F_Rate_Scenario` (
   `idRateScenario` int(11) NOT NULL AUTO_INCREMENT,
   `RateScenario` double DEFAULT NULL,
@@ -1753,9 +1763,9 @@ INSERT INTO `F_Rate_Scenario` (`idRateScenario`, `RateScenario`, `numberOfClasse
 (5965, 0.450931677, 805, 363, 1, 14),
 (6826, 0.43786295, 861, 377, 1, 15),
 (7715, 0.437570303, 889, 389, 1, 16),
-(8614, 0.438264738, 899, 394,1, 17),
-(9522, 0.435022026, 908, 395,1, 18),
-(10436, 0.434354485, 914, 397,1, 19);
+(8614, 0.438264738, 899, 394, 1, 17),
+(9522, 0.435022026, 908, 395, 1, 18),
+(10436, 0.434354485, 914, 397, 1, 19);
 
 -- --------------------------------------------------------
 
@@ -1763,6 +1773,7 @@ INSERT INTO `F_Rate_Scenario` (`idRateScenario`, `RateScenario`, `numberOfClasse
 -- Estrutura para tabela `F_Scenario_Class`
 --
 
+DROP TABLE IF EXISTS `F_Scenario_Class`;
 CREATE TABLE IF NOT EXISTS `F_Scenario_Class` (
   `idScenarioFact` int(11) NOT NULL AUTO_INCREMENT,
   `quantity_Scenario` int(11) DEFAULT NULL,
@@ -1775,7 +1786,7 @@ CREATE TABLE IF NOT EXISTS `F_Scenario_Class` (
   KEY `fk_F_Scenario_Class_D_Project1_idx` (`D_Project_idProject`),
   KEY `fk_F_Scenario_Class_D_Release1_idx` (`D_Release_idRelease`),
   KEY `fk_F_Scenario_Class_D_Class1_idx` (`D_Class_idClass`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5756 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5755 ;
 
 --
 -- Fazendo dump de dados para tabela `F_Scenario_Class`
@@ -6514,6 +6525,7 @@ INSERT INTO `F_Scenario_Class` (`idScenarioFact`, `quantity_Scenario`, `D_Scenar
 -- Estrutura para tabela `Meta_Metric_Ranges`
 --
 
+DROP TABLE IF EXISTS `Meta_Metric_Ranges`;
 CREATE TABLE IF NOT EXISTS `Meta_Metric_Ranges` (
   `idMetricRange` int(11) NOT NULL AUTO_INCREMENT,
   `metric_name` varchar(45) DEFAULT NULL,
@@ -6634,6 +6646,7 @@ INSERT INTO `Meta_Metric_Ranges` (`idMetricRange`, `metric_name`, `description`,
 -- Estrutura para tabela `Meta_Metric_Ranges_Meta_Scenario`
 --
 
+DROP TABLE IF EXISTS `Meta_Metric_Ranges_Meta_Scenario`;
 CREATE TABLE IF NOT EXISTS `Meta_Metric_Ranges_Meta_Scenario` (
   `idMeta_Scenario_Ranges` int(11) NOT NULL,
   `Meta_Scenario_idMeta_Scenario` int(11) DEFAULT NULL,
@@ -6675,6 +6688,7 @@ INSERT INTO `Meta_Metric_Ranges_Meta_Scenario` (`idMeta_Scenario_Ranges`, `Meta_
 -- Estrutura para tabela `Meta_Scenario`
 --
 
+DROP TABLE IF EXISTS `Meta_Scenario`;
 CREATE TABLE IF NOT EXISTS `Meta_Scenario` (
   `idMeta_Scenario` int(11) NOT NULL DEFAULT '0',
   `name` varchar(45) DEFAULT NULL,
@@ -6719,18 +6733,18 @@ ALTER TABLE `F_Rate_Scenario`
 -- Restrições para tabelas `F_Scenario_Class`
 --
 ALTER TABLE `F_Scenario_Class`
-  ADD CONSTRAINT `fk_F_Scenario_Class_D_Scenario_Clean_Code1` FOREIGN KEY (`D_Scenario_Clean_Code_idScenario`) REFERENCES `D_Scenario_Clean_Code` (`idScenario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_F_Scenario_Class_D_Class1` FOREIGN KEY (`D_Class_idClass`) REFERENCES `D_Class` (`idClass`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_F_Scenario_Class_D_Project1` FOREIGN KEY (`D_Project_idProject`) REFERENCES `D_Project` (`idProject`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_F_Scenario_Class_D_Release1` FOREIGN KEY (`D_Release_idRelease`) REFERENCES `D_Release` (`idRelease`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_F_Scenario_Class_D_Class1` FOREIGN KEY (`D_Class_idClass`) REFERENCES `D_Class` (`idClass`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_F_Scenario_Class_D_Scenario_Clean_Code1` FOREIGN KEY (`D_Scenario_Clean_Code_idScenario`) REFERENCES `D_Scenario_Clean_Code` (`idScenario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `Meta_Metric_Ranges_Meta_Scenario`
 --
 ALTER TABLE `Meta_Metric_Ranges_Meta_Scenario`
   ADD CONSTRAINT `fk_Meta_Metric_Ranges_has_Meta_Scenario_Meta_Metric_Ranges1` FOREIGN KEY (`Meta_Metric_Ranges_idMetricRange1`) REFERENCES `Meta_Metric_Ranges` (`idMetricRange`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Meta_Metric_Ranges_has_Meta_Scenario_Meta_Scenario1` FOREIGN KEY (`Meta_Scenario_idMeta_Scenario`) REFERENCES `Meta_Scenario` (`idMeta_Scenario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Meta_Metric_Ranges_has_Meta_Scenario_Meta_Metric_Ranges2` FOREIGN KEY (`Meta_Metric_Ranges_idMetricRange2`) REFERENCES `Meta_Metric_Ranges` (`idMetricRange`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Meta_Metric_Ranges_has_Meta_Scenario_Meta_Metric_Ranges2` FOREIGN KEY (`Meta_Metric_Ranges_idMetricRange2`) REFERENCES `Meta_Metric_Ranges` (`idMetricRange`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Meta_Metric_Ranges_has_Meta_Scenario_Meta_Scenario1` FOREIGN KEY (`Meta_Scenario_idMeta_Scenario`) REFERENCES `Meta_Scenario` (`idMeta_Scenario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
